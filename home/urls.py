@@ -12,7 +12,7 @@ from home.views import HomeView
 
 urlpatterns = [
 
-    url(r'^$', views.list1),
+    url(r'^$', views.index),
     url(r'^chat', HomeView.as_view(), name = 'chat'),
     
     url(r'^home/$', views.home, name = "home"),
