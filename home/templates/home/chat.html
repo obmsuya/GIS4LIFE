@@ -1,0 +1,43 @@
+
+
+{% extends 'base.html' %}
+
+
+   {% block body %}
+        <div class="container">
+            <div class="col-md-8">
+            <h2>Chat with others for help </h2>
+            <form method='post'>
+                            
+                {%csrf_token%}
+                
+                {{form.post}}
+                <br>
+                <button type="submit">submit</button>
+            </form>
+            
+            <h2>{{text}}</h2>
+            {% for post in posts%}
+                <hi>{{post.post}}</hi>
+                <p>{{post.user.get_full_name}} on {{post.created}}</p>   
+                
+            {%endfor%}
+            </div>
+            
+            <div class="col-md-4">
+              <h2>Other People</h2>
+              
+              {% for user in users %}
+                  <a href="{%url 'accounts:view_profile_with_pk' pk=user.pk%}">
+                    <h3>{{user.username}}</h3>
+                    </a>
+                  
+              
+          {% endfor %}
+          
+                
+            </div>
+        </div>
+
+
+   {% endblock %}

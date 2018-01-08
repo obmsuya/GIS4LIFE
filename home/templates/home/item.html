@@ -1,0 +1,35 @@
+
+{% extends 'base.html' %}
+
+    {%block head%}
+     
+    {% if item != None %}
+        <title>{{item.name}}-Selected Class</title>
+        
+    {% else %}
+        <title>Invalid Item ID- Selected Class</title>
+    {% endif %}
+    
+    {%endblock%}
+
+
+   {% block body %}
+      <div class="container">
+    <a href="{% url 'home:index' %}">&lt; Back to the list</a>
+    {% if item != None %}
+        
+        <h3>{{item.category.name}}</h3>
+        <h4>{{item.name}}</h4>
+        <p>{{item.description}}</p>
+    {% else %}
+        <p>Invalid Item ID.</p>
+    {% endif %}
+    
+        
+    </div>
+
+
+
+
+
+   {% endblock %}

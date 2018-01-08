@@ -1,0 +1,23 @@
+
+{% extends 'base.html' %}
+
+    
+
+
+<div class="post">
+        
+{% block body %}
+      <div class="container">
+        {% for category in categories%}
+            <h2>{{category.tittle}}</h2>
+            {%for list2 in category.list2_set.all %}
+                <h1> <a href="{% url 'home:list2' pk=category.pk %}">{{ category.title }}</a> </h1>
+            {%endfor%}
+      {% endfor %}
+hi
+<h2>{{list2.tittle}}</h2>
+   {% endblock %}
+   
+</div>
+
+  
