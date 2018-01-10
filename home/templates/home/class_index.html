@@ -1,0 +1,23 @@
+
+{% extends 'base.html' %}
+
+
+
+
+   {% block body %}
+      
+        
+      
+
+            {% for obj in object_list %}
+               <h2>{{obj.title}}</h2>
+               
+            
+            <a href="{% url 'home:detail' id=obj.id %}"> {{obj.title}}</a>
+          
+               {%endfor%}
+          
+
+
+
+   {% endblock %}

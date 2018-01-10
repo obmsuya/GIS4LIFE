@@ -1,7 +1,7 @@
 from django import forms
 from home.models import Post
 from home.models import Post4
-
+from home.models import Classes
 
 
 
@@ -61,3 +61,12 @@ class ClassRegistration(forms.ModelForm):
     class Meta:
         model = Post4
         fields = ('fullname', 'username','Proffession','subject','subtitle','phone')
+
+class PostForm(forms.ModelForm):
+    class Meta:
+        model = Classes
+        fields= [
+            "title",
+            "subtitle",
+            "content"
+        ]

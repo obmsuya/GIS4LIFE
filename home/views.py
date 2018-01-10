@@ -5,10 +5,10 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 from django.shortcuts import render, get_object_or_404
 from django.template import loader
-#from django.core.context_processors import csrf
 
-from home.forms import HomeForm, ClassRegistration
-from home.models import Post,Item, Category,Post4
+
+from home.forms import HomeForm, ClassRegistration, PostForm
+from home.models import Post,Item, Category,Post4, Classes
 
 
 
@@ -26,7 +26,7 @@ class HomeView(TemplateView):
         return render(request, self.template_name, args)
         
     def post(self,request):
-        form =HomeForm(request.POST)
+        form =HomeForm(request.POST or None)
         if form.is_valid():
             post = form.save(commit=False)
             post.user =request.user
@@ -43,7 +43,6 @@ class HomeView(TemplateView):
 def home(request):
     return render (request, "home/home.html", {})
  
- #It is written list2 but this is the first list, list of classes offered  
 def index(request):
     
     context = {
@@ -64,77 +63,56 @@ def item(request, item_id):
     return render(request, 'home/item.html', context)
 
 
-
+#This view is for class registration- 
 def create(request):
-        form = ClassRegistration(request.POST)
+        form = ClassRegistration(request.POST or None)
         if form.is_valid():
-            create = form.save()
+            create = form.save(commit=False)
+            create.save
             
             return redirect('home:chat')
             
         args = {'form': form}
         return render(request, 'home/create.html', args)
+       
+def classes_home(request):
+    queryset = Classes.objects.all()
+    context = {
+        "object_list":queryset
+    }
+    return render(request, "home/class_index.html", context)
     
-
-
-#def post(self,request):
-#        form =HomeForm(request.POST)
+def classes_detail(request,id):
+    try:
+        itm = Classes.objects.get(id=id)
+    except Classes.DoesNotExist:
+        itm = None
+        
+    context = {
+        'detail': itm
+    }
+    return render(request, "home/class_detail.html", context)
+    
+def classes_create(request):
+    form = PostForm(request.POST or None)
+   
+    if form.is_valid():
+        create = form.save(commit=False)
+        create.save()
+            
+        return redirect('home:make')
+            
+    args = {'form': form}
+        
+    return render(request, 'home/class_create.html', args)
+  
+#def create(request):
+#        form = ClassRegistration(request.POST)
 #        if form.is_valid():
-#            post = form.save(commit=False)
-#            post.user =request.user
-#            post.save()
-#            text = form.cleaned_data['post']
-#            form = HomeForm()
+#            create = form.save()
+#            
 #            return redirect('home:chat')
 #            
-#        args = {'form': form, 'text': text}
-#        return render(request, self.template_name, args)
-
-
-
-
-#def list1(request): 
-#      
-#    return render(request, 'home/list1.html')
-  
-  
-    
-    
-    
-#It is written list but this is the second list, list of subclasses   
-#def list2(request, pk):
-#    post = get_object_or_404(Post2, pk=pk)
-#        
-#    return render(request, 'home/list2.html', {'post': post})
-#
-##this list is special to retrive lists of subjects
-# 
-#def detail(request, pk):
-#    post = get_object_or_404(Post2, pk=pk)
-#    return render(request, 'home/detail.html', {'post': post})
-#   
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-def register_class(request):
-    if request.method == "POST":
-        form = ClassRegistration(request.POST)
-        if form.is_valid():
-            post = form.save(commit=False)
-            post.author = request.user
-            post.published_date = timezone.now()
-            post.save()
-            return redirect('/home', pk=post.pk)
-    else:
-        form = ClassRegistration()
-        args = {'form': form}
-    return render(request, 'home/registration.html', args)
-
- 
+#        args = {'form': form}
+#        return render(request, 'home/create.html', args) 
+#  

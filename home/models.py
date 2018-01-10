@@ -37,7 +37,7 @@ class Item(models.Model):
     def __str__(self):
         return self.name
      
-   #This model is special for class registration 
+#This model is for class registration 
 class Post4(models.Model):
     class Meta:
         verbose_name_plural = 'Students Request'
@@ -52,3 +52,16 @@ class Post4(models.Model):
     
     def __str__(self):
         return self.fullname
+    
+class Classes (models.Model):
+    title = models.CharField (max_length=120)
+    subtitle = models.CharField (max_length=120)
+    content = models.TextField()
+    updated = models.DateTimeField(auto_now=True, auto_now_add=False)
+    timestamp = models.DateTimeField(auto_now=False, auto_now_add=True)
+    
+                    
+    def __str__(self):
+        return self.title
+    
+    

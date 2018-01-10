@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post,Item, Category, Post4
+from .models import Post,Item, Category, Post4, Classes
 
 # Register your models here.
 
@@ -59,3 +59,4 @@ admin.site.register(Post, PostModelAdmin)
 admin.site.register(Item)
 admin.site.register(Category)
 admin.site.register(Post4)
+admin.site.register(Classes)
