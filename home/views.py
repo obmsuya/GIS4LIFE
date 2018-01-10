@@ -1,17 +1,17 @@
 from django.shortcuts import render, redirect,reverse
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.views.generic import TemplateView
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.shortcuts import render, get_object_or_404
 from django.template import loader
+#from django.core.context_processors import csrf
 
-from home.forms import HomeForm
-from home.models import Post
-from .models import Item
-from .models import Category
-from .models import Post4
-from .forms import ClassRegistration
+from home.forms import HomeForm, ClassRegistration
+from home.models import Post,Item, Category,Post4
+
+
+
     
 class HomeView(TemplateView):
     template_name ='home/chat.html'
@@ -20,7 +20,7 @@ class HomeView(TemplateView):
         form =HomeForm()
         posts = Post.objects.all().order_by('-created')
         users = User.objects.exclude(id=request.user.id)
-        print (users)
+      
         
         args = {'form': form, 'posts': posts, 'users': users}
         return render(request, self.template_name, args)
@@ -63,9 +63,39 @@ def item(request, item_id):
     }
     return render(request, 'home/item.html', context)
 
-def list1(request): 
-      
-    return render(request, 'home/list1.html')
+
+
+def create(request):
+        form = ClassRegistration(request.POST)
+        if form.is_valid():
+            create = form.save()
+            
+            return redirect('home:chat')
+            
+        args = {'form': form}
+        return render(request, 'home/create.html', args)
+    
+
+
+#def post(self,request):
+#        form =HomeForm(request.POST)
+#        if form.is_valid():
+#            post = form.save(commit=False)
+#            post.user =request.user
+#            post.save()
+#            text = form.cleaned_data['post']
+#            form = HomeForm()
+#            return redirect('home:chat')
+#            
+#        args = {'form': form, 'text': text}
+#        return render(request, self.template_name, args)
+
+
+
+
+#def list1(request): 
+#      
+#    return render(request, 'home/list1.html')
   
   
     

@@ -18,12 +18,12 @@ urlpatterns = [
     url(r'^home/$', views.home, name = "home"),
     url(r'^index/$', views.index, name = "index"),
     url(r'^item/(?P<item_id>\d+)/$', views.item, name = "item"), 
-     
-    url(r'^list/$', views.list1, name = "list1"),
+    url(r'^create/$', views.create, name = "create"), 
+    ##url(r'^list/$', views.list1, name = "list1"),
     
-    #url(r'^list2/(?P<pk>\d+)/$', views.list2, name = "list2"),
+    #url(r'^list2reate/(?P<pk>\d+)/$', views.list2, name = "list2"),
     #url(r'^detail/(?P<pk>\d+)/$', views.detail, name = "detail"),
-    
+   
     
     
 ]

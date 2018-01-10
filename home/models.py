@@ -36,32 +36,12 @@ class Item(models.Model):
     
     def __str__(self):
         return self.name
-
-
-    
-#codingEntrepreneurs vid 6    
-#class Post2(models.Model):
-#    title = models.CharField(max_length=120)
-#    subtitle = models.CharField(max_length=120,default='')
-#    content = models.TextField()
-#    created_date = models.DateTimeField(
-#            default=timezone.now)
-#    published_date = models.DateTimeField(
-#            blank=True, null=True)
-#    category = models.ForeignKey(category)
-#
-#    def publish(self):
-#        self.published_date = timezone.now()
-#        self.save()
-#
-#    def __str__(self):
-#        return self.title
-    
-    
-
-    
+     
    #This model is special for class registration 
 class Post4(models.Model):
+    class Meta:
+        verbose_name_plural = 'Students Request'
+    
     fullname = models.CharField (max_length=100, default='')
     username = models.CharField (max_length=100, default='')
     Proffession = models.CharField (max_length=100, default='')
