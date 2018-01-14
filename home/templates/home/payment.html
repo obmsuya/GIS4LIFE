@@ -1,0 +1,52 @@
+
+{% extends 'base.html' %}
+
+    
+
+
+<div class="post">
+        
+{% block body %}
+      
+</div>
+<!--Paypal stuff-->
+
+<div class="col-sm-8">
+        <h1>Almost there, one more thing!</h1>
+         <h2>Make payment to join this course now</h2>
+         <br>
+          <p> Basic Class = TSH 50,000</p>
+          <p>Advanced Class = TSH 100,000</p>
+          
+          <br>
+          
+         <h2>Payment options</h2>
+          <ul class="nav navbar-nav navbar-left">
+           <h3>Tigo Pesa- 0653397942 Name:Overblessing Msuya</h3>
+           <h3>M Pesa- 0753386304 Name:Overblessing Msuya</h3>
+           <h3>Airtel Money</h3>
+           <br>
+           <h3>paypal</h3>
+          </ul>
+          <br>
+           
+         
+          </ul>
+          <form action = "https://paypal.com/cgi-bin/webscr" method= "post" target="_top"
+       <input type="hidden" name="cmd" value="_s-xclick">
+       <input type="hidden" name="hosted_button_id" value="5XSG8PPLJ9APJ">
+       <input type="hidden" name="on0" value="Course">
+         <select class="form-control" name="os0">
+             <option value="Basic">Basic Class $99.00 USD</option>
+             <option value="Advance">Advanced Class$150.00 USD</option>
+         </select>
+         <br>
+         <input type="hidden" name="currency_code" value="USD">
+         <input type='submit' class= 'btn-success '>
+          </form>
+          <br>
+    </div>
+   
+</div>
+
+{% endblock %}  

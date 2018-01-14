@@ -64,9 +64,10 @@ class ClassRegistration(forms.ModelForm):
 
 class PostForm(forms.ModelForm):
     class Meta:
-        model = Classes
+        model = Post4
         fields= [
-            "title",
-            "subtitle",
-            "content"
+            "fullname",
+            "username",
+            "Proffession",
+            
         ]

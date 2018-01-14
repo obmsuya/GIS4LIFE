@@ -21,7 +21,8 @@
         <h3>{{item.category.name}}</h3>
         <h4>{{item.name}}</h4>
         <p>{{item.description}}</p>
-        <li><a href= "{% url 'home:create'%}">Register</a></li>
+        
+        <li><a href= "{% url 'home:register'%}">Register</a></li>
     {% else %}
         <p>Invalid Item ID.</p>
     {% endif %}
