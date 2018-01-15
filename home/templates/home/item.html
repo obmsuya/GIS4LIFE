@@ -22,7 +22,9 @@
         <h3>{{item.category.name}}</h3>
         <h4>{{item.name}}</h4>
         <p>{{item.description}}</p>
+        {% if item.image%} 
         <img src='{{item.image.url}}' class= 'img-responsive'/>
+        {%endif%}
         <li><a href= "{% url 'home:register'%}">REGISTER NOW</a></li>
     <br>
         <br>
