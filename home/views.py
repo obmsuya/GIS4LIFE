@@ -11,7 +11,7 @@ from home.forms import HomeForm, ClassRegistration, PostForm
 from home.models import Post,Item, Category,Post4, Classes
 
 
-
+#These class views is for chating
     
 class HomeView(TemplateView):
     template_name ='home/chat.html'
@@ -44,7 +44,10 @@ class HomeView(TemplateView):
 
  
 def home(request):
-    return render (request, "home/home.html", {})
+    context = {
+       'categories':Item.objects.all() 
+    }
+    return render (request, "home/home.html", context)
  
 def index(request):
     
@@ -67,25 +70,26 @@ def item(request, item_id):
 
 
 
-def reg(request, item_id):
-    try:
-        instance = Item.objects.get(id=item_id)
-    except Classes.DoesNotExist:
-        instance = None
-    
-    form = PostForm(request.POST or None, instance=instance)
-   
-    if form.is_valid():
-        instance = form.save(commit=False)
-        instance.save()
-        return redirect (reverse('home:class'))
+#This view is for class registration- 
+def register(request):
+        form = ClassRegistration(request.POST or None)
+        if form.is_valid():
+            create = form.save()
+            create.save
+            
+            return redirect('home:payment')
+            
+        args = {'form': form}
+        return render(request, 'home/create.html', args)
         
-    context = {
-        "title":instance.name,
-        "instance":instance,
-        'form': form,
-    }
-    return render(request, "home/class_update.html", context)
+        
+def payment(request):
+    return render (request, "home/payment.html", {})
+
+
+
+
+
     
 
 #post_list      
@@ -163,21 +167,6 @@ def classes_delete(request,id):
     return redirect (reverse('home:class'))
      
 
-#This view is for class registration- 
-def register(request):
-        form = ClassRegistration(request.POST or None)
-        if form.is_valid():
-            create = form.save()
-            create.save
-            
-            return redirect('home:payment')
-            
-        args = {'form': form}
-        return render(request, 'home/create.html', args)
-        
-        
-def payment(request):
-    return render (request, "home/payment.html", {})
 
 
 #def create(request):

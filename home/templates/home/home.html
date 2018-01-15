@@ -14,8 +14,12 @@
                 Login or Click Register to see Offered classes
            </p>
 
-               
-
+            {% for category in categories %}
+                <h2>{{category.name}}</h2>
+                {% if category.image%}
+                    <img src='{{category.image.url}}' class= 'img-responsive'/>
+                {%endif%}   
+            {%endfor%}
             
 
         </div>

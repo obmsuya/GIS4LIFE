@@ -16,17 +16,20 @@
    {% block body %}
       <div class="container">
     <a href="{% url 'home:index' %}">&lt; Back to the list</a>
+    
     {% if item != None %}
         
         <h3>{{item.category.name}}</h3>
         <h4>{{item.name}}</h4>
         <p>{{item.description}}</p>
-        
-        <li><a href= "{% url 'home:register'%}">Register</a></li>
+        <img src='{{item.image.url}}' class= 'img-responsive'/>
+        <li><a href= "{% url 'home:register'%}">REGISTER NOW</a></li>
+    <br>
+        <br>
     {% else %}
         <p>Invalid Item ID.</p>
     {% endif %}
-    
+       
         
     </div>
 
