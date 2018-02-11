@@ -7,19 +7,15 @@
    {% block body %}
         <div class="container">
           
-           <h1>Offered COURSES</h1>
+           <h2>Available Courses</h2>
            
            {% for category in categories %}
                <h2>{{category.name}}</h2>
+               <!--<select name="dropdown1">-->
                {%for item in category.item_set.all %}
                    <a href="{% url 'home:item' item_id=item.id %}"> {{item.name}}</a>
                {%endfor%}
-            
-               {% if category.image%} 
-                    <img src='{{category.image.url}}' class= 'img-responsive'/>
-                {%endif%}   
-            
-            
+               <!--</select>-->
             {%endfor%}
            
            <!--{%for item in items%}
