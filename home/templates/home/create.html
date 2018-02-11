@@ -5,17 +5,24 @@
 
 
 {% block body %}
-
-<div class="contaner">
-    <h1>Register</h1>
-        <form method="post">
-
-            {% csrf_token%}
-            {{form.as_p}}
-        <button type="submit">submit</button>
-
-        </form>
-
+      <ul class="nav navbar-nav navbar-right"> 
+            <div class="row">
+                  <main role="main">
+                      
+                      <div class="jumbotron">
+                        <h1>Register</h1>
+                        <form method="post">
+                
+                            {% csrf_token%}
+                            {{form.as_p}}
+                        <button type="submit">submit</button>
+      
+                        </form>
+      
+                    </div>
+                  </main>
+            </div>
+      </ul>
 
 
    {% endblock %}

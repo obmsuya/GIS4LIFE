@@ -4,41 +4,65 @@
     
 
 
-<div class="post">
+
         
 {% block body %}
-      
-</div>
-<!--Paypal stuff-->
+        
+ <ul class="nav navbar-nav navbar-left"> 
+      <div class="row">
+            <main role="main">
+                <h2>Almost there, one more thing!</h2>
+                <div class="jumbotron">     
 
-<div class="col-sm-8">
-        <h1>Almost there, one more thing!</h1>
-         <h2>Make payment to join this course now</h2>
-         <br>
-          <p> Basic Class = TSH 50,000</p>
-          <p>Advanced Class = TSH 100,000</p>
-          
-          <br>
-          
-         <h2>Payment options</h2>
-          <ul class="nav navbar-nav navbar-left">
-           <h3>Tigo Pesa- 0653397942 Name:Overblessing Msuya</h3>
-           <h3>M Pesa- 0753386304 Name:Overblessing Msuya</h3>
-           <h3>Airtel Money</h3>
-           <br>
-           <h3>paypal</h3>
+                        
+                         <h2>Make payment to join the course.</h2>
+                         <br>
+                          <p> Basic Class = TSH 50,000 or $25 USD</p>
+                          <p>Advanced Class = TSH 100,000 or $100 USD</p>
+</div>
+            </main>
+      </div>
+ </ul>
+                       
+                       
+<ul class="nav navbar-nav navbar-left"> 
+      
+      <div class="row">
+            
+            
+            <main role="main">
+                <h2>Payment options</h2>
+                <div class="jumbotron">     
+                   
+                <br>      
+                         
+                         
+                         <h3>1) Mobile Wallet</h3>
+                                               
+                           <h3>Tigo Pesa +255653397942 or M Pesa +255753386304</h3>
+                           
+                           <h3> Account Name:Overblessing Msuya.</h3>
+                           <h4>Note: Make sure to send the refference number for confirmation</h4>
+                           <h4>through whatsapp number +255653397942</h4>
+                           <h4>Check your email for instruction within two days.</h4>
+                          
+                           
+                             <h3>2) paypal</h3>     
+                      </div>
+            </main>
+      </div>
+ </ul>                  
+        
           </ul>
-          <br>
-           
          
-          </ul>
           <form action = "https://paypal.com/cgi-bin/webscr" method= "post" target="_top"
+                
        <input type="hidden" name="cmd" value="_s-xclick">
        <input type="hidden" name="hosted_button_id" value="5XSG8PPLJ9APJ">
        <input type="hidden" name="on0" value="Course">
          <select class="form-control" name="os0">
-             <option value="Basic">Basic Class $99.00 USD</option>
-             <option value="Advance">Advanced Class$150.00 USD</option>
+             <option value="Basic">Basic Class $25.00 USD</option>
+             <option value="Advance">Advanced Class$50.00 USD</option>
          </select>
          <br>
          <input type="hidden" name="currency_code" value="USD">
@@ -48,5 +72,7 @@
     </div>
    
 </div>
+
+      
 
 {% endblock %}  

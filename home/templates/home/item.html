@@ -23,18 +23,23 @@
         <h4>{{item.name}}</h4>
         <p>{{item.description}}</p>
         
-        <!--<li><a href= "{% url 'home:register'%}">REGISTER NOW</a></li>-->
-        <!--<p><a href="{% url 'home:register'%}">REGISTER &raquo;</a></p>-->
-        <p><a class="btn btn-primary btn-lg"href="{% url 'home:register'%}" role="button">REGISTER &raquo;</a></p>
         <br><br>
+        <ul class="nav navbar-nav navbar-left">
+        <p><a class="btn btn-primary btn-lg"href="{% url 'home:register'%}" role="button">Register for this class &raquo;</a></p>
+        </ul>
         
+        <ul class="nav navbar-nav navbar-right">
+        <p><a class="btn btn-primary btn-lg"href="{% url 'home:payment'%}" role="button"> Already registered i want to Pay &raquo;</a></p>
+        </ul>
+      
+    <br><br>
+            
         {% if item.image%} 
-        <img src='{{item.image.url}}' class= 'img-responsive'/>
+            <img src='{{item.image.url}}' class= 'img-responsive'/>
         {%endif%}
-    <br>
-        <br>
+      </div>
     {% else %}
-        <p>Invalid Item ID.</p>
+            <p>Invalid Item ID.</p>
     {% endif %}
        
         

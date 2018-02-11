@@ -11,22 +11,13 @@
            
            {% for category in categories %}
                <h2>{{category.name}}</h2>
-               <!--<select name="dropdown1">-->
                {%for item in category.item_set.all %}
                    <a href="{% url 'home:item' item_id=item.id %}"> {{item.name}}</a>
                {%endfor%}
-               <!--</select>-->
             {%endfor%}
            
-           <!--{%for item in items%}
-               
-               
-               
-               <p>{{item.description}}</p>
-               <br>
-           {%endfor%}-->
         </div>
- 
+        
 
 
 
