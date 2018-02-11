@@ -23,7 +23,9 @@
         <h4>{{item.name}}</h4>
         <p>{{item.description}}</p>
         
-        <li><a href= "{% url 'home:register'%}">REGISTER NOW</a></li>
+        <!--<li><a href= "{% url 'home:register'%}">REGISTER NOW</a></li>-->
+        <!--<p><a href="{% url 'home:register'%}">REGISTER &raquo;</a></p>-->
+        <p><a class="btn btn-primary btn-lg"href="{% url 'home:register'%}" role="button">REGISTER &raquo;</a></p>
         <br><br>
         
         {% if item.image%} 
