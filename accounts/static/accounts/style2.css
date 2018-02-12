@@ -9,3 +9,8 @@ body {
 h1, h2, h3, h4, p {
     font-family: 'Lobster';
 }
+
+li a {
+    color: #FCA205;
+    font-family: 'Lobster';
+}

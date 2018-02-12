@@ -48,6 +48,8 @@ class Post4(models.Model):
     
     fullname = models.CharField (max_length=100, default='')
     username = models.CharField (max_length=100, default='')
+    country = models.CharField (max_length=100, default='')
+    region = models.CharField (max_length=100, default='')
     Proffession = models.CharField (max_length=100, default='')
     subject = models.CharField (max_length=100, default='')
     subtitle = models.CharField (max_length=100, default='')
