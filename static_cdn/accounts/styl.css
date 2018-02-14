@@ -9,13 +9,25 @@ h1, h2, h3, h4, p {
     font-family: 'Lobster';
 }
 
+h2 {
+    color: #330000;
+}
+h1 {
+    text-align:center;
+    
+}
+
+span {
+    font-weight:bold;
+    color:darkblue;
+}
 li a {
     color: #FCA205;
     font-family: 'Lobster';
 }
 
 p{
-font-size: 18px;
+font-size: 19px;
 }
 
 .page-header {
@@ -23,3 +35,4 @@ font-size: 18px;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
 }
+.redtext {color:green;}
