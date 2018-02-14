@@ -6,18 +6,18 @@
  
    {% block body %}
         <div class="container">
-          <h1 class="display-4">GIS4LIFE Online College!</h1>
           
+        <h2 class="display-4"><a name= top></a> GIS4LIFE Online College!</h2>
     <main role="main">
       <div class="jumbotron">
         <div class="container">
-          <h1 class="display-3">GIS ONLINE!</h1>
-          <p>This is an Online   Platform for GIS Training. We know that getting started with GIS can be difficult.
-          However, by using well crafted videos and tutorials you will learn the most
+          <h1 class="display-3"><span>GIS ONLINE!</span></h1>
+          <p>This is an Online   Platform for GIS Training. We know that getting started with GIS can be difficult,
+          however, by using well crafted videos and tutorials from us you will learn the most
           complicated concepts of GIS in an easy way and becomes GIS proffessional within a short period of time.
           When you complete your course, you will receive a certificate of completion, which will help you to demonstrate your accomplishments,
           which you can share with co-workers and potential employers. For more detail on Each class category read the link below.
-          Remember; You must login to join the Class.</p>
+          <span>Remember;  You must sign in to join the Class</span>.</p>
           <ul class="nav navbar-nav navbar-left">
           <p><a class="btn btn-primary btn-lg"href="{% url 'accounts:login'%}" role="button">Sing In &raquo;</a></p>
           </ul>
@@ -40,6 +40,10 @@
           </div>
           
           <div class="col-md-4">
+            <h2><a href="#TAILOR" role="button">Tailor made Course &raquo;</a></h2> 
+          </div>
+          
+          <div class="col-md-4">
             
             <h3><a href="#GIS" role="button">What is GIS &raquo;</a></h3> 
           </div>
@@ -53,22 +57,63 @@
         
         
 <h2><a name= BASIC></a> Basic GIS</h2> 
-<p>Basic GIS is for begginners. Inside the basic GIS you will be able to learn the following courses; Introduction to GIS, Introduction to GPS, Introduction to Google Earth/Map, Introduction to GIS Analysis and Introduction to Catography.
- Sign in/ Sign up to register for a course</p>
+<p>Basic GIS is for begginners. Under this category you will be able to learn the following courses; <hp><a href="#gisintro" role="button">Introduction to GIS</a></hp>,
+<hp><a href="#gpsintro" role="button">Introduction to GPS</a></hp>, <hp><a href="#googleintro" role="button">Introduction to Google Earth</a></hp>,
+<hp><a href="#ganalysisintro" role="button">Introduction to GIS Analysis</a></hp> and <hp><a href="#catogintro" role="button">Introduction to Catography</a></hp>.
+Click the Course for more information. Sign in/ Sign up to register for a course</p>
             <!--<p><a class="btn btn-secondary" name="#BASIC GIS" role="button">View details &raquo;</a></p>-->
 
 <h2><a name= ADVANCED></a> Advanced GIS</h2>
-<p>The course covers selected, sophisticated methods for GIS analysis, but also advanced editing, geoprocessing and thematic mapping techniques. Automation of ArcGIS workflows, using the application ModelBuilder and
+<p> Advanced GIS analysis, but also advanced editing, geoprocessing and thematic mapping techniques. Automation of ArcGIS workflows, using the application ModelBuilder and
             scripting in the Python programming language, constitutes central course elements. Sign in/ Sign up to see the list of available courses </p>
             <!--<p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> -->
 
+<h2><a name= TAILOR></a> Tailor made Course</h2>
+<p> A tailor-made training is designed to meet your specific needs and requirements. You sets the objectives and the topics
+To request for a tailor made course please log in and feel the form. Before requesting for tailor made course check to see if it is already available</p>
+            <!--<p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> -->
 
-<h2><a name= GIS></a> GIS?</h2>
-<P>GIS stands for Geographic Information Systems. GIS is a mapping technology that allows the user to create
-and interact with a variety of maps and data sources. <br>
-GIS integrates databases with georeferenced spatial data (maps tied to specific known locations).
-    Geographic Information System (GIS) helps people visualize and create information that can be used to make decisions and solve problems. A geographic information system (GIS) lets us visualize, question, analyze, and interpret data
-            to understand relationships, patterns, and trends. GIS benefits organizations of all sizes and in almost every industry..</P>
-        
+<h2><a name= GIS></a> What is GIS?</h2>
+<P>GIS stands for Geographic Information Systems. It is a technology that allows us to visualize and interact various features and their informations to see their relationship on the map. <br>
+GIS integrates databases with the locations of features (maps tied to specific known locations).
+Geographic Information System (GIS) helps people visualize and create information that can be used to make decisions and solve problems.
+A geographic information system (GIS) lets us visualize, question, analyze, and interpret data to understand relationships, patterns, and trends of features and events.
+GIS benefits organizations of all sizes and in almost every industry.</P>
+<P>A GIS (geographic or geospatial information system) allows us to record the information and show the location of anything(any feature) available on
+the earth(longitude or latitude) and then to add additional information of other features.  The GIS then allows the individual layers, or themes as they
+are called to be linked. Analysis of the information can then be undertaken using the statistical
+and analytical tools that are provided as part of the GIS.  By providing spatial analysis of suitably coded data it is possible
+to provide striking, visual representations of data.  These representations can often reveal patterns and trends that might otherwise have gone unnoticed
+without the use of GIS techniques. Visual representations of this type can also be extended further so that more considered and objective means of measurement
+are applied.  Such approaches allow macro views to be taken in many fields.  Epidemiologists are interested in the global spread of disease occurrence;
+criminologists are interested in local, national and international patters of criminal activity whilst geologists are interested in physical formations to
+predict earthquake activity and the availability of resources such as oil and gas.  None of these disciplines would be able to work as they currently do without
+the ability to apply analytical tools to otherwise disparate sets of data in the way a Geographical Information System permits.
+</P>
+   <p><a href="#top" role="button">Sign in to register for a class </a></p>
+   
+<h2><a name= gisintro></a> Introduction to GIS</h2>
+<p>Are you new in GIS? You dont know where to start? Introduction to GIS will set stage for you to become a GIS proffessional. As you are here i am guessing that
+the term GIS has came to your mind at work or ar school. Maybe your organization has decided to start using GIS to make better sense of their data, or you were
+looking into ways to map your data, or may be you want to learn GIS to get a new job, this course will answer all your question. <br>
+
+This course is meant for professionals in various sectors including public health, water resources, urban planning, and others that deal with spatial data.
+It is perfect for someone who wants to apply for a GIS job or GIS Specialist job position. Anyone who wants to learn how to access and do basic GIS staff must start with this course.<br>
+</p>
+<p class= redtext>Under this course we will cover the following; GIS Concepts, Coordinate system, data types, Data presentation, Software installation and configurations and
+Data entry</p>.
+<p><a href="#top" role="button">Sign in to register for this class </a></p> 
+
+<h2><a name= gpsintro></a> Introduction to GPS</h2>
+<P>This course introduce you to the Global Positioning System (GPS) and how it can be used in surveying and data collection.
+ Emphasis is
+on GPS applications related to mapping, engineering and construction projects. This course is primarily aimed at
+the beginners surveying/engineering technicians and anyone who is planing to collect spatial data.</P>
+<p class= redtext>You wil learn about GPS surveying equipment, setting GPS, Data collection procedures, upload and using GPS data into GIS system.</p>
+<p><a href="#top" role="button">Sign in to register for this class </a></p> 
+
+<h2><a name= googleintro></a> Introduction to Google Earth</h2>
+<h2><a name= ganalysisintro></a> Introduction to GIS Analysis</h2>
+<h2><a name= catogintro></a> Introduction to Catography</h2>
 
    {% endblock %}
