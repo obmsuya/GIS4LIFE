@@ -127,7 +127,7 @@ LOGIN_URL = '/account/login/'
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
-MEDIA_ROOT =  os.path.join(BASE_DIR, 'mysite/media')
+MEDIA_ROOT =  os.path.join(os.path.dirname(BASE_DIR), 'static/media')
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
 
 
