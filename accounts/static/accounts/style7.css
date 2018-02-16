@@ -1,5 +1,7 @@
 body {
-    background-color: lightblue
+    background-color: #FFFFFF;
+    margin: 0;
+    padding: 0;
 }
 .content {
     margin-left: 40px;
@@ -41,43 +43,22 @@ font-size: 18px;
 /**{
     margin: 0;
     padding: 0;
-}*/
+}
 
 
-@-webkit-keyframes slide{
-    0%{
-      left: 0;  
-    }
-    10%{
-      left: 0;  
-    }
-    20%{
-      left: -100;  
-    }
-    30%{
-      left: -100;  
-    }
-    40%{
-      left: -200;  
-    }
-    50%{
-      left: -200;  
-    }
-    60%{
-      left: -200;  
-    }
-    70%{
-      left: -300;  
-    }
-    80%{
-      left: -400;  
-    }
-    90%{
-      left: -400;  
-    }
-    100%{
-      left: 0;  
-    }
+@-webkit-keyframes slide
+{
+    0%{left: 0;}
+    10%{left: 0;}
+    20%{left: -100;}
+    30%{left: -100;}
+    40%{left: -200;}
+    50%{left: -200;}
+    60%{left: -200;}
+    70%{left: -300;}
+    80%{left: -400;}
+    90%{left: -400;}
+    100%{left: 0;}
 }
 
 
@@ -93,6 +74,7 @@ font-size: 18px;
 #slider figure{
     position: relative;
     width:500%;
-    animation: slide 10s infinite;
+    -webkit-animation: slide 5s infinite;
     
 }
+*/

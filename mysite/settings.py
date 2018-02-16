@@ -125,11 +125,19 @@ LOGIN_URL = '/account/login/'
 
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static', 'static_root')
+
+
+STATICFILES_DIRS = (
+  os.path.join(os.path.dirname(BASE_DIR), 'static', 'static_dirs'),
+
+)
+
+#MEDIA_ROOT =  os.path.join(BASE_DIR, 'mysite/media')
+MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static', 'media')
+
+
 MEDIA_URL = '/media/'
-
-MEDIA_ROOT =  os.path.join(os.path.dirname(BASE_DIR), 'static/media')
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static')
-
 
 LOGIN_EXEMPT_URLS = (
     r'^account/logout/$',
