@@ -1,60 +1,61 @@
 
 {% extends 'base.html' %}
 
-
-
  
    {% block body %}
-       
         <div class="container">
           
-        <h2 class="display-4"><a name= top></a> GIS4LIFE Online College!</h2>
-    <main role="main">
-      <div class="jumbotron">
+        <div class="container-fluid">
         <div class="container">
+          
           <h1 class="display-3"><span>GIS ONLINE!</span></h1>
-          <p>This is an Online   Platform for GIS Training. We know that getting started with GIS can be difficult,
-          however, by using well crafted videos and tutorials from us you will learn the most
+          
+          <h3>This is an Online  Platform for GIS Training from GIS4LIFE TRAINING COLLEGE. We know that getting started with GIS can be difficult,
+          however, by using well crafted videos and tutorials from this site you will be able to learn the most
           complicated concepts of GIS in an easy way and becomes GIS proffessional within a short period of time.
-          When you complete your course, you will receive a certificate of completion, which will help you to demonstrate your accomplishments,
-          which you can share with co-workers and potential employers. For more detail on Each class category read the link below.
-          <span>Remember;  You must sign in to join the Class</span>.</p>
+          When you complete your course, you will receive a recognized certificate of completion. There are two main categories; Basic GIS
+          and Advaced GIS, on each category there are list of courses of which you can register. For more detail on Each class category click the link below.
+          <span>Remember;  You must sign in to register for Class</span>.</h3>
+          
           <ul class="nav navbar-nav navbar-left">
           <p><a class="btn btn-primary btn-lg"href="{% url 'accounts:login'%}" role="button">Sing In &raquo;</a></p>
           </ul>
+          
           <ul class="nav navbar-nav navbar-right">
           <p><a class="btn btn-primary btn-lg"href="{% url 'accounts:register'%}" role="button">Sign up &raquo;</a></p>
           </ul>
+          
         </div>
       </div>
-
-      <div class="container">
         
-        <div class="row">
-            
-          <div class="col-md-4">
-            <h2><a href="#BASIC" role="button">Basic GIS &raquo;</a></h2> 
-          </div>
-          
-          <div class="col-md-4">
-            <h2><a href="#ADVANCED" role="button">Advanced GIS &raquo;</a></h2> 
-          </div>
-          
-          <div class="col-md-4">
-            <h2><a href="#TAILOR" role="button">Tailor made Course &raquo;</a></h2> 
-          </div>
-          
-          <div class="col-md-4">
-            
-            <h3><a href="#GIS" role="button">What is GIS &raquo;</a></h3> 
-          </div>
-          
+        <br>
+                <div class="container">
+                  
+                      <div class="row">
+                          
+                        <div class="col-md-4">
+                          <h2><a href="#BASIC" role="button">Basic GIS &raquo;</a></h2> 
+                        </div>
+                        
+                        <div class="col-md-4">
+                          <h2><a href="#ADVANCED" role="button">Advanced GIS &raquo;</a></h2> 
+                        </div>
+                        
+                        <div class="col-md-4">
+                          <h2><a href="#TAILOR" role="button">Tailor made Course &raquo;</a></h2> 
+                        </div>
+                        
+                        <div class="col-md-4">
+                          
+                          <h3><a href="#GIS" role="button">What is GIS &raquo;</a></h3> 
+                        </div>
+                        
+                </div>
         </div>
         </div>
      
 
-    </main>
-        </div>
+   
         
         
 <h2><a name= BASIC></a> Basic GIS</h2> 
@@ -114,7 +115,10 @@ the beginners surveying/engineering technicians and anyone who is planing to col
 <p><a href="#top" role="button">Sign in to register for this class </a></p> 
 
 <h2><a name= googleintro></a> Introduction to Google Earth</h2>
+<p><a href="#top" role="button">Sign in to register for a class </a></p>
 <h2><a name= ganalysisintro></a> Introduction to GIS Analysis</h2>
+<p><a href="#top" role="button">Sign in to register for a class </a></p>
 <h2><a name= catogintro></a> Introduction to Catography</h2>
+<p><a href="#top" role="button">Sign in to register for a class </a></p>
 
    {% endblock %}
