@@ -25,7 +25,7 @@ span {
 }
 li a {
     color: #FCA205;
-    font-family: '•Arial';
+    font-family: 'lobster';
 }
 
 p{
@@ -37,8 +37,19 @@ font-size: 18px;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
 }
-.redtext {color:red;
+.redtext {color:blue;
+
 }
+
+
+.wrapper {
+    
+
+    border: solid 1px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
 
 /**{
     margin: 0;
@@ -78,3 +89,4 @@ font-size: 18px;
     
 }
 */
+
