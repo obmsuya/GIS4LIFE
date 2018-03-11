@@ -1,20 +1,100 @@
 
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
 
- 
-   {% block body %}
-        <div class="container">
+{% load staticfiles %}
+
+<html>
+
+
+    <head>
+<
+        <title>GIS4LIFE </title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>   
+            
+        <link rel="stylesheet" href="{% static 'accounts/style11.css' %}">
+        <!--<link rel="stylesheet" href="{% static 'home/house.css' %}">-->
+         
+         <meta name="viewport" content="width=device-width, initial-scale=1.0"   
+
+        
+
+    </head>
+
+
+    <body>
+    <img src="{%static 'img/mmm10.jpg'%}"   class= 'img-responsive'>
+     
+     
+<br>
+    <div class="container">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>   
+    </div>  
+          <div id="navbar" class="navbar-collapse collapse">
+              {% if user.is_authenticated %}
+            
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="{% url 'home:home'%}">Home</a></li>
+                <li><a href="{% url 'home:chat'%}">Talk to Others</a></li>
+                <li><a href="{% url 'home:index'%}">Register</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href= "{% url 'accounts:view_profile'%}">Profile</a></li>
+                <li><a href="{% url 'accounts:edit_profile'%}">Edit Profile</a></li>
+                <li><a href="{% url 'accounts:change_password'%}">Change Password</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="{% url 'accounts:logout'%}">Logout</a></li>
+            </ul>
+
+
+              {%else%}
+
+           <ul class="nav navbar-nav navbar-left"> 
+                <li><a href="{% url 'home:home'%}">Home</a></li>
+            </ul>
+            
+            <ul class="nav navbar-nav navbar-right">
+               <li><a href="{% url 'accounts:login'%}">Sign in</a></li>
+               <li><a href="{% url 'accounts:register'%}">Sign up</a></li>
+                <li><a href="{% url 'accounts:reset_password'%}">Reset Password</a></li>
+            </ul>
+            {%endif %}
+
+    </div>
+    
+
+ </nav>
+   
+  
+       
+            <div class="container">
           
         <div class="container-fluid">
         <div class="container">
           
           <h1 class="display-3"><span>GIS ONLINE!</span></h1>
           
-          <p>This Platform is dedicated for Online GIS Training. We know that getting started with GIS can be difficult,
+          <p>This Platform is dedicated for GIS Training only. We know that getting started with GIS is difficult,
           however, by using well crafted videos and tutorials from this site you will be able to learn the most
           complicated concepts of GIS in an easy way and becomes GIS proffessional within a short period of time.
-          When you complete a course, you will receive a recognized certificate of completion. There are two main categories of courses, that is Basic GIS
-          and Advaced GIS. On each category there is a list of courses which you can register. Click the link below to see the list for each category .
+          When you complete a course, you will receive a recognized certificate of completion. There are two main courses categories, that is Basic GIS
+          and Advaced GIS, on each category there is a list of courses which you can register on. Click the link below to see the detail of each category.
           <span>Remember;  You must sign in to register for a Class</span>.</p>
           
           <ul class="nav navbar-nav navbar-left">
@@ -32,38 +112,41 @@
         <br>
       
                           <h1>READ THIS!</h1> 
-                       <div class= wrapper>      
+                       <div class= wrapper>
+                        
 
-<P>After Sign in you will see the list of all available courses, click your choice and follow the registration process. After registration,
-a payment page  with payment options and instructions will pop up. Chose your payment option and complete transaction. Within two
-business days, you we will receive an e-mail with instructions and links to start your course.<br>
-<br>Remember; Because you read through videos, to reduce the cost of internet connection,
-we will send you a video downloader to download our videos and watch them while offline. You will also be given informations on how to download and
+<P>After Sign in you will see the list of available courses, click on your choice and follow the registration process. After registration,
+a payment page  with payment options will pop up. Chose your option and complete the transaction, then within two
+business days, you we will receive an e-mail with links to start your course.<br>You will also be given informations on how to download and
 install open source GIS (QGIS), if you chose to use commercial licenses such as ArcGIS we will send you a setup files as well as instructions
-for installation and configuration. <br><span> Note: If it happens that you get stack or you can't figure out something, we will offer you a live support, by remote your PC
-and do it together.</span></P>
-<!--<p><a class="btn btn-primary btn-lg"href="{% url 'accounts:login'%}" role="button">Sing In &raquo;</a></p> -->
+for installation and configuration.
+<br><br> There are two major challenges when it comes to online courses, WE KNOW THEM AND WE HAVE SOLUTIONS FOR THEM. <span> To address the challenge
+of internet cost, we will send you a video downloader to download all of our videos and watch them while offline. Our step by step instructions is very easy
+to follow but you still might get stack somewhere, to address such challenges, we offer live support by remote your PC
+and solve it together.</span></P>
+
 </div>
-                 <br><br>       
+        
+        <br><br>       
                 <div class="container">
                   
                       <div class="row">
                         
                         <div class="col-md-4">
-                          <h2><a href="#BASIC" role="button">Basic GIS &raquo;</a></h2> 
+                          <h3><a href="#BASIC" role="button">Basic GIS </a></h3> 
                         </div>
                         
                         <div class="col-md-4">
-                          <h2><a href="#ADVANCED" role="button">Advanced GIS &raquo;</a></h2> 
+                          <h3><a href="#ADVANCED" role="button">Advanced GIS </a></h3> 
                         </div>
                         
                         <div class="col-md-4">
-                          <h2><a href="#TAILOR" role="button">Tailor made Course &raquo;</a></h2> 
+                          <h3><a href="#TAILOR" role="button">Tailor made Course </a></h3> 
                         </div>
                         
                         <div class="col-md-4">
                           
-                          <h3><a href="#GIS" role="button">What is GIS &raquo;</a></h3> 
+                          <h3><a href="#GIS" role="button">What is GIS </a></h3> 
                         </div>
                         
                 </div>
@@ -78,52 +161,57 @@ and do it together.</span></P>
         </div>
         </div>
        </div>
+           
        
-<br><br>
-   
-<div class= wrapper>      
-<h2><a name= JOIN></a> Joining Instructions</h2>
-<P>After Sign up and Sign in you will be able to register for the course of your choice. After registration, will come a payment page
-with payment options and instructions on how to pay. After making a payment we will send you an e-mail containing instructions and links
-to start your course. <br>You will read through videos and tutorials in PDF format. In order to solve the problem of internet cost,
-we will send you a software to download videos so that you can still read when offline. You will also be given information on how to download and
-install open source GIS (QGIS). If you chose to use commercial licenses such as ArcGIS you will also be given setup files as well as instructions
-for installation and configuration.</P>
-<p><a class="btn btn-primary btn-lg"href="{% url 'accounts:login'%}" role="button">Sing In &raquo;</a></p> 
-</div>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
- <div class= wrapper>      
-<h2><a name= BASIC></a> Basic GISs</h2>
-<!--<div class="container">-->
+       <br><br><br>
+       <h2>GIS  Book (Swahili Version- Watch the video below)</h2>
+        <p><a class="btn btn-primary btn-lg"href="{% url 'home:payment'%}" role="button"> Buy this Book</a></p>
+        <p> Since GIS is used by everybody  we have decided to write this
+        book in swahili language so as to reach as many swahili speaking people as possible. English versio is on the way.
+        The main focus of this book is to bring awareness to swahili speaking community about the importance of GIS technology. We have realized
+        that pure knowledge of GIS knowledge among ourselves is the contributing factor to the resistance. T
+        
+       <div class = "container">
+        <div class="panel-heading">
+        <div class="embed-responsive embed-responsive-16by9">
+       <iframe src="https://www.youtube.com/embed/1iPI5uEXC4I?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
+        </div>
+        </div>
+<br><br>
+
+
+  <br><br>
+ <div class= wrapper>      
+<h3><a name= BASIC></a> Basic GISs</h3>
 
 <p> Basic GIS is for begginners. Under this category you will be able to learn the following courses; <hp><a href="#gisintro" role="button">Introduction to GIS</a></hp>,
 <hp><a href="#gpsintro" role="button">Introduction to GPS</a></hp>, <hp><a href="#googleintro" role="button">Introduction to Google Earth</a></hp>,
 <hp><a href="#ganalysisintro" role="button">Introduction to GIS Analysis</a></hp> and <hp><a href="#catogintro" role="button">Introduction to Catography</a></hp>.
-Click the Course for more information. Sign in/ Sign up to register for a course</p>
-            <!--<p><a class="btn btn-secondary" name="#BASIC GIS" role="button">View details &raquo;</a></p>-->
+Click the Course for more information. Sign in to register for a course</p>
+<p><a class="btn btn-primary btn-lg"href="{% url 'accounts:login'%}" role="button">Sing In </a></p> 
 </div>
 <br><br><br><br><br><br><br><br><br><br><br><br>
 <br>
 <div class= wrapper>
-<h2><a name= ADVANCED></a> Advanced GIS</h2>
+<h3><a name= ADVANCED></a> Advanced GIS</h3>
 
 <p> Advanced GIS analysis, but also advanced editing, geoprocessing and thematic mapping techniques. Automation of ArcGIS workflows, using the application ModelBuilder and
-            scripting in the Python programming language, constitutes central course elements. Sign in/ Sign up to see the list of available courses </p>
-            <!--<p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> -->
+            scripting in the Python programming language, constitutes central course elements. Sign in to see the list of available courses </p>
+<p><a class="btn btn-primary btn-lg"href="{% url 'accounts:login'%}" role="button">Sing In </a></p>            
 </div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br>
 <div class= wrapper>
-<h2><a name= TAILOR></a> Tailor made Course</h2>
+<h3><a name= TAILOR></a> Tailor made Course</h3>
 
 <p> A tailor-made training is designed to meet your specific needs and requirements. You sets the objectives and the topics
 To request for a tailor made course please log in and feel the form. Before requesting for tailor made course check to see if it is already available</p>
-  
+<p><a class="btn btn-primary btn-lg"href="{% url 'accounts:login'%}" role="button">Sing In </a></p>   
   </div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br>
 <!--<p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p> -->
 <div class= wrapper>
-<h2><a name= GIS></a> What is GIS?</h2>
+<h3><a name= GIS></a> What is GIS?</h3>
 
 <P>GIS stands for Geographic Information Systems. It is a technology that allows us to visualize and interact various features and their informations to see their relationship on the map. <br>
 GIS integrates databases with the locations of features (maps tied to specific known locations).
@@ -141,7 +229,7 @@ criminologists are interested in local, national and international patters of cr
 predict earthquake activity and the availability of resources such as oil and gas.  None of these disciplines would be able to work as they currently do without
 the ability to apply analytical tools to otherwise disparate sets of data in the way a Geographical Information System permits.
 </P>
-   <p><a href="#top" role="button">Sign in to register for a class </a></p>
+   <p><a class="btn btn-primary btn-lg"href="{% url 'accounts:login'%}" role="button">Sing In </a></p> 
   </div>
 <br><br><br><br><br><br><br><br><br><br><br><br><br>
     
@@ -155,7 +243,7 @@ It is perfect for someone who wants to apply for a GIS job or GIS Specialist job
 </p>
 <p class= redtext>Under this course we will cover the following; GIS Concepts, Coordinate system, data types, Data presentation, Software installation and configurations and
 Data entry</p>.
-<p><a href="#top" role="button">Sign in to register for this class </a></p> 
+<p><a class="btn btn-primary btn-lg"href="{% url 'accounts:login'%}" role="button">Sing In </a></p> 
 
 <h2><a name= gpsintro></a> Introduction to GPS</h2>
 <P>This course introduce you to the Global Positioning System (GPS) and how it can be used in surveying and data collection.
@@ -163,7 +251,7 @@ Data entry</p>.
 on GPS applications related to mapping, engineering and construction projects. This course is primarily aimed at
 the beginners surveying/engineering technicians and anyone who is planing to collect spatial data.</P>
 <p class= redtext>You wil learn about GPS surveying equipment, setting GPS, Data collection procedures, upload and using GPS data into GIS system.</p>
-<p><a href="#top" role="button">Sign in to register for this class </a></p> 
+<p><a class="btn btn-primary btn-lg"href="{% url 'accounts:login'%}" role="button">Sing In </a></p> 
 
 <h2><a name= googleintro></a> Introduction to Google Earth</h2>
 <p><a href="#top" role="button">Sign in to register for a class </a></p>
@@ -172,4 +260,28 @@ the beginners surveying/engineering technicians and anyone who is planing to col
 <h2><a name= catogintro></a> Introduction to Catography</h2>
 <p><a href="#top" role="button">Sign in to register for a class </a></p>
 
-   {% endblock %}
+
+
+
+
+
+
+
+
+    <footer class="container">
+      <p>&copy; Company 2017-2018</p>
+    </footer>
+    </body>
+    
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"></script> 
+    
+    <script
+       src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+       integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+       crossorigin="anonymous"></script>
+    
+    
+</html>

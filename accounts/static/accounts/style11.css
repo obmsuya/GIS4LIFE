@@ -9,6 +9,7 @@ body {
 
 h1, h2, h3, h4, p {
     font-family: 'Lobster';
+    text-indent: 25px;
 }
 
 h2 {
@@ -25,7 +26,7 @@ span {
 }
 li a {
     color: #FCA205;
-    font-family: '•Arial';
+    font-family: 'lobster';
 }
 
 p{
@@ -38,8 +39,25 @@ font-size: 18px;
     padding: 20px 20px 20px 40px;
 }
 .redtext {color:red;
+
 }
 
+
+.wrapper {
+    
+    border: red;
+    border: solid 3px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.image {
+    /*position: relative;*/
+    display: block;
+    margin-left: 400px;
+    margin-right:auto;
+    
+}
 /**{
     margin: 0;
     padding: 0;
@@ -78,3 +96,4 @@ font-size: 18px;
     
 }
 */
+
