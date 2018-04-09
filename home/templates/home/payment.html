@@ -8,72 +8,24 @@
         
 {% block body %}
         
- <ul class="nav navbar-nav navbar-left"> 
-      <div class="row">
-            <main role="main">
-                <h1>Almost there, one more thing!. <span>Complete the payment</span>.</h1>
-                     <br><br>
-                         <h1>PRICE</h1>
-                         <br>
-                          <p> <span>GIS Book </span>=  $50 USD (TSH 100,000) </p>
-                          <p> <span>Basic Course </span>=  or $100 USD (TSH 200,000)</p>
-                          <p><span>Advanced Course</span> =  or $300 USD (TSH 700,000)</p>
 
-            </main>
-      </div>
-      </
- </ul>
-                       
-                       
-<ul class="nav navbar-nav navbar-left"> 
-      
       <div class="row">
-            
-            
             <main role="main">
-                <h1>PAYMENT OPTIONS</h1>
+                <h2>Almost there, one more thing!. Complete the payment.</h1>
                  
-                   
-                <br>      
-                         
-                         
-                         <h2>1) <span>Mobile Wallet</span></h2>
-                                               
-                           <h3>Tigo Pesa +255653397942 or M Pesa +255753386304</h3>
-                           
-                           <h3> Account Name:Overblessing Msuya.</h3>
-                           <p class="redtext">Note: After making your payments send the refference number and your name through whatsapp at +255653397942, then
-                           check your email within two business days for further instructions.</p>
-                          
-                           <h2>2) <span>Bank Account</span></h2>
-                           <p> CRDB BANK A/C 0152303138800- Account Name:Overblessing Msuya.</p>
-                           
-                             <h2>3) <span>paypal</span></h2>     
-                    
             </main>
       </div>
- </ul>                  
-        
-          </ul>
-         
-          <form action = "https://paypal.com/cgi-bin/webscr" method= "post" target="_top"
-                
-       <input type="hidden" name="cmd" value="_s-xclick">
-       <input type="hidden" name="hosted_button_id" value="5XSG8PPLJ9APJ">
-       <input type="hidden" name="on0" value="Course">
-         <select class="form-control" name="os0">
-             <option value="Basic">Basic Class $100.00 USD</option>
-             <option value="Advance">Advanced Class$300.00 USD</option>
-         </select>
-         <br>
-         <input type="hidden" name="currency_code" value="USD">
-         <input type='submit' class= 'btn-success '>
-          </form>
-          <br>
-    </div>
-   
-</div>
-
       
+      <h2> {{item.subtitle}} is only {{item.price}} USD</h2>
+      
+   <!--  <h2> Click the link below to start your course {{item.link}} </h2>-->
+    
+   <!--  <a class="btn btn-primary btn-lg"href="{{item.link}}"> <ul>start </ul></a>-->
+     
+     <p><a class="btn btn-primary btn-lg "href="{% url 'home:options' item_id=item.id %}"> Payment options</a></p>
+      
+     <!-- <h1><span>Start Now </span></h1>-->
+                  <br>   <br>     
+
 
 {% endblock %}  

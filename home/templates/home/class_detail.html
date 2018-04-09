@@ -10,14 +10,15 @@
         
          <div class="container">
              <div class='col-sm-6 col-sm-offset-3'>
-                 <a href="{% url 'home:class' %}">&lt; Back to the list</a>
+                 <!--<a href="{% url 'home:class' %}">&lt; Back to the list</a>-->
          
          
          
-                 {% if detail != None %}   
+                 {% if detail != None %}
+                    <p><a class="btn btn-primary btn-lg"href="{% url 'home:training'%}" role="button">{{detail.title}}</a></p>
                  <h3>{{detail.title}}</h3>
-                  <h3>  {{title}}</h3>
-                    <h3>  {{itm}}</h3>
+                  <!--<h3>  {{title}}</h3>-->
+                    <a href="{% url 'home:register' item_id=id %}"> <ul>register</ul></a>
                  <h4>{{detail.content}}</h4>
                      {% if detail.image%}
                      <img src='{{detail.image.url}}' class= 'img-responsive'/>

@@ -1,6 +1,6 @@
 from django import forms
 from home.models import Post
-from home.models import Post4
+from home.models import Post4, Friend
 from home.models import Classes
 
 
@@ -13,9 +13,33 @@ class HomeForm(forms.ModelForm):
             'placeholder': 'write a post....'
         }
     ))
+    
+    title= forms.CharField(widget=forms.TextInput(
+        attrs={
+            'class':'form-control',
+            'placeholder': 'write a title....'
+        }
+    ))
+   
+
+    
     class Meta:
         model = Post
-        fields=('post',)
+        fields=('post',
+                'title',
+                'image'
+               )
+        
+class MyFriend(forms.ModelForm):
+    post= forms.CharField(widget=forms.TextInput(
+        attrs={
+            'class':'form-control',
+            'placeholder': 'write a post....'
+        }
+    ))
+    class Meta:
+        model = Friend
+        fields=('post',) 
         
         
         
@@ -64,10 +88,10 @@ class ClassRegistration(forms.ModelForm):
 
 class PostForm(forms.ModelForm):
     class Meta:
-        model = Post4
+        model = Classes
         fields= [
-            "fullname",
-            "username",
-            "Proffession",
-            
+            "title",
+            "subtitle",
+            "content",
+            "image"
         ]

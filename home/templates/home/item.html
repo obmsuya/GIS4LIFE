@@ -25,11 +25,15 @@
         
         <br><br>
         <ul class="nav navbar-nav navbar-left">
-        <p><a class="btn btn-primary btn-lg"href="{% url 'home:register'%}" role="button">Register for this class &raquo;</a></p>
+        <!--<p><a class="btn btn-primary btn-lg"href="{% url 'home:register'%}" role="button">Register for this class &raquo;</a></p>-->
+        <p><a class="btn btn-primary btn-lg "href="{% url 'home:register' item_id=item.id %}"> Register</a></p>
         </ul>
         
         <ul class="nav navbar-nav navbar-right">
-        <p><a class="btn btn-primary btn-lg"href="{% url 'home:payment'%}" role="button"> Already registered i want to Pay &raquo;</a></p>
+         
+          <h3>I am registered already i want to <a class="btn btn-primary btn-lg"href="{% url 'home:payment' item_id=item.id %}"> PAY</a></h3>
+          
+        
         </ul>
       
     <br><br>

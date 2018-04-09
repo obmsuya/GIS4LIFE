@@ -1,7 +1,4 @@
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,27 +9,30 @@
 
     <head>
 <
-        <title>GIS4LIFE </title>
+        <title>Database </title>
+        <meta charset="UTF-8">
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>   
-        <link rel="stylesheet" href="{% static 'accounts/style11.css' %}">
-        <!--<link rel="stylesheet" href="{% static 'home/house.css' %}">-->
+            
+        <link rel="stylesheet" href="{% static 'accounts/style12.css' %}">
+       
          
          <meta name="viewport" content="width=device-width, initial-scale=1.0"   
 
-        {% block head %}
+       
 
-        {% endblock %}
 
     </head>
 
 
     <body>
-    <img src="{%static 'img/mmm10.jpg'%}"   class= 'img-responsive'>    
+    <img src="{%static 'img/gis-intro.jpg'%}"   class= 'img-responsive'>
+     
+     
 <br>
     <div class="container">
       <nav class="navbar navbar-default">
@@ -50,7 +50,7 @@
             
             <ul class="nav navbar-nav navbar-left">
                 <li><a href="{% url 'home:home'%}">Home</a></li>
-                <li><a href="{% url 'home:chat'%}">My Courses</a></li>
+                <li><a href="{% url 'home:chat'%}">Talk to Others</a></li>
                 <li><a href="{% url 'home:index'%}">Register</a></li>
             </ul>
 
@@ -78,37 +78,62 @@
             </ul>
             {%endif %}
 
-    </div><!--/.nav-collapse -->
+    </div>
     
 
  </nav>
    
-        
-        
-       
-      
-      <!--<center><img src="{%static 'img/mmm4.jpg'%}"   class= 'img-responsive'></center>-->
-    <!--  <img src="{%static 'img/mama2.jpg'%}"   alt="">-->
-      <!--<img src="{%static 'img/dark2.jpg'%}"   alt="">
-      <img src="{%static 'img/bluish2.jpg'%}"   alt="">
-      <img src="{%static 'img/bluishextend2.jpg'%}"   alt="">-->
-       
-    
-       
-       
-            <div class="row">
-            <div class="col-md-8">
-                    
-                    
-         
-      
-                    {% block body %}
-                        
-                    {% endblock %}
-                </div>
-            </div>
-        </div>
+  
+ <h1>
+             Hatari lakini salama, lets go to work. GIS Database.
+               
+           </h1>
 
+<!--<iframe frameboder="1"name="siteswitch" id="siteswitch" width="600"
+        height= "375" src="http://backstageincome.com">-->
+ 
+<!--</iframe>-->
+ <div class="col-md-3">
+            <div class= wrapper>
+               <h3>CONTENT</h3>
+   <ol style="list-style: decimal inside;"nav navbar-nav navbar-left">
+       
+   <li><a href= "http://rise2learn.com" target="sites">rise2learn</a></li>
+   <li><a href= "{% url 'home:chat'%}" target="sites">chat</a></li>
+   <li><button onclick="refreshIframe();">Refresh Iframe</button></li>
+   </ol> 
+   
+<div class="menuItem"><a class="level2"href="content_218929.html">What is GIS?</a></div><br>
+<div class="menuItem"><a class="level2"href="content_218934.html">What is GIS data?</a></div><br>
+<div class="menuItem"><a class="level2"href="content_218957.html">Navigating a GIS map</a></div><br>
+<div class="menuItem"><a class="level2"href="content_218957.html">Finding Information</a></div><br>
+<div class="menuItem"><a class="level2"href="content_218957.html">Navigating a GIS map</a></div><br>
+
+</div>
+   </div>
+
+
+<div class="col-md-9">  
+ 
+<div class = "container">
+        <div class="panel-heading">
+        <div class="embed-responsive embed-responsive-16by9">
+
+<div class="video-container"><<iframe width="960" height="615" class="embed-responsive-item" name="sites" id="site" src="https://www.youtube.com/embed/f-SPJ92Egxg?rel=0"
+            allow="autoplay; encrypted-media" allowfullscreen>
+   
+</iframe></div>
+        </div>
+        </div>
+</div>
+ </div>
+</div>
+<br>
+  
+<!--<a href="{% url 'home:again' %}">&lt; Back to the list</a>
+
+<iframe src="logout.html" width="400" height="300" style="border: 2px
+solid green;"></iframe>-->
     <footer class="container">
       <p>&copy; Company 2017-2018</p>
     </footer>
@@ -126,3 +151,24 @@
     
     
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   

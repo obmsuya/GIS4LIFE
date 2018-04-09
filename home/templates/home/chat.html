@@ -5,39 +5,67 @@
 
    {% block body %}
         <div class="container">
-            <div class="col-md-8">
-            <h2>Chat with others for help </h2>
-            <form method='post'>
+            <div class="col-md-9">
+            <h2>Active Courses are listed here! </h2>
+            
+            <!--<form method='POST' enctype="multipart/form-data">
                             
                 {%csrf_token%}
                 
-                {{form.post}}
+              
+                {{form.as_p}}
                 <br>
                 <button type="submit">submit</button>
-            </form>
+            </form>-->
             
-            <h2>{{text}}</h2>
+         <!--   <p>{{text}}</p>-->
+         
             {% for post in posts%}
-                <hi>{{post.post}}</hi>
-                <p>{{post.user.get_full_name}} on {{post.created}}</p>   
+                {%if post.user in friends%} 
+               
                 
+               
+               {{post.title}}
+                <p>{{post.user.get_full_name}} on {{post.created}}</p>
+                <p>{{post.user.get_full_name}} By {{post.user}}</p>
+                <a href="{{post.post}}"> <ul>Click to start</ul></a>
+                
+                
+               <!--<a href="{% url 'home:detail' id=post.id %}">Product Details</a>-->
+               <!--<a href="{% url 'home:delete' id=post.id %}"> Delete this post</a>-->
+               
+               {%endif%} 
             {%endfor%}
+           
             </div>
             
-            <div class="col-md-4">
-              <h2>Other People</h2>
+            <!--<div class="col-md-4">
+              <h2>Other Groups</h2>
               
               {% for user in users %}
                   <a href="{%url 'accounts:view_profile_with_pk' pk=user.pk%}">
                     <h3>{{user.username}}</h3>
                     </a>
-                  
-              
+              {%if not user in friends%}    
+              <a href="{% url 'home:change_friends' operation='add' pk=user.pk%}">
+                  <button type="button" class="btn btn-success">Add Friend</button>    
+              {%endif%}
           {% endfor %}
           
+          <h2>friends</h2>
+          {% for friend in friends %}
+                  <a href="{%url 'accounts:view_profile_with_pk' pk=user.pk%}">
+                    <h3>{{friend.username}}</h3>
+                    </a>
+                  <a href="{% url 'home:change_friends' operation='remove' pk=friend.pk%}">
+                  <button type="button" class="btn btn-danger">Remove</button>
+
+              
+          {% endfor %}
                 
-            </div>
+            </div>-->
         </div>
+
 
 
    {% endblock %}

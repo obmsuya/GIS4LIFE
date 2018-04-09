@@ -3,12 +3,6 @@ body {
     margin: 0;
     padding: 0;
 }
-
-/*body {
-    background-color: lightblue;
-}*/
-
-
 .content {
     margin-left: 40px;
 }
@@ -44,7 +38,7 @@ font-size: 18px;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
 }
-.redtext {color:red;
+.redtext {color:blue;
 
 }
 
@@ -52,9 +46,9 @@ font-size: 18px;
 .wrapper {
     
     border: red;
-    border: solid 3px;
+    border: solid 1px;
     padding: 10px;
-    border-radius: 7px;
+    border-radius: 10px;
 }
 
 .image {
@@ -64,22 +58,42 @@ font-size: 18px;
     margin-right:auto;
     
 }
-.video-container {
-position: relative;
-padding-bottom: 56.25%;
-padding-top: 30px; height: 0; overflow: hidden;
-}
-
-.video-container iframe,
-.video-container object,
-.video-container embed {
-position: absolute;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
+/**{
+    margin: 0;
+    padding: 0;
 }
 
 
+@-webkit-keyframes slide
+{
+    0%{left: 0;}
+    10%{left: 0;}
+    20%{left: -100;}
+    30%{left: -100;}
+    40%{left: -200;}
+    50%{left: -200;}
+    60%{left: -200;}
+    70%{left: -300;}
+    80%{left: -400;}
+    90%{left: -400;}
+    100%{left: 0;}
+}
 
+
+#slider{
+    overflow: hidden;
+    
+}
+#slider figure img{
+    float: left;
+    width: 20%
+}
+
+#slider figure{
+    position: relative;
+    width:500%;
+    -webkit-animation: slide 5s infinite;
+    
+}
+*/
 

@@ -8,7 +8,7 @@ from django.template import loader
 
 
 from home.forms import HomeForm, ClassRegistration, PostForm
-from home.models import Post,Item, Category,Post4, Classes
+from home.models import Post,Item, Category,Post4, Classes, Friend
 
 
 #These class views is for chating
@@ -19,27 +19,39 @@ class HomeView(TemplateView):
     def get(self, request):
         form =HomeForm()
         posts = Post.objects.all().order_by('-created')
-        users = User.objects.exclude(id=request.user.id)
-      
+        users = User.objects.all()
+        #exclude(id=request.user.id)
+     
+        friend = Friend.objects.get(current_user=request.user)
+        friends = friend.users.all()
+       
         
-        args = {'form': form, 'posts': posts, 'users': users}
+        args = {'form': form, 'posts': posts, 'users': users, 'friends':friends}
+        #'friends':friends
         return render(request, self.template_name, args)
         
     def post(self,request):
-        form =HomeForm(request.POST or None)
-        if form.is_valid(commit=False):
-            post = form.save()
+        form =HomeForm(request.POST or None, request.FILES or None)
+        if form.is_valid():
+            post = form.save(commit=False)
             post.user =request.user
             post.save()
             text = form.cleaned_data['post']
+            
+            
             form = HomeForm()
             return redirect('home:chat')
             
-        args = {'form': form, 'text': text}
+        args = {'form': form, 'text':text}
         return render(request, self.template_name, args)
-        
 
-
+def change_friends(request, operation, pk):
+    friend = User.objects.get(pk=pk)
+    if operation == 'add':
+        Friend.make_friend(request.user, friend)
+    elif operation == 'remove':
+        Friend.lose_friend(request.user, friend)
+    return redirect('home:chat')
 
 
  
@@ -71,7 +83,7 @@ def item(request, item_id):
 
 
 #This view is for class registration- 
-def register(request):
+def register(request, item_id):
         form = ClassRegistration(request.POST or None)
         if form.is_valid():
             create = form.save()
@@ -83,24 +95,53 @@ def register(request):
         return render(request, 'home/create.html', args)
         
         
-def payment(request):
-    return render (request, "home/payment.html", {})
-
-
-
-
-
+def payment(request, item_id):
+    try:
+        itm = Item.objects.get(id=item_id)
+    except Post.DoesNotExist:
+        itm = None
+        
+    context = {
+        'item': itm
+        
+    }
+    
+    return render (request, "home/payment.html", context)
+    
+def payment_options(request, item_id):
+    
+    return render (request, "home/options.html")
+    
     
 
-#post_list      
-def classes_home(request):
-    queryset = Classes.objects.all()
-    context = {
-        "object_list":queryset
-    }
-    return render(request, "home/class_index.html", context)
+def gisintro(request, item_id):    
+    return render (request, "home/gisintro.html")
+    
+def gisintroarcgis1(request):    
+    return render (request, "home/gisintroarcgis1.html")
+    
+def gisintroarcgis2(request):    
+    return render (request, "home/gisintroarcgis2.html")
+    
+    
 
-#post_detail    
+def database(request, item_id):    
+    return render (request, "home/database.html")
+ 
+
+def classes_create(request):
+    form = PostForm(request.POST or None, request.FILES or None)
+   
+    if form.is_valid():
+        create = form.save(commit=False)
+        create.save()
+            
+        return redirect('home:class')
+            
+    args = {'form': form}
+        
+    return render(request, 'home/class_create.html', args)
+    
 def classes_detail(request,id):
     try:
         itm = Classes.objects.get(id=id)
@@ -114,6 +155,48 @@ def classes_detail(request,id):
     }
             
     return render(request, "home/class_detail.html", context)   
+#post_list      
+def classes_home(request):
+    queryset = Classes.objects.all()
+    context = {
+        "object_list":queryset
+    }
+    return render(request, "home/class_index.html", context)
+    
+def classes_update(request,id):
+    try:
+        instance = Classes.objects.get(id=id)
+    except Classes.DoesNotExist:
+        instance = None
+    
+    form = PostForm(request.POST or None, instance=instance)
+   
+    if form.is_valid():
+        instance = form.save(commit=False)
+        instance.save()
+        return redirect (reverse('home:class'))
+        
+    context = {
+        "title":instance.title,
+        "instance":instance,
+        'form': form,
+    }
+    return render(request, "home/class_update.html", context)
+
+def classes_delete(request,id):
+    try:
+        itm = Classes.objects.get(id=id)
+    except Classes.DoesNotExist:
+        itm = None
+    itm.delete()
+    return redirect (reverse('home:class'))
+
+
+
+
+ 
+
+
 
 
 
@@ -136,26 +219,8 @@ def classes_create(request):
     return render(request, 'home/class_create.html', args)
  
     
-#post_update
-def classes_update(request,id):
-    try:
-        instance = Classes.objects.get(id=id)
-    except Classes.DoesNotExist:
-        instance = None
-    
-    form = PostForm(request.POST or None, instance=instance)
-   
-    if form.is_valid():
-        instance = form.save(commit=False)
-        instance.save()
-        return redirect (reverse('home:class'))
-        
-    context = {
-        "title":instance.title,
-        "instance":instance,
-        'form': form,
-    }
-    return render(request, "home/class_update.html", context)
+
+
 
 
 def classes_delete(request,id):
@@ -166,7 +231,9 @@ def classes_delete(request,id):
     itm.delete()
     return redirect (reverse('home:class'))
      
-
+def training(request):
+    return render(request, 'home/training.html')
+    
 
 
 #def create(request):

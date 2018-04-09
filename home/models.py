@@ -5,7 +5,13 @@ from django.utils import timezone
 
 # Create your models here.
 class Post(models.Model):
+    title = models.CharField (max_length=120, default = "")
     post = models.CharField(max_length=200)
+    image = models.ImageField(null=True, blank=True,
+            width_field="width_field",
+            height_field="height_field")
+    height_field = models.IntegerField(default=0)
+    width_field = models.IntegerField(default=0)
     user = models.ForeignKey(User)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -13,6 +19,29 @@ class Post(models.Model):
     def __str__(self):
         return self.user.username
   
+class Friend(models.Model):
+    users = models.ManyToManyField(User)
+    post = models.CharField(max_length=200, default= "")
+    current_user = models.ForeignKey(User, related_name='owner', null=True)
+    
+    
+    
+    @classmethod
+    def make_friend(cls, current_user, new_friend):
+        friend, created = cls.objects.get_or_create(
+            current_user=current_user
+        )
+        friend.users.add(new_friend)
+    
+    
+    @classmethod
+    def lose_friend(cls, current_user, new_friend):
+        friend, created = cls.objects.get_or_create(
+            current_user=current_user
+        )
+        friend.users.remove(new_friend)
+
+
 
 class Category(models.Model):
     class Meta:
@@ -29,6 +58,8 @@ class Item(models.Model):
     name = models.CharField(max_length= 50)
     subtitle = models.CharField (max_length=120, default='Introduction to GIS')
     description = models.TextField()
+    link = models.TextField(default = "")
+    price = models.IntegerField(default=0)
     category = models.ForeignKey(Category)
     
     def __str__(self):
