@@ -18,7 +18,7 @@
         <!-- Latest compiled and minified JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>   
             
-        <link rel="stylesheet" href="{% static 'accounts/style12.css' %}">
+        <link rel="stylesheet" href="{% static 'accounts/style13.css' %}">
        
          
          <meta name="viewport" content="width=device-width, initial-scale=1.0"   
@@ -30,12 +30,12 @@
 
 
     <body>
-    <img src="{%static 'img/gis-intro2.jpg'%}"   class= 'img-responsive'>
+   <!-- <img src="{%static 'img/gis-intro2.jpg'%}"   class= 'img-responsive'>-->
      
      
 <br>
-    <div class="container">
-      <nav class="navbar navbar-default">
+      <div class="container">
+     <!-- <nav class="navbar navbar-default">-->
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -43,21 +43,22 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                </button>   
-    </div>  
+                </button> 
+    <h4>Introduction to GIS.</h4>
+            </div>  
           <div id="navbar" class="navbar-collapse collapse">
               {% if user.is_authenticated %}
             
             <ul class="nav navbar-nav navbar-left">
                 <li><a href="{% url 'home:home'%}">Home</a></li>
-               <!-- <li><a href="{% url 'home:chat'%}">Talk to Others</a></li>-->
+               <li><a href="{% url 'home:chat'%}">My causes</a></li>
                <!-- <li><a href="{% url 'home:index'%}">Register</a></li>-->
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href= "{% url 'accounts:view_profile'%}">Profile</a></li>
-                <li><a href="{% url 'accounts:edit_profile'%}">Edit Profile</a></li>
-                <li><a href="{% url 'accounts:change_password'%}">Change Password</a></li>
+                <!--<li><a href= "{% url 'accounts:view_profile'%}">Profile</a></li>-->
+                <!--<li><a href="{% url 'accounts:edit_profile'%}">Edit Profile</a></li>
+                <li><a href="{% url 'accounts:change_password'%}">Change Password</a></li>-->
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -87,35 +88,41 @@
 
  </nav>
    
-  
- <h1>
-             Introduction to GIS.
-               
-           </h1>
+
 
 
  <div class="col-md-2">
-   <div id="navbar" class="navbar-collapse collapse">
-            <div class= wrapper>
-               <h3>CONTENT</h3>
+ 
+
+  <nav class="navbar navbar-default">
+   <div class="container-fluid">
    <ol style="list-style: decimal inside;"nav navbar-nav navbar-left">
        
-   <!--<li><a href= "http://rise2learn.com" target="sites">rise2learn</a></li>
-   <li><a href= "{% url 'home:chat'%}" target="sites">chat</a></li>-->
   
-   </ol> 
-   
-<div class="menuItem"><a class="level2"href="https://www.youtube.com/embed/f-SPJ92Egxg?rel=0" target="sites">What is GIS?</a></div><br>
+   </ol>
+<p>CONTENT</p> 
+<p><span>What is GIS</span></p>   
+<div class="menuItem"><a class="level2"href="https://www.youtube.com/embed/llFLbZ1eV3I?rel=0&amp;showinfo=0" target="sites">What is GIS-Video</a></div>
 <!--<div class="menuItem"><a href= "{% url 'home:chat'%}" target="sites">My Courses</a></div><br>-->
-<div class="menuItem"><a href= "{% url 'home:gisintroarcgis1'%}" target="sites">How GIS Works</a></div><br>
-<div class="menuItem"><a href= "{% url 'home:gisintroarcgis2'%}" target="sites">Practicle</a></div><br>
-<div class="menuItem"><a class="level2"href="content_218957.html">Navigating a GIS map</a></div><br>
-<div class="menuItem"><a class="level2"href="content_218957.html">Finding Information</a></div><br>
-<div class="menuItem"><a class="level2"href="content_218957.html">Navigating a GIS map</a></div><br>
+<div class="menuItem"><a class="level2"href= "{% url 'home:gisintroarcgis1'%}" target="sites">How GIS Works-Reading</a></div><br>
+<p><span>Coordinate System</span></p>
+<div class="menuItem"><a class="level2"href="https://www.youtube.com/embed/DSOGG-AGVd0?rel=0&amp;showinfo=0" target="sites">Coordinate System-Video</a></div><br>
+<P><span>Longitude and Latitude</span></P>
+<div class="menuItem"><a class="level2"href="https://www.youtube.com/embed/r4W86ORpk1Y?rel=0&amp;showinfo=0" target="sites">Longitude and Latitude-Video</a></div>
+<div class="menuItem"><a href= "{% url 'home:gisintroarcgis2'%}" target="sites">longitude and Latitude- Reading</a></div><br>
+<p><span>Data Models</span></p>
+<div class="menuItem"><a class="level2"" target="sites">Vector Data-Video</a></div>
+<div class="menuItem"><a class="level2"" target="sites">Raster Data-Video</a></div>
+<br>
+<p><span>Practicle</span></p>
+<div class="menuItem"><a class="level2"" target="sites">QGIS-Video</a></div>
 
 </div>
-   </div>
+   
+ 
+  </nav>
  </div>
+
 
 
 <div class="col-md-10">  
@@ -124,9 +131,10 @@
         <div class="panel-heading">
         <div class="embed-responsive embed-responsive-16by9">
 
-<div class="video-container"><iframe width="990" height="680" class="embed-responsive-item" name="sites" id="site" src="https://www.youtube.com/embed/f-SPJ92Egxg?rel=0"
-            allow="autoplay; encrypted-media" allowfullscreen>
-   
+<div class="video-container">
+   <!--<iframe width="990" height="680" class="embed-responsive-item" name="sites" id="site" src="https://www.youtube.com/embed/f-SPJ92Egxg?rel=0"
+            allow="autoplay; encrypted-media" allowfullscreen>-->
+<iframe width="990" height="680" class="embed-responsive-item" name="sites" id="site" src="https://www.youtube.com/embed/llFLbZ1eV3I?rel=0&amp;showinfo=0" allow="autoplay; encrypted-media" allowfullscreen></iframe>   
 </iframe></div>
 
 
@@ -136,6 +144,7 @@
 </div>
  </div>
 </div>
+
 <br>
   
 

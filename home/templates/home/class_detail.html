@@ -15,7 +15,7 @@
          
          
                  {% if detail != None %}
-                    <p><a class="btn btn-primary btn-lg"href="{% url 'home:training'%}" role="button">{{detail.title}}</a></p>
+                    <p><a class="btn btn-primary btn-lg"href="{% url 'home:training' item_id=id %}" role="button">{{detail.title}}</a></p>
                  <h3>{{detail.title}}</h3>
                   <!--<h3>  {{title}}</h3>-->
                     <a href="{% url 'home:register' item_id=id %}"> <ul>register</ul></a>

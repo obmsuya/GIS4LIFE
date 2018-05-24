@@ -89,7 +89,7 @@ def register(request, item_id):
             create = form.save()
             create.save
             
-            return redirect('home:payment')
+            return redirect('home:index')
             
         args = {'form': form}
         return render(request, 'home/create.html', args)

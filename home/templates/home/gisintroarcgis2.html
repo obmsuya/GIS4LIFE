@@ -1,19 +1,147 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+{% load staticfiles %}
+
+<html>
 
 
+    <head>
+<
+        
 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-
-   {% block body %}
-        <div class="container">
-           
-           <p>
-               You are at gisintroarcgis2
-           </p>
-
-
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>   
             
+        <link rel="stylesheet" href="{% static 'accounts/style12.css' %}">
+        <!--<link rel="stylesheet" href="{% static 'home/house.css' %}">-->
+         
+         <meta name="viewport" content="width=device-width, initial-scale=1.0"   
 
-        </div>
+        
 
-   {% endblock %}
+    </head>
+
+
+    <body>
+    
+     
+     
+
+  
+       
+            
+          <div class="container">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <h3 class="display-3"><span>What is Latitude?</span></h3>
+          </div>
+      </nav>
+         </div>
+          <p>Latitude is defined as a measurement of distance in degrees north and south of the equator. The word latitude is derived from the latin word, "latus", mearning "wide"</p>
+            
+         <img src="{%static 'img/lat1.jpg'%}"   class= 'img-responsive'>
+
+
+         <p>There are 90 degrees of latitude from the equator to each of the poles, north and south. Latitude lines are parallel, that is they are the same distance apart.
+         These lines are sometimes refered to as parallels.</p>
+        <img src="{%static 'img/lat2.jpg'%}"   class= 'img-responsive'>
+        <br>
+         
+         
+         <h3 class="display-3"><span>The equator</span></h3>
+         
+        <p>The equator is the longest of all lines of latitude. It divides the earth in alf and is measured as 0 (Zero degrees)</p>
+        
+        <br>
+      <img src="{%static 'img/lat3.jpg'%}"   class= 'img-responsive'>
+         
+         
+         <h3 class="display-3"><span>North and South Latitudes</span></h3>
+        
+       Positions on latitude lines above the equator are called "north" and are in the northern hemisphere.  Positions on latitude lines below the equator are
+       called "south" and are in the southern hemisphere.
+        <img src="{%static 'img/lat5.jpg'%}"   class= 'img-responsive'>
+        <br><br> 
+        <div class="container">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid"> 
+         <h3 class="display-3"><span>What is Longitude</span></h3>
+         </div>
+      </nav>
+         </div>
+         <p>Longitude is defined as measurement of distance in degrees east or west of the prime meridian.
+         The word longitude is derived from the Latin word, "longus", meaning "length"</p>.
+          <img src="{%static 'img/lat6.jpg'%}"   class= 'img-responsive'>
+            
+        <p>The Prime Meridian, as do all other lines of longitude, pass through the north and south pole. They make the earth look like a peeled orange.</p>
+    <img src="{%static 'img/lat7.jpg'%}"   class= 'img-responsive'>
+    
+    
+    <h3 class="display-3"><span>The Prime Meridian </span></h3>
+   
+    <p>The Prime meridian divides the earth in half too. It is also 0 degree. It passes through the community of Greenwich, England.</p>
+    <img src="{%static 'img/lat8.jpg'%}"   class= 'img-responsive'>
+     
+     
+    <div class="container">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">  
+    <h3 class="display-3"><span>The International Date Line </span></h3>
+    </div>
+      </nav>
+        
+      <p>There are 180 lines of longitude on each side of the prime meridian.  But on the opposite side, the primer meridian is not
+      zero degrees but 180 degree.  It is called the International Date Line.</p>
+      <img src="{%static 'img/lat9.jpg'%}"   class= 'img-responsive'>
+     
+     
+       
+    <h3 class="display-3"><span>East and West Longitudes</span></h3>
+   
+    <p>Longitude lines to the left of the prime meridian give locations west, in the western hemisphere. Longitude lines to the right of the
+    primer meridian give locations east, in the eastern hemisphere.</p>
+    <img src="{%static 'img/lat10.jpg'%}"   class= 'img-responsive'>
+    <br>
+    <img src="{%static 'img/lat11.jpg'%}"   class= 'img-responsive'>
+      </div><br>  
+      <div class="container">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+      <h3 class="display-3"><span>Using Latitude and Longitude</span></h3>
+      </div>
+      </nav>
+         
+      
+        <p>To fine your exact location on a map, you need to determine which latitude line and which longitude line meet where you are standing.
+      When writing locations, the latitude is given first.
+      For example <br>
+      Miami, Florida, has a location of 25 degree North and 80 degree West.<br>
+      This is usually written in a short form as 25 degree N 80 degree W </p>
+      </div>
+    </body>
+
+        
+ 
+
+
+
+
+    
+    
+    <script
+      src="https://code.jquery.com/jquery-2.2.4.min.js"
+      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+      crossorigin="anonymous"></script> 
+    
+    <script
+       src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+       integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+       crossorigin="anonymous"></script>
+    
+    
+</html>

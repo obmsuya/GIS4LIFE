@@ -29,13 +29,17 @@
         <p><a class="btn btn-primary btn-lg "href="{% url 'home:register' item_id=item.id %}"> Register</a></p>
         </ul>
         
+        
         <ul class="nav navbar-nav navbar-right">
          
           <h3>I am registered already i want to <a class="btn btn-primary btn-lg"href="{% url 'home:payment' item_id=item.id %}"> PAY</a></h3>
           
         
         </ul>
-      
+      <ul class="nav navbar-nav navbar-right">
+        <!--<p><a class="btn btn-primary btn-lg"href="{% url 'home:register'%}" role="button">Register for this class &raquo;</a></p>-->
+      <a class="btn btn-success" href="{% url 'home:chat'%}">My Courses</a>
+        </ul>
     <br><br>
             
         {% if item.image%} 

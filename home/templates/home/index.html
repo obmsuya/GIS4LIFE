@@ -12,6 +12,8 @@
          
               
             <div class="col-md-4">
+               
+               
            {% for category in categories %}
                <h2>{{category.name}}</h2>
                
@@ -26,6 +28,20 @@
                
           
         </div>
+        
+        
         </div>
-
+      <br><br>   <br><br>   
+<div class="col-md-4">
+   <div class="container">
+      <ul>
+             <a class="btn btn-success" href="{% url 'home:chat'%}">Courses on Progress</a>
+        </ul>
+      <br><br>
+   <h4>FREE COURSES</h4>
+   
+</div>
+           </div>
    {% endblock %}
+
+          

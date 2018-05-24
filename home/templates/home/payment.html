@@ -16,13 +16,13 @@
             </main>
       </div>
       
-      <h2> {{item.subtitle}} is only {{item.price}} USD</h2>
+   <h2> {{item.name}} is only {{item.price}} USD</h2>
       
    <!--  <h2> Click the link below to start your course {{item.link}} </h2>-->
     
    <!--  <a class="btn btn-primary btn-lg"href="{{item.link}}"> <ul>start </ul></a>-->
      
-     <p><a class="btn btn-primary btn-lg "href="{% url 'home:options' item_id=item.id %}"> Payment options</a></p>
+     <p>I am ready to pay what are my <a class="btn btn-primary btn-lg "href="{% url 'home:options' item_id=item.id %}"> Payment options</a></p>
       
      <!-- <h1><span>Start Now </span></h1>-->
                   <br>   <br>     
