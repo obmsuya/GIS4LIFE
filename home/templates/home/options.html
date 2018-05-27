@@ -5,37 +5,35 @@
 {% extends 'base.html' %}
 
    {% block body %}
-        <ul class="nav navbar-nav navbar-left"> 
-      
-      <div class="row">
+        
             
-            
-            <main role="main">
-                <h1>Payment Options</h1>
+            <div class="container-fluid">
+        <div class="container">
+         
+                
                  
-                   
-                <br>      
-                         
-                         
-                        <h3> <span>M Pesa +255753386304</span></h3>
-                        <h3> <span>Tigo Pesa +255653397942</span></h3>
-                        <h3> <span>CRDB BANK A/C 0152303138800</span></h3>
+                   <h3 class="redtext">Note: After payments send the payment refference number and your name through whatsapp at +255653397942, then
+                           click <a class="btn btn-success" href="{% url 'home:chat'%}">My Courses</a> within two hours to start your course.</h3>
+                <br>
+                  <h1>Payment Options</h1>      
+                      
+                         <ol style="list-style: decimal inside;"> 
+                        <h3> <span>1. M Pesa +255753386304</span></h3>
+                        <h3> <span>2. Tigo Pesa +255653397942</span></h3>
+                        <h3> <span>3. CRDB BANK A/C 0152303138800</span></h3>
                         
                            <p> Accounts Holder:Overblessing Msuya.</p>
                            
                            
-                           <p class="redtext">Note: After payments send your refference number and your name through whatsapp at +255653397942, then
-                           click <a class="btn btn-success" href="{% url 'home:chat'%}">My Courses</a> within two hours to start your course.</p>
+                           
                           
                           
                            
-                             <h3> <span>paypal</span></h3>     
+                             <h3> <span>4.paypal</span></h3>     
                     
-            </main>
+          
       </div>
- </ul>                  
-        
-          </ul>
+            
          
           <form action = "https://paypal.com/cgi-bin/webscr" method= "post" target="_top"
                 
@@ -51,10 +49,7 @@
          <input type='submit' >
           </form>
           <br>
-    </div>
-   
-</div>
-
-      
+    
+        </div>
 
    {% endblock %}

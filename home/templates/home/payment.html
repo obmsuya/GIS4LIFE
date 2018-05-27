@@ -9,23 +9,18 @@
 {% block body %}
         
 
-      <div class="row">
-            <main role="main">
-                <h2>Almost there, one more thing!. Complete the payment.</h1>
+         <div class="col-md-4">
+        <div class="container-fluid">
+        <div class="container">
+           
+                <h2>{{item.name}} is only {{item.price}} USD.</h2>
                  
-            </main>
-      </div>
       
-   <h2> {{item.name}} is only {{item.price}} USD</h2>
+   <h3>  Here are the payment <a class="btn btn-primary btn-lg "href="{% url 'home:options' item_id=item.id %}"> Options</a> </h3>
       
-   <!--  <h2> Click the link below to start your course {{item.link}} </h2>-->
-    
-   <!--  <a class="btn btn-primary btn-lg"href="{{item.link}}"> <ul>start </ul></a>-->
-     
-     <p>I am ready to pay what are my <a class="btn btn-primary btn-lg "href="{% url 'home:options' item_id=item.id %}"> Payment options</a></p>
-      
-     <!-- <h1><span>Start Now </span></h1>-->
-                  <br>   <br>     
-
-
+   
+        </div>
+        </div>
+         </div>
+       
 {% endblock %}  

@@ -7,8 +7,9 @@ from django.shortcuts import render, get_object_or_404
 from django.template import loader
 
 
-from home.forms import HomeForm, ClassRegistration, PostForm
-from home.models import Post,Item, Category,Post4, Classes, Friend
+from home.forms import HomeForm, ClassRegistration
+#PostForm
+from home.models import Post,Item, Category,Post4,  Friend
 
 
 #These class views is for chating
@@ -116,7 +117,8 @@ def payment_options(request, item_id):
 
 def gisintro(request, item_id):    
     return render (request, "home/gisintro.html")
-    
+def gisintrostart(request):    
+    return render (request, "home/gisintrostart.html")    
 def gisintroarcgis1(request):    
     return render (request, "home/gisintroarcgis1.html")
     
@@ -129,120 +131,10 @@ def database(request, item_id):
     return render (request, "home/database.html")
  
 
-def classes_create(request):
-    form = PostForm(request.POST or None, request.FILES or None)
-   
-    if form.is_valid():
-        create = form.save(commit=False)
-        create.save()
-            
-        return redirect('home:class')
-            
-    args = {'form': form}
-        
-    return render(request, 'home/class_create.html', args)
-    
-def classes_detail(request,id):
-    try:
-        itm = Classes.objects.get(id=id)
-    except Classes.DoesNotExist:
-        itm = None
-        
-    context = {
-        'detail': itm,
-        "title":itm.title,
-        "itm":itm,   
-    }
-            
-    return render(request, "home/class_detail.html", context)   
-#post_list      
-def classes_home(request):
-    queryset = Classes.objects.all()
-    context = {
-        "object_list":queryset
-    }
-    return render(request, "home/class_index.html", context)
-    
-def classes_update(request,id):
-    try:
-        instance = Classes.objects.get(id=id)
-    except Classes.DoesNotExist:
-        instance = None
-    
-    form = PostForm(request.POST or None, instance=instance)
-   
-    if form.is_valid():
-        instance = form.save(commit=False)
-        instance.save()
-        return redirect (reverse('home:class'))
-        
-    context = {
-        "title":instance.title,
-        "instance":instance,
-        'form': form,
-    }
-    return render(request, "home/class_update.html", context)
 
-def classes_delete(request,id):
-    try:
-        itm = Classes.objects.get(id=id)
-    except Classes.DoesNotExist:
-        itm = None
-    itm.delete()
-    return redirect (reverse('home:class'))
-
-
-
-
- 
-
-
-
-
-
-
-
-
-
-#post create   
-def classes_create(request):
-    form = PostForm(request.POST or None, request.FILES or None)
-   
-    if form.is_valid():
-        create = form.save(commit=False)
-        create.save()
-            
-        return redirect('home:class')
-            
-    args = {'form': form}
-        
-    return render(request, 'home/class_create.html', args)
- 
-    
-
-
-
-
-def classes_delete(request,id):
-    try:
-        itm = Classes.objects.get(id=id)
-    except Classes.DoesNotExist:
-        itm = None
-    itm.delete()
-    return redirect (reverse('home:class'))
      
 def training(request):
     return render(request, 'home/training.html')
     
 
 
-#def create(request):
-#        form = ClassRegistration(request.POST)
-#        if form.is_valid():
-#            create = form.save()
-#            
-#            return redirect('home:chat')
-#            
-#        args = {'form': form}
-#        return render(request, 'home/create.html', args) 
-#  

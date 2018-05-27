@@ -19,32 +19,24 @@
     
     {% if item != None %}
         
-        <h3>{{item.category.name}}</h3>
+        <!--<h3>{{item.category.name}}</h3>-->
         <h4>{{item.name}}</h4>
         <p>{{item.description}}</p>
         
         <br><br>
         <ul class="nav navbar-nav navbar-left">
-        <!--<p><a class="btn btn-primary btn-lg"href="{% url 'home:register'%}" role="button">Register for this class &raquo;</a></p>-->
         <p><a class="btn btn-primary btn-lg "href="{% url 'home:register' item_id=item.id %}"> Register</a></p>
+        
         </ul>
         
         
         <ul class="nav navbar-nav navbar-right">
          
-          <h3>I am registered already i want to <a class="btn btn-primary btn-lg"href="{% url 'home:payment' item_id=item.id %}"> PAY</a></h3>
           
-        
+          
+        <h3>Thanks for the registration, now <a class="btn btn-primary btn-lg"href="{% url 'home:payment' item_id=item.id %}"> Make Payment</a></h3>
         </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <!--<p><a class="btn btn-primary btn-lg"href="{% url 'home:register'%}" role="button">Register for this class &raquo;</a></p>-->
-      <a class="btn btn-success" href="{% url 'home:chat'%}">My Courses</a>
-        </ul>
-    <br><br>
-            
-        {% if item.image%} 
-            <img src='{{item.image.url}}' class= 'img-responsive'/>
-        {%endif%}
+      
       </div>
     {% else %}
             <p>Invalid Item ID.</p>
