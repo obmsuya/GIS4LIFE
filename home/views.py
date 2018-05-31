@@ -109,30 +109,32 @@ def payment(request, item_id):
     
     return render (request, "home/payment.html", context)
     
-def payment_options(request, item_id):
-    
+def payment_options(request, item_id):  
     return render (request, "home/options.html")
-    
-    
 
+def basic(request):    
+    return render (request, "home/basic.html")
+def advanced(request):    
+    return render (request, "home/advanced.html")    
+def atailormade(request):    
+    return render (request, "home/atailormade.html")
+    
 def gisintro(request, item_id):    
     return render (request, "home/gisintro.html")
 def gisintrostart(request):    
     return render (request, "home/gisintrostart.html")    
 def gisintroarcgis1(request):    
-    return render (request, "home/gisintroarcgis1.html")
-    
+    return render (request, "home/gisintroarcgis1.html")    
 def gisintroarcgis2(request):    
     return render (request, "home/gisintroarcgis2.html")
+def gisintrokeyterms(request):    
+    return render (request, "home/gisintrokeyterms.html")
+def gisintrodownload(request):    
+    return render (request, "home/gisintrodownload.html")   
     
-    
-
 def database(request, item_id):    
     return render (request, "home/database.html")
- 
-
-
-     
+    
 def training(request):
     return render(request, 'home/training.html')
     

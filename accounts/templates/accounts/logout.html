@@ -8,7 +8,7 @@
 
 
     <head>
-<
+
         <title>GIS4LIFE </title>
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -28,13 +28,20 @@
 
 
     <body>
+        
     <img src="{%static 'img/mmm10.jpg'%}"   class= 'img-responsive'>
+        <br>
+        <div class="container">
+        <ul class="nav navbar-nav navbar-right">
+      <h4>Contact: +255653397942, obmsuya@yahoo.com</h4>
      
-     
+      </ul>
+        </div>
+       
 <br>
-    <div class="container">
+  <!--  <div class="container">-->
       <nav class="navbar navbar-default">
-        <div class="container-fluid">
+        <div class="container-fluid bg-3 text-center">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
@@ -50,6 +57,7 @@
                 <li><a href="{% url 'home:home'%}">Home</a></li>
                 <li><a href="{% url 'home:chat'%}">Talk to Others</a></li>
                 <li><a href="{% url 'home:index'%}">Register</a></li>
+            
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -67,6 +75,7 @@
 
            <ul class="nav navbar-nav navbar-left"> 
                 <li><a href="{% url 'home:home'%}">Home</a></li>
+            
             </ul>
             
             <ul class="nav navbar-nav navbar-right">
@@ -111,15 +120,16 @@
       </div>
         <br>
       
-                          <h1>Registrations Procedures!</h1> 
+                          <h1>Registrations Process!</h1> 
                        
                         
 
-<P>After Sign in you will see the list of available courses, click on your choice then register. After registration,
-click pay to make the payment.  The course will be activated two hours prior to the payment, click my course button to start. We know that there are challenges when it comes to online courses, DON'T WORRY, WE KNOW THEM AND WE HAVE SOLUTIONS IN PLACE.  To address the challenge
-of internet cost, we will send you a video downloader to download all of our videos and watch them while offline. Our step by step instructions is very easy
-to follow but you still might get stack somewhere, to address this challenges, we offer live support upon your request, live support will allow us to
-solve challenge together. Remember. You don't have to pay all in cash, payment by instalment is also accepted, contact us for more information. Enjoy the ri </P>
+<P>After Sign in you will see the list of available courses, click on your choice then click register. After registration,
+click pay to make the payment.  Two hours later, your Course will be activated and ready to go. Click my course button to see the list of registered courses.
+There are lots of challenges when it comes to online courses, DON'T WORRY, WE KNOW THEM AND WE HAVE ALL SOLUTIONS IN PLACE.  To address the cost 
+of internet connection, we will send you a video downloader and video links to download and watch them while offline. Our step by step instructions is very easy
+to follow but our experience show that you still might get stack somewhere, to address this challenge, we offer live support upon your request, which will allow us to
+solve work together. Remember. You don't have to pay all in cash, instalment is accepted, contact us for more information. Enjoy the ride </P>
 
 
         
@@ -145,17 +155,23 @@ solve challenge together. Remember. You don't have to pay all in cash, payment b
                         </div>
                         
                         <div class="col-md-4">
-                          <h3><a href="#BASIC" role="button">Basic GIS </a></h3>
+                        <!--  <h3><a href="#BASIC" role="button">Basic GIS </a></h3>-->
+                          <h3><div class="menuItem"><a class="level2"href= "{% url 'home:basic'%}" target="sites">Basic Courses</a></div> 
+                        </div></h3>
+                        
+                        
+                        <div class="col-md-4">
+                          
+                          <h3><div class="menuItem"><a class="level2"href= "{% url 'home:advanced'%}" target="sites">Advanced Courses</a></div> 
+                        </div></h3>
                           
                         </div>
                         
-                        
                         <div class="col-md-4">
-                          <h3><a href="#ADVANCED" role="button">Advanced GIS </a></h3> 
-                        </div>
-                        
-                        <div class="col-md-4">
-                          <h3><a href="#TAILOR" role="button">Tailor made Course </a></h3> 
+                         <!-- <h3><a href="#TAILOR" role="button">Tailor made Course </a></h3>-->
+                         <h3><div class="menuItem"><a class="level2"href= "{% url 'home:atailormade'%}" target="sites">Tailor Made Courses</a></div> 
+                        </div></h3> 
+                          
                         </div>
                         
                         
@@ -186,45 +202,11 @@ solve challenge together. Remember. You don't have to pay all in cash, payment b
 
  <br><br>
   
-       
+   <!--<div class="menuItem"><a class="level2"href= "{% url 'home:basic'%}" target="sites">Basic GIS</a></div><br>    -->
   
 
      
- </div>
-    </div>
-  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<h1><a name= BASIC></a> Basic GIS</h1>
-
-<p> Under this category you will be able to learn the following courses; <hp><a href="#gisintrod" role="button">Introduction to GIS</a></hp>,
-<hp><a href="#gpsintro" role="button">Introduction to GPS</a></hp>, <hp><a href="#googleintro" role="button">Introduction to Google Earth</a></hp>,
-<hp><a href="#ganalysisintro" role="button">Introduction to GIS Analysis</a></hp> and <hp><a href="#catogintro" role="button">Introduction to Catography</a></hp>.
-<h3><a href="{% url 'accounts:logout'%}">Go back</a></h3>
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><
-
-
-<h1><a name= ADVANCED></a> Advanced GIS</h1>
-
-<p> Under this category you will be able to learn the following courses; Advanced GIS analysis, but also advanced editing, geoprocessing and thematic mapping techniques. Automation of ArcGIS workflows, using the application ModelBuilder and
-            scripting in the Python programming language, constitutes central course elements. Sign in to see the list of available courses </p>
-   <h3><a href="{% url 'accounts:logout'%}">Go back</a></h3>     
- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
- <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
  
-<h1><a name= TAILOR></a> Tailor made Course</h1>
-
-<p> A tailor-made training is designed to meet your specific needs and requirements. You sets the objectives and the topics for yourself.
-To request for a tailor made course please log in and feel the form.</p>
-<h3><a href="{% url 'accounts:logout'%}">Go back</a></h3>
-
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br
-
     
     </body>
     

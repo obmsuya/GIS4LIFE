@@ -23,13 +23,22 @@ urlpatterns = [
     url(r'^item/(?P<item_id>\d+)/register/payment/$', views.payment, name = "payment"),
     url(r'^item/(?P<item_id>\d+)/register/payment/options/$', views.payment_options, name = "options"),
     url(r'^item/(?P<item_id>\d+)/payment/gisintro/$', views.gisintro, name = "gisintro"),
-    url(r'^gisintrostart/$', views.gisintrostart, name = "gisintrostart"),
-    url(r'^gisintroarcgis1/$', views.gisintroarcgis1, name = "gisintroarcgis1"),
-    url(r'^gisintroarcgis2/$', views.gisintroarcgis2, name = "gisintroarcgis2"),
+    
     url(r'^item/(?P<item_id>\d+)/payment/database/$', views.database, name = "database"), 
     
     url(r'^register/$', views.register, name = "register"), 
     url(r'^connect/(?P<operation>.+)(?P<pk>\d+)/$', views.change_friends, name = "change_friends"),
   
-      
+    url(r'^gisintrostart/$', views.gisintrostart, name = "gisintrostart"),
+    url(r'^gisintroarcgis1/$', views.gisintroarcgis1, name = "gisintroarcgis1"),
+    url(r'^gisintroarcgis2/$', views.gisintroarcgis2, name = "gisintroarcgis2"),
+   
+    url(r'^gisintrokeyterms/$', views.gisintrokeyterms, name = "gisintrokeyterms"),
+    url(r'^gisintrodownload/$', views.gisintrodownload, name = "gisintrodownload"),
+    
+    url(r'^basic/$', views.basic, name = "basic"),
+    url(r'^advanced/$', views.advanced, name = "advanced"),
+    url(r'^atailormade/$', views.atailormade, name = "atailormade"),
+    
+    
 ]
