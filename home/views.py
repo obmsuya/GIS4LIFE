@@ -121,6 +121,10 @@ def atailormade(request):
     
 def gisintro(request, item_id):    
     return render (request, "home/gisintro.html")
+    
+def gisintro2(request, item_id):    
+    return render (request, "home/gisintro2.html")    
+    
 def gisintrostart(request):    
     return render (request, "home/gisintrostart.html")    
 def gisintroarcgis1(request):    

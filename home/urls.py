@@ -23,6 +23,8 @@ urlpatterns = [
     url(r'^item/(?P<item_id>\d+)/register/payment/$', views.payment, name = "payment"),
     url(r'^item/(?P<item_id>\d+)/register/payment/options/$', views.payment_options, name = "options"),
     url(r'^item/(?P<item_id>\d+)/payment/gisintro/$', views.gisintro, name = "gisintro"),
+    url(r'^item/(?P<item_id>\d+)/payment/gisintro2/$', views.gisintro2, name = "gisintro2"),
+    
     
     url(r'^item/(?P<item_id>\d+)/payment/database/$', views.database, name = "database"), 
     
