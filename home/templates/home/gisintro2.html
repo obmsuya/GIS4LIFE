@@ -14,7 +14,7 @@ body {font-family: "Lato", sans-serif;}
     border: 1px solid #ccc;
     background-color: #f1f1f1;
     width: 20%;
-    height: 500px;
+    height: auto;
 }
 
 /* Style the buttons inside the tab */
@@ -29,7 +29,9 @@ body {font-family: "Lato", sans-serif;}
     text-align: left;
     cursor: pointer;
     transition: 0.3s;
-    font-size: 17px;
+    font-size: 14px;
+    /*lines: line-height: 1;*/
+    line-height: !important;
 }
 
 /* Change background color of buttons on hover */
@@ -45,11 +47,11 @@ body {font-family: "Lato", sans-serif;}
 /* Style the tab content */
 .tabcontent {
     float: left;
-    padding: 0px 12px;
-    border: 0px solid #ccc;
+    padding: 0px 6px;
+    border: 3px solid #ccc;
     width: 80%;
     border-left: none;
-    height: 700px;
+    height: auto;
 }
 
 .video-container {
@@ -72,98 +74,126 @@ border: none;
 
 
 
+
 <div class="tab">
-  <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">Introda</button>
-  
-  
- 
-  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Dowload QGIS</button>
-  
-  <button class="tablinks" onclick="openCity(event, 'Pari')">Download Data</button>
-  
-   <button class="tablinks" onclick="openCity(event, 'Paris')">Key Terms</button>
-  
-  
-  <button class="tablinks" onclick="openCity(event, 'Toky')">Toky</button>
+  <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">Introduction</button>
+  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Dowloads</button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')">Key Terms</button>
+  <button class="tablinks" onclick="openCity(event, 'Toky')">What is GIS</button>
+  <button class="tablinks" onclick="openCity(event, 'Par')">Longitude and Latitude</button>
+  <button class="tablinks" onclick="openCity(event, 'Tok')">Coordinate System</button>
+  <button class="tablinks" onclick="openCity(event, 'To')">To</button>
+  <button class="tablinks" onclick="openCity(event, 'Pa')">Pa</button>
+  <button class="tablinks" onclick="openCity(event, 'To')">T</button>
   <button class="tablinks" onclick="openCity(event, 'Par')">Par</button>
   <button class="tablinks" onclick="openCity(event, 'Tok')">Tok</button>
+  <button class="tablinks" onclick="openCity(event, 'To')">To</button>
+  <button class="tablinks" onclick="openCity(event, 'Pa')">Pa</button>
+  <button class="tablinks" onclick="openCity(event, 'To')">T</button>
 </div>
+
+<h1>GIS4LIFE Training College</h1><h1>Need technical help?, make TeamViewer appointment.</h1>
+
+
+
 
 <div id="London" class="tabcontent">
-  <h3>Introda</h3>
-  
-  <p>After completing this course, you will be able to perform the following tasks:
-Define GIS.
-Differentiate between vector and raster data.
-Navigate a GIS map.
-Use tools to access feature information.
-Create a location query and an attribute query.
-</p>
-<div class="video-container"><iframe  name="sites" id="sites" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>  </div>
+        <h3>Introduction</h3>
+        <p>After completing this course, you will be able to perform the following tasks:
+            Define GIS, Differentiate between vector and raster data, Navigate a GIS map, Use tools to access feature information,
+                Create a location query and an attribute query.</p>
+        <h3>Approaching the tutorial</h3>
+        <p>To accomplish this course you need to install QGIS software and to download Data. Also you need to install video dowloader to your machine.
+             Above each video you will find a url link for download. On the next download section you will find three videos
+             which demostrate these procedures.<br><br>
+             
+             <div class="tab">
+           <button class="tablinks" onclick="openCity(event, 'Tokyo')">Next to Downloads &raquo;</button>
+             </div>
+        <div class="video-container"><iframe  name="sites" id="sites" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+     
+        
 </div>
+
+
 
 <div id="Tokyo" class="tabcontent">
-  <h3></h3>
-  <p>In this training we are going to use an Open Source Software called QGIS. Please visit <a href= "https://qgis.org/en/site/forusers/download.html" target="_blank">www.qgis.com</a>
-  to download Software. The Video bellow walks you through the installation steps, please watch it first to avoid any confusion.</p>
-  
- <div class="video-container" style="border:#333333 2px solid; border-radius:12px; overflow:hidden;">
-    <iframe src="https://www.youtube.com/embed/f-SPJ92Egxg?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media"
-            allowfullscreen></iframe>
- </div>
+    <p>In this training we are going to use an Open Source Software called QGIS.  The First video walks you through QGIS installation process, please watch it
+                first to avoid any confusion. The second video walks you through downloading data for this course. The third video walks you through the software for
+                    downloading our videos </p><br>
+    <p>QGIS Installation</p>
+    <div class="video-container" style="border:#333333 2px solid; border-radius:12px; overflow:hidden;">
+            <iframe src="https://www.youtube.com/embed/f-SPJ92Egxg?rel=0&amp;showinfo=0" frameborder="0"allow="autoplay; encrypted-media"
+                        allowfullscreen></iframe>
+    </div>
+    <p>Please visit <a href= "https://qgis.org/en/site/forusers/download.html" target="_blank">www.qgis.com</a>to download Software.</p>        
+    <br>
+        
+    <p>Download Data</p>      
+    
+    <div class="video-container" style="border:#333333 2px solid; border-radius:12px; overflow:hidden;">
+            <iframe src="https://www.youtube.com/embed/f-SPJ92Egxg?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media"
+                allowfullscreen></iframe>
+    </div>
+    
+    <p>Click <a href= "{%static 'Reg_Centre.zip'%}" download>Here</a> to download data for this Course.<br>
+    
+    <p>Downloading videos</p>
+            <div class="video-container" style="border:#333333 2px solid; border-radius:12px; overflow:hidden;">
+            <iframe src="https://www.youtube.com/embed/f-SPJ92Egxg?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media"
+                allowfullscreen></iframe></div>
+    <br>
+        <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'Paris')">Next to Key Terms &raquo;</button>
+       
+       </div>
+      
+       
 </div>
+ <br>
 </div>
-</div>
+ <br> 
 
-
-<div id="Pari" class="tabcontent">
-  <h3>Data for this course</h3>
-<p>Click <a href= "{%static 'Reg_Centre.zip'%}" download>Data</a> to download data for this Course.
-  Data is in a zip format, you must extract before you can use it</p>
- <div class="video-container" style="border:#333333 2px solid; border-radius:12px; overflow:hidden;">
-    <iframe src="https://www.youtube.com/embed/f-SPJ92Egxg?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media"
-            allowfullscreen></iframe>
- </div>
-</div>
 
 
 
 <div id="Paris" class="tabcontent">
-  <h3>Key Terms</h3>
-  <p><h3>Attribute query</h3>
+  <h1>Key Terms</h1>
+  <p><h2>Attribute query</h2>
      <p>Request for features based on values in the attribute table. The three basic components of an attribute query are the attribute field, operator,
      and attribute value.
      </p>
-     <h3>feature</h3>
+     <h2>Feature</h2>
         <p>A representation of a real-world object on a GIS map.</p>
         
-        <h3>Geographical Coordinates</h3>
+        <h2>Geographical Coordinates</h2>
         <p>A measurement of a location on the earth's surface expressed in degrees of latitude and longitude.</p>
         
-        <h3>GIS</h3>
+        <h2>GIS</h2>
         <p>Acronym for geographic information system. An integrated system of data, software, hardware, people and workflows used to answer questions, make
         decisions,and provide tools to create, share, and use geographic information.</p>
         
-        <h3>Layers</h3>
+        <h2>Layers</h2>
         <p>References GIS data that represents real world features. The layer creates a symbol to represent the collection of these features. The features in
         a layer have the same theme, geometry, and set of attributes.</p>
         
-        <h3>Local Query</h3>
+        <h2>Local Query</h2>
         <p>Request for features based on the location and spatial relationship to other features. The three basic components of a location query are the layer
         containing features to select, the location relationship, and the layer containing the related features.</p>
         
-        <h3>Metadata</h3>
+        <h2>Metadata</h2>
         <p>Information that describes the content, quality, condition, origin, and other characteristics of data.</p> 
         
-        <h3>Raster</h3>
+        <h2>Raster</h2>
         <p>A data model that defines surfaces as an array of equally sized cells arranged in rows and columns. Each cell contains an attribute or measurement
         value. A raster's origin, cell size, and relative cell location are used to determine the location of the cells and raster on the earth.</p>
         
-        <h3>Scale</h3>
+        <h2>Scale</h2>
         <p>Relationship between the size of a feature on a map and the actual size of that feature in the real world. Scales can be expressed as a ratio or
         an equivalence.</p>
         
-        <h3>Vector</h3>
+        <h2>Vector</h2>
         <p>A data model that represents geographic features as points, polylines, and polygons. Attributes are associated with each vector feature, as
         opposed to a raster data model, which associates attributes with grid cells. Vector data uses pairs of geographic coordinates to determine the
         location of the features on the earth.</p><br> 
@@ -171,24 +201,228 @@ Create a location query and an attribute query.
 
 
 
-
-
-
-
-
 <div id="Toky" class="tabcontent">
-  <h3>Toky</h3>
-  <p>Tokyo is the capital of Japan.</p>
+  <h1>What is GIS</h1>
+  <div class="video-container" style="border:#333333 2px solid; border-radius:12px; overflow:hidden;">
+    <iframe src="https://www.youtube.com/embed/llFLbZ1eV3I?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media"
+            allowfullscreen></iframe>
+ </div>
+  <br>
+  <h1>What can you do with GIS</h1>
+<p>As previously discussed, a GIS uses geographic information to help users answer questions and make decisions. One of the most common GIS
+formats is a map. Shown here are real-world examples of GIS maps that have been formatted to analyze trends, find relationships, and assist with
+future decisions.</p>  <br>               
+        
+<h4><span>Map location</span></h4>
+<p>We can map the spatial location of real-world features and visualize the spatial relationships among them.  Example one:
+The map below illustrates the location of countries, rivers, and cities within the continent of Africa. Locational maps can be used to determine where
+things are situated in relation to each other and are often used with navigation.
+Map quantities. People map quantities, such as where the most and least are, to find places that meet their criteria or to see the
+relationships between places. 
+Example: below is a map of cemetery locations in Wisconsin.  The map shows the cemetery locations as dots (dot density) and each
+county is color coded to show where the most and least are (lighter blue means fewer cemeteries).</p>
+
+<img src="{%static 'img/intro1.jpg'%}"   class= 'img-responsive'>
+<br><br>
+
+<h4><span>Map quantities</span></h4>
+<p>People map quantities, such as where the most and least are, to find places that meet their criteria or to see the relationships between places.
+Example: below is a map of cemetery locations in Wisconsin.  The map shows the cemetery locations as dots (dot density) and each county is color
+coded to show where the most and least are (lighter blue means fewer cemeteries)</p>.<br>
+<img src="{%static 'img/intro2.jpg'%}"   class= 'img-responsive'>
+<br><br>
+
+<h4><span>Map what is inside</span></h4>
+We can use GIS to determine what is happening or what features are located inside a specific area/region. We can determine the characteristics of "inside"
+by creating specific criteria to define an area of interest (AOI).<br>
+This map illustrates school locations in relation to crime areas. Mapping what is inside can assist with monitoring and assessment. According to this map, schools
+located in Miami may be more at risk, because Miami has the highest number of crime reports.
+<br>
+<img src="{%static 'img/intro3.jpg'%}"   class= 'img-responsive'>
+
+   <br><br>
+   
+ <h4><span> Map densities</span></h4> 
+  
+  <p>Sometimes it is more important to map concentrations, or a quantity normalized by area or total number.
+This map illustrates a higher population density in the southeast portion of Canada. Density maps can be used to condense large amounts of data
+analyzed for correlations and trends. Further analysis could be completed to determine if the denser population is related to the proximity of the
+border or the proximity of water bodies.</p><br>
+
+  <img src="{%static 'img/intro4.jpg'%}"   class= 'img-responsive'>
+  
+  
+  <br><br>
+  
+  
+  <h4><span> What is nearby.</span></h4>
+  <p>We can find out what is happening within a set distance of a feature or event by mapping what is nearby using geoprocessing tools like BUFFER</p>
+  <br>
+   <img src="{%static 'img/intro5.jpg'%}"   class= 'img-responsive'>
+      
+  <br>
+  <p>This map illustrates the proximity of JMill retail stores to county spending potential. Mapping what is nearby is often used in risk
+  assessment and predictions. JMill predicts higher revenue in the Massachusetts, Connecticut, and Rhode Island stores, because they are located
+  within 20 miles of a higher potential spending index.</p>
+  <br><br>
+  
+<h4><span>Map change</span></h4> 
+   <p>We can map the change in a specific geographic area to anticipate future conditions, decide on a course of action, or to evaluate the results
+   of an action or policy. The map below illustrates population change over the past 10 years. The largest population changes occurred in the
+   western and southeastern states. This can be used to assess future trends in urban sprawl and market demands.
+</p>
+   <br>
+   <img src="{%static 'img/intro6.jpg'%}"   class= 'img-responsive'>
+      <br><br>  
+
+
+<h1>How GIS works</h1>
+<p>Whether you search a location on the Internet or map car routes, you can use a GIS to get the information you need.
+
+GIS provides tools to find, use, create, and share geographic information with others. For example, you can locate location for each
+of your customers, share this information with your coworkers, and work together to build a customer profile. The functionality and
+versatility of a GIS depends on the system itself. A GIS integrates hardware, software, data, people, and workflows
+into its comprehensive package.</p>
+
+<h3>Data</h3>
+<p>Data has spatial and attribute information to explain where something is and
+what something is.</p>
+
+
+<h3>Software</h3>
+<p>Software is to store, analyze, and display geographical data.</p>
+
+<h3>Hardware</h3>
+<p>Data and software run off hardware, which can range from centralized computer servers to desktops to handheld devices
+. Geographic Information can be created, shared, and used from each of these hardware devices.</p>
+
+<h3>People</h3>
+<p>People use GIS sotware to perform GIS task on geographic data. People create and follow workflow to
+order GIS tast and make their work more efficient.</p>
+
+<br>
 </div>
+
+
+
+
+
+
+
+
+
+
 <div id="Par" class="tabcontent">
-  <h3>Par</h3>
-  <p>Paris is the capital of France.</p> 
+  <div class="container">
+      <nav class="navbar navbar-default">
+          <h1>Longitude and Latitude</h1>
+        <div class="container-fluid">
+          
+          </div>
+      </nav>
+         </div>
+  
+
+  
+  <div class="video-container" style="border:#333333 2px solid; border-radius:12px; overflow:hidden;">
+    <iframe src="https://www.youtube.com/embed/r4W86ORpk1Y?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media"
+            allowfullscreen></iframe>
+ </div>
+  <h2 class="display-3"><span>Latitude?</span></h2>
+  
+          <p>Latitude is defined as a measurement of distance in degrees north and south of the equator. The word latitude is derived from the latin word, "latus", mearning "wide"</p>
+            
+         <img src="{%static 'img/lat1.jpg'%}"   class= 'img-responsive'>
+
+
+         <p>There are 90 degrees of latitude from the equator to each of the poles, north and south. Latitude lines are parallel, that is they are the same distance apart.
+         These lines are sometimes refered to as parallels.</p>
+        <img src="{%static 'img/lat2.jpg'%}"   class= 'img-responsive'>
+        <br>
+         
+         
+         <h3 class="display-3"><span>The equator</span></h3>
+         
+        <p>The equator is the longest of all lines of latitude. It divides the earth in alf and is measured as 0 (Zero degrees)</p>
+        
+        <br>
+      <img src="{%static 'img/lat3.jpg'%}"   class= 'img-responsive'>
+         
+         
+         <h3 class="display-3"><span>North and South Latitudes</span></h3>
+        
+       Positions on latitude lines above the equator are called "north" and are in the northern hemisphere.  Positions on latitude lines below the equator are
+       called "south" and are in the southern hemisphere.
+        <img src="{%static 'img/lat5.jpg'%}"   class= 'img-responsive'>
+        <br><br> 
+        <div class="container">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid"> 
+         <h2 class="display-3"><span>Longitude</span></h2>
+         </div>
+      </nav>
+         </div>
+         <p>Longitude is defined as measurement of distance in degrees east or west of the prime meridian.
+         The word longitude is derived from the Latin word, "longus", meaning "length"</p>.
+          <img src="{%static 'img/lat6.jpg'%}"   class= 'img-responsive'>
+            
+        <p>The Prime Meridian, as do all other lines of longitude, pass through the north and south pole. They make the earth look like a peeled orange.</p>
+    <img src="{%static 'img/lat7.jpg'%}"   class= 'img-responsive'>
+    
+    
+    <h3 class="display-3"><span>The Prime Meridian </span></h3>
+   
+    <p>The Prime meridian divides the earth in half too. It is also 0 degree. It passes through the community of Greenwich, England.</p>
+    <img src="{%static 'img/lat8.jpg'%}"   class= 'img-responsive'>
+     
+     
+    <div class="container">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">  
+    <h3 class="display-3"><span>The International Date Line </span></h3>
+    </div>
+      </nav>
+        
+      <p>There are 180 lines of longitude on each side of the prime meridian.  But on the opposite side, the primer meridian is not
+      zero degrees but 180 degree.  It is called the International Date Line.</p>
+      <img src="{%static 'img/lat9.jpg'%}"   class= 'img-responsive'>
+     
+     
+       
+    <h3 class="display-3"><span>East and West Longitudes</span></h3>
+   
+    <p>Longitude lines to the left of the prime meridian give locations west, in the western hemisphere. Longitude lines to the right of the
+    primer meridian give locations east, in the eastern hemisphere.</p>
+    <img src="{%static 'img/lat10.jpg'%}"   class= 'img-responsive'>
+    <br>
+    <img src="{%static 'img/lat11.jpg'%}"   class= 'img-responsive'>
+      </div><br>  
+      <div class="container">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+      <h3 class="display-3"><span>Using Latitude and Longitude</span></h3>
+      </div>
+      </nav>
+         
+      
+        <p>To fine your exact location on a map, you need to determine which latitude line and which longitude line meet where you are standing.
+      When writing locations, the latitude is given first.
+      For example <br>
+      Miami, Florida, has a location of 25 degree North and 80 degree West.<br>
+      This is usually written in a short form as 25 degree N 80 degree W </p>
+      </div>
 </div>
 
 <div id="Tok" class="tabcontent">
-  <h3>Tok</h3>
-  <p>Tokyo is the capital of Japan.</p>
+  <h3>Coordinate system</h3>
+  <div class="video-container" style="border:#333333 2px solid; border-radius:12px; overflow:hidden;">
+    <iframe src="https://www.youtube.com/embed/DSOGG-AGVd0?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media"
+            allowfullscreen></iframe>
+ </div>
 </div>
+
+
+
 
 <script>
 function openCity(evt, cityName) {
@@ -207,6 +441,9 @@ function openCity(evt, cityName) {
 
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
+
+
+
 </script>
      
 </body>
