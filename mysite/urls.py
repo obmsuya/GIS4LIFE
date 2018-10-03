@@ -22,13 +22,14 @@ from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 #from django.views.static import serve
 
-
+app_name = 'accounts'
+#app_name = 'home'
 
 urlpatterns = [
     url(r'^$', views.login_redirect, name='login_redirect'),
     
     url(r'^admin/', admin.site.urls),
-    url(r'^account/', include ('accounts.urls',namespace='accounts')),
+    url(r'^account/', include ('accounts.urls', namespace='accounts')),
     url(r'^home/', include ('home.urls', namespace='home')),
    
 ]

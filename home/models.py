@@ -12,7 +12,7 @@ class Post(models.Model):
             height_field="height_field")
     height_field = models.IntegerField(default=0)
     width_field = models.IntegerField(default=0)
-    user = models.ForeignKey(User)
+    user = models.ForeignKey(User, on_delete=models.PROTECT)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     
@@ -22,7 +22,7 @@ class Post(models.Model):
 class Friend(models.Model):
     users = models.ManyToManyField(User)
     post = models.CharField(max_length=200, default= "")
-    current_user = models.ForeignKey(User, related_name='owner', null=True)
+    current_user = models.ForeignKey(User, related_name='owner', null=True, on_delete=models.PROTECT)
     
     
     
@@ -60,7 +60,7 @@ class Item(models.Model):
     description = models.TextField()
     link = models.TextField(default = "")
     price = models.IntegerField(default=0)
-    category = models.ForeignKey(Category)
+    category = models.ForeignKey(Category, on_delete=models.PROTECT)
     
     def __str__(self):
         return self.name

@@ -11,25 +11,26 @@ body {font-family: "Lato", sans-serif;}
 /* Style the tab */
 .tab {
     float: left;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
+    border: 0px solid #ccc;
+    /*background-color: #f1f1f1;*/
     width: 20%;
     height: auto;
 }
 
 /* Style the buttons inside the tab */
 .tab button {
-    display: block;
+    /*display: block;
     background-color: inherit;
-    color: black;
+    color: black;*/
     padding: 22px 16px;
     width: 100%;
-    border: 1px;
+    border: 2px;
     outline: none;
     text-align: left;
     cursor: pointer;
     transition: 0.3s;
     font-size: 14px;
+    /*font-size: 2wv;*/
     /*lines: line-height: 1;*/
     line-height: !important;
 }
@@ -79,10 +80,12 @@ border: none;
   <button class="tablinks" onclick="openCity(event, 'London')" id="defaultOpen">Introduction</button>
   <button class="tablinks" onclick="openCity(event, 'Tokyo')">Dowloads</button>
   <button class="tablinks" onclick="openCity(event, 'Paris')">Key Terms</button>
-  <button class="tablinks" onclick="openCity(event, 'Toky')">What is GIS</button>
+  <button class="tablinks" onclick="openCity(event, 'whatgis')">What is GIS</button>
+  <button class="tablinks" onclick="openCity(event, 'gisdo')">What can GIS do </button>
+  <button class="tablinks" onclick="openCity(event, 'Tos')">How gis works</button>
   <button class="tablinks" onclick="openCity(event, 'Par')">Longitude and Latitude</button>
   <button class="tablinks" onclick="openCity(event, 'Tok')">Coordinate System</button>
-  <button class="tablinks" onclick="openCity(event, 'To')">To</button>
+  
   <button class="tablinks" onclick="openCity(event, 'Pa')">Pa</button>
   <button class="tablinks" onclick="openCity(event, 'To')">T</button>
   <button class="tablinks" onclick="openCity(event, 'Par')">Par</button>
@@ -92,7 +95,7 @@ border: none;
   <button class="tablinks" onclick="openCity(event, 'To')">T</button>
 </div>
 
-<h1>GIS4LIFE Training College</h1><h1>Need technical help?, make TeamViewer appointment.</h1>
+<h1>GIS4LIFE Training College</h1><h1>Do you need help?, make  appointment for TeamViewer.</h1>
 
 
 
@@ -196,111 +199,228 @@ border: none;
         <h2>Vector</h2>
         <p>A data model that represents geographic features as points, polylines, and polygons. Attributes are associated with each vector feature, as
         opposed to a raster data model, which associates attributes with grid cells. Vector data uses pairs of geographic coordinates to determine the
-        location of the features on the earth.</p><br> 
+        location of the features on the earth.</p>
+        
+        <h2>GIS Terminology to Know</h2> 
+        <p>GIS has a lot of terminologies used. The following are fundamental terminologies to know and be able to define at the end of the lesson</p>. 
+        <h3>Point, Line and Polygon</h3> 
+        <p>Point is a geometric element which is defined by pair of x,y coordinates. Line or polyline define a connection segment between one or more path. A polygon Is a closed shape defined by 
+        a connected sequence of x,y coordinate pairs, where the first and last coordinates pair are the same and all other pairs are unique.</p> 
+        <img src="{%static 'img/pic_1.jpg'%}" class= 'img-responsive'> 
+        <p>Figure 1: An image showing example of Points, lines and a polygon</p> 
+        <h3>Attributes tables</h3> 
+        <p>Tabular or textual data describing the geographic characteristics of features.</p> 
+        <img src="{%static 'img/pic_2.jpg'%}" class= 'img-responsive'> 
+        <p>Figure 2: An example of attribute table</p> 
+        <h3>Vectors and raster data</h3> 
+        <p>Vector data is a representation of the geographical features by using points, lines and polygons. Each point feature is represented as a single coordinate pair, while line and polygon 
+        features are represented as ordered lists of vertices.</p> 
+        <p>Raster data a spatial data model that defines space as an array of equally sized cells arranged in rows and columns, and composed of single or multiple bands. Each cell contains an 
+        attribute value and location coordinates.</p> 
+        <img src="{%static 'img/pic_3.jpg'%}" class= 'img-responsive'> 
+        <p>Figure 3: an image showing an example of vector and raster data representation of features on a real word</p> 
+        <h3>Imagery</h3> 
+        <p>Imagery is a type of data that is useful for many GIS applications and is defined as any type of photograph. Photographs used for GIS projects consist of images gathered from a satellite or an aircraft.</p> 
+        <img src="{%static 'img/pic_4.jpg'%}" class= 'img-responsive'> 
+        <p>Figure 4: Satellite imagery of Tanzania</p> 
+        <h3>Geoprocessing tools</h3> 
+        <p>Geoprocessing is a framework and set of tools for processing geographic and related data. Can be used to perform spatial analysis or manage GIS data in an automated way. Example of these tools are buffer, intersect, clip, intersect etc.</p> 
+        <img src="{%static 'img/pic_5.jpg'%}" class= 'img-responsive'> 
+        <p>Figure 5: Basic editing Geoprocessing tools</p> 
+        <h3>Geodatabase</h3> 
+        <p>Is a database or file structure used to store, query and manipulate spatial data. Geodatabase stores geometry, a spatial reference system, attributes and behavior rules for data. Various types of geographic datasets can be collected within geodatabase such as feature classes, attribute tables, raster dataset and many others.</p> 
+        <img src="{%static 'img/pic_6.jpg'%}" class= 'img-responsive'> 
+        <p>Figure 6: Image showing example of geodatabase</p> 
+        <h3>Shapefiles</h3> 
+        <p>Is a non-topological format for storing the attribute information of geographic features, location and shape. A geographic feature in a Shapefiles is represented by points, lines and polygons.</p> 
+        <img src="{%static 'img/pic_7.jpg'%}" class= 'img-responsive'> 
+        <p>Figure 7: Example of how Shapefiles appear in ArcCatalog (source: Esri)</p> 
+        <h3>Layers</h3> 
+        <p>Is a mechanism used to display geographic dataset in any digital map environment. A layer is a slice or stratum of the geographic reality in a particular area, for example, roads, land use, boundaries, elevations and rivers might be considered different layers.</p> 
+        <img src="{%static 'img/pic_8.jpg'%}" class= 'img-responsive'> 
+        <p>Figure 8: example of map layers</p> 
+
 </div>
 
 
 
-<div id="Toky" class="tabcontent">
+<div id="whatgis" class="tabcontent">
   <h1>What is GIS</h1>
-  <div class="video-container" style="border:#333333 2px solid; border-radius:12px; overflow:hidden;">
-    <iframe src="https://www.youtube.com/embed/llFLbZ1eV3I?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media"
-            allowfullscreen></iframe>
- </div>
-  <br>
+        <div class="video-container" style="border:#333333 2px solid; border-radius:12px; overflow:hidden;">
+                <iframe src="https://www.youtube.com/embed/llFLbZ1eV3I?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media"
+                        allowfullscreen></iframe>
+       </div>
+ <div>   
+<h1>What is GIS?</h1> 
+<h2>Definition</h2> 
+<p>GIS stands for Geographical Information System. The word GIS is a broad term and it has no consistent definition. It can have more than ten
+different definitions from GIS users. Here, GIS is simply defined as a computer based system used to capture, store, retrieve, manipulate, analyze
+and display spatial information. GIS helps people to use spatial(location) information to produce maps and perform spatial(location) analyses for
+decision making and problem solving. </p>
+<h2>History of GIS</h2>
+<p>A GIS (geographic or geospatial information system) is a modern extension of traditional cartography with one fundamental similarity and two
+essential 
+differences. The similarity lies in the fact that both a cartographic document and a GIS contain examples of a map to which additional data can be added. 
+The differences are that there is no limit to the amount of additional data that can be added to a GIS map and secondly the GIS uses analysis and
+statistics 
+to present data in support of particular arguments which a cartographic map cannot do. Cartographic maps are often extremely simplified as there
+are limits to 
+the amount of data that can be physically and meaningfully stored on a small map.</p> 
+
+<p>GIS passed four distinct phases in the development of Geographical Information System.Phase one, was between the early 1960s to mid 1970s where a new discipline being dominated by a few key individuals who were to shape the
+direction of future research and development. Phase two, was from the mid of 1970s to early 1980s where the adoption of technologies by national
+agencies that led to a focus on the development of best practice. Third phase, between 1980 to late 1982 saw the development and exploitation of the
+commercial market places surrounding GIS whilst the final phase since the late 1980s has seen a focus on ways of improving the usability of technology
+by making facilities more user centric.</p>
+
+<h2>Why GIS is Awesome</h2> 
+<p>GIS is not one thing, it is a general set of technologies and a way to think about data in new exciting ways. The following are few of the things that makes why GIS 
+applications awesome.</p> 
+<h3>GIS in mapping</h3> 
+<p>Mapping is a central function of GIS which provides a visual interpretation of data. GIS store data in database and then represent it visually in a mapped format.</p> 
+<h3>Urban planning</h3> 
+<p>The GIS technology is used to analyze the urban growth and its direction of expansion, and to find suitable sites for further urban development.</p> 
+<h3>Infrastructure planning</h3> 
+<p>GIS can be used in managing transportation and logistical problems. It can help in monitoring railway system and roads conditions. The best route for transportation based on 
+the criteria like flattest route, least damage and least disturbance from local people.</p> 
+<h3>Agriculture applications</h3> 
+<p>Can be used to create more effective and efficient farming techniques. It can help in analyzing soil data and to determine the best crop plant, and where they should be planted.</p> 
+<h3>Disaster management and mitigation</h3> 
+<p>GIS are used to protect environment. It has become a well-developed and successful tool in disaster management and mitigation. It can be help by displaying areas that are 
+likely to be prone to natural hazards or man-made disasters.</p> 
+<h3>Navigation</h3> 
+<p>For example using a GPS on the smart phone to get a location of a place. Currently many people in the world are using smart phones to move from one place to another. 
+To know nearby places where they are located and how to get there through google maps e.g. Hospitals, restaurant, shops, banks, ATM and many other things.</p> 
+<h3>Routing problems</h3> 
+
+<p>GIS can also be used to solve problems such as water route which runs from down hills. Therefore data is needed to understand where down hills is located on a landscape scale. 
+Once the information is known it is easy to figure out the common locations where water runs off occur. This information can help in determine where the town location are and 
+flood risks area, as well as to figure out how much water is needed for an area.</p> 
+
+<h2>Summary of this Lesson</h2> 
+<h3>GIS definition</h3> 
+<h3>History of GIS</h3> 
+<h3>Why GIS is awesome</h3> 
+<h4>GIS in mapping</h4> 
+<h4>Urban planning</h4> 
+<h4>Infrastructure planning</h4> 
+<h4>Agriculture applications</h4> 
+<h4>Disaster management and mitigation</h4> 
+<h4>Navigation</h4> 
+<h4>Routing problems</h4> 
+<h3>GIS terminology to know</h3> 
+<h4>Point, Line and Polygon</h4> 
+<h4>Attributes tables</h4> 
+<h4>Vectors and raster data </h4> 
+<h4>Imagery</h4> 
+<h4>Geoprocessing tools</h4> 
+<h4>Geodatabase</h4> 
+<h4>Shapefiles</h4> 
+<h4>Layers</h4>
+
+
+
+
+<br><br><br><br><br><br>
+ </div>   
+</div>
+
+
+
+<div id="gisdo" class="tabcontent">  
   <h1>What can you do with GIS</h1>
-<p>As previously discussed, a GIS uses geographic information to help users answer questions and make decisions. One of the most common GIS
-formats is a map. Shown here are real-world examples of GIS maps that have been formatted to analyze trends, find relationships, and assist with
-future decisions.</p>  <br>               
+        <p>As previously discussed, a GIS uses geographic information to help users answer questions and make decisions. One of the most common GIS
+        formats is a map. Shown here are real-world examples of GIS maps that have been formatted to analyze trends, find relationships, and assist with
+        future decisions.</p>  <br>               
         
-<h4><span>Map location</span></h4>
-<p>We can map the spatial location of real-world features and visualize the spatial relationships among them.  Example one:
-The map below illustrates the location of countries, rivers, and cities within the continent of Africa. Locational maps can be used to determine where
-things are situated in relation to each other and are often used with navigation.
-Map quantities. People map quantities, such as where the most and least are, to find places that meet their criteria or to see the
-relationships between places. 
-Example: below is a map of cemetery locations in Wisconsin.  The map shows the cemetery locations as dots (dot density) and each
-county is color coded to show where the most and least are (lighter blue means fewer cemeteries).</p>
-
-<img src="{%static 'img/intro1.jpg'%}"   class= 'img-responsive'>
+        <h4><span>Map location</span></h4>
+        <p>We can map the spatial location of real-world features and visualize the spatial relationships among them.  Example one:
+        The map below illustrates the location of countries, rivers, and cities within the continent of Africa. Locational maps can be used to determine where
+        things are situated in relation to each other and are often used with navigation.
+        Map quantities. People map quantities, such as where the most and least are, to find places that meet their criteria or to see the
+        relationships between places. 
+        Example: below is a map of cemetery locations in Wisconsin.  The map shows the cemetery locations as dots (dot density) and each
+        county is color coded to show where the most and least are (lighter blue means fewer cemeteries).</p>
+        
+        <img src="{%static 'img/intro1.jpg'%}"   class= 'img-responsive'>
 <br><br>
 
-<h4><span>Map quantities</span></h4>
-<p>People map quantities, such as where the most and least are, to find places that meet their criteria or to see the relationships between places.
-Example: below is a map of cemetery locations in Wisconsin.  The map shows the cemetery locations as dots (dot density) and each county is color
-coded to show where the most and least are (lighter blue means fewer cemeteries)</p>.<br>
-<img src="{%static 'img/intro2.jpg'%}"   class= 'img-responsive'>
-<br><br>
-
-<h4><span>Map what is inside</span></h4>
-We can use GIS to determine what is happening or what features are located inside a specific area/region. We can determine the characteristics of "inside"
-by creating specific criteria to define an area of interest (AOI).<br>
-This map illustrates school locations in relation to crime areas. Mapping what is inside can assist with monitoring and assessment. According to this map, schools
-located in Miami may be more at risk, because Miami has the highest number of crime reports.
-<br>
-<img src="{%static 'img/intro3.jpg'%}"   class= 'img-responsive'>
-
-   <br><br>
-   
- <h4><span> Map densities</span></h4> 
+        <h4><span>Map quantities</span></h4>
+        <p>People map quantities, such as where the most and least are, to find places that meet their criteria or to see the relationships between places.
+        Example: below is a map of cemetery locations in Wisconsin.  The map shows the cemetery locations as dots (dot density) and each county is color
+        coded to show where the most and least are (lighter blue means fewer cemeteries)</p>.<br>
+        <img src="{%static 'img/intro2.jpg'%}"   class= 'img-responsive'>
+        <br><br>
+        
+        <h4><span>Map what is inside</span></h4>
+        We can use GIS to determine what is happening or what features are located inside a specific area/region. We can determine the characteristics of "inside"
+        by creating specific criteria to define an area of interest (AOI).<br>
+        This map illustrates school locations in relation to crime areas. Mapping what is inside can assist with monitoring and assessment. According to this map, schools
+        located in Miami may be more at risk, because Miami has the highest number of crime reports.
+        <br>
+        <img src="{%static 'img/intro3.jpg'%}"   class= 'img-responsive'>
+        
+           <br><br>
+           
+         <h4><span> Map densities</span></h4> 
   
-  <p>Sometimes it is more important to map concentrations, or a quantity normalized by area or total number.
-This map illustrates a higher population density in the southeast portion of Canada. Density maps can be used to condense large amounts of data
-analyzed for correlations and trends. Further analysis could be completed to determine if the denser population is related to the proximity of the
-border or the proximity of water bodies.</p><br>
-
-  <img src="{%static 'img/intro4.jpg'%}"   class= 'img-responsive'>
-  
-  
-  <br><br>
-  
-  
-  <h4><span> What is nearby.</span></h4>
-  <p>We can find out what is happening within a set distance of a feature or event by mapping what is nearby using geoprocessing tools like BUFFER</p>
-  <br>
-   <img src="{%static 'img/intro5.jpg'%}"   class= 'img-responsive'>
+        <p>Sometimes it is more important to map concentrations, or a quantity normalized by area or total number.
+      This map illustrates a higher population density in the southeast portion of Canada. Density maps can be used to condense large amounts of data
+      analyzed for correlations and trends. Further analysis could be completed to determine if the denser population is related to the proximity of the
+      border or the proximity of water bodies.</p><br>
       
-  <br>
-  <p>This map illustrates the proximity of JMill retail stores to county spending potential. Mapping what is nearby is often used in risk
-  assessment and predictions. JMill predicts higher revenue in the Massachusetts, Connecticut, and Rhode Island stores, because they are located
-  within 20 miles of a higher potential spending index.</p>
-  <br><br>
-  
-<h4><span>Map change</span></h4> 
-   <p>We can map the change in a specific geographic area to anticipate future conditions, decide on a course of action, or to evaluate the results
-   of an action or policy. The map below illustrates population change over the past 10 years. The largest population changes occurred in the
-   western and southeastern states. This can be used to assess future trends in urban sprawl and market demands.
-</p>
-   <br>
-   <img src="{%static 'img/intro6.jpg'%}"   class= 'img-responsive'>
-      <br><br>  
-
-
-<h1>How GIS works</h1>
-<p>Whether you search a location on the Internet or map car routes, you can use a GIS to get the information you need.
-
-GIS provides tools to find, use, create, and share geographic information with others. For example, you can locate location for each
-of your customers, share this information with your coworkers, and work together to build a customer profile. The functionality and
-versatility of a GIS depends on the system itself. A GIS integrates hardware, software, data, people, and workflows
-into its comprehensive package.</p>
-
-<h3>Data</h3>
-<p>Data has spatial and attribute information to explain where something is and
-what something is.</p>
-
-
-<h3>Software</h3>
-<p>Software is to store, analyze, and display geographical data.</p>
-
-<h3>Hardware</h3>
-<p>Data and software run off hardware, which can range from centralized computer servers to desktops to handheld devices
-. Geographic Information can be created, shared, and used from each of these hardware devices.</p>
-
-<h3>People</h3>
-<p>People use GIS sotware to perform GIS task on geographic data. People create and follow workflow to
-order GIS tast and make their work more efficient.</p>
-
-<br>
+        <img src="{%static 'img/intro4.jpg'%}"   class= 'img-responsive'>
+        
+        
+        <br><br>
+        
+        
+        <h4><span> What is nearby.</span></h4>
+        <p>We can find out what is happening within a set distance of a feature or event by mapping what is nearby using geoprocessing tools like BUFFER</p>
+        <br>
+         <img src="{%static 'img/intro5.jpg'%}"   class= 'img-responsive'>
+            
+        <br>
+        <p>This map illustrates the proximity of JMill retail stores to county spending potential. Mapping what is nearby is often used in risk
+        assessment and predictions. JMill predicts higher revenue in the Massachusetts, Connecticut, and Rhode Island stores, because they are located
+        within 20 miles of a higher potential spending index.</p>
+        <br><br>
+        
+      <h4><span>Map change</span></h4> 
+         <p>We can map the change in a specific geographic area to anticipate future conditions, decide on a course of action, or to evaluate the results
+         of an action or policy. The map below illustrates population change over the past 10 years. The largest population changes occurred in the
+         western and southeastern states. This can be used to assess future trends in urban sprawl and market demands.
+      </p>
+         <br>
+         <img src="{%static 'img/intro6.jpg'%}"   class= 'img-responsive'>
+            <br><br>  
+</div>
+<div id="Tos" class="tabcontent">
+        <h1>How GIS works</h1>
+        <p>Whether you search a location on the Internet or map car routes, you can use a GIS to get the information you need.
+        
+        GIS provides tools to find, use, create, and share geographic information with others. For example, you can locate location for each
+        of your customers, share this information with your coworkers, and work together to build a customer profile. The functionality and
+        versatility of a GIS depends on the system itself. A GIS integrates hardware, software, data, people, and workflows
+        into its comprehensive package.</p>
+        
+        <h3>Data</h3>
+        <p>Data has spatial and attribute information to explain where something is and
+        what something is.</p>
+        
+        
+        <h3>Software</h3>
+        <p>Software is to store, analyze, and display geographical data.</p>
+        
+        <h3>Hardware</h3>
+        <p>Data and software run off hardware, which can range from centralized computer servers to desktops to handheld devices
+        . Geographic Information can be created, shared, and used from each of these hardware devices.</p>
+        
+        <h3>People</h3>
+        <p>People use GIS sotware to perform GIS task on geographic data. People create and follow workflow to
+        order GIS tast and make their work more efficient.</p>
+        
+        <br>
 </div>
 
 

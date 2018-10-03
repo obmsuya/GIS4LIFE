@@ -4,7 +4,7 @@ from django.db.models.signals import post_save
 
 # Create your models here.
 class UserProfile(models.Model):
-    user = models.OneToOneField(User)
+    user = models.OneToOneField(User, on_delete=models.PROTECT)
     Proffession = models.CharField (max_length=100, default='')
     country = models.CharField (max_length=100, default='')
     region = models.CharField (max_length=100, default='')
