@@ -2,8 +2,20 @@
     {% load staticfiles %}
 <html>
 <head>
-    <link rel="stylesheet" href="{% static 'accounts/style14.css' %}">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>   
+            
+        <link rel="stylesheet" href="{% static 'accounts/style12.css' %}">
+        <!--<link rel="stylesheet" href="{% static 'home/house.css' %}">-->
+         
+         <meta name="viewport" content="width=device-width, initial-scale=1.0"   
+
+        <!--<link rel="stylesheet" href="{% static 'accounts/style14.css' %}">-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+      
 <style>
 * {box-sizing: border-box}
 body {font-family: "Lato", sans-serif;}
@@ -73,6 +85,45 @@ border: none;
 </head>
 <body>
 
+<br>
+    <div class="container">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>   
+    </div>  
+          <div id="navbar" class="navbar-collapse collapse">
+              
+            
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="{% url 'home:home'%}">Home</a></li>
+                <li><a href="{% url 'home:chat'%}">My courses</a></li>
+                <li><a href="{% url 'home:index'%}">Register New Course</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href= "{% url 'accounts:view_profile'%}">Profile</a></li>
+                <li><a href="{% url 'accounts:edit_profile'%}">Edit Profile</a></li>
+                <li><a href="{% url 'accounts:change_password'%}">Change Password</a></li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="{% url 'accounts:logout'%}">Logout</a></li>
+            </ul>
+
+
+    </div>
+    
+
+ </nav>
+        </div>
+
+
 
 
 
@@ -95,7 +146,7 @@ border: none;
   <button class="tablinks" onclick="openCity(event, 'To')">T</button>
 </div>
 
-<h1>GIS4LIFE Training College</h1><h1>Do you need help?, make  appointment for TeamViewer.</h1>
+<h1>GIS4LIFE Training College</h1><h3>For live support <span>click here</span> to make appointment.</h3>
 
 
 
@@ -206,7 +257,11 @@ border: none;
         <h3>Point, Line and Polygon</h3> 
         <p>Point is a geometric element which is defined by pair of x,y coordinates. Line or polyline define a connection segment between one or more path. A polygon Is a closed shape defined by 
         a connected sequence of x,y coordinate pairs, where the first and last coordinates pair are the same and all other pairs are unique.</p> 
-        <img src="{%static 'img/pic_1.jpg'%}" class= 'img-responsive'> 
+        
+      
+        
+            <img src="{%static 'img/pic_1.jpg'%}"   class= 'img-responsive'>
+                
         <p>Figure 1: An image showing example of Points, lines and a polygon</p> 
         <h3>Attributes tables</h3> 
         <p>Tabular or textual data describing the geographic characteristics of features.</p> 

@@ -26,9 +26,11 @@
             {%if user.userprofile.image%}
           <img src="{{ user.userprofile.image.url }}" width="240">
             {%endif%}
-
-
-
+ 
 
    </div>
+   <div class="Container" >
+    <h3><a href="{% url 'accounts:edit_profile'%}">Edit Profile</a></h3>
+   </div>
+   
    {% endblock %}
