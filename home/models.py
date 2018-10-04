@@ -77,8 +77,8 @@ class Post4(models.Model):
     country = models.CharField (max_length=100, default='')
     region = models.CharField (max_length=100, default='')
     Proffession = models.CharField (max_length=100, default='')
-    subject = models.CharField (max_length=100, default='')
-    subtitle = models.CharField (max_length=100, default='')
+    category = models.CharField (max_length=100, default='')
+    course = models.CharField (max_length=100, default='')
     phone = models.IntegerField(default=0)
     
     

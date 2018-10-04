@@ -17,22 +17,20 @@
       <div class="container">
     <a href="{% url 'home:index' %}">&lt; Back to the list</a>
       <br><br>
+      
     {% if item != None %}
         
-        <!--<h3>{{item.category.name}}</h3>-->
+        <h1>{{item.name}}</h1>
         
+        <ul class="nav navbar-nav navbar-right">
+        <h3>To register for this course click <a class="btn btn-info btn-lg "href="{% url 'home:register' item_id=item.id %}"> HERE </a> </h3>
         
-        
-        <ul class="nav navbar-nav navbar-left">
-        <p><a class="btn btn-primary btn-lg "href="{% url 'home:register' item_id=item.id %}"> Register</a></p>
+        <h3>To pay for this course click <a class="btn btn-primary btn-lg"href="{% url 'home:payment' item_id=item.id %}">HERE</a> </h3> 
         </ul>
+        <br><br><br><br> <br><br>
         
-        
-        <ul class="nav navbar-nav navbar-right"> 
-        <h3>Thanks for the registration, now <a class="btn btn-primary btn-lg"href="{% url 'home:payment' item_id=item.id %}"> Make Payment</a></h3>
-        </ul>
-        <br><br><br><br>
-        <h3>{{item.name}}</h3>
+       
+        <h3>Course Dscriptions</h3>
         <p>{{item.description}}</p>
         
       
@@ -44,7 +42,7 @@
         
     </div>
 
-
+<br><br><br>
 
 
 

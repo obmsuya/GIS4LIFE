@@ -7,20 +7,173 @@
 
         
 {% block body %}
-        
+ 
 
-         <div class="col-md-4">
+
+
+<div class="container">
+    <a href="{% url 'home:index' %}">&lt; Back to the list</a>
+      
+      </div>
+<br><br>
+
+ <div class="col-md-4">
         <div class="container-fluid">
         <div class="container">
            
-                <h2>{{item.name}} is only {{item.price}} USD.</h2>
+<h1>{{item.name}} is only {{item.price}} USD.</h1>
                  
-      
-   <h3>  Here are the payment <a class="btn btn-primary btn-lg "href="{% url 'home:options' item_id=item.id %}"> Options</a> </h3>
-      
-   
+      </div>
         </div>
+        
+
+ <div class="container">
+          
+        <div class="container-fluid">
+        <div class="container">
+          
+          <h1 class="display-3"><span>NOTE</span></h1>
+          
+          <h3> After payments, send the refference number for verification, through whatsapp number at +255653397942, then click
+                   <a class="btn btn-light btn-lg" href="{% url 'home:chat'%}">My Courses</a>within two business hours  to start your course.</h3>
+          
+          
+        
         </div>
-         </div>
+      </div>
+        
+        <br>
+
+<h1>Payment Options</h1> 
+
+                <div class="container">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>   
+    </div>  
+          <div id="navbar" class="navbar-collapse collapse">
+                      
+                        
+                        
+                        
+                        <div class="col-md-4">
+                        <!--  <h3><a href="#BASIC" role="button">Basic GIS </a></h3>-->
+                          <h3>1. M Pesa +255753386304</h3>
+                        </div></h3>
+                        
+                        
+                        <div class="col-md-4">
+                          
+                          <h3>2. Tigo Pesa +255653397942</h3>
+                        </div></h3>
+                          
+                        </div>
+                        
+                        <div class="col-md-8">
+                         
+                        <h3>3. CRDB BANK A/C 0152303138800</h3>
+                        
+                          
+                        </div>
+                        
+                      <div class="col-md-4">
+                            <h3><div class="menuItem"><a class="level2"href= "" target="sites"> Accounts Name:Overblessing Msuya.</a></h3></div> 
+                          
+                        </div>
+                        
+</div>
+    
+
+ </nav>
+     
+
+<br><br>
+
+
+  <div class="container-fluid">
+        <div class="container">
+         
+                             <h3> <span>4.paypal</span></h3>     
+                    
+          
+      </div>
+            
+         
+          <form action = "https://paypal.com/cgi-bin/webscr" method= "post" target="_top"
+                
+       <input type="hidden" name="cmd" value="_s-xclick">
+       <input type="hidden" name="hosted_button_id" value="5XSG8PPLJ9APJ">
+       <input type="hidden" name="on0" value="Course">
+         <select class="form-control" name="os0">
+             <option value="Basic">Basic Class $150.00 USD</option>
+             <option value="Advance">Advanced Class$300.00 USD</option>
+         </select>
+         <br>
+         <input type="hidden" name="currency_code" value="USD">
+         <input type='submit' >
+          </form>
+          <br>
+    
+        </div>
+   </div>
+         
+         
+         
+         
+         
+         
+        
+        
+        
+<main role="main">
+
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      
+
+      <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+          <div class="col-md-4">
+            <h2>Before Payment</h2>
+            <p>Before you make the payments make sure you register to the particular course. Also make sure that you have all the required
+            qualification fot that particula course. </p>
+        
+          </div>
+          <div class="col-md-4">
+            <h2>After Payment</h2>
+            <p>If for some reasons you made the payment before registration, dont wory just go ahead and register. After payments, send the refference number for verification, through whatsapp number at +255653397942.</p>
+          
+          </div>
+          <div class="col-md-4">
+            <h2>View courses and start class</h2>
+            <p>After payments and sending your reference number your course will be activated, click <a class="btn btn-light btn-lg" href="{% url 'home:chat'%}">My Courses</a> within two business hours  to start your course.</p>
+        
+          </div>
+        </div>
+
+        <hr>
+
+      </div> <!-- /container -->
+
+    </main>
+
        
-{% endblock %}  
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+

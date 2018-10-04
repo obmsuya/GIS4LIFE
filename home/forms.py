@@ -53,17 +53,17 @@ class ClassRegistration(forms.ModelForm):
     ))
     
     
-    subject= forms.CharField(widget=forms.TextInput(
+    category = forms.CharField(widget=forms.TextInput(
         attrs={
             'class':'form-control',
-            'placeholder': 'Put subject category example Basic GIS....'
+            'placeholder': 'Put category example Basic GIS....'
         }
     ))
     
-    subtitle= forms.CharField(widget=forms.TextInput(
+    course= forms.CharField(widget=forms.TextInput(
         attrs={
             'class':'form-control',
-            'placeholder': 'Put the subtitle example Introd to GIS....'
+            'placeholder': 'Put course example Introd to GIS....'
         }
     ))
     
@@ -71,6 +71,12 @@ class ClassRegistration(forms.ModelForm):
         attrs={
             'class':'form-control',
             'placeholder': 'Put your login username....'
+        }
+    ))
+    country= forms.CharField(widget=forms.TextInput(
+        attrs={
+            'class':'form-control',
+            'placeholder': 'Put your country....'
         }
     ))
     
@@ -84,7 +90,7 @@ class ClassRegistration(forms.ModelForm):
 
     class Meta:
         model = Post4
-        fields = ('fullname', 'username','Proffession','subject','subtitle','phone')
+        fields = ('fullname', 'username','country','Proffession','category','course','phone')
 
 #class PostForm(forms.ModelForm):
 #    class Meta:

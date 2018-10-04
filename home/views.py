@@ -109,8 +109,8 @@ def payment(request, item_id):
     
     return render (request, "home/payment.html", context)
     
-def payment_options(request, item_id):  
-    return render (request, "home/options.html")
+#def options(request, item_id):  
+#    return render (request, "home/options.html")
 
 def basic(request):    
     return render (request, "home/basic.html")
