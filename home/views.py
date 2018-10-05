@@ -134,8 +134,8 @@ def gisintroarcgis1(request):
     return render (request, "home/gisintroarcgis1.html")    
 def gisintroarcgis2(request):    
     return render (request, "home/gisintroarcgis2.html")
-def gisintrokeyterms(request):    
-    return render (request, "home/gisintrokeyterms.html")
+def contact(request):    
+    return render (request, "home/contact.html")
 def gisintrodownload(request):    
     return render (request, "home/gisintrodownload.html")   
     

@@ -167,26 +167,151 @@
 
       
       
-<div class="container">
+ <div class="container">
           
+        <div class="container-fluid">
+        <div class="container">
+          
+          <h1 class="display-3"><span>GIS ONLINE!</span></h1>
+          
+          <p>This Platform is dedicated for GIS Training only. We know that getting started with GIS can be difficult,
+          however, by using well crafted videos and tutorials from this site you will learn the most
+          complicated concepts of GIS in an easy way and becomes GIS proffessional within a short period of time.
+          When you complete a course, you will receive a recognized certificate of completion. There are three main courses categories, that is; Basic GIS,
+          Advaced GIS and Tailormade GIS. On each category, there are lists of courses which you can register. Click the link below for more detail on each category.
+          <span>Remember;  You must sign in to register for a Class</span>.</p>
+          
+          <ul class="nav navbar-nav navbar-left">
+          <p><a class="btn btn-success "href="{% url 'accounts:login'%}" role="button">Sing In &raquo;</a></p>
+          </ul>
+          
+          
+          <ul class="nav navbar-nav navbar-right">
+          <p><a class="btn btn-primary"href="{% url 'accounts:register'%}" role="button">Sign up &raquo;</a></p>
+          </ul>
+          
+        
+        </div>
+      </div>
+        <br>
+    
+
+
+        
+        <br><br>       
+                
+ <div class="container">
+    	<div class="row">
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>   
+    </div>  
+          <div id="navbar" class="navbar-collapse collapse">
+                      
+                        <div class="col-md-4">
+                        <!--  <h3><a href="#BASIC" role="button">Basic GIS </a></h3>-->
+                          <h3><div class="menuItem"><a class="level2"href= "{% url 'home:regprocess'%}" target="sites">Registration Process</a></div> 
+                        </div></h3>
+                        
+                        
+                        <div class="col-md-4">
+                        <!--  <h3><a href="#BASIC" role="button">Basic GIS </a></h3>-->
+                          <h3><div class="menuItem"><a class="level2"href= "{% url 'home:basic'%}" target="sites">Basic Courses</a></div> 
+                        </div></h3>
+                        
+                        
+                        
+                        <div class="col-md-4">
+                        <!--  <h3><a href="#BASIC" role="button">Basic GIS </a></h3>-->
+                          <h3><div class="menuItem"><a class="level2"href= "{% url 'home:advanced'%}" target="sites">Advanced Courses</a></div> 
+                        </div></h3>
+                          
+                       <div class="col-md-4">
+                        
+                          <h3><div class="menuItem"><a class="level2"href= "{% url 'home:atailormade'%}" target="sites">Tailor Made</a></div> 
+                        </div></h3>
+                          
+                        </div>
+            
+                        
+                      
+                        
+</div>
+    
+
+ </nav>
+     
+
+</div>
+            
+            <div class="container">
+          <div class="col-md-2">
         <div class="container-fluid">
         <div class="container">
         <div class="panel-heading">
         <div class="embed-responsive embed-responsive-16by9">
 
 <div class="video-container">
-<!--<iframe width="200" height="50" class="embed-responsive-item" name="sites" id="sites" src="" allow="autoplay></iframe>-->
-<iframe width="390" height="680" class="embed-responsive-item" name="sites" id="sites" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>   
+<iframe width="190" height="80" class="embed-responsive-item" name="sites" id="sites" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>   
 </iframe>
  </div>
 </div>
         </div>
 </div>
-</div>
-
- <br><br>
+        </div>
+          </div>
+ <br> <br> <br> <br> <br><br> <br> <br> <br>
   
-   <!--<div class="menuItem"><a class="level2"href= "{% url 'home:basic'%}" target="sites">Basic GIS</a></div><br>    -->
+ 
+  <section id="contact">
+  <div class="container">
+    
+ 
+	
+	<div class="row">
+            
+     
+	  <div class="col-md-7">
+       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.631005949047!2d39.28588095033273!3d-6.814655968524553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4b0e3e329621%3A0x4fe0c5f78d8e3de9!2sGeneral+Post+Office!5e0!3m2!1sen!2stz!4v1538751053848" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+
+      <div class="col-md-3">
+       <h4><strong>Contact Us</strong></h4>
+       
+        <form>
+          <div class="form-group">
+            <input type="text" class="form-control" name="" value="" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <input type="email" class="form-control" name="" value="" placeholder="E-mail">
+          </div>
+          <div class="form-group">
+            <input type="tel" class="form-control" name="" value="" placeholder="Phone">
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" name="" rows="3" placeholder="Message"></textarea>
+          </div>
+          <button class="btn btn-default" type="submit" name="button">
+              <i class="fa fa-paper-plane-o" aria-hidden="true"></i> Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+            </div>
+ </div>
+ <br> <br>
+   <br>
+   <br>
+   <br>
+  
   
 
      

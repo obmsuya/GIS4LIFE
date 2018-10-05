@@ -23,7 +23,7 @@ urlpatterns = [
     url(r'^item/(?P<item_id>\d+)/register/payment/$', views.payment, name = "payment"),
     #url(r'^item/(?P<item_id>\d+)/register/payment/options/$', views.options, name = "options"),
     url(r'^item/(?P<item_id>\d+)/payment/gisintro/$', views.gisintro, name = "gisintro"),
-    url(r'^item/(?P<item_id>\d+)/payment/gistheory/$', views.gistheory, name = "gistheory2"),
+    url(r'^item/(?P<item_id>\d+)/payment/gistheory/$', views.gistheory, name = "gistheory"),
     url(r'^item/(?P<item_id>\d+)/payment/gispracticle/$', views.gispracticle, name = "gispracticle"),
     
     
@@ -36,7 +36,7 @@ urlpatterns = [
     url(r'^gisintroarcgis1/$', views.gisintroarcgis1, name = "gisintroarcgis1"),
     url(r'^gisintroarcgis2/$', views.gisintroarcgis2, name = "gisintroarcgis2"),
    
-    url(r'^gisintrokeyterms/$', views.gisintrokeyterms, name = "gisintrokeyterms"),
+    url(r'^contact/$', views.contact, name = "contact"),
     url(r'^gisintrodownload/$', views.gisintrodownload, name = "gisintrodownload"),
     
     
