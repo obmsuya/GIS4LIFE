@@ -6,7 +6,10 @@ from django.utils import timezone
 # Create your models here.
 class Post(models.Model):
     title = models.CharField (max_length=120, default = "")
-    post = models.CharField(max_length=200)
+    theory = models.CharField(max_length=200)
+    practicle = models.CharField (max_length=120, default = "")
+    exam = models.CharField (max_length=120, default = "")
+    results = models.CharField (max_length=120, default = "")
     image = models.ImageField(null=True, blank=True,
             width_field="width_field",
             height_field="height_field")

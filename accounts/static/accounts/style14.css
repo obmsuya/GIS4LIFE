@@ -117,3 +117,7 @@ height: 500px;
     border: 1px solid #ccc;
     border-top: none;
 }
+
+#tab div {
+  margin-left: 10px;
+}

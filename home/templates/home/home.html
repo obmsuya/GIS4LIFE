@@ -83,6 +83,7 @@
    
   
        
+           
             <div class="container">
           
         <div class="container-fluid">
@@ -90,42 +91,34 @@
           
           <h1 class="display-3"><span>GIS ONLINE!</span></h1>
           
-          <p>This Platform is dedicated for GIS Training only. We know that getting started with GIS is difficult,
-          however, by using well crafted videos and tutorials from this site you will be able to learn the most
+          <p>This Platform is dedicated for GIS Training only. We know that getting started with GIS can be difficult,
+          however, by using well crafted videos and tutorials from this site you will learn the most
           complicated concepts of GIS in an easy way and becomes GIS proffessional within a short period of time.
-          When you complete a course, you will receive a recognized certificate of completion. There are two main courses categories, that is Basic GIS
-          and Advaced GIS, on each category there is a list of courses which you can register on. Click the link below to see the detail of each category.
+          When you complete a course, you will receive a recognized certificate of completion. There are three main courses categories, that is; Basic GIS,
+          Advaced GIS and Tailormade GIS. On each category, there are lists of courses which you can register. Click the link below for more detail on each category.
           <span>Remember;  You must sign in to register for a Class</span>.</p>
           
-          <!--<ul class="nav navbar-nav navbar-left">
-          <p><a class="btn btn-primary btn-lg"href="{% url 'accounts:login'%}" role="button">Sing In &raquo;</a></p>
+          <ul class="nav navbar-nav navbar-left">
+          <p><a class="btn btn-success "href="{% url 'accounts:login'%}" role="button">Sing In &raquo;</a></p>
           </ul>
           
           
           <ul class="nav navbar-nav navbar-right">
-          <p><a class="btn btn-primary btn-lg"href="{% url 'accounts:register'%}" role="button">Sign up &raquo;</a></p>
-          </ul>-->
+          <p><a class="btn btn-primary"href="{% url 'accounts:register'%}" role="button">Sign up &raquo;</a></p>
+          </ul>
           
         
         </div>
       </div>
         <br>
       
-                          <h1>Registrations Procedures!</h1> 
-                       
-                        
-
-<P>After Sign in you will see the list of available courses, click on your choice then register. After registration,
-click pay to make the payment.  The course will be activated two hours prior to the payment, click my course button to start. We know that there are challenges when it comes to online courses, DON'T WORRY, WE KNOW THEM AND WE HAVE SOLUTIONS IN PLACE.  To address the challenge
-of internet cost, we will send you a video downloader to download all of our videos and watch them while offline. Our step by step instructions is very easy
-to follow but you still might get stack somewhere, to address this challenges, we offer live support upon your request, live support will allow us to
-solve challenge together. Remember. You don't have to pay all in cash, payment by instalment is also accepted, contact us for more information. Enjoy the ri </P>
+                         
 
 
         
         <br><br>       
                 
-                  <div class="container">
+ <div class="container">
       <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -139,41 +132,41 @@ solve challenge together. Remember. You don't have to pay all in cash, payment b
           <div id="navbar" class="navbar-collapse collapse">
                       
                         <div class="col-md-4">
-                            <h3><div class="menuItem"><a href= "https://www.gislounge.com/what-is-gis/" target="sites">What is GIS?</a></div></h3>
-                          
-                        </div>
+                        <!--  <h3><a href="#BASIC" role="button">Basic GIS </a></h3>-->
+                          <h3><div class="menuItem"><a class="level2"href= "{% url 'home:regprocess'%}" target="sites">Registration Process</a></div> 
+                        </div></h3>
                         
                         
                         <div class="col-md-4">
                         <!--  <h3><a href="#BASIC" role="button">Basic GIS </a></h3>-->
-                          <h3><div class="menuItem"><a "href= "{% url 'home:basic'%}" target="sites">Basic Courses</a></div> 
+                          <h3><div class="menuItem"><a class="level2"href= "{% url 'home:basic'%}" target="sites">Basic Courses</a></div> 
                         </div></h3>
                         
                         
-                        <div class="col-md-4">
-                          
-                          <h3><div class="menuItem"><a "href= "{% url 'home:advanced'%}" target="sites">Advanced Courses</a></div> 
-                        </div></h3>
-                          
-                        </div>
                         
                         <div class="col-md-4">
-                         <!-- <h3><a href="#TAILOR" role="button">Tailor made Course </a></h3>-->
-                         <h3><div class="menuItem"><a "href= "{% url 'home:atailormade'%}" target="sites">Tailor Made Courses</a></div> 
-                        </div></h3> 
+                        <!--  <h3><a href="#BASIC" role="button">Basic GIS </a></h3>-->
+                          <h3><div class="menuItem"><a class="level2"href= "{% url 'home:advanced'%}" target="sites">Advanced Courses</a></div> 
+                        </div></h3>
+                          
+                       <div class="col-md-4">
+                        
+                          <h3><div class="menuItem"><a class="level2"href= "{% url 'home:atailormade'%}" target="sites">Tailor Made</a></div> 
+                        </div></h3>
                           
                         </div>
             
                         
-                        
+                      
                         
 </div>
     
 
  </nav>
- 
      
-    
+
+      
+      
 <div class="container">
           
         <div class="container-fluid">

@@ -39,7 +39,7 @@ from .models import Post,Item, Category, Post4,  Friend
 
     
 class PostModelAdmin(admin.ModelAdmin):
-    list_display = ("post", "user" )
+    list_display = ("theory", "practicle","user" )
 
     def user_info(self,obj):
         return obj.user

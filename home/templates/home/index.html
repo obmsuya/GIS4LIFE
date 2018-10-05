@@ -20,7 +20,7 @@
                
                {%for item in category.item_set.all %}
                   
-                   <h2><a href="{% url 'home:item' item_id=item.id %}"> <ul>Course: {{item.name}}</ul></a></h2>
+                   <h3><a href="{% url 'home:item' item_id=item.id %}"> <ul>Course: {{item.name}}</ul></a></h3>
                    
                {%endfor%}
             {%endfor%}

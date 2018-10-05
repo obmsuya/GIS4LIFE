@@ -19,7 +19,7 @@ class HomeView(TemplateView):
         
     def get(self, request):
         form =HomeForm()
-        posts = Post.objects.all().order_by('-created')
+        posts = Post.objects.all().order_by('created')
         users = User.objects.all()
         #exclude(id=request.user.id)
      
@@ -108,9 +108,7 @@ def payment(request, item_id):
     }
     
     return render (request, "home/payment.html", context)
-    
-#def options(request, item_id):  
-#    return render (request, "home/options.html")
+
 
 def basic(request):    
     return render (request, "home/basic.html")
@@ -119,14 +117,19 @@ def advanced(request):
 def atailormade(request):    
     return render (request, "home/atailormade.html")
     
+def regprocess(request):    
+    return render (request, "home/regprocess.html")
+
+
 def gisintro(request, item_id):    
-    return render (request, "home/gisintro.html")
+    return render (request, "home/gisintro.html")    
+def gistheory(request, item_id):    
+    return render (request, "home/gistheory.html")    
     
-def gisintro2(request, item_id):    
-    return render (request, "home/gisintro2.html")    
-    
-def gisintrostart(request):    
-    return render (request, "home/gisintrostart.html")    
+def gispracticle(request, item_id):    
+    return render (request, "home/gispracticle.html")    
+
+
 def gisintroarcgis1(request):    
     return render (request, "home/gisintroarcgis1.html")    
 def gisintroarcgis2(request):    
