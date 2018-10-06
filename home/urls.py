@@ -36,7 +36,8 @@ urlpatterns = [
     url(r'^gisintroarcgis1/$', views.gisintroarcgis1, name = "gisintroarcgis1"),
     url(r'^gisintroarcgis2/$', views.gisintroarcgis2, name = "gisintroarcgis2"),
    
-    url(r'^contact/$', views.contact, name = "contact"),
+    #url(r'^contact/$', views.contact, name = "contact"),
+   
     url(r'^gisintrodownload/$', views.gisintrodownload, name = "gisintrodownload"),
     
     

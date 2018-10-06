@@ -95,6 +95,16 @@ def register(request, item_id):
         args = {'form': form}
         return render(request, 'home/create.html', args)
         
+#def contact(request):
+#        form = ContactForm(request.POST or None)
+#        if form.is_valid():
+#            create = form.save()
+#            create.save
+#            
+#            return redirect('home:contact')
+#            
+#        args = {'form': form}
+#        return render(request, 'home/home.html', args)        
         
 def payment(request, item_id):
     try:
@@ -134,8 +144,7 @@ def gisintroarcgis1(request):
     return render (request, "home/gisintroarcgis1.html")    
 def gisintroarcgis2(request):    
     return render (request, "home/gisintroarcgis2.html")
-def contact(request):    
-    return render (request, "home/contact.html")
+
 def gisintrodownload(request):    
     return render (request, "home/gisintrodownload.html")   
     

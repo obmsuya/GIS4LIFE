@@ -8,33 +8,34 @@
 
 
     <head>
-<
-        <title>GIS4LIFE </title>
+<title>GIS4LIFE </title>
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-        <!-- Latest compiled and minified JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>   
-            
-        <link rel="stylesheet" href="{% static 'accounts/style12.css' %}">
-        <!--<link rel="stylesheet" href="{% static 'home/house.css' %}">-->
-         
-         <meta name="viewport" content="width=device-width, initial-scale=1.0"   
-
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">     
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>              
+        <link rel="stylesheet" href="{% static 'accounts/style14.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"
         
 
     </head>
 
 
     <body>
+        
     <img src="{%static 'img/mmm10.jpg'%}"   class= 'img-responsive'>
+        <br>
+        <div class="container">
+        <ul class="nav navbar-nav navbar-right">
+      <h4>Contact: +255653397942, obmsuya@yahoo.com</h4>
      
-     
+      </ul>
+        </div>
+       
 <br>
-    <div class="container">
+  <!--  <div class="container">-->
       <nav class="navbar navbar-default">
-        <div class="container-fluid">
+        <div class="container-fluid bg-3 text-center">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
@@ -44,12 +45,13 @@
                 </button>   
     </div>  
           <div id="navbar" class="navbar-collapse collapse">
-             
+              {% if user.is_authenticated %}
             
             <ul class="nav navbar-nav navbar-left">
-                <!--<li><a href="{% url 'home:home'%}">Home</a></li>-->
-                <li><a href="{% url 'home:chat'%}">My courses</a></li>
-                <li><a href="{% url 'home:index'%}">Available courses</a></li>
+                <li><a href="{% url 'home:home'%}">Home</a></li>
+                <li><a href="{% url 'home:chat'%}">Talk to Others</a></li>
+                <li><a href="{% url 'home:index'%}">Register</a></li>
+            
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -63,18 +65,19 @@
             </ul>
 
 
-     
+              {%else%}
 
            <!--<ul class="nav navbar-nav navbar-left"> 
                 <li><a href="{% url 'home:home'%}">Home</a></li>
+            
             </ul>-->
             
             <ul class="nav navbar-nav navbar-right">
-              <!-- <li><a href="{% url 'accounts:login'%}">Sign in</a></li>
-               <li><a href="{% url 'accounts:register'%}">Sign up</a></li>-->
+               <li><a href="{% url 'accounts:login'%}">Sign in</a></li>
+               <li><a href="{% url 'accounts:register'%}">Sign up</a></li>
                 <li><a href="{% url 'accounts:reset_password'%}">Reset Password</a></li>
             </ul>
-      
+            {%endif %}
 
     </div>
     
@@ -83,96 +86,12 @@
    
   
        
-           
-            <div class="container">
+        <div class="container">
           
         <div class="container-fluid">
         <div class="container">
           
-          <h1 class="display-3"><span>GIS ONLINE!</span></h1>
-          
-          <p>This Platform is dedicated for GIS Training only. We know that getting started with GIS can be difficult,
-          however, by using well crafted videos and tutorials from this site you will learn the most
-          complicated concepts of GIS in an easy way and becomes GIS proffessional within a short period of time.
-          When you complete a course, you will receive a recognized certificate of completion. There are three main courses categories, that is; Basic GIS,
-          Advaced GIS and Tailormade GIS. On each category, there are lists of courses which you can register. Click the link below for more detail on each category.
-          <span>Remember;  You must sign in to register for a Class</span>.</p>
-          
-          <ul class="nav navbar-nav navbar-left">
-          <p><a class="btn btn-success "href="{% url 'accounts:login'%}" role="button">Sing In &raquo;</a></p>
-          </ul>
-          
-          
-          <ul class="nav navbar-nav navbar-right">
-          <p><a class="btn btn-primary"href="{% url 'accounts:register'%}" role="button">Sign up &raquo;</a></p>
-          </ul>
-          
-        
-        </div>
-      </div>
-        <br>
-      
-                         
-
-
-        
-        <br><br>       
-                
- <div class="container">
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>   
-    </div>  
-          <div id="navbar" class="navbar-collapse collapse">
-                      
-                        <div class="col-md-4">
-                        <!--  <h3><a href="#BASIC" role="button">Basic GIS </a></h3>-->
-                          <h3><div class="menuItem"><a class="level2"href= "{% url 'home:regprocess'%}" target="sites">Registration Process</a></div> 
-                        </div></h3>
-                        
-                        
-                        <div class="col-md-4">
-                        <!--  <h3><a href="#BASIC" role="button">Basic GIS </a></h3>-->
-                          <h3><div class="menuItem"><a class="level2"href= "{% url 'home:basic'%}" target="sites">Basic Courses</a></div> 
-                        </div></h3>
-                        
-                        
-                        
-                        <div class="col-md-4">
-                        <!--  <h3><a href="#BASIC" role="button">Basic GIS </a></h3>-->
-                          <h3><div class="menuItem"><a class="level2"href= "{% url 'home:advanced'%}" target="sites">Advanced Courses</a></div> 
-                        </div></h3>
-                          
-                       <div class="col-md-4">
-                        
-                          <h3><div class="menuItem"><a class="level2"href= "{% url 'home:atailormade'%}" target="sites">Tailor Made</a></div> 
-                        </div></h3>
-                          
-                        </div>
-            
-                        
-                      
-                        
-</div>
-    
-
- </nav>
-     
-
-      
-      
- <div class="container">
-          
-        <div class="container-fluid">
-        <div class="container">
-          
-          <h1 class="display-3"><span>GIS ONLINE!</span></h1>
+          <h1 class="display-3"><span>GIS4LIFE </span></h1>
           
           <p>This Platform is dedicated for GIS Training only. We know that getting started with GIS can be difficult,
           however, by using well crafted videos and tutorials from this site you will learn the most
@@ -195,130 +114,165 @@
       </div>
         <br>
     
+        <br><br>
+        
+        
 
+<!--SCRIPTS 2-->
+
+        <div class="tab">
+          <button class="tablinks" onclick="openCity(event, 'contact')" id="defaultOpen">Contact</button>
+          <button class="tablinks" onclick="openCity(event, 'regprocess')">Registration Process</button>
+          <button class="tablinks" onclick="openCity(event, 'gisbasic')">Basic GIS</button>
+          <button class="tablinks" onclick="openCity(event, 'advancedgis')">Advanced GIS</button>
+          <button class="tablinks" onclick="openCity(event, 'gisdo')">Why study GIS?</button>
+          <!--<button class="tablinks" onclick="openCity(event, 'Tos')">How gis works</button>-->
+          <!--<button class="tablinks" onclick="openCity(event, 'Par')">Longitude and Latitude</button>-->
+          <!--<button class="tablinks" onclick="openCity(event, 'Tok')">Coordinate System</button>-->
+          
+          
+        </div>
+        
+        
 
         
-        <br><br>       
-                
- <div class="container">
-    	<div class="row">
-      <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>   
-    </div>  
-          <div id="navbar" class="navbar-collapse collapse">
-                      
-                        <div class="col-md-4">
-                        <!--  <h3><a href="#BASIC" role="button">Basic GIS </a></h3>-->
-                          <h3><div class="menuItem"><a class="level2"href= "{% url 'home:regprocess'%}" target="sites">Registration Process</a></div> 
-                        </div></h3>
-                        
-                        
-                        <div class="col-md-4">
-                        <!--  <h3><a href="#BASIC" role="button">Basic GIS </a></h3>-->
-                          <h3><div class="menuItem"><a class="level2"href= "{% url 'home:basic'%}" target="sites">Basic Courses</a></div> 
-                        </div></h3>
-                        
-                        
-                        
-                        <div class="col-md-4">
-                        <!--  <h3><a href="#BASIC" role="button">Basic GIS </a></h3>-->
-                          <h3><div class="menuItem"><a class="level2"href= "{% url 'home:advanced'%}" target="sites">Advanced Courses</a></div> 
-                        </div></h3>
-                          
-                       <div class="col-md-4">
-                        
-                          <h3><div class="menuItem"><a class="level2"href= "{% url 'home:atailormade'%}" target="sites">Tailor Made</a></div> 
-                        </div></h3>
-                          
-                        </div>
-            
-                        
-                      
-                        
-</div>
-    
-
- </nav>
-     
-
-</div>
-            
-            <div class="container">
-          <div class="col-md-2">
-        <div class="container-fluid">
-        <div class="container">
-        <div class="panel-heading">
-        <div class="embed-responsive embed-responsive-16by9">
-
-<div class="video-container">
-<iframe width="190" height="80" class="embed-responsive-item" name="sites" id="sites" src="" allow="autoplay; encrypted-media" allowfullscreen></iframe>   
-</iframe>
- </div>
-</div>
-        </div>
-</div>
-        </div>
-          </div>
- <br> <br> <br> <br> <br><br> <br> <br> <br>
-  
- 
-  <section id="contact">
-  <div class="container">
-    
- 
-	
-	<div class="row">
-            
-     
-	  <div class="col-md-7">
-       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.631005949047!2d39.28588095033273!3d-6.814655968524553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4b0e3e329621%3A0x4fe0c5f78d8e3de9!2sGeneral+Post+Office!5e0!3m2!1sen!2stz!4v1538751053848" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-      </div>
-
-      <div class="col-md-3">
-       <h4><strong>Contact Us</strong></h4>
        
-        <form>
-          <div class="form-group">
-            <input type="text" class="form-control" name="" value="" placeholder="Name">
-          </div>
-          <div class="form-group">
-            <input type="email" class="form-control" name="" value="" placeholder="E-mail">
-          </div>
-          <div class="form-group">
-            <input type="tel" class="form-control" name="" value="" placeholder="Phone">
-          </div>
-          <div class="form-group">
-            <textarea class="form-control" name="" rows="3" placeholder="Message"></textarea>
-          </div>
-          <button class="btn btn-default" type="submit" name="button">
-              <i class="fa fa-paper-plane-o" aria-hidden="true"></i> Submit
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-            </div>
- </div>
- <br> <br>
-   <br>
-   <br>
-   <br>
-  
-  
+<div id="contact" class="tabcontent">
+                
+    <div class="row">
+			
+	<div class="col-md-8">
+            <div class="embed-responsive embed-responsive-16by9">
+                <div class="video-container">                                   
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5233.185493903763!2d39.27138706048278!3d-6.833484473017059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4ba5bbc1ba7b%3A0x2f4f0a88e2089417!2sKariakoo%2C+Dar+es+Salaam!5e0!3m2!1sen!2stz!4v1538828227060" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </div>                               
+        </div>
+	<div class="col-md-3">
+	    <h4><strong>Contact Us</strong></h4>
+            <h4>Contact: +255653397942</h4> or
+       
+				<form>
+						<div class="form-group">
+						  <input type="text" class="form-control" name="" value="" placeholder="Name">
+						</div>
+						
+						<div class="form-group">
+						  <input type="email" class="form-control" name="" value="" placeholder="E-mail">
+						</div>
+						
+						<div class="form-group">
+						  <input type="tel" class="form-control" name="" value="" placeholder="Phone">
+						</div>
+						
+						<div class="form-group">
+						  <textarea class="form-control" name="" rows="3" placeholder="Message"></textarea>
+						</div>
+						
+						<button class="btn btn-default" type="submit" name="button">
+						    <i class="fa fa-paper-plane-o" aria-hidden="true"></i> Submit
+						</button>
+				</form>
+	</div>
+    </div>     
+</div>
+        
+        
+        
+        <div id="regprocess" class="tabcontent">
+            <p>After Sign in you will see the list of available courses, click on your choice then click register. After registration, click pay to make the payment.
+            Two hours later, your Course will be activated and ready to go. Click my course button to see the list of registered courses.
+            There are lots of challenges when it comes to online courses, DON'T WORRY, WE KNOW THEM AND WE HAVE ALL SOLUTIONS IN PLACE.
+            To address the cost of internet connection, we will send you a video downloader and video links to download and watch them while offline.
+            Our step by step instructions is very easy to follow but our experience show that you still might get stack somewhere, to address this challenge,
+            we offer live support upon your request, which will allow us to solve work together. Remember. You don't have to pay all in cash, instalment is accepted,
+            contact us for more information. Enjoy the ride</p><br><br><br><br>
+           
+        </div>
+        
+         <br><br><br>
+        
+        <div id="gisbasic" class="tabcontent">
+                    <p>Under this category you will be able to learn the following courses; Introduction to GIS, Introduction to GPS, Introduction to Google Earth,
+                    Introduction to GIS Analysis and Introduction to Catography.</p>      <br><br><br>
+        </div>
+        <br><br><br>
+        
+        
+        <div id="advancedgis" class="tabcontent">
+                <p> Advanced GIS analysis, but also advanced editing, geoprocessing and thematic mapping techniques. Automation of ArcGIS workflows,
+                using the application ModelBuilder and scripting in the Python programming language, constitutes central course elements.
+                Sign in to see the list of available courses. </p>      
+        </div>   
+        
+        
+        
+        
+        <div id="gisdo" class="tabcontent">
+            <h2>Uses of GIS system.</h2>
+          <p> GIS can be used as tool in both problem solving and decision making processes, as well as for visualization of data. GIS uses geographic information to help people answer questions and make decisions. GIS analyze trends, find relationships, and assist
+          with future decisions making.  Just like internet, GIS is for all proffessionals, GIS answers the following questions;</p>
 
+
+<h3>Map location</h3>
+<p> We can map the spatial location of real-world features and visualize the spatial relationships among them. Example, the map can illustrates the
+location of countries, rivers, and cities within the continent of Africa. Locational maps can be used to determine where things are situated in relation to each
+other and are often used with navigation .</p>
+
+<h3>Map quantities</h3>
+
+<p> People map quantities, such as where the most and least are, to find places that meet their criteria or to see the relationships between places.
+Example: The map can shows the cemetery locations as dots (dot density) and each district is color coded to
+show where the most and least are.</p>
+
+<h3>Map what is inside</h3>
+
+<p> We can use GIS to determine what is happening or what features are located inside a specific area/region. We can determine the characteristics of "inside"
+by creating specific criteria to define an area of interest (AOI). The map can illustrates school locations in relation to crime areas. Mapping what is inside can
+assist with monitoring and assessment.</p>
+
+<h3>Map densities</h3>
+
+<p> Sometimes it is more important to map concentrations, or a quantity normalized by area or total number. The map can illustrates a higher population density
+in the region. Density maps can be used to condense large amounts of data analyzed for correlations and trends. Further analysis could be
+completed to determine if the denser population is related to the proximity of the border or the proximity of water bodies.</p>
+
+
+
+
+<h3>What is nearby. </h3>
+<p> We can find out what is happening within a set distance of a feature or event by mapping what is nearby using geoprocessing tools like BUFFER.
+Mapping what is nearby is often used in risk assessment and predictions.
+</p>
+
+<h3>Map change</h3>
+
+<p> We can map the change in a specific geographic area to anticipate future conditions, decide on a course of action, or to evaluate the results of an action or
+policy. The map can illustrates population change over the past 10 years.  and show where the the largest population changes occurred. This can be used to assess future trends in urban sprawl and market demands.</p>
+
+                   
+    </div>
+        
+        
+  <ul class="nav navbar-nav navbar-left">
+          <p><a class="btn btn-success "href="{% url 'accounts:login'%}" role="button">please sing me In &raquo;</a></p>
+        
+          </ul>      
+        <br><br>
+        
+        
+        
+<footer class="container">
+      <p>&copy; Company 2017-2018</p>
+    </footer>
      
+ 
+     
+ 
+    
  
     
     </body>
-    
     <script
       src="https://code.jquery.com/jquery-2.2.4.min.js"
       integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
@@ -329,5 +283,25 @@
        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
        crossorigin="anonymous"></script>
     
+  <!--SCRIPT 2  -->
+    <script>
+        
+    function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
     
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+    </script>
+
 </html>

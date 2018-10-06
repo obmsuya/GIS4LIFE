@@ -61,3 +61,4 @@ admin.site.register(Category)
 admin.site.register(Post4)
 
 admin.site.register(Friend)
+

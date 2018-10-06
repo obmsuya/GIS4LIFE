@@ -92,6 +92,13 @@ class ClassRegistration(forms.ModelForm):
         model = Post4
         fields = ('fullname', 'username','country','Proffession','category','course','phone')
 
+
+#class ContactForm(forms.ModelForm):
+#    class Meta:
+#        model = Contact
+#        fields = ('name', 'email','phone_number','message')
+
+
 #class PostForm(forms.ModelForm):
 #    class Meta:
 #        model = Classes
