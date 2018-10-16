@@ -7,30 +7,25 @@
    {% block body %}
        <br>
       <ul class="nav navbar-nav navbar-right"> 
-      <div class="row">
-        
-                
+          <div class="row">
                 <div class="jumbotron">
                  
                      <h1>Welcome</h1>
                     
          
-                     <h2>
-         
-                         <form method="post">
+                     <h2><form method="post">
                              {% csrf_token%}
                              {{form.as_p}}
          
                              <button type="submit">Sign in</button>
-                         </form>
-                     </h2>
+                         </form></h2>
                      <br>
                      <br> 
                      <p><a href="{% url 'accounts:register'%}">I don't have a password &raquo;</a></p>
                      <p><a href="{% url 'accounts:reset_password'%}">I forgot my Password &raquo;</a></p>
                  </div>
      
-         
+          </div>
             
     
       </ul>
