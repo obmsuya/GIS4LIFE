@@ -15,8 +15,10 @@ urlpatterns = [
     url(r'^$', views.index),
     url(r'^chat', HomeView.as_view(), name = 'chat'),
     
+    url(r'^donald/$', views.donald, name = "donald"),
+    url(r'^noel/$', views.noel, name = "noel"),
+    
     url(r'^home/$', views.home, name = "home"),
-    #url(r'^payment/$', views.payment, name = "payment"),
     url(r'^index/$', views.index, name = "index"),
     url(r'^item/(?P<item_id>\d+)/$', views.item, name = "item"),
     url(r'^item/(?P<item_id>\d+)/register/$', views.register, name = "register"),
@@ -36,7 +38,7 @@ urlpatterns = [
     url(r'^gisintroarcgis1/$', views.gisintroarcgis1, name = "gisintroarcgis1"),
     url(r'^gisintroarcgis2/$', views.gisintroarcgis2, name = "gisintroarcgis2"),
    
-    #url(r'^contact/$', views.contact, name = "contact"),
+ 
    
     url(r'^gisintrodownload/$', views.gisintrodownload, name = "gisintrodownload"),
     

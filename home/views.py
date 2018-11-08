@@ -61,6 +61,12 @@ def home(request):
        'categories':Item.objects.all() 
     }
     return render (request, "home/home.html", context)
+    
+def donald(request):    
+    return render (request, "home/donald.html")
+    
+def noel(request):
+    return render (request, "home/noel.html")
  
 def index(request):
     
