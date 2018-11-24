@@ -4,315 +4,862 @@
 
 {% load staticfiles %}
 
-<html>
 
 
-    <head>
-<title>GIS4LIFE </title>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<title>Gis Online Courses</title>
 
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">     
-        
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>              
-        <link rel="stylesheet" href="{% static 'accounts/style14.css' %}">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"
-        
+	<!-- icons and fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Poppins" rel="stylesheet"> -->
 
-    </head>
-
-
-    <body>
-        
-    <img src="{%static 'img/mmm10.jpg'%}"   class= 'img-responsive'>
-        <br>
-        <div class="container">
-        <ul class="nav navbar-nav navbar-right">
-      <h4>Contact: +255653397942, obmsuya@yahoo.com</h4>
-     
-      </ul>
-        </div>
-       
-<br>
-  <!--  <div class="container">-->
-      <nav class="navbar navbar-default">
-        <div class="container-fluid bg-3 text-center">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>   
-    </div>  
-          <div id="navbar" class="navbar-collapse collapse">
-              {% if user.is_authenticated %}
-            
-            <ul class="nav navbar-nav navbar-left">
-                <li><a href="{% url 'home:home'%}">Home</a></li>
-                <li><a href="{% url 'home:chat'%}">My classes</a></li>
-                <li><a href="{% url 'home:index'%}">Register</a></li>
-            
-            </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href= "{% url 'accounts:view_profile'%}">Profile</a></li>
-                <li><a href="{% url 'accounts:edit_profile'%}">Edit Profile</a></li>
-                <li><a href="{% url 'accounts:change_password'%}">Change Password</a></li>
-            </ul>
-
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="{% url 'accounts:logout'%}">Logout</a></li>
-            </ul>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Varela+Round" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Niramit|Open+Sans|Varela+Round" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Niramit" rel="stylesheet">
 
 
-              {%else%}
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>-->
 
-           <!--<ul class="nav navbar-nav navbar-left"> 
-                <li><a href="{% url 'home:home'%}">Home</a></li>
-            
-            </ul>-->
-            
-            <ul class="nav navbar-nav navbar-right">
-               <li><a href="{% url 'accounts:login'%}">Sign in</a></li>
-               <li><a href="{% url 'accounts:register'%}">Sign up</a></li>
-                <li><a href="{% url 'accounts:reset_password'%}">Reset Password</a></li>
-            </ul>
-            {%endif %}
-
-    </div>
     
+        <script src="{% static "accounts/js/bootstrap.min.js" %}" type="text/javascript"></script>
+         <script src="{% static "accounts/js/scrollreveal.min.js" %}" type="text/javascript"></script>
+         <script src="{% static "accounts/js/app2.js" %}" type="text/javascript"></script>
+      
+	
+		
+	<link rel="stylesheet" href="{% static 'accounts/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'accounts/css/font-awesome.min.css' %}">	
+	<link rel="stylesheet" href="{% static 'accounts/css/normalize.css' %}">
+	<link rel="stylesheet" href="{% static 'accounts/css/animate.css' %}">	
+	
+	<link rel="stylesheet" href="{% static 'accounts/css/main3.css' %}">
+	
+	
 
- </nav>
-   
-   
-  
-       
-        <div class="container">
-          
-        <div class="container-fluid">
-        <div class="container">
-          
-          <h1 class="display-3"><span>GIS4LIFE TRAINING COLLEGE</span></h1><br><br><br>
-          
-          <h1>This Platform is dedicated for GIS Training only. Sign in to register for a class.</h1> 
-          
-          
-          <ul class="nav navbar-nav navbar-left">
-          <p><a class="btn btn-success "href="{% url 'accounts:login'%}" role="button">Sing In &raquo;</a></p>
-          </ul>
-          
-          
-          <ul class="nav navbar-nav navbar-right">
-          <p><a class="btn btn-primary"href="{% url 'accounts:register'%}" role="button">Sign up &raquo;</a></p>
-          </ul>
-          
-        
-        </div>
-      </div>
-        <br>
-    
-        <br><br><br><br>
-        
-        
+		
+</head>
 
-<!--SCRIPTS 2-->
+<body>
 
-        <div class="tab">
-          <button class="tablinks" onclick="openCity(event, 'contact')" id="defaultOpen">Contact</button>
-          <button class="tablinks" onclick="openCity(event, 'conduct')">Why study with us</button>
-          <button class="tablinks" onclick="openCity(event, 'regprocess')">Registration Process</button>          
-          <button class="tablinks" onclick="openCity(event, 'gisbasic')">Basic GIS</button>
-          <button class="tablinks" onclick="openCity(event, 'advancedgis')">Advanced GIS</button>
-          <button class="tablinks" onclick="openCity(event, 'gisdo')">Why study GIS?</button>
-          
-          <!--<button class="tablinks" onclick="openCity(event, 'Par')">Longitude and Latitude</button>-->
-          <!--<button class="tablinks" onclick="openCity(event, 'Tok')">Coordinate System</button>-->
-          
-          
-        </div>
-        
-        
 
-        
-       
-<div id="contact" class="tabcontent">
-                
-    <div class="row">
-			
-	<div class="col-md-8">
-            <div class="embed-responsive embed-responsive-16by9">
-                <div class="video-container">                                   
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5233.185493903763!2d39.27138706048278!3d-6.833484473017059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4ba5bbc1ba7b%3A0x2f4f0a88e2089417!2sKariakoo%2C+Dar+es+Salaam!5e0!3m2!1sen!2stz!4v1538828227060" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-                </div>
-            </div>                               
-        </div>
-	<div class="col-md-3">
-	    <h4><strong>Contact Us</strong></h4>
-            <h4>Contact: +255653397942</h4> or
-       
-				<form>
-						<div class="form-group">
-						  <input type="text" class="form-control" name="" value="" placeholder="Name">
-						</div>
-						
-						<div class="form-group">
-						  <input type="email" class="form-control" name="" value="" placeholder="E-mail">
-						</div>
-						
-						<div class="form-group">
-						  <input type="tel" class="form-control" name="" value="" placeholder="Phone">
-						</div>
-						
-						<div class="form-group">
-						  <textarea class="form-control" name="" rows="3" placeholder="Message"></textarea>
-						</div>
-						
-						<button class="btn btn-default" type="submit" name="button">
-						    <i class="fa fa-paper-plane-o" aria-hidden="true"></i> Submit
-						</button>
-				</form>
-	</div>
-    </div>     
+	<!-- header -->
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-light">
+
+			<div class="container">
+			  <button class="btn menu-btn d-md-none .d-lg-none"  onclick="openNav()">
+			  	<i class="fa fa-bars"></i>
+			  </button>
+
+			  <a class="navbar-brand" href="#">GIS4life</a>
+			<!--   <button class="navbar-toggler mr-20" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			    <span class="navbar-toggler-icon"></span>
+			  </button> -->
+
+
+<div id="mySidenav" class="asidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="{% url 'accounts:login'%}" role="button">LogIn &raquo;</a>
+  <a href="#top">Contact &raquo;</a>
+  <!--<a href="#">Clients</a>-->
+  <!--<a href="#">Contact</a>-->
 </div>
 
-       <div id="conduct" class="tabcontent">
-            <p>We know that getting started with GIS can be difficult, however, by using well crafted videos and tutorials from this site you
-            will learn the most complicated concepts of GIS in an easy way and becomes GIS proffessional within a short period of time.
-            When you complete a course, you will receive a recognized certificate of completion. There are three main courses categories,
-            that is; Basic GIS, Advaced GIS and Tailormade GIS. On each category, there are lists of courses which you can register. Sign in to see the list of available
-            courses. Come visit us next time if you cant find the course of your interest or call us for a tailor made course.</p>
-            <p>There are lots of challenges when it comes to online courses, DON'T WORRY, WE KNOW THEM AND WE HAVE ALL SOLUTIONS IN PLACE.
-            To address the cost of internet connection, we will send you a video downloader and video links to download and watch them while offline.
-            Our step by step instructions is very easy to follow but our experience show that you still might get stack somewhere, to address this challenge,
-            we offer live support upon your request, which will allow us to solve work together. Remember. You don't have to pay all in cash, instalment is accepted,
-            contact us for more information.</p><br><br><br><br>
-           
-        </div>
-        
-         <br><br><br> 
-        
-        
-        <div id="regprocess" class="tabcontent">
-            <p>After Sign in you will see the list of available courses, click on your choice then click register. After registration, click pay to
-            make the payment. On the payment page you will see list of payment options, choose the  convinient method for you and make the payment. This is important; for proof purposes,
-            remember to send the payment reference number immediatelly after making your payment. Send it through whatsapp number +255653397942. 
-            Two hours later (working hours), your Course will be activated ready to start. Click my course button to see the list of registered courses.
-            Note:All accounts are registered under the name of Overblessing Msuya.<br>
-             Enjoy the ride</p><br><br><br><br>
-           
-        </div>
-        
-         <br><br><br>
-        
-        <div id="gisbasic" class="tabcontent">
-                    <p>Under this category you will be able to learn the following courses; Introduction to GIS, Introduction to GPS, Introduction to Google Earth,
-                    Introduction to GIS Analysis and Introduction to Catography.</p>      <br><br><br>
-        </div>
-        <br><br><br>
-        
-        
-        <div id="advancedgis" class="tabcontent">
-                <p> Advanced GIS analysis, but also advanced editing, geoprocessing and thematic mapping techniques. Automation of ArcGIS workflows,
-                using the application ModelBuilder and scripting in the Python programming language, constitutes central course elements.
-                Sign in to see the list of available courses. </p>      
-        </div>   
-        
-        
-        
-        
-        <div id="gisdo" class="tabcontent">
-            <h2>Uses of GIS system.</h2>
-          <p> GIS can be used as tool in both problem solving and decision making processes, as well as for visualization of data. GIS uses geographic information to help people answer questions and make decisions. GIS analyze trends, find relationships, and assist
-          with future decisions making.  Just like internet, GIS is for all proffessionals, GIS answers the following questions;</p>
+			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			    <ul class="navbar-nav ml-auto">
+			     	  {% if user.is_authenticated %}
+                                
+                                <!--<li class="nav-item"><a href="{% url 'home:home'%}">Home</a></li>-->
+                <li class="nav-item mr-20"><a href="{% url 'home:chat'%}">My classes</a></li>
+                <li class="nav-item mr-20"><a href="{% url 'home:index'%}">Register</a></li>
+                
+                
+                <li class="nav-item mr-20"><a href= "{% url 'accounts:view_profile'%}">Profile</a></li>
+                <li class="nav-item mr-20"><a href="{% url 'accounts:edit_profile'%}">Edit Profile</a></li>
+                <li class="nav-item mr-20"><a href="{% url 'accounts:change_password'%}">Change Password</a></li>
+                
+                <li class="nav-item mr-20"><a href="{% url 'accounts:logout'%}">Logout</a></li>
+			    </ul>
+                            
+                      {%else%}         
+                            
+               <ul class="navbar-nav ml-auto">
+               <li class="nav-item mr-20"><a href="{% url 'accounts:login'%}">Sign in</a></li>
+               <li class="nav-item mr-20"><a href="{% url 'accounts:register'%}">Sign up</a></li>
+                <li class="nav-item mr-20"><a href="{% url 'accounts:reset_password'%}">Reset Password</a></li>
+            </ul>
+            {%endif %}            
+                            
+                            
+                            
+                            
+			  </div>
+			</div>
 
 
-<h3>Map location</h3>
-<p> We can map the spatial location of real-world features and visualize the spatial relationships among them. Example, the map can illustrates the
-location of countries, rivers, and cities within the continent of Africa. Locational maps can be used to determine where things are situated in relation to each
-other and are often used with navigation .</p>
-
-<h3>Map quantities</h3>
-
-<p> People map quantities, such as where the most and least are, to find places that meet their criteria or to see the relationships between places.
-Example: The map can shows the cemetery locations as dots (dot density) and each district is color coded to
-show where the most and least are.</p>
-
-<h3>Map what is inside</h3>
-
-<p> We can use GIS to determine what is happening or what features are located inside a specific area/region. We can determine the characteristics of "inside"
-by creating specific criteria to define an area of interest (AOI). The map can illustrates school locations in relation to crime areas. Mapping what is inside can
-assist with monitoring and assessment.</p>
-
-<h3>Map densities</h3>
-
-<p> Sometimes it is more important to map concentrations, or a quantity normalized by area or total number. The map can illustrates a higher population density
-in the region. Density maps can be used to condense large amounts of data analyzed for correlations and trends. Further analysis could be
-completed to determine if the denser population is related to the proximity of the border or the proximity of water bodies.</p>
+		<div class="line"></div>
+		</nav>
+	</header>
 
 
 
+	<main class="page-wrapper">
+		<div class="landing">-->
+			
+			<div class="words-part container">
+				
+				<div class="courses-summary">
+					<ul class="courses-lists text-white" align="center">
+						<li><span><i class="fa fa-book"></i></span><span><b>6</b> Courses</span></li>
+						<li><span><i class="fa fa-users"></i></span><span><b>200</b> Students</span></li>
+						<li><span><i class="fa fa-user-circle-o"></i></span><span><b>10</b> Teachers</span></li>
+					</ul>
+				</div>
 
-<h3>What is nearby. </h3>
-<p> We can find out what is happening within a set distance of a feature or event by mapping what is nearby using geoprocessing tools like BUFFER.
-Mapping what is nearby is often used in risk assessment and predictions.
+<br><br><br><br><br>
+				<div class="page-title"><h1>LEARN GIS ONLINE </h1></div>
+				
+				<div class="page-tagline text-white"><h4>GIS4life enhance your capacities with GIS, concepts, and terminology of spatial analysis and modeling</h4></div>
+
+
+				<!--<div class="cta d-flex justify-content-center"><a href="#" class="btn btn-follow">Learn more</a></div>-->
+			</div>
+			
+		</div>
+
+
+	
+	
+	<section>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 flex-center f-col" >
+						<div class="section-title pt-5">
+							<span class="text-center newslatter-title">
+								This Platform is dedicated for GIS Training only. <a class="btn btn-success "href="{% url 'accounts:login'%}" role="button">LogIn &raquo;</a> to register for a course. 
+          
+							</span>
+						</div>
+
+						
+
+
+
+						
+					</div>
+				</div>
+			</div>
+		</section>
+
+		
+		
+
+<br>
+
+		
+
+
+
+
+
+		<section class="section grey-scale">
+			<div class="container">
+				
+				<div class="row">
+					<div class="col-md-6">
+						<small>
+							<span class="caps">Our Strength</span>
+						</small>
+						<div class="line-sep"></div>
+						<div class="section-title">
+							<span>
+								Here's why GIS4life is better place for GIS courses.
+							</span>
+							<span class="pl-20">
+								 
+							</span>
+						</div>
+
+						<div class="section-tagline">
+							<p>
+								Knowledge of Geographic Information Systems (GIS) is an increasingly sought after skill in industries from agriculture to public health. with us you will learn the skills you need to successfully use GIS software in a professional setting. You will learn how to analyze your spatial data, use cartography techniques to communicate your results and a lot more
+							</p>
+						</div>
+					</div>
+
+
+					<div class="col-md-6">
+						<div class="course-image bottom-in">
+								
+								
+								<img src="{%static 'img/i.jpg'%}" class="img-responsive" alt=""'>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br><br><br><br>
+			
+			
+			<div class="quick-tabs container">
+			<div class="quick-tabs-holder">
+				
+				<br>
+				<div>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="card left-in">
+								<div class="card-icon">
+									
+									<img src="{%static 'img/c.png'%}"  alt="fast">
+							
+								
+								</div>
+
+								<div class="q-tab-title">
+									<p>Time Efficient</p><div class="line-sep"></div>
+								</div>
+
+
+								<div class="q-tabs-desc">
+									<p>
+										Courses are designed to suite your learning speed
+										<hr>
+									</p>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="col-md-4">
+							<div class="card bottom-in">
+								<div class="card-icon">
+									
+									<img src="{%static 'img/b.png'%}"  alt="fast">	
+								</div>
+
+								<div class="q-tab-title">
+									<p>Real-life Projects</p><div class="line-sep"></div>
+								</div>
+
+
+								<div class="q-tabs-desc">
+									<p>
+										Designed to help you practice and apply the skills you learn.
+										<hr>
+									</p>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="col-md-4">
+							<div class="card right-in">
+								<div class="card-icon">
+									
+									<img src="{%static 'img/d.png'%}"  alt="fast">	
+								</div>
+
+								<div class="q-tab-title">
+									<p>Certificates</p><div class="line-sep"></div>
+								</div>
+
+
+								<div class="q-tabs-desc">
+									<p>
+										When you complete a course, you will receive a recognized certificate of completion,
+										which you can share with your friends, relatives, co-workers and potential employers.
+										.<a href="{% url 'home:gisprac_interface' %}" > Learn more </a>
+										
+										<hr>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>	
+			
+			
+			
+		</section>
+                
+                
+                
+                
+                
+                
+      
+                
+
+
+
+		<section class="section">
+			<div class="container">
+				<div class="row">
+                                                        
+
+					<div class="col-md-12 mb-30">
+						<div class="flex f-end f-col">
+							<small>Our Courses</small>
+							<div class="line-sep"></div>
+							<h2>Available Courses</h2>
+						</div>
+					</div>
+
+					<!-- the courses -->
+					<div class="col-md-12">
+						<div class="row">
+							<div class="col-md-6 p-0 ">
+								<div class="course-image left-in">
+									
+									<img src="{%static 'img/h.jpg'%}" class="img-responsive" alt="">
+								</div>
+							</div>
+
+
+							<div class="col-md-6 p-0">
+								<div class="course-description flex bg-dark right-in">
+									<div class="course-title">
+										Begginer Courses
+									</div>
+									<div class="line-sep"></div>
+
+									<div class="course-body">
+										<p>Explore the world of spatial data and cartography with geographic information systems (GIS).
+                                                                                Here you will learn the basics of the industry's leading software tools and qgis. Under this category you will be able to learn the following courses;
+										Introduction to GIS, Introduction to GPS, Introduction to Google Earth, Introduction to GIS Analysis and Introduction to Catography.
+										<a class="btn btn-success "href="{% url 'accounts:login'%}" role="button">LogIn &raquo;</a>  to register to one of these courses.</p>
+
 </p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 
-<h3>Map change</h3>
 
-<p> We can map the change in a specific geographic area to anticipate future conditions, decide on a course of action, or to evaluate the results of an action or
-policy. The map can illustrates population change over the past 10 years.  and show where the the largest population changes occurred. This can be used to assess future trends in urban sprawl and market demands.</p>
+					<!-- the second course -->
+					<div class="col-md-12">
+						<div class="row">
+							<div class="col-md-6 p-0">
+								<div class="course-description flex f-end bg-dark left-in">
+									<div class="course-title">
+										Advanced Courses
+									</div>
+									<div class="line-sep"></div>
 
-                   
-    </div>
-        
-        
-  <!--<ul class="nav navbar-nav navbar-left">-->
-  <!--        <p><a class="btn btn-success "href="{% url 'accounts:login'%}" role="button">please sing me In &raquo;</a></p>-->
-  <!--      -->
-  <!--        </ul>      -->
-        <br><br>
-        
-        
-        
-<footer class="container">
-      <p>&copy; Company 2017-2018</p>
-    </footer>
-     
-     
- 
-    
- 
-    
-    </body>
-    <script
-      src="https://code.jquery.com/jquery-2.2.4.min.js"
-      integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-      crossorigin="anonymous"></script> 
-    
-    <script
-       src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-       integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-       crossorigin="anonymous"></script>
-    
-  <!--SCRIPT 2  -->
-    <script>
-        
-    function openCity(evt, cityName) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-        document.getElementById(cityName).style.display = "block";
-        evt.currentTarget.className += " active";
-    }
-    
-    // Get the element with id="defaultOpen" and click on it
-    document.getElementById("defaultOpen").click();
-    </script>
+									<div class="course-body">
+										<p>Geographic Information Systems (GIS) Specialization, you will go in-depth with common data types (such as raster
+                                                                                and vector data), structures, quality and storage. Apply your GIS knowledge in this course on geospatial analysis, focusing on analysis tools, 3D data, working with rasters,
+                                                                                projections, and environment variables. <a class="btn btn-success "href="{% url 'accounts:login'%}" role="button">LogIn &raquo;</a>  to register to one of these courses.</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-md-6 p-0">
+								<div class="course-image right-in">
+									
+									<img src="{%static 'img/i.jpg'%}" class="img-responsive" alt=""'>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+
+				<!-- the last course -->
+				<div class="col-md-12">
+						<div class="row">
+							<div class="col-md-6 p-0 ">
+								<div class="course-image left-in">
+								
+										
+										<img src="{%static 'img/j.jpg'%}" class="img-responsive" alt=""'>
+								</div>
+							</div>
+
+
+							<div class="col-md-6 p-0">
+								<div class="course-description flex bg-dark right-in">
+									<div class="course-title">
+										Tailor Made Courses
+									</div>
+									<div class="line-sep"></div>
+
+									<div class="course-body">
+										<p>Apply your GIS knowledge in this course on geospatial analysis, focusing on analysis tools, 3D data, working with rasters,
+                                                                                projections, and environment variables. <a class="btn btn-success "href="{% url 'accounts:login'%}" role="button">LogIn &raquo;</a>  to register to one of these courses.</p></p>
+									</div>
+								</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</section>
+
+
+		<section class="section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<small>
+							<span class="caps">Our Team</span>
+						</small>
+						<div class="line-sep"></div>
+						<div class="section-title">
+							Team of Tutors
+						</div>
+					</div>
+
+					<div class="col-md-12">
+						<div class="row">
+							<div class="col-md-4">
+								<div class="tutor">
+									<div class="tutor-image">
+										
+										<img src="{%static 'img/eeeee.jpg'%}" class="img-responsive" alt=""'>	
+									</div>
+
+									<div class="text-center">
+										<h4>
+											Overblessing A Msuya
+										</h4>
+										<p>
+											Head of Admission
+										</p>
+									</div>
+
+									<ul class="tutor-icons">
+										<li>
+											<a href="facebook.com" target="blank" class="bg-dark">
+												<i class="fa fa-facebook"></i>
+											</a>
+										</li>
+
+										<li>
+											<a href="facebook.com" target="blank" class="bg-dark">
+												<i class="fa fa-instagram"></i>
+											</a>
+										</li>
+
+										<li>
+											<a href="facebook.com" target="blank" class="bg-dark">
+												<i class="fa fa-twitter"></i>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+
+
+							<div class="col-md-4">
+								<div class="tutor">
+									<div class="tutor-image">
+										
+										<img src="{%static 'img/avatar.jpg'%}" class="img-responsive" alt=""'>	
+									</div>
+
+									<div class="text-center">
+										<h4>
+											Rodline Blood
+										</h4>
+										<p>
+											Certificate Unit
+										</p>
+									</div>
+
+									<ul class="tutor-icons">
+										<li>
+											<a href="facebook.com" target="blank" class="bg-dark">
+												<i class="fa fa-facebook"></i>
+											</a>
+										</li>
+
+										<li>
+											<a href="facebook.com" target="blank" class="bg-dark">
+												<i class="fa fa-instagram"></i>
+											</a>
+										</li>
+
+										<li>
+											<a href="facebook.com" target="blank" class="bg-dark">
+												<i class="fa fa-twitter"></i>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="col-md-4">
+								<div class="tutor">
+									<div class="tutor-image">
+										<img src="{%static 'img/avatr.jpg'%}" class="img-responsive" alt=""'>	
+									</div>
+
+									<div class="text-center">
+										<h4>
+											Miss Monica 
+										</h4>
+										<p>
+											Head of Training
+										</p>
+									</div>
+
+									<ul class="tutor-icons">
+										<li>
+											<a href="facebook.com" target="blank" class="bg-dark">
+												<i class="fa fa-facebook"></i>
+											</a>
+										</li>
+
+										<li>
+											<a href="facebook.com" target="blank" class="bg-dark">
+												<i class="fa fa-instagram"></i>
+											</a>
+										</li>
+
+										<li>
+											<a href="facebook.com" target="blank" class="bg-dark">
+												<i class="fa fa-twitter"></i>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12 py-5">
+								<p class="text-center w-70 mx-auto">
+									<p>With a list of many more awsome tutors and patners, we are determined to grow beyond courses, reaching more minds with videos and publications on
+                                                                        GIS</p>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+
+
+
+
+
+
+               
+               
+                
+               
+                
+      
+             
+
+
+
+
+
+
+
+
+
+		<section class="section grey-scale pt-5">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 flex-center f-col" >
+						<div class="section-title pt-15">
+							<span class="text-center newslatter-title">
+								Subscribe to Our Newslatter
+							</span>
+						</div>
+
+						<div class="section-tagline">
+							<p class="text-center newslatter-body">
+								Get the best of Gis materials, meetups, events, publication and news every week <br>
+								<small>No spam, We promise</small>
+							</p>
+						</div>
+
+
+
+						<div class="newslatter-form">
+							<form action="">
+								<div class="form-group">
+									<input type="text" class="form-control">
+								</div>
+
+								<div class="form-group">
+									<input type="submit" value="Subscribe" class="btn btn-follow wide">
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+<br><br>
+		<section class="section">
+			<div class="container">
+				<div class="row">
+
+					<div class="col-md-12">
+						<small>
+                                                     <span class="caps"><a name="top"></a>contact us</span>
+
+						</small>
+						<div class="line-sep"></div>
+						<div class="section-title">
+							Get in touch
+						</div>
+					</div>
+					<div class="col-md-7">
+						<!--  <div class="tab">
+		                          <button class="tablinks" onclick="openCity(event, 'contact')" id="defaultOpen">Contact</button>
+		                </div> -->
+                        
+                                           
+		                <div id="contact">
+		                                
+		                
+		                    <div class="video-container">                                   
+		                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5233.185493903763!2d39.27138706048278!3d-6.833484473017059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4ba5bbc1ba7b%3A0x2f4f0a88e2089417!2sKariakoo%2C+Dar+es+Salaam!5e0!3m2!1sen!2stz!4v1538828227060" frameborder="0" style="border:0" allowfullscreen></iframe>
+		                    </div>
+		                    
+		                </div>
+					</div>
+
+<br>
+					<div class="col-md-5">
+						<div class="">
+							<div>
+								<p>
+									Give us a call at <a href="tel:0653397942" class="pull-right">+255653397942</a>
+								</p>
+
+								
+							</div>
+                        
+	
+                            <hr>
+                            <p class="text-center">Or <br> be classical</p>
+                       
+                                                <form>
+                                                                <div class="form-group">
+                                                                  <input type="text" class="form-control" name="" value="" placeholder="Name">
+                                                                </div>
+                                                                
+                                                                <div class="form-group">
+                                                                  <input type="email" class="form-control" name="" value="" placeholder="E-mail">
+                                                                </div>
+                                                                
+                                                                <div class="form-group">
+                                                                  <input type="tel" class="form-control" name="" value="" placeholder="Phone">
+                                                                </div>
+                                                                
+                                                                <div class="form-group">
+                                                                  <textarea class="form-control" name="" rows="3" placeholder="Message"></textarea>
+                                                                </div>
+                                                                
+                                                                <button class="btn btn-follow pull-right" type="submit" name="button">
+                                                                    <i class="fa fa-paper-plane-o" aria-hidden="true"></i> Submit
+                                                                </button>
+                                                </form>
+                        </div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		 <section class="section-small py-5">
+	      <div class="container">
+	        <div class="row">
+	          <div class="col-md-3 col-sm-6">
+	            <a href="#">
+	              <img class="img-fluid d-block mx-auto" src="{%static 'img/logo.jpg'%}" class="img-responsive" alt="">
+	            </a>
+	          </div>
+	          <div class="col-md-3 col-sm-6">
+	            <a href="#">
+	              <img class="img-fluid d-block mx-auto" src="{%static 'img/pic.png'%}" class="img-responsive" alt="">	 
+	            </a>
+	          </div>
+	          <div class="col-md-3 col-sm-6">
+	            <a href="#">
+	              <img class="img-fluid d-block mx-auto" src="{%static 'img/logo.jpg'%}" class="img-responsive" alt="">
+	            </a>
+	          </div>
+	          <div class="col-md-3 col-sm-6">
+	            <a href="#">
+	              <img class="img-fluid d-block mx-auto" src="{%static 'img/pic.png'%}" class="img-responsive" alt="">
+	            </a>
+	          </div>
+	        </div>
+	      </div>
+	    </section>
+	</main>
+
+
+	<footer>
+		<div class="footer">
+			<div class="container">
+				
+				<div class="row">
+					<div class="col-md-4">
+						<div class="link-title">
+							<p>
+								About Us
+							</p>
+							<div class="separator"></div>
+						</div>
+
+
+						<div>
+							<p>
+								<p> We are a compay Aiming at changing the lives of people through easy to follow and short time centered videos on Learning GIS, the geospatial
+                                                                software of modern times.</p>
+							</p>
+						</div>
+					</div>
+
+
+					<div class="col-md-2">
+						
+
+						<ul class="links">
+							<p>
+								Quick links
+							</p>
+							<div class="separator"></div>
+                                                        
+                                                        <li>
+								<a href="">Why GIS</a>
+							</li>
+
+							<li>
+								<a href="">Privacy Policy</a>
+							</li>
+						</ul>
+					</div>
+
+					
+					<div class="col-md-3">
+						
+
+						<ul class="links">
+                                                    
+                                                        <li>
+								<a href="">Registration process</a>
+							</li>            
+							<li>
+								<a href="">Student Support</a>
+							</li>
+
+							<li>
+								<a href="">Course Categories</a>
+							</li>
+
+							<li>
+								<a href="">Become an Instructor</a>
+							</li>
+						</ul>
+					</div>
+
+
+					<div class="col-md-3">
+						<div class="link-title">
+							<p>
+								Contact Us
+							</p>
+							<div class="separator"></div>
+						</div>
+
+						<p>
+							3rd Floor, Imalaseko Investment Limited, <br>
+							Kariakoo <br>
+							P. O. Box 123 <br>
+							Dar Es Salaam, Tanzania
+						</p>
+						<a href="tel:+255652441424" class="a-link">
+							(+255) 653 397942
+						</a>
+
+						<a href="mailto:obmsuya@yahoo.com" class="a-link">
+							info@gis4life.com
+						</a>
+
+					</div>
+
+
+				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<div class="social-share">
+							<ul>
+								<li>
+									<a href="" class="fb-icon" target="blank">
+										<i class="fa fa-facebook"></i>
+									</a>
+								</li>
+
+								<li>
+									<a href="" class="ig-icon" target="blank">
+										<i class="fa fa-instagram"></i>
+									</a>
+								</li>
+
+								<li>
+									<a href="" class="tw-icon" target="blank">
+										<i class="fa fa-twitter"></i>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+					<hr class="white">
+
+
+					<div class="footer-bottom">
+						<span>
+							@2018 GIS4life
+						</span>
+
+						<span>
+							
+						</span>
+					</div>
+			</div>
+		</div>
+	</footer>
+
+
+	<script>
+			function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+	</script>
+
+
+
+
+</body>
+
+
 
 </html>

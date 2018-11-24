@@ -16,7 +16,8 @@ urlpatterns = [
     url(r'^chat', HomeView.as_view(), name = 'chat'),
     
     url(r'^donald/$', views.donald, name = "donald"),
-    url(r'^noel/$', views.noel, name = "noel"),
+    url(r'^gisprac_interface/$', views.gisprac_interface, name = "gisprac_interface"),
+      url(r'^gisprac_attribute/$', views.gisprac_attribute, name = "gisprac_attribute"),
     
     url(r'^home/$', views.home, name = "home"),
     url(r'^index/$', views.index, name = "index"),
@@ -24,6 +25,7 @@ urlpatterns = [
     url(r'^item/(?P<item_id>\d+)/register/$', views.register, name = "register"),
     url(r'^item/(?P<item_id>\d+)/register/payment/$', views.payment, name = "payment"),
     #url(r'^item/(?P<item_id>\d+)/register/payment/options/$', views.options, name = "options"),
+    
     url(r'^item/(?P<item_id>\d+)/payment/gisintro/$', views.gisintro, name = "gisintro"),
     url(r'^item/(?P<item_id>\d+)/payment/gistheory/$', views.gistheory, name = "gistheory"),
     url(r'^item/(?P<item_id>\d+)/payment/gispracticle/$', views.gispracticle, name = "gispracticle"),

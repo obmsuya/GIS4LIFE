@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+
+{% load staticfiles %}
+
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<title>Gis Online Courses</title>
+
+	
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Niramit" rel="stylesheet">
+
+	
+	  
+          <link rel="stylesheet" href="{% static 'accounts/css/font-awesome.min.css' %}">
+        <link rel="stylesheet" href="{% static 'accounts/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'accounts/css/main.css' %}">-->
+    
+	<link rel="stylesheet" href="{% static 'accounts/css/main3.css' %}">-->
+        
+            
+</head>
+<body>
+
+
+	<!-- header -->
+	<header>
+		<nav class="navbar navbar-expand-lg navbar-light">
+
+			<div class="container">
+			  <button class="btn menu-btn d-md-none .d-lg-none"  onclick="openNav()">
+			  	<i class="fa fa-bars"></i>
+			  </button>
+
+			  <a class="navbar-brand" href="#">GIS4life</a>
+			
+                            <div id="mySidenav" class="asidenav">
+                              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                              <a href="{% url 'accounts:logout'%}" role="button">Logout </a>
+			      <a href="{% url 'home:chat'%}" role="button">My classes</a>
+                              
+                            </div>
+
+			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			    <ul class="navbar-nav ml-auto">
+			     	  {% if user.is_authenticated %}
+                                
+                                
+                <li class="nav-item mr-20"><a href="{% url 'home:chat'%}">My classes</a></li>
+                
+                <li class="nav-item mr-20"><a href="{% url 'accounts:logout'%}">Logout</a></li>
+			    </ul>
+                            
+                      {%else%}         
+                            
+               <ul class="navbar-nav ml-auto">
+		<li class="nav-item mr-20"><a href="{% url 'accounts:login'%}">Sign in</a></li>
+               <li class="nav-item mr-20"><a href="{% url 'accounts:register'%}">Sign up</a></li>
+                <li class="nav-item mr-20"><a href="{% url 'accounts:reset_password'%}">Reset Password</a></li>
+            </ul>
+            {%endif %}            
+                            
+                            
+                            
+                            
+			  </div>
+			</div>
+
+
+		<div class="line"></div>
+		</nav>
+	</header>
+
+
+	<main class="main-wrapper">
+		<aside class="side-panel">
+			<div class="search-area">
+				<form action="">
+					<input type="text" placeholder="Type to search.. ">
+				</form>
+			</div>
+			<div class="scroll-able mt-10">
+				<ul class="top-ul">
+					
+                                        <li>
+                                            <!--<a href="index_1.html"">with image</a>-->
+                                            <a href="{% url 'home:gisprac_interface' %}" >GIS Interface</a>
+                                            
+                                        </li>
+                                        
+                                        
+                                        <li>
+						
+                                                
+                                                <!--<a href="" class="active">The topic one title</a>-->
+                                                
+                                                <a href="" class="active">Work with Attribute</a>
+                                                 
+                                                 
+						
+                                                <ul class="submenu">
+							<li>
+								<a href="" id="link1">Sub menu</a>
+							</li>
+
+							<li>
+								<a href="" id="link2">Sub menu</a>
+							</li>
+							<li>
+								<a href="" id="link3">Sub menu</a>
+							</li>
+						</ul>
+					</li>
+
+					
+					<li><a href="{% url 'home:gisprac_attribute' %}" >Whats next</a></li>
+						<li><a href="" >Coming soon</a></li>
+						<li><a href="" >Coming soon</a></li>
+						<li><a href="" >Coming soon</a></li>
+						<li><a href="" >Coming soon</a></li>
+						<li><a href="" >Coming soon</a></li>
+						<li><a href="" >Coming soon</a></li>
+						<li><a href="" >Coming soon</a></li>
+						<li><a href="" >Coming soon</a></li>
+						<li><a href="" >Coming soon</a></li>
+				</ul>
+			</div>
+		</aside>
+
+
+
+
+
+		<div class="main-section">
+			<div class="container">
+
+
+				<h2 class="topic-title">
+					Work with Attribute
+				</h2>
+
+				<div id="linkintro">
+					<p>
+						<span>Welcome. This is topic one of the one Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima odit eius ullam minus ad
+                                                reiciendis obcaecati, neque id fugiat. Veniam totam dolorum eum tempora nisi amet, asperiores
+                                                assumenda, nihil id.</span>
+						
+					</p>
+				</div>
+
+				<hr>
+
+				<div id="link1data" class="animated fadeIn">
+
+
+
+					<h3>
+						Topic sub header 1
+					</h3>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis odit, fugit temporibus sed illo asperiores mollitia commodi, cumque numquam omnis cupiditate, ratione itaque suscipit sapiente nulla accusamus, soluta consequuntur enim! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia maiores, nemo explicabo accusantium possimus earum amet nesciunt autem harum magni laboriosam, sequi hic maxime libero quasi minima quam nam recusandae.
+					</p>
+
+
+					<div class="image-holder" style="background-image: url('img/bg.jpg')">
+                                            
+                                            <img src="{%static 'img/c.png'%}"  alt="fast">
+                                            
+                                            
+					</div>
+
+
+					<p>
+						<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque autem nam aperiam sed quis,
+                                                sapiente quod ipsam officia doloribus ea saepe, dicta atque eligendi modi id placeat laudantium
+                                                praesentium sequi.</span>
+						<span>Mollitia voluptate temporibus, corporis perspiciatis dolorum odit commodi, dolor expedita
+                                                unde nihil nobis harum non, sed! Pariatur saepe, nulla, delectus quibusdam dignissimos rem atque
+                                                vel consectetur quam illo id eligendi.</span>
+						<span>Earum dolorem necessitatibus, expedita? Voluptatibus asperiores eum doloremque! Commodi,
+                                                reiciendis at in labore obcaecati repudiandae rem consequatur aut magnam, qui aspernatur
+                                                laboriosam est, quod autem odit numquam molestias ducimus nihil.</span>
+					</p>
+
+					<hr>
+
+
+				</div>
+
+				
+
+
+
+
+				<div id="link2data" class="animated fadeIn">
+					<h3>
+						Topic sub header 2
+					</h3>
+
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam ipsam sit ea distinctio vel,
+                                                quaerat non totam quae cum. Assumenda consequatur maxime praesentium, minima! Blanditiis aperiam
+                                                repudiandae eos perferendis necessitatibus?
+					</p>
+
+					<div class="video-holder">
+						<iframe src="https://www.youtube.com/embed/V0m2gxGFRx4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+
+					<hr>
+				</div>
+
+
+
+				<div id="link3data" class="animated fadeIn">
+					<h3>
+						Topic sub header 3
+					</h3>
+
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam ipsam sit ea distinctio vel,
+                                                quaerat
+                                                non totam quae cum. Assumenda consequatur maxime praesentium, minima! Blanditiis aperiam
+                                                repudiandae eos perferendis necessitatibus?
+					</p>
+
+					<hr>
+				</div>
+
+
+
+
+
+			</div>
+		</div>
+	</main>
+        
+        
+        <script src="{% static "accounts/js/jquery.min.js" %}" type="text/javascript"></script>
+        <script src="{% static "accounts/js/bootstrap.min.js" %}" type="text/javascript"></script>
+        <script src="{% static "accounts/js/scrollreveal.min.js" %}" type="text/javascript"></script>
+        <script src="{% static "accounts/js/app2.js" %}" type="text/javascript"></script>
+
+
+
+        
+
+
+
+<script>
+			function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+	</script>
+
+
+
+
+</body>
+
+
+
+</html>

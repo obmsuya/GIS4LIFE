@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 from django.utils import timezone
 from django.shortcuts import render, get_object_or_404
 from django.template import loader
+from django.contrib.auth.decorators import login_required
 
 
 from home.forms import HomeForm, ClassRegistration
@@ -13,10 +14,11 @@ from home.models import Post,Item, Category,Post4,  Friend
 
 
 #These class views is for chating
-    
+
+
 class HomeView(TemplateView):
     template_name ='home/chat.html'
-        
+   
     def get(self, request):
         form =HomeForm()
         posts = Post.objects.all().order_by('created')
@@ -53,28 +55,19 @@ def change_friends(request, operation, pk):
     elif operation == 'remove':
         Friend.lose_friend(request.user, friend)
     return redirect('home:chat')
-
-
  
 def home(request):
     context = {
        'categories':Item.objects.all() 
     }
     return render (request, "home/home.html", context)
-    
-def donald(request):    
-    return render (request, "home/donald.html")
-    
-def noel(request):
-    return render (request, "home/noel.html")
- 
+   
 def index(request):
     
     context = {
        'categories':Category.objects.all() 
     }
     return render(request, 'home/index.html', context)
-    
     
 def item(request, item_id):
     try:
@@ -87,8 +80,6 @@ def item(request, item_id):
     }
     return render(request, 'home/item.html', context)
 
-
-
 #This view is for class registration- 
 def register(request, item_id):
         form = ClassRegistration(request.POST or None)
@@ -100,18 +91,7 @@ def register(request, item_id):
             
         args = {'form': form}
         return render(request, 'home/create.html', args)
-        
-#def contact(request):
-#        form = ContactForm(request.POST or None)
-#        if form.is_valid():
-#            create = form.save()
-#            create.save
-#            
-#            return redirect('home:contact')
-#            
-#        args = {'form': form}
-#        return render(request, 'home/home.html', args)        
-        
+       
 def payment(request, item_id):
     try:
         itm = Item.objects.get(id=item_id)
@@ -132,13 +112,25 @@ def advanced(request):
     return render (request, "home/advanced.html")    
 def atailormade(request):    
     return render (request, "home/atailormade.html")
+
+def donald(request):    
+    return render (request, "home/donald_home.html")
+@login_required    
+def gisprac_interface(request):    
+    return render (request, "home/gisprac_interface.html")
+
+def gisprac_attribute(request):    
+    return render (request, "home/gisprac_attribute.html")
     
+  
 def regprocess(request):    
     return render (request, "home/regprocess.html")
 
 
 def gisintro(request, item_id):    
-    return render (request, "home/gisintro.html")    
+    return render (request, "home/gisintro.html")
+    
+@login_required    
 def gistheory(request, item_id):    
     return render (request, "home/gistheory.html")    
     
@@ -150,13 +142,10 @@ def gisintroarcgis1(request):
     return render (request, "home/gisintroarcgis1.html")    
 def gisintroarcgis2(request):    
     return render (request, "home/gisintroarcgis2.html")
-
 def gisintrodownload(request):    
-    return render (request, "home/gisintrodownload.html")   
-    
+    return render (request, "home/gisintrodownload.html")       
 def database(request, item_id):    
-    return render (request, "home/database.html")
-    
+    return render (request, "home/database.html")   
 def training(request):
     return render(request, 'home/training.html')
     
