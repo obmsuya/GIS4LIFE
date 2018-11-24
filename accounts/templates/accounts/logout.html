@@ -52,44 +52,33 @@
 		<nav class="navbar navbar-expand-lg navbar-light">
 
 			<div class="container">
-			  <button class="btn menu-btn d-md-none .d-lg-none"  onclick="openNav()">
-			  	<i class="fa fa-bars"></i>
-			  </button>
+                                <button class="btn menu-btn d-md-none .d-lg-none"  onclick="openNav()">
+                                      <i class="fa fa-bars"></i>
+                                </button>
 
-			  <a class="navbar-brand" href="#">GIS4life</a>
-			<!--   <button class="navbar-toggler mr-20" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			    <span class="navbar-toggler-icon"></span>
-			  </button> -->
+                                <a class="navbar-brand" href="#">GIS4life</a>
+                                        
 
+                            <div id="mySidenav" class="asidenav">
+                              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                              <a href="{% url 'accounts:login'%}" role="button">LogIn &raquo;</a>
+                              <a href="#top">Contact &raquo;</a>
+                            </div>
 
-<div id="mySidenav" class="asidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="{% url 'accounts:login'%}" role="button">LogIn &raquo;</a>
-  <a href="#top">Contact &raquo;</a>
-  <!--<a href="#">Clients</a>-->
-  <!--<a href="#">Contact</a>-->
-</div>
-
-			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-			    <ul class="navbar-nav ml-auto">
-			     	<li class="nav-item mr-20">
-			     		<!--<a href="#" class="nav-link">Login</a>-->
-                                        <a class="btn btn-link "href="{% url 'accounts:login'%}" role="button">LogIn &raquo;</a>
-			     	</li>
-
-			     	<li class="nav-item">
-			     		<!--<a href="#" class="btn btn-follow">Register</a>-->
-                                        <p><a class="btn btn-link "href="#top">Contact Us &raquo;</a></p>
-
-
-			     	</li>
-
-			    </ul>
-			  </div>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav ml-auto">
+                                        <li class="nav-item mr-20">
+                                            <a class="btn btn-link "href="{% url 'accounts:login'%}" role="button">LogIn &raquo;</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <p><a class="btn btn-link "href="#top">Contact Us &raquo;</a></p>
+                                        </li>
+                                </ul>
+                            </div>
 			</div>
 
 
-		<div class="line"></div>
+                                    <div class="line"></div>
 		</nav>
 	</header>
 
@@ -100,18 +89,18 @@
 			
 			<div class="words-part container">
 				
-				<div class="courses-summary">
-					<ul class="courses-lists text-white" align="center">
-						<li><span><i class="fa fa-book"></i></span><span><b>6</b> Courses</span></li>
-						<li><span><i class="fa fa-users"></i></span><span><b>200</b> Students</span></li>
-						<li><span><i class="fa fa-user-circle-o"></i></span><span><b>10</b> Teachers</span></li>
-					</ul>
-				</div>
+                                            <div class="courses-summary">
+                                                    <ul class="courses-lists text-white" align="center">
+                                                            <li><span><i class="fa fa-book"></i></span><span><b>6</b> Courses</span></li>
+                                                            <li><span><i class="fa fa-users"></i></span><span><b>200</b> Students</span></li>
+                                                            <li><span><i class="fa fa-user-circle-o"></i></span><span><b>10</b> Teachers</span></li>
+                                                    </ul>
+                                            </div>
 
 				<br><br><br><br><br>
 				<div class="page-title"><h1>LEARN GIS ONLINE </h1></div>
 				
-				<div class="page-tagline text-white"><h4>GIS4life enhance your capacities with GIS, concepts, and terminology of spatial analysis and modeling</h4></div>
+				<!--<div class="page-tagline text-white"><h4>GIS4life enhance your capacities with GIS, concepts, and terminology of spatial analysis and modeling</h4></div>-->
 
 
 				<!--<div class="cta d-flex justify-content-center"><a href="#" class="btn btn-follow">Learn more</a></div>-->
@@ -128,7 +117,7 @@
 						<div class="col-md-12 flex-center f-col" >
 							<div class="section-title pt-5">
 								<span class="text-center newslatter-title">
-									This Platform is dedicated for GIS Training only. <a class="btn btn-success "href="{% url 'accounts:login'%}" role="button">LogIn &raquo;</a> to register for a course. 
+									You must <a class="btn btn-follow "href="{% url 'accounts:login'%}" role="button">LogIn &raquo;</a> To register for a course. 
 	          
 								</span>
 							</div>
@@ -172,11 +161,14 @@
 							</span>
 						</div>
 
-						<div class="section-tagline">
+						<!--<div class="section-tagline">-->
 							<p>
-								Knowledge of Geographic Information Systems (GIS) is an increasingly sought after skill in industries from agriculture to public health. with us you will learn the skills you need to successfully use GIS software in a professional setting. You will learn how to analyze your spatial data, use cartography techniques to communicate your results and a lot more
+								Knowledge of Geographic Information Systems (GIS) is an increasingly sought
+                                                                after skill in industries from agriculture to public health. with us you will learn the skills
+                                                                you need to successfully use GIS software in a professional setting. You will learn how to analyze
+                                                                your spatial data, use cartography techniques to communicate your results and a lot more
 							</p>
-						</div>
+						<!--</div>-->
 					</div>
 
 
@@ -328,7 +320,7 @@
 										<p>Explore the world of spatial data and cartography with geographic information systems (GIS).
                                                                                 Here you will learn the basics of the industry's leading software tools and qgis. Under this category you will be able to learn the following courses;
 										Introduction to GIS, Introduction to GPS, Introduction to Google Earth, Introduction to GIS Analysis and Introduction to Catography.
-										<a class="btn btn-success "href="{% url 'accounts:login'%}" role="button">LogIn &raquo;</a>  to register to one of these courses.</p>
+										<a class="btn btn-follow "href="{% url 'accounts:login'%}" role="button">LogIn &raquo;</a>  to register to one of these courses.</p>
 
 </p>
 									</div>
@@ -351,7 +343,7 @@
 									<div class="course-body">
 										<p>Geographic Information Systems (GIS) Specialization, you will go in-depth with common data types (such as raster
                                                                                 and vector data), structures, quality and storage. Apply your GIS knowledge in this course on geospatial analysis, focusing on analysis tools, 3D data, working with rasters,
-                                                                                projections, and environment variables. <a class="btn btn-success "href="{% url 'accounts:login'%}" role="button">LogIn &raquo;</a>  to register to one of these courses.</p>
+                                                                                projections, and environment variables. <a class="btn btn-follow "href="{% url 'accounts:login'%}" role="button">LogIn &raquo;</a>  to register to one of these courses.</p>
 									</div>
 								</div>
 							</div>
@@ -388,7 +380,7 @@
 
 									<div class="course-body">
 										<p>Apply your GIS knowledge in this course on geospatial analysis, focusing on analysis tools, 3D data, working with rasters,
-                                                                                projections, and environment variables. <a class="btn btn-success "href="{% url 'accounts:login'%}" role="button">LogIn &raquo;</a>  to register to one of these courses.</p></p>
+                                                                                projections, and environment variables. <a class="btn btn-follow "href="{% url 'accounts:login'%}" role="button">LogIn &raquo;</a>  to register to one of these courses.</p></p>
 									</div>
 								</div>
 						</div>
@@ -733,9 +725,10 @@
 
 
 
-
+<div class="collapse navbar-collapse" >
 <div class="web-add">
 	ad
+</div>
 </div>
 
 
