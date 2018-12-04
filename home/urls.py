@@ -20,7 +20,7 @@ urlpatterns = [
     url(r'^gisprac_q_intro/$', views.gisprac_q_intro, name = "gisprac_q_intro"),
     url(r'^gisprac_interface/$', views.gisprac_interface, name = "gisprac_interface"),
     url(r'^gisprac_attribute/$', views.gisprac_attribute, name = "gisprac_attribute"),
-    url(r'^Payment_two/$', views.Payment_two, name = "Payment_two"),
+    url(r'^Paymenttwo/$', views.Paymenttwo, name = "Paymenttwo"),
     
     url(r'^home/$', views.home, name = "home"),
     url(r'^index/$', views.index, name = "index"),
