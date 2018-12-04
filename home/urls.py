@@ -16,8 +16,11 @@ urlpatterns = [
     url(r'^chat', HomeView.as_view(), name = 'chat'),
     
     url(r'^donald/$', views.donald, name = "donald"),
+    
+    url(r'^gisprac_q_intro/$', views.gisprac_q_intro, name = "gisprac_q_intro"),
     url(r'^gisprac_interface/$', views.gisprac_interface, name = "gisprac_interface"),
-      url(r'^gisprac_attribute/$', views.gisprac_attribute, name = "gisprac_attribute"),
+    url(r'^gisprac_attribute/$', views.gisprac_attribute, name = "gisprac_attribute"),
+    url(r'^payment2/$', views.payment2, name = "payment2"),
     
     url(r'^home/$', views.home, name = "home"),
     url(r'^index/$', views.index, name = "index"),

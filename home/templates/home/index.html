@@ -5,41 +5,48 @@
 
 
    {% block body %}
-        <div class="container">
-        
-        <h1>List of Courses</h1>
-           <!--<h3>Click on the course to register and make the payment</h3>-->
-           <br>
-         
-              
-          <!--  <div class="col-md-4">-->
-               
-               
-           {% for category in categories %}
-               <h3>{{category.name}}</h3>
-               
-               {%for item in category.item_set.all %}
-                  
-                   <h3><a href="{% url 'home:item' item_id=item.id %}"> <ul>Course: {{item.name}}</ul></a></h3>
-                   
-               {%endfor%}
-            {%endfor%}
-           
-        <!--</div>-->
-               
+        <section class="section">
+	    <div class="container">
+			<small>
+							<span class="caps">Courses</span>
+						</small>
+                        <div class="line-sep"></div>
+                
+                <div class="section-title">
+			    List of Courses	
+		    </div>
+                <hr>
+                <div class="row">
+                     <div class="col-md-6">
+                        
+                        
+                        
+                       
+						
+                        
+                        
+                       {% for category in categories %}
+                           
+		    
+                           <h3>{{category.name}}</h3>
+                            
+                           
+                           {%for item in category.item_set.all %}
+                              
+                               <h3><a href="{% url 'home:item' item_id=item.id %}"> <ul> {{item.name}}</ul></a></h3>
+                            
+                           {%endfor%}
+                        {%endfor%}
           
-        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         
         
-        </div>
-      <br><br>   <br><br>   
-<!--<div class="col-md-4">
-   <div class="container">
-      
-   <h3>FREE COURSES</h3>
-   
-</div>-->
-           </div>
+     
+      <br><br>   
+          
    {% endblock %}
 
           

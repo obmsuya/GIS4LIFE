@@ -149,7 +149,8 @@ LOGIN_EXEMPT_URLS = (
 
 )
 
-
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'suggestion')
 
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 1025

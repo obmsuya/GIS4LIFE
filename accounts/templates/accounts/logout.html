@@ -4,7 +4,7 @@
 
 {% load staticfiles %}
 
-
+<html>
 
 <head>
 	<meta charset="UTF-8">
@@ -37,7 +37,7 @@
 	<link rel="stylesheet" href="{% static 'accounts/css/normalize.css' %}">
 	<link rel="stylesheet" href="{% static 'accounts/css/animate.css' %}">	
 	
-	<link rel="stylesheet" href="{% static 'accounts/css/main3.css' %}">
+	<link rel="stylesheet" href="{% static 'accounts/css/main.css' %}">
 	
 	
 
@@ -122,7 +122,9 @@
 								</span>
 							</div>
 
-							
+							<div class="flex f-end f-col">               
+                                                                    <h3> Already registered? click <a class="btn btn-link "href="{% url 'home:payment2' %}">I just want to Pay </a> </h3> </li>
+                                                     </div>  
 
 
 
@@ -206,7 +208,9 @@
 
 								<div class="q-tabs-desc">
 									<p>
-										Courses are designed to suite your learning speed
+										Courses are designed to suite your learning speed. Reduces travel time and travel costs for off-campus students. 
+                                                                                
+                                                                                Can take exam  after finishing all the tests associated to that particular module. The faster you do it the faster you will get your certificate.
 										<hr>
 									</p>
 								</div>
@@ -222,13 +226,14 @@
 								</div>
 
 								<div class="q-tab-title">
-									<p>Real-life Projects</p><div class="line-sep"></div>
+									<p>Real-life Examples</p><div class="line-sep"></div>
 								</div>
 
 
 								<div class="q-tabs-desc">
 									<p>
-										Designed to help you practice and apply the skills you learn.
+										Designed to help you practice and apply the skills you learn that connect
+                                                                                deep subject content with real world problem solving.Real-life examples enable all students to create extraordinary work that matters.
 										<hr>
 									</p>
 								</div>
@@ -251,8 +256,8 @@
 								<div class="q-tabs-desc">
 									<p>
 										When you complete a course, you will receive a recognized certificate of completion,
-										which you can share with your friends, relatives, co-workers and potential employers.
-										.<a href="{% url 'home:gisprac_interface' %}" > Learn more </a>
+										which you can share with your friends, relatives, co-workers and potential employers. 
+										<!--.<a href="{% url 'home:gisprac_interface' %}" > Learn more </a>-->
 
 
 										<button type="button" class="btn btn-follow" data-toggle="modal" data-target="#exampleModalLong">Learn More 
@@ -268,12 +273,34 @@
 								</div>
 							</div>
 						</div>
+                                                
+                                                
+                                                <div class="col-md-12">
+							<div class="card right-in">
+								<div class="card-icon">
+                                                                    Additional benefit.<br>
+                                                                    <div class="line-sep"></div>
+                                                1. To speed up your understanding, each tutorial is taught in two different formats, videos and Reading format<br>
+                                                2. To reduce the cost of internet, we attach links  for every videos so that you can download and watch them offline.
+                                                <br>3.For smooth landing, we offer you with live support in setting up and get things running i.e installations and configurations.<br>4. 
+                                                This is important; you don't have to pay all in cash, GIS4life accepted payment by instalment,
+                                                <a class="btn btn-link "href="#top">Contact Us &raquo;</a> for more information. <br>Enjoy your ride
+                                                
+                                                                </div>
+                                                        </div>
+                                                </div>
 					</div>
 				</div>
 			</div>
 			</div>	
 			
-		</section>
+		
+                
+            
+                
+                
+                
+                </section>
                 
                 
                 
@@ -379,8 +406,8 @@
 									<div class="line-sep"></div>
 
 									<div class="course-body">
-										<p>Apply your GIS knowledge in this course on geospatial analysis, focusing on analysis tools, 3D data, working with rasters,
-                                                                                projections, and environment variables. <a class="btn btn-follow "href="{% url 'accounts:login'%}" role="button">LogIn &raquo;</a>  to register to one of these courses.</p></p>
+										<p>A tailor-made training is designed to meet your specific needs and requirements. You sets the objectives and the topics. Apply your GIS knowledge in this course on geospatial analysis,
+                                                                                focusing on analysis tools, 3D data, working with rasters, projections, and environment variables. <a class="btn btn-follow "href="{% url 'accounts:login'%}" role="button">LogIn &raquo;</a>  to make a request.</p></p>
 									</div>
 								</div>
 						</div>
@@ -541,24 +568,6 @@
 
 
 
-
-
-               
-               
-                
-               
-                
-      
-             
-
-
-
-
-
-
-
-
-
 		<section class="section grey-scale pt-5">
 			<div class="container">
 				<div class="row">
@@ -698,38 +707,76 @@
 
 
 
-	<div class="modal fade bd-example-modal-lg" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
+                <div class="modal fade bd-example-modal-lg" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLongTitle">GIS4life Certificate</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                            </div>
+                        <div class="modal-body">
+                                When all the curriculum items of a course have been completed, a red or white trophy
+                                will appear on the course dashboard, signifying that the certificate of completion is ready.
+                                Certificates can be saved as a .pdf or .jpg file so that you can easily share your accomplishment. In addition, certificates can be shared
+                                on Facebook, Twitter, and LinkedIn directly from GIS4life.  
+                    </div>
+              
+                </div>
+                
+                
+                
+                 
+                
+                
+                
+                
+                
+                
+                
+                
   </div>
 </div>
 
 
 
-<div class="collapse navbar-collapse" >
-<div class="web-add">
-	ad
-</div>
-</div>
+
+
+
+
+
+
+
+ <div class="modal fade bd-example-modal-lg" id="regprocess" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLongTitle">Registration Process</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                
+                                            <!--<div class="modal-body">-->
+                                            
+                                            <ul class="courses-lists " align="left">
+                                            
+                                                <li>1. Sign in to see the list of available courses, click on your choice then click register.</li>
+                                                <li>2. After registration click pay button to make the payment.</li>
+                                                <li>3. Two hours later, your Course will be activated and ready to go.</li>
+                                                <li>4. Click my course button to see your registered courses.</li>
+                                                </ul> 
+                                               
+                                                    
+                                                
+                                                    
+                                                    
+                                            <!--</div>-->
+              
+                            </div>
+                        </div>
+                    </div>
 
 
 	<footer>
@@ -759,10 +806,12 @@
 						
 
 						<ul class="links">
+							<div class="link-title">
 							<p>
-								Quick links
+								links
 							</p>
 							<div class="separator"></div>
+						</div>
                                                         
                                                         <li>
 								<a href="">Why GIS</a>
@@ -776,12 +825,19 @@
 
 					
 					<div class="col-md-3">
-						
+						<div class="link-title">
+							<p>
+								More
+							</p>
+							<div class="separator"></div>
+						</div>
 
 						<ul class="links">
                                                     
                                                         <li>
-								<a href="">Registration process</a>
+								
+                                                                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#regprocess">Registration process
+										</button>
 							</li>            
 							<li>
 								<a href="">Student Support</a>
@@ -862,9 +918,15 @@
 							
 						</span>
 					</div>
-			</div>
-		</div>
-	</footer>
+                                        
+                                        
+                                        
+                                     
+                                        
+                                        
+	    </div>
+	</div>
+    </footer>
 
 
 	<script>

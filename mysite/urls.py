@@ -32,6 +32,7 @@ urlpatterns = [
     url(r'^account/', include ('accounts.urls', namespace='accounts')),
     url(r'^home/', include ('home.urls', namespace='home')),
    
+   
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)               

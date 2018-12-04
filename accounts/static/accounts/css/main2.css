@@ -337,7 +337,7 @@ nav{
 	text-align: center;
 }
 .landing{
-	height: calc(100vh - 200px);
+	height: calc(100vh - 300px);
 	/*background-color: #f2f5f5;*/
 	display: -webkit-flex;
 	display: -moz-flex;
@@ -346,7 +346,7 @@ nav{
 	display: flex;
 	-ms-align-items: center;
 	align-items: center;
-	background-image: url('../img/online.jpg');
+	background-image: url('../img/front.jpg');
 	background-position: top;
 	background-repeat: no-repeat;
 	background-size: cover;

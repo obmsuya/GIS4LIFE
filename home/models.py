@@ -6,7 +6,7 @@ from django.utils import timezone
 # Create your models here.
 class Post(models.Model):
     title = models.CharField (max_length=120, default = "")
-    theory = models.CharField(max_length=200)
+    theory = models.CharField(max_length=200, default = "")
     practicle = models.CharField (max_length=120, default = "")
     exam = models.CharField (max_length=120, default = "")
     results = models.CharField (max_length=120, default = "")
@@ -62,6 +62,8 @@ class Item(models.Model):
     subtitle = models.CharField (max_length=120, default='Introduction to GIS')
     description = models.TextField()
     link = models.TextField(default = "")
+    audience = models.TextField(default = "")
+    content = models.TextField(default = "")
     price = models.IntegerField(default=0)
     category = models.ForeignKey(Category, on_delete=models.PROTECT)
     
