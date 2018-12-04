@@ -125,8 +125,8 @@ def gisprac_interface(request):
     
 def gisprac_attribute(request):    
     return render (request, "home/gisprac_attribute.html")
-def payment2(request):
-    return render (request, "home/payment2.html")
+def Payment_two(request):
+    return render (request, "home/Payment_two.html")
     
   
 def regprocess(request):
