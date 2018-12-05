@@ -70,12 +70,6 @@ class Item(models.Model):
     def __str__(self):
         return self.name
     
-#class Contact(models.Model):
-#    name = models.CharField(max_length= 50)
-#    email = models.EmailField(max_length=70, blank=True, null=True, unique=True, default=None)
-#    phone_number = models.IntegerField(default=0)
-#    message = models.TextField(blank=True, null=True)
-     
 
 def save(self, *args, **kwargs):
     if self.email is not None and self.email.strip() == "":
