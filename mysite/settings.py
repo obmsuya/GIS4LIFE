@@ -82,7 +82,7 @@ DATABASES = {
         'USER': 'gis4life',
         'PASSWORD': 'Savioury9',
         'HOST': 'mysql.sever',
-        'PORT': 'gis4life.mysql.pythonanywhere"-"services.com',
+        'PORT': 'gis4life.mysql.pythonanywhere-services.com',
     }
 }
 
