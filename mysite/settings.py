@@ -80,7 +80,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME':'gis4life',
         'USER': 'gis4life',
-        'PASSWORD': 'Savioury9'
+        'PASSWORD': 'Savioury9',
+        'HOST': 'mysql.sever',
+        'PORT': '',
     }
 }
 
