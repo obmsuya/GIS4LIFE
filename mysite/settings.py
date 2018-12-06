@@ -80,7 +80,16 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME':'gis4life$gis4life',
         'USER': 'gis4life',
-        'OPTIONS': {},
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+            #Tell mysql to connect with 'utf8mb4' character set
+            'charset':'utf8mb4',
+            },
+        #Tell django to build the test database with 'utf8mb4'character set
+        'TEST': {
+            'CHARSET': 'utf8mb4',
+            'COLLATION': 'utf8mb4_unicode_ci',
+        },
         'PASSWORD': 'Pa55w0rd',
         'HOST': 'gis4life.mysql.pythonanywhere-services.com',
         'PORT': '',
