@@ -18,6 +18,7 @@ urlpatterns = [
     url(r'^donald/$', views.donald, name = "donald"),
     
     url(r'^gisprac_q_intro/$', views.gisprac_q_intro, name = "gisprac_q_intro"),
+    url(r'^gisprac_q_datacreation/$', views.gisprac_q_datacreation, name = "gisprac_q_datacreation"),
     url(r'^gisprac_interface/$', views.gisprac_interface, name = "gisprac_interface"),
     url(r'^gisprac_attribute/$', views.gisprac_attribute, name = "gisprac_attribute"),
     

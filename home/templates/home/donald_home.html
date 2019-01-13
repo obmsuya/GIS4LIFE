@@ -1,838 +1,1026 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
-
-{% load staticfiles %}
-
-
-
 <head>
-	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-	<title>Gis Online Courses</title>
+<title>What is Database - Definition and Explained</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Database is a concise and arranged collection of similar data that is usually accessible to many simultaneous users. Database can be stored on a system and examined by a program called database...">
+<meta name="Definition keywords" content="Database,what is Database?, Database Definition, define database,What is a database?  " /> 
+<meta name="keyword" content="Database,what is Database?, Database Definition, define database,What is a database?  "/> 
+<link rel="canonical" href="https://whatis.ciowhitepapersreview.com/definition/database/" />
+<meta name="author" content="CIO Whitepepers Review"/> 
+<meta name="website" content="https://whatis.ciowhitepapersreview.com"/>
+<meta name="msvalidate.01" content="47648C3FCBD53C895A54522050B5A6DC" />
 
-	<!-- icons and fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Poppins" rel="stylesheet"> -->
+<link href="https://www.ciowhitepapersreview.com/assets/css/bootstrap.css" rel="stylesheet">
+<link href="https://www.ciowhitepapersreview.com/assets/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://www.ciowhitepapersreview.com/assets/css/font-awesome-animation.css" rel="stylesheet">
+<link href="https://www.ciowhitepapersreview.com/assets/css/prettyPhoto.css" rel="stylesheet">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+<link rel="shortcut icon" type="image/png" href="https://www.ciowhitepapersreview.com/assets/img/sm-logo.png" />
+<link href="https://www.ciowhitepapersreview.com/assets/css/style.css" rel="stylesheet">
+<link href="https://www.ciowhitepapersreview.com/assets/css/default-base.css" rel="stylesheet">
+<link href="https://www.ciowhitepapersreview.com/assets/css/social_sharing.css" rel="stylesheet" />		
 
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Varela+Round" rel="stylesheet"> 
-	<link href="https://fonts.googleapis.com/css?family=Niramit|Open+Sans|Varela+Round" rel="stylesheet"> 
-	<link href="https://fonts.googleapis.com/css?family=Montserrat|Niramit" rel="stylesheet">
+<link href="https://www.ciowhitepapersreview.com/css/jquery-ui.css" rel="Stylesheet"></link>
+<link href="https://www.ciowhitepapersreview.com/css/sky-tabs.css" rel="Stylesheet"></link>
+
+<script src="https://use.fontawesome.com/49e7d9be19.js"></script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-58099519-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<style type="text/css">
+a {outline: 0 none !important;text-decoration:none !important;}
+#index2-header2 .overlay {
+    background: #eff7ff;
+    min-height: 400px;
+}
+#footer-sec {
+    background-color: #00496B;
+    color: #fff;
+    padding: 20px;
+}
+#footser-end {
+    text-align: right;
+    background-color: #013A54;
+    color: #fff;
+    padding: 10px;
+}
+#index2-header{
+background: url(https://www.nakshtechnologies.com/Naksh-website/web/images/cloud_services_banner.jpg) no-repeat center center;
+padding: 0;
+-webkit-background-size: cover;
+background-size: 100% 100%;
+}
+
+#index2-header .overlay {
+    background: transparent;
+    min-height: 300px;
+}
+.header-browse-alpha ul {
+    list-style-type: none;
+}
+.header-browse-alpha li {
+    font-size: 15px;
+    float: left;
+    margin: 0;
+    line-height: 24px;
+}
+.header-browse-alpha li a {
+    padding: 0 3.4px;
+}
+.header-browse-alpha span {
+    float: left;
+    display: inline-block;
+    padding: 0;
+}
+.header-browse-alpha span {
+    font-weight: 600;
+font-size: 12px;
+    font-family: 'NHaasGroteskTXW01-75Bd', Helvetica, Arial, sans-serif;
+}
+.header-browse-alpha li {
+  font-weight: 600;
+font-size: 11px;
+}
 
 
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-	<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>-->
+#custom-search-input{
+    padding: 0px;
+    border: solid 1px #E4E4E4;
+    border-radius: 6px;
+    background-color: #fff;
+}
 
-    
-        <script src="{% static "accounts/js/bootstrap.min.js" %}" type="text/javascript"></script>
-         <script src="{% static "accounts/js/scrollreveal.min.js" %}" type="text/javascript"></script>
-         <script src="{% static "accounts/js/app2.js" %}" type="text/javascript"></script>
-      
+#custom-search-input input{
+    border: 0;
+    box-shadow: none;
+}
+
+#custom-search-input button{
+    margin: 2px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: #666666;
+    padding: 0 8px 0 10px;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input button:hover{
+    border: 0;
+    box-shadow: none;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input .glyphicon-search{
+    font-size: 16px;
+}
+.form-control {
+    box-sizing: border-box;
+    display: block;
+    padding: 7px 12px;
+    font-size: 11px;
+    line-height: 1.42857143;
+    color: #555;
+    border: 1px solid #036;
+    border-radius: 4px;
+    background-color: #fff;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    height: 30px;
+}
+.terms-home {
+    background: url(border_diagonal.png) repeat-x 0 bottom;
+    padding-bottom: 25px;
+    margin-bottom: 15px;
+}
+.whatis-terms-home .trending-topics ol.tt-list li {
+    font-size: 16px;
+    padding-left: 45px;
+}
+.whatis-terms-home .trending-topics ol.tt-list li {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #e3e3e3;
+    padding-bottom: 10px;
+    font-size: 14px;
+    position: relative;
+    padding-left: 5px;
+    margin-left: -20px;
+}
+.pad-top-botm {
+    padding-top: 50px;
+    padding-bottom: 0px;
+}
+.cat-blocks .cattitle {
+    background: rgba(0, 0, 0, 0) url("https://www.cioapplications.com/images/sep.png") repeat-x scroll center center;
+    margin: 5px 0 10px;
+    position: relative;
+}
+.cattitle {
+    font-size: 22px;
+    line-height: 31px;
+    font-weight: 600;
+}
+.cat-blocks .cattitle span {
+    background: #024564;
+    margin: 0;
+    font-size: 16px;
+    padding: 0 24px;
+    display: table;
+    font-weight: bold;
+    height: 40px;
+    line-height: 40px;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Lato","Droid Arabic Kufi",Arial,sans-serif;
+}
+.cat-blocks .cattitle span::after {
+    content: "";
+    width: 8px;
+    height: 13px;
+    background: url(https://premiumlayers.net/demo/html/gazeta1/images/cb-ribbon.png) no-repeat;
+    position: absolute;
+    right: -7px;
+    top: 0;
+}
+.cat-blocks .cattitle span {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Lato","Droid Arabic Kufi",Arial,sans-serif;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+#breadcrumbs-one {
+   border-radius: 5px !important;
+    overflow: hidden !important;
+    width: 100% !important;	
+}
+ol, ul, li {
+    list-style: outside none none;
+}
+#breadcrumbs-one li {
+    float: left;
+}
+#breadcrumbs-one a::after, #breadcrumbs-one a::before {
+    border-bottom: 1.5em solid transparent;
+    border-left: 1em solid;
+    border-top: 1.5em solid transparent;
+    content: "";
+    margin-top: -1.5em;
+    position: absolute;
+    right: -1em;
+    top: 50%;
+}
+#breadcrumbs-one a::before {
+    border-left-color: #ccc;
+    right: -1.1em;
+    z-index: 1;
+}
+#breadcrumbs-one a::after {
+    border-left-color: #ddd;
+    z-index: 2;
+}
+#breadcrumbs-one .current::after, #breadcrumbs-one .current::before {
+    content: normal;
+}
+#breadcrumbs-one li:first-child a {
+    border-radius: 5px 0 0 5px;
+    padding-left: 1em;
+}
+#breadcrumbs-one a
+{
+    background-color: #ddd;
+    background-image: linear-gradient(to right, #f5f5f5, #ddd);
+    color: #444;
+    float: left;
+    font-size: 12px;
+    padding: 0.2em 1em 0.2em 2em;
+    position: relative;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+	::i-block-chrome, #main-menu{margin-top:-28px;}
+	.share_to{-webkit-transform:rotate(90deg);-webkit-transform-origin:left top 0;}
+}
+div.menu-icon{margin-top: 30px;}
+ .wdn-text-hidden {
+  font-size: 0;
+  width: 1px;
+  height: 1px;
+  display: inline-block;
+  overflow: hidden;
+  position: absolute!important;
+  border: 0!important;
+  padding: 0!important;
+  margin: 0!important;
+  clip: rect(1px,1px,1px,1px);
+}
+div#popup-menu{ 
+background-color:#fff !important;
+
+}	
+a .menu_select:hover{
+	transition-delay: 10s !important;
+	-webkit-transition-delay: 10s !important;
+	-webkit-transition: background-color all 0.17s ease-in-out;
+-moz-transition: background-color 0.5s ease;
+ -o-transition: background-color 0.5s ease;
+transition: background-color 0.5s ease;
+
+}
+#menu-button{padding-top:0px !important;}
+#menu-button, i.icon:after, i.icon:before{
+	transition: all 3s !important;
+	-webkit-transition: all 0.19s ease-in-out !important;
 	
-		
-	<link rel="stylesheet" href="{% static 'accounts/css/bootstrap.min.css' %}">
-	<link rel="stylesheet" href="{% static 'accounts/css/font-awesome.min.css' %}">	
-	<link rel="stylesheet" href="{% static 'accounts/css/normalize.css' %}">
-	<link rel="stylesheet" href="{% static 'accounts/css/animate.css' %}">	
-	
-	<link rel="stylesheet" href="{% static 'accounts/css/main3.css' %}">
-	
-	
+	}
+	.border_ver{ border:1px solid #09C ;  border-radius: 0 0 8px 8px; padding-top: 20px;}
+.pad-top-botm{ padding-top:34px !important;}
+.pad-p {
+    padding: 10px 12px 10px 12px !important;
+    background-color: #fff;
+    margin-bottom: 10px !important;
+}
+.myspan{background:#fff !important;}
+div#popup-menu a{ color:#000 !important;padding-top: 6px !important;}
+div#popup-menu {padding-top: 6px !important;}
+.focus i.icon::before, .focus i.icon::after {
+    background: #000 !important;
+}
+div.menu-icon{ margin-right:20px !important;}
+</style>
 
-		
+
+<script src="https://www.ciowhitepapersreview.com/js/jquery-ui.js" ></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.ciowhitepapersreview.com/js/autocomplete-0.3.0.js"></script>
+<script type="text/javascript" src="https://www.ciowhitepapersreview.com/js/autocomplete-0.3.0.min.js"></script>
+
+<script type="text/javascript">
+var FrontEndConfig = {"audioPlayer":"mediaelement","media.jwplayer.options.primary":"flash","media.jwplayer.ga.enabled":"true","media.jwplayer.hls.mimeTypes":"vnd.apple.mpegURL,application/x-mpegURL","videoPlayer":"flowplayer","media.jwplayer.sharing.enabled":"true","media.jwplayer.hls.enabled":"true"};
+if (typeof(FrontEndConfig) == 'undefined') {
+FrontEndConfig = {};
+}
+FrontEndConfig.rootURL = "https://www.ciowhitepapersreview.com/";
+var WFClientTypeDef = {"medium":"(min-width: 768px) and (max-width: 1023px)","xlarge":"(min-width: 1600px)","large":"(min-width: 1024px) and (max-width: 1599px)","small":"(max-width: 767px)"};
+var imageSizes = [80, 100, 115, 155, 170, 215, 230, 240, 300, 320, 355, 435, 460, 480, 615, 660, 730, 810, 960, 1080, 1140];
+var isMobile=false;
+var isTablet=false;
+var isDesktop=false;
+var isLargeDesktop=false;
+for ( var type in WFClientTypeDef) {
+if (window.matchMedia(WFClientTypeDef[type]).matches) {
+switch (type) {
+case "xlarge":
+isLargeDesktop=true; break;
+case "large":
+isDesktop=true;
+break;
+case "medium":
+isTablet=true; break;
+case "small":
+isMobile=true;
+break;
+}
+break;
+}
+}
+$(function(){
+$.each(FrontEndConfig, function(key, value) {
+/* Regular properties other than JW Player setup options
+are being processed here */
+if (key.indexOf('media.jwplayer.options') < 0) {
+FrontEndConfig[key] = WFUtils.parseStringToJSONObject(value);
+}
+});
+});
+</script>
+
+
+
 </head>
-
 <body>
+	<!-- Added for Social Sharing -->
+	<div class="a2a_kit a2a_kit_size_32 a2a_floating_style a2a_vertical_style" style="right:0px; top:147px; background-color: rgb(71, 107, 140);">
+		<p class="share_to" style="font-size: 14px;"><span style="color: white;"><b>Share On</b></span></p>
+		<a class="a2a_button_facebook" style="margin-top: -31px;" title="Share to Facebook"></a>
+		<a class="a2a_button_twitter" title="Share to Twitter"></a>
+		<a class="a2a_button_google_plus" title="Share to Google+"></a>
+		<a class="a2a_button_linkedin" title="Share to Linkedin"></a>
+	</div>
+	<script async src="https://www.ciowhitepapersreview.com/assets/js/social_sharing.js"></script>	
+<div class="navbar navbar-default navbar-fixed-top menu-back">
+    <div class="container">
+        <div class="navbar-header" style="background-color: #fff;">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+
+			
+		</div>
+                <div class="navbar-collapse collapse navbar-right">
+			<nav class="navbar main-menu clear " role="navigation">
+            
+            <!--menu popup -->
+				<div id="popup-menu" class="js-menu">
+                    <!--POPUP MENU TOP AREA -->
+                    <div class="menu-top">
+                    <div class="container clear">
+                    <div class="menu-icon">
+                    <a href="javascript:void(0)" id="" class="close menu-close focus">
+                    <i class="icon"></i>
+                    </a>
+                    </div>
+                    <a href="https://www.ciowhitepapersreview.com/">
+                    <!--<img src="https://www.ciowhitepapersreview.com/assets/img/logo.png" alt="ciowhitepapersreview" class="log-hed" style=""></a>-->
+                    <a href="javascript:void(0)" class="close menu-close close-top"></a>
+                    </div>
+                    <!--AFTER SEARCH FUNCTIONALITY IMPLEMENTED -->
+                
+                
+                    </div>
+                     <!--main menu--> 
+                    
+                
+                    <div class="sky-tabs sky-tabs-pos-left sky-tabs-anim-flip sky-tabs-response-to-icons">
+	    	            
+                  	            <input name="sky-tabs"  id="sky-tab2" class="sky-tab-content-2" type="radio">
+            <label for="sky-tab2"><span><span>Choose your Country</span></span></label>
+            
+                  	          	            
+            
+                  	            
+      
+       <ul>
+					
+					
+					<li class="sky-tab-content-2">
+						<div class="typography">
+							<div class="col-md-12" style="padding-left:0px;padding-right:0px;">
+								<div class="col-md-4"><p class="pad-p"><a href="{% url 'accounts:login'%}">Tanzania</a></p></div>
+								<div class="col-md-4"><p class="pad-p"><a href="">Kenya</a></p></div>
+								<div class="col-md-4"><p class="pad-p"><a href="">Uganda</a></p></div></div>
+								<div class="col-md-12" style="padding-left:0px;padding-right:0px;">
+								<div class="col-md-4"><p class="pad-p"><a href="">Ruanda</a></p></div>
+								<div class="col-md-4"><p class="pad-p"><a href="">Burundi</a></p></div>
+								<div class="col-md-4"><p class="pad-p"><a href="">Congo</a></p></div>
+							</div>
+								
+							<div class="col-md-12" style="padding-left:0px;padding-right:0px;">
+								<div class="col-md-4"><p class="pad-p"><a href="">Zimbabwe</a></p></div>
+								<div class="col-md-4"><p class="pad-p"><a href="">Zambia</a></p></div>
+								<div class="col-md-4"><p class="pad-p"><a href="">Malawi</a></p></div>
+							</div>
+							
+							<div class="col-md-12" style="padding-left:0px;padding-right:0px;">
+								<div class="col-md-4"><p class="pad-p"><a href=""></a></p></div>
+								<div class="col-md-4"><p class="pad-p"><a href=""></a></p></div>
+								<div class="col-md-4"><p class="pad-p"><a href=""></a></p></div>
+							</div>
+							<div class="col-md-12" style="padding-left:0px;padding-right:0px;">
+								<div class="col-md-4"><p class="pad-p"><a href=""></a></p></div>
+								<div class="col-md-4"><p class="pad-p"><a href=""></a></p></div>
+								<div class="col-md-4"><p class="pad-p"><a href=""></a></p></div>
+							</div>
+							<div class="col-md-12" style="padding-left:0px;padding-right:0px;">
+								<div class="col-md-4"><p class="pad-p"><a href=""></a></p></div>
+								<div class="col-md-4"><p class="pad-p"><a href=""></a></p></div>
+								<div class="col-md-4"><p class="pad-p"><a href=""></a></p></div>
+							</div>
+							<div class="col-md-12" style="padding-left:0px;padding-right:0px;">
+								<div class="col-md-4"><p class="pad-p"><a href=""></a></p></div>
+								<div class="col-md-4"><p class="pad-p"><a href=""></a></p></div>
+								<div class="col-md-4"><p class="pad-p"><a href=""></a></p></div>
+							</div>
+							<div class="col-md-12" style="padding-left:0px;padding-right:0px;">
+								<div class="col-md-4"><p class="pad-p"><a href=""></a></p></div>
+								<div class="col-md-4"><p class="pad-p"><a href=""></a></p></div>
+								<div class="col-md-4"><p class="pad-p"><a href=""></a></p></div>
+							</div>
+							<div class="col-md-12" style="padding-left:0px;padding-right:0px;">
+								<div class="col-md-4"><p class="pad-p"><a href=""></a></p></div>
+								<div class="col-md-4"><p class="pad-p"><a href=""></a></p></div>
+								<div class="col-md-4"><p class="pad-p"><a href=""></a></p></div>
+							</div>
+							<div class="col-md-12" style="padding-left:0px;padding-right:0px;">
+								<div class="col-md-4"><p class="pad-p"><a href=""></a></p></div>
+								<div class="col-md-4"><p class="pad-p"><a href=""></a></p></div>
+								<div class="col-md-4"><p class="pad-p"><a href=""></a></p></div>
+							</div>
+							<div class="col-md-12" style="padding-left:0px;padding-right:0px;">
+								<div class="col-md-4"><p class="pad-p"><a href=""></a></p></div>
+								<div class="col-md-4"><p class="pad-p"><a href=""></a></p></div>
+								<div class="col-md-4"><p class="pad-p"><a href=""></a></p></div>
+							</div>
+							<div class="col-md-12" style="padding-left:0px;padding-right:0px;">
+								<div class="col-md-4"><p class="pad-p"><a href=""></a></p></div>
+								<div class="col-md-4"><p class="pad-p"><a href=""></a></p></div>
+								<div class="col-md-4"><p class="pad-p"><a href=""></a></p></div>
+							</div>
+							
+							
+							
+							<div class="col-md-12" style="padding-left:0px;padding-right:0px;">
+								<div class="col-md-4"><p class="pad-p"><a href=""></a></p></div>
+							</div>
+						</div>
+					</li>
+			
+					
+                    
+                    		
+				</ul>
+    
+		</div>
+                    </div>
+                    <!--End popup -->
+				<!--<div id="popup-menu" class="js-menu">
+					
+						<div class="container clear">
+							<div class="menu-icon" style="width: 100%;">
+								<a href="javascript:void(0)" id="" class="close menu-close focus" style="float: left;"><i class="icon"></i></a>
+								<a class="navbar-brand" style="float: left;margin-left: 30px;" href="https://www.ciowhitepapersreview.com/">
+									<img src="https://www.ciowhitepapersreview.com/assets/img/logo.png" class="navbar-brand-logo1 " alt="Company Logo" title="ciowhitepapersreview.com">
+								</a>
+							</div>
+						</div>
+						
+					
+				</div>-->
+				<div class="just-in-conatiner hidden-sm hidden-md hidden-lg hidden-xs">
+					<i class="fa fa-bell"></i>
+					<span class="just-in-counter"></span>
+				</div>
+				<div class="menu-icon">
+                <a href="javascript:void(0)" class="menu_select" id="menu-button">
+					<!--<a href="https://www.ciowhitepapersreview.com/whitepaper-library/" id="menu-button1">--><i class="icon"></i></a>
+				</div>
+				
+			</nav>
+        </div>
+	</div>
+	
 
 
-	<!-- header -->
-	<header>
-		<nav class="navbar navbar-expand-lg navbar-light">
-
-			<div class="container">
-			  <button class="btn menu-btn d-md-none .d-lg-none"  onclick="openNav()">
-			  	<i class="fa fa-bars"></i>
-			  </button>
-
-			  <a class="navbar-brand" href="#">GIS4life</a>
-			<!--   <button class="navbar-toggler mr-20" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			    <span class="navbar-toggler-icon"></span>
-			  </button> -->
-
-
-			  <div id="mySidenav" class="asidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
 </div>
 
-			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-			    <ul class="navbar-nav ml-auto">
-			     	<li class="nav-item mr-20">
-			     		<a href="#" class="nav-link">Login</a>
-			     	</li>
+	<style>
+.terms-home{
+background: url(https://whatis.ciowhitepapersreview.com/border_diagonal.png) repeat-x 0 bottom;
+}
+.contnthere ul li {
+	list-style-type : disc !important;
+}
+</style>
 
-			     	<li class="nav-item">
-			     		<a href="#" class="btn btn-follow">Register</a>
-			     	</li>
+	<section id="vedio-sec" style="background-color: #fff;">
+        <div class="container">
+            <div class="row pad-top-botm" style="padding-top: 40px;">
+				<ul id="breadcrumbs-one" style="margin-top:10px; width:300px;padding-left:30px;">
+					<li><a href="">Home</a></li>
+					<li><a href="">What is</a></li>
+					<li><a href="javascript:;">Database</a></li>
+				</ul>					
+                <div class="col-md-8">
+					<div class="col-lg-12 col-md-12">
+						<div class="col-lg-12 col-md-12" style="padding-left: 0;padding-right: 0;">
+							<div class="cat-blocks">
+								<h1 class="cattitle" ><span><a href="javascript:;" style="color:#fff;text-decoration:none;">SAGLOBAL</a></span></h1>	  
+							</div>
+                 
+						</div>
+					</div>
+					<div class="col-lg-12 col-md-12  col-sm-12" style="padding-left: 0;padding-right: 0;margin-bottom: 15px;">
+						<div class="col-lg-12 col-md-12  col-sm-12 contnthere" style="margin-bottom: 15px;">
+							 <p style="text-align: justify;">
+							 <p><span style="font-size:16px">Database is a concise and arranged collection of similar data that is usually accessible to many simultaneous users. <a href="https://www.ciowhitepapersreview.com/database/data-protection-software-for-cloud-databases-334.html"><span style="color:#0000CD"><u><em><strong>Database</strong></em></u></span></a> can be stored on a system and examined by a program called database management system (DBMS). One of the most important aspects of a DBMS is its relational model which is also known as relational Database management system (RDBMS).</span></p>
 
-			    </ul>
-			  </div>
-			</div>
+<h2><u><span style="font-size:18px"><strong>Types of Database</strong></span></u></h2>
 
+<h3><span style="font-size:16px"><strong>Relational Data base Management System (RDBMS)</strong></span></h3>
 
-		<div class="line"></div>
-		</nav>
-	</header>
+<p><span style="font-size:16px">An RDBMS is a program that is used to generate, modernize and control any relational database. IBM started a research project y the name of<em> System R </em>as a research project to develop a prototype RDBMS. Oracle was the first commercial RDBMS which is known as Oracle corp. limited, reports Wikipedia.org.</span></p>
 
+<h3><span style="font-size:16px"><strong>Operational Database</strong></span></h3>
 
+<p><span style="font-size:16px">Operational database plays an important role for business and IT organizations because they store the details of the amount of information a company has and the information of clients who buy them. Operational database can be manipulated as per the requirement and situation.</span></p>
 
-	<main class="page-wrapper">
-		<div class="landing">-->
-			
-			<div class="words-part container">
-				
-				<div class="courses-summary">
-					<ul class="courses-lists text-white" align="center">
-						<li><span><i class="fa fa-book"></i></span><span><b>6</b> Courses</span></li>
-						<li><span><i class="fa fa-users"></i></span><span><b>200</b> Students</span></li>
-						<li><span><i class="fa fa-user-circle-o"></i></span><span><b>10</b> Teachers</span></li>
-					</ul>
+<h3><span style="font-size:16px"><strong>Database Warehouse</strong></span></h3>
+
+<p><span style="font-size:16px">Database warehouses act as storage niche of data. In some places it is important to retain information for over 5 years during which it goes through screenings and editing and need no further checks when stored in database warehouses.</span></p>
+
+<h3><span style="font-size:16px"><strong>Distributed Database</strong></span></h3>
+
+<p><span style="font-size:16px">Large organizations are placed as different offices at various geological locations; hence the data at all these locations forms the main database of a company.</span></p>
+
+<h3><span style="font-size:16px"><strong>External database</strong></span></h3>
+
+<p><span style="font-size:16px">A company needs a lot of information other than what is present with them, which is known as external data. This useful and limited access data is known as external database.</span></p>
+
+<h3><span style="font-size:16px"><strong>Navigational Database</strong></span></h3>
+
+<p><span style="font-size:16px">In this kind of database each object is a reference from another item in the database. They might use modern systems like XPath which help in navigating from one object or item to another.</span></p>
+
+<h3><span style="font-size:16px"><strong>In-memory Database</strong></span></h3>
+
+<p><span style="font-size:16px">Instead of storing data on an external device this database stores it in the main memory of a computer.</span></p>
+
+							</p> 		
+						</div>		
+					</div>			
+				</div>				
+				<div class="col-md-4 whatis-terms-home">
+					<section class="trending-topics-section" id="trendingTopics">
+						<div class="trending-topics">
+							<h2 class="terms-home"><i class="icon whatis_trending"></i>Trending Topics</h2>
+							<ol class="tt-list">
+																	<li style="font-size:15px;">
+										<a href="https://whatis.ciowhitepapersreview.com/definition/risk-management/">Risk Management</a>
+									</li>								
+																	<li style="font-size:15px;">
+										<a href="https://whatis.ciowhitepapersreview.com/definition/erp/">ERP</a>
+									</li>								
+																	<li style="font-size:15px;">
+										<a href="https://whatis.ciowhitepapersreview.com/definition/database/">Database</a>
+									</li>								
+																	<li style="font-size:15px;">
+										<a href="https://whatis.ciowhitepapersreview.com/definition/big-data/">Big Data</a>
+									</li>								
+																	<li style="font-size:15px;">
+										<a href="https://whatis.ciowhitepapersreview.com/definition/cloud-computing/">Cloud Computing</a>
+									</li>								
+																	<li style="font-size:15px;">
+										<a href="https://whatis.ciowhitepapersreview.com/definition/technology/">Technology</a>
+									</li>								
+															</ol>
+						</div>
+					</section>
+                    
+                    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                    <!-- Whatis.ciowhitepapersreview -->
+                    <ins class="adsbygoogle"
+                         style="display:inline-block;width:300px;height:250px;margin-left:20px;"
+                         data-ad-client="ca-pub-5965893319682433"
+                         data-ad-slot="8926337567"></ins>
+                         
+						<script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                     
+                    
 				</div>
-
-<br><br><br><br><br>
-				<div class="page-title"><h1>LEARN GIS ONLINE </h1></div>
-				
-				<div class="page-tagline text-white"><h4>GIS4life enhance your capacities with GIS, concepts, and terminology of spatial analysis and modeling</h4></div>
-
-
-				<!--<div class="cta d-flex justify-content-center"><a href="#" class="btn btn-follow">Learn more</a></div>-->
-			</div>
-			
-		</div>
-<br>
-
-	
-	
-	<section>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 flex-center f-col" >
-						<div class="section-title pt-5">
-							<span class="text-center newslatter-title">
-								This Platform is dedicated for GIS Training only. <a class="btn btn-success "href="{% url 'accounts:login'%}" role="button">LogIn &raquo;</a> to register for a class. 
-          
-							</span>
-						</div>
-
-						
-
-
-
-						
-					</div>
-				</div>
-			</div>
-		</section>
-
-		
-		
-
-<br><br><br>
-
-		
-
-
-
-
-
-		<section class="section grey-scale">
-			<div class="container">
-				
-				<div class="row">
-					<div class="col-md-6">
-						<small>
-							<span class="caps">Our Strength</span>
-						</small>
-						<div class="line-sep"></div>
-						<div class="section-title">
-							<span>
-								Here's why GIS4life is better place for GIS courses.
-							</span>
-							<span class="pl-20">
-								 
-							</span>
-						</div>
-
-						<div class="section-tagline">
-							<p>
-								Knowledge of Geographic Information Systems (GIS) is an increasingly sought after skill in industries from agriculture to public health. with us you will learn the skills you need to successfully use GIS software in a professional setting. You will learn how to analyze your spatial data, use cartography techniques to communicate your results and a lot more
-							</p>
-						</div>
-					</div>
-
-
-					<div class="col-md-6">
-						<div class="course-image bottom-in">
-								
-								
-								<img src="{%static 'img/i.jpg'%}" class="img-responsive" alt=""'>
-						</div>
-					</div>
-				</div>
-			</div>
-			<br><br><br><br>
-			
-			
-			<div class="quick-tabs container">
-			<div class="quick-tabs-holder">
-				
-				<br>
-				<div>
-					<div class="row">
-						<div class="col-md-4">
-							<div class="card left-in">
-								<div class="card-icon">
-									
-									<img src="{%static 'img/c.png'%}"  alt="fast">
-							
-								
-								</div>
-
-								<div class="q-tab-title">
-									<p>Time Efficient</p><div class="line-sep"></div>
-								</div>
-
-
-								<div class="q-tabs-desc">
-									<p>
-										Courses are designed to suite your learning speed
-										<hr>
-									</p>
-								</div>
-							</div>
-						</div>
-
-
-						<div class="col-md-4">
-							<div class="card bottom-in">
-								<div class="card-icon">
-									
-									<img src="{%static 'img/b.png'%}"  alt="fast">	
-								</div>
-
-								<div class="q-tab-title">
-									<p>Real-life Projects</p><div class="line-sep"></div>
-								</div>
-
-
-								<div class="q-tabs-desc">
-									<p>
-										Designed to help you practice and apply the skills you learn.
-										<hr>
-									</p>
-								</div>
-							</div>
-						</div>
-
-
-						<div class="col-md-4">
-							<div class="card right-in">
-								<div class="card-icon">
-									
-									<img src="{%static 'img/d.png'%}"  alt="fast">	
-								</div>
-
-								<div class="q-tab-title">
-									<p>Certificates</p><div class="line-sep"></div>
-								</div>
-
-
-								<div class="q-tabs-desc">
-									<p>
-										When you complete a course, you will receive a recognized certificate of completion,
-										which you can share with your friends, relatives, co-workers and potential employers.
-										.<a href="{% url 'home:gisprac_interface' %}" > Learn more </a>
-										
-										<hr>
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			</div>	
-			
-			
-			
-		</section>
-
-
-
-		<section class="section">
-			<div class="container">
-				<div class="row">
-
-
-					<div class="col-md-12 mb-30">
-						<div class="flex f-end f-col">
-							<!--<small>Our Courses</small>-->
-							<!--<div class="line-sep"></div>-->
-							<h2>Available Courses</h2>
-						</div>
-					</div>
-
-					<!-- the courses -->
-					<div class="col-md-12">
-						<div class="row">
-							<div class="col-md-6 p-0 ">
-								<div class="course-image left-in">
-									
-									<img src="{%static 'img/h.jpg'%}" class="img-responsive" alt="">
-								</div>
-							</div>
-
-
-							<div class="col-md-6 p-0">
-								<div class="course-description flex bg-dark right-in">
-									<div class="course-title">
-										Begginer Courses
-									</div>
-									<div class="line-sep"></div>
-
-									<div class="course-body">
-										<p>Explore the world of spatial data and cartography with geographic information systems (GIS).
-                                                                                Here you will learn the basics of the industry's leading software tools and qgis. Under this category you will be able to learn the following courses;
-										Introduction to GIS, Introduction to GPS, Introduction to Google Earth, Introduction to GIS Analysis and Introduction to Catography.
-										<a class="btn btn-success "href="{% url 'accounts:login'%}" role="button">LogIn &raquo;</a>  to register to one of these courses.</p>
-
-</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-
-					<!-- the second course -->
-					<div class="col-md-12">
-						<div class="row">
-							<div class="col-md-6 p-0">
-								<div class="course-description flex f-end bg-dark left-in">
-									<div class="course-title">
-										Advanced Courses
-									</div>
-									<div class="line-sep"></div>
-
-									<div class="course-body">
-										<p>Geographic Information Systems (GIS) Specialization, you will go in-depth with common data types (such as raster
-                                                                                and vector data), structures, quality and storage. Apply your GIS knowledge in this course on geospatial analysis, focusing on analysis tools, 3D data, working with rasters,
-                                                                                projections, and environment variables. <a class="btn btn-success "href="{% url 'accounts:login'%}" role="button">LogIn &raquo;</a>  to register to one of these courses.</p>
-									</div>
-								</div>
-							</div>
-
-							<div class="col-md-6 p-0">
-								<div class="course-image right-in">
-									
-									<img src="{%static 'img/i.jpg'%}" class="img-responsive" alt=""'>
-								</div>
-							</div>
-						</div>
-					</div>
-
-
-
-				<!-- the last course -->
-				<div class="col-md-12">
-						<div class="row">
-							<div class="col-md-6 p-0 ">
-								<div class="course-image left-in">
-								
-										
-										<img src="{%static 'img/j.jpg'%}" class="img-responsive" alt=""'>
-								</div>
-							</div>
-
-
-							<div class="col-md-6 p-0">
-								<div class="course-description flex bg-dark right-in">
-									<div class="course-title">
-										Tailor Made Courses
-									</div>
-									<div class="line-sep"></div>
-
-									<div class="course-body">
-										<p>Apply your GIS knowledge in this course on geospatial analysis, focusing on analysis tools, 3D data, working with rasters,
-                                                                                projections, and environment variables. <a class="btn btn-success "href="{% url 'accounts:login'%}" role="button">LogIn &raquo;</a>  to register to one of these courses.</p></p>
-									</div>
-								</div>
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</section>
-
-
-		<section class="section">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<small>
-							<span class="caps">Our Team</span>
-						</small>
-						<div class="line-sep"></div>
-						<div class="section-title">
-							Team of Tutors
-						</div>
-					</div>
-
-					<div class="col-md-12">
-						<div class="row">
-							<div class="col-md-4">
-								<div class="tutor">
-									<div class="tutor-image">
-										
-										<img src="{%static 'img/eeeee.jpg'%}" class="img-responsive" alt=""'>	
-									</div>
-
-									<div class="text-center">
-										<h4>
-											Overblessing A Msuya
-										</h4>
-										<p>
-											Head of Admission
-										</p>
-									</div>
-
-									<ul class="tutor-icons">
-										<li>
-											<a href="facebook.com" target="blank" class="bg-dark">
-												<i class="fa fa-facebook"></i>
-											</a>
-										</li>
-
-										<li>
-											<a href="facebook.com" target="blank" class="bg-dark">
-												<i class="fa fa-instagram"></i>
-											</a>
-										</li>
-
-										<li>
-											<a href="facebook.com" target="blank" class="bg-dark">
-												<i class="fa fa-twitter"></i>
-											</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-
-
-
-							<div class="col-md-4">
-								<div class="tutor">
-									<div class="tutor-image">
-										
-										<img src="{%static 'img/avatar.jpg'%}" class="img-responsive" alt=""'>	
-									</div>
-
-									<div class="text-center">
-										<h4>
-											Rodline Blood
-										</h4>
-										<p>
-											Certificate Unit
-										</p>
-									</div>
-
-									<ul class="tutor-icons">
-										<li>
-											<a href="facebook.com" target="blank" class="bg-dark">
-												<i class="fa fa-facebook"></i>
-											</a>
-										</li>
-
-										<li>
-											<a href="facebook.com" target="blank" class="bg-dark">
-												<i class="fa fa-instagram"></i>
-											</a>
-										</li>
-
-										<li>
-											<a href="facebook.com" target="blank" class="bg-dark">
-												<i class="fa fa-twitter"></i>
-											</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-
-							<div class="col-md-4">
-								<div class="tutor">
-									<div class="tutor-image">
-										<img src="{%static 'img/avatr.jpg'%}" class="img-responsive" alt=""'>	
-									</div>
-
-									<div class="text-center">
-										<h4>
-											Miss Monica 
-										</h4>
-										<p>
-											Head of Training
-										</p>
-									</div>
-
-									<ul class="tutor-icons">
-										<li>
-											<a href="facebook.com" target="blank" class="bg-dark">
-												<i class="fa fa-facebook"></i>
-											</a>
-										</li>
-
-										<li>
-											<a href="facebook.com" target="blank" class="bg-dark">
-												<i class="fa fa-instagram"></i>
-											</a>
-										</li>
-
-										<li>
-											<a href="facebook.com" target="blank" class="bg-dark">
-												<i class="fa fa-twitter"></i>
-											</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-
-						<div class="row">
-							<div class="col-md-12 py-5">
-								<p class="text-center w-70 mx-auto">
-									<p>With a list of many more awsome tutors and patners, we are determined to grow beyond courses, reaching more minds with videos and publications on
-                                                                        GIS</p>
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-
-
-
-
-
-
-
-
-               
-               
                 
-               
-                
-      
-             
-
-
-
-
-
-
-
-
-
-		<section class="section grey-scale pt-5">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 flex-center f-col" >
-						<div class="section-title pt-15">
-							<span class="text-center newslatter-title">
-								Subscribe to Our Newslatter
-							</span>
-						</div>
-
-						<div class="section-tagline">
-							<p class="text-center newslatter-body">
-								Get the best of Gis materials, meetups, events, publication and news every week <br>
-								<small>No spam, We promise</small>
-							</p>
-						</div>
-
-
-
-						<div class="newslatter-form">
-							<form action="">
-								<div class="form-group">
-									<input type="text" class="form-control">
-								</div>
-
-								<div class="form-group">
-									<input type="submit" value="Subscribe" class="btn btn-follow wide">
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-
-		<section class="section">
-			<div class="container">
-				<div class="row">
-
-					<div class="col-md-12">
-						<small>
-							<span class="caps">Contact us</span>
-						</small>
-						<div class="line-sep"></div>
-						<div class="section-title">
-							Get in touch
-						</div>
-					</div>
-					<div class="col-md-7">
-						<!--  <div class="tab">
-		                          <button class="tablinks" onclick="openCity(event, 'contact')" id="defaultOpen">Contact</button>
-		                </div> -->
-                        
-                                           
-		                <div id="contact">
-		                                
-		                
-		                    <div class="video-container">                                   
-		                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5233.185493903763!2d39.27138706048278!3d-6.833484473017059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4ba5bbc1ba7b%3A0x2f4f0a88e2089417!2sKariakoo%2C+Dar+es+Salaam!5e0!3m2!1sen!2stz!4v1538828227060" frameborder="0" style="border:0" allowfullscreen></iframe>
-		                    </div>
-		                    
-		                </div>
-					</div>
-
-
-					<div class="col-md-5">
-						<div class="">
-							<div>
-								<p>
-									Give us a call at <a href="tel:0653397942" class="pull-right">+255653397942</a>
-								</p>
-
-								
-							</div>
-                        
-	
-                            <hr>
-                            <p class="text-center">Or <br> be classical</p>
-                       
-                                                <form>
-                                                                <div class="form-group">
-                                                                  <input type="text" class="form-control" name="" value="" placeholder="Name">
-                                                                </div>
-                                                                
-                                                                <div class="form-group">
-                                                                  <input type="email" class="form-control" name="" value="" placeholder="E-mail">
-                                                                </div>
-                                                                
-                                                                <div class="form-group">
-                                                                  <input type="tel" class="form-control" name="" value="" placeholder="Phone">
-                                                                </div>
-                                                                
-                                                                <div class="form-group">
-                                                                  <textarea class="form-control" name="" rows="3" placeholder="Message"></textarea>
-                                                                </div>
-                                                                
-                                                                <button class="btn btn-follow pull-right" type="submit" name="button">
-                                                                    <i class="fa fa-paper-plane-o" aria-hidden="true"></i> Submit
-                                                                </button>
-                                                </form>
-                        </div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		 <section class="section-small py-5">
-	      <div class="container">
-	        <div class="row">
-	          <div class="col-md-3 col-sm-6">
-	            <a href="#">
-	              <img class="img-fluid d-block mx-auto" src="{%static 'img/logo.jpg'%}" class="img-responsive" alt="">
-	            </a>
-	          </div>
-	          <div class="col-md-3 col-sm-6">
-	            <a href="#">
-	              <img class="img-fluid d-block mx-auto" src="{%static 'img/pic.png'%}" class="img-responsive" alt="">	 
-	            </a>
-	          </div>
-	          <div class="col-md-3 col-sm-6">
-	            <a href="#">
-	              <img class="img-fluid d-block mx-auto" src="{%static 'img/logo.jpg'%}" class="img-responsive" alt="">
-	            </a>
-	          </div>
-	          <div class="col-md-3 col-sm-6">
-	            <a href="#">
-	              <img class="img-fluid d-block mx-auto" src="{%static 'img/pic.png'%}" class="img-responsive" alt="">
-	            </a>
-	          </div>
-	        </div>
-	      </div>
-	    </section>
-	</main>
-
-
-	<footer>
-		<div class="footer">
-			<div class="container">
-				
-				<div class="row">
-					<div class="col-md-4">
-						<div class="link-title">
-							<p>
-								About Us
-							</p>
-							<div class="separator"></div>
-						</div>
-
-
-						<div>
-							<p>
-								<p> We are a compay Aiming at changing the lives of people through easy to follow and short time centered videos on Learning GIS, the geospatial
-                                                                software of modern times.</p>
-							</p>
-						</div>
-					</div>
-
-
-					<div class="col-md-2">
-						
-
-						<ul class="links">
-							<p>
-								Quick links
-							</p>
-							<div class="separator"></div>
-                                                        
-                                                        <li>
-								<a href="">Why GIS</a>
-							</li>
-
-							<li>
-								<a href="">Privacy Policy</a>
-							</li>
-						</ul>
-					</div>
-
-					
-					<div class="col-md-3">
-						
-
-						<ul class="links">
-                                                    
-                                                        <li>
-								<a href="">Registration process</a>
-							</li>            
-							<li>
-								<a href="">Student Support</a>
-							</li>
-
-							<li>
-								<a href="">Course Categories</a>
-							</li>
-
-							<li>
-								<a href="">Become an Instructor</a>
-							</li>
-						</ul>
-					</div>
-
-
-					<div class="col-md-3">
-						<div class="link-title">
-							<p>
-								Contact Us
-							</p>
-							<div class="separator"></div>
-						</div>
-
-						<p>
-							3rd Floor, Imalaseko Investment Limited, <br>
-							Kariakoo <br>
-							P. O. Box 123 <br>
-							Dar Es Salaam, Tanzania
-						</p>
-						<a href="tel:+255652441424" class="a-link">
-							(+255) 653 397942
-						</a>
-
-						<a href="mailto:obmsuya@yahoo.com" class="a-link">
-							info@gis4life.com
-						</a>
-
-					</div>
-
-
-				</div>
-
-				<div class="row">
-					<div class="col-md-12">
-						<div class="social-share">
-							<ul>
-								<li>
-									<a href="" class="fb-icon" target="blank">
-										<i class="fa fa-facebook"></i>
-									</a>
-								</li>
-
-								<li>
-									<a href="" class="ig-icon" target="blank">
-										<i class="fa fa-instagram"></i>
-									</a>
-								</li>
-
-								<li>
-									<a href="" class="tw-icon" target="blank">
-										<i class="fa fa-twitter"></i>
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-					<hr class="white">
-
-
-					<div class="footer-bottom">
-						<span>
-							@2018 GIS4life
-						</span>
-
-						<span>
 							
-						</span>
-					</div>
+					<section style="" id="home-service11">
+						<div id="media-sec-11">
+							<div class="container">
+								<div class="1">
+									<div class="col-lg-12 col-md-12" style="margin-bottom: 30px;">
+										<div class="cat-blocks">
+										<h4 class="cattitle" style="margin: -10px 0 20px;"><span><a href="javascript:;" style="color:#fff; text-decoration:none;">Related Terms </a></span></h4>	
+										</div>
+																														<div class="col-lg-3 col-md-3">   
+											<p style="font-size:16px;"><a href="" style="padding-left:0;margin: 0 0 0px;"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> Cloud Computing</a></p>	
+											<p style="font-size:16px;"><a href="" style="padding-left:0;margin: 0 0 0px;"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> Data Management</a></p>	
+											<p style="font-size:16px;"><a href="" style="padding-left:0;margin: 0 0 0px;"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> Data Visualization</a></p>	
+																				</div>
+																													</div>
+								</div>
+							</div>
+						</div>
+					</section>
+													
+					<section style="" id="home-service11">
+						<div id="media-sec-11">
+							<div class="container">
+								<div class="1">
+									<div class="col-lg-12 col-md-12">
+										<div class="cat-blocks">
+											<h4 class="cattitle" style="margin: -10px 0 20px;"><span><a href="javascript" style="color:#fff;">Database Whitepapers </a></span></h4>	
+										</div>
+																																<div class="col-lg-12 col-md-12">
+																							<div class="col-lg-4 col-md-4">
+													<blockquote id="mypdiv1">  
+													 <h5 style="font-weight: 900;margin-top: 0px;font-size: 18px;margin-bottom: 3px;"><a href="" style="color:#000;">Data Visualization: Creating Impactful Reports</a></h5>
+														<p style="font-weight: 900;margin-bottom: 3px;">White Paper By: DataFactZ Solutions</p>
+														<p style="text-align: justify;" id="myp1">Data visualization is an effective way to create impactful reports, dashboards that improve decision making, enhanced ad-hoc data analysis, better information sharing, increased ROI, time saving and reduced burden on IT.
+
+Data visualization is an essential component in the era of big data, enabling users to see trends and patterns that provide actionable intelligence.
+
+This white paper...</p>	
+													</blockquote>
+												</div>
+																																												<div class="col-lg-4 col-md-4">
+													<blockquote id="mypdiv2">  
+													 <h5 style="font-weight: 900;margin-top: 0px;font-size: 18px;margin-bottom: 3px;"><a href="" style="color:#000;">Business Class Next Generation Mobile Data Services</a></h5>
+														<p style="font-weight: 900;margin-bottom: 3px;">White Paper By: DataXoom Corp</p>
+														<p style="text-align: justify;" id="myp2">Next generation mobile applications and services and technologies to transform your business:
+
+Mobile data traffic is at an all-time high, and its growth shows no signs of slowing. In response to the changing requirements and to enable the richer experience users expect, the mobile community is evolving new standards for the next generation mobile data services and technologies .
+
+What...</p>	
+													</blockquote>
+												</div>
+																																												<div class="col-lg-4 col-md-4">
+													<blockquote id="mypdiv3">  
+													 <h5 style="font-weight: 900;margin-top: 0px;font-size: 18px;margin-bottom: 3px;"><a href="" style="color:#000;">Hitting the Data Trifecta: Three Secrets of Achieving Data Quality Excellence</a></h5>
+														<p style="font-weight: 900;margin-bottom: 3px;">White Paper By: Service Objects</p>
+														<p style="text-align: justify;" id="myp3">Collecting visitor and customer data through a variety of channels allows you to quickly grow your contact list. However, receiving high quality data isn&rsquo;t necessarily a given.
+
+Whatever your touch points are with customers or prospects &ndash; including customer data, contest entry forms, phone surveys, lead generation and point of sale interactions &ndash; some data will be...</p>	
+													</blockquote>
+												</div>
+																						</div>
+																														</div>
+								</div>
+							</div>
+						</div>
+					</section>
+						
 			</div>
 		</div>
-	</footer>
+			
+    </section>
+<script src="https://www.ciowhitepapersreview.com//assets/js/jquery-1.10.2.js"></script>
 
+<script>
+$(document).ready(function(){
+	for(i=1;i<=10;i++){		
+		var div = document.getElementById("mypdiv"+i);		
+		var divheight = $("#mypdiv"+i).height();
+		var lineheight = $("#mypdiv"+i).css('line-height');
+		tc = Math.round(divheight/parseInt(lineheight));
+		if(tc > 6){
+			var words = $("#myp"+i).text().split(" ");
+			$("#myp"+i).text("");		
+			$.each(words, function(index, value){
+				var divheight = $("#mypdiv"+i).height();
+				var lineheight = $("#mypdiv"+i).css('line-height');
+				tc = Math.round(divheight/parseInt(lineheight));	
+				if (tc <= 6){
+					$("#myp"+i).append(value + " ");   
+				}						
+			});					
+		}
+	str = $("#myp"+i).text();	
+	str = str.trim();
+	lastIndex = str.lastIndexOf(" ");
+	str = str.substring(0, (lastIndex - 3));
+	$("#myp"+i).text(str+'..');
+	}
+});
+</script>
+		
 
-	<script>
-			function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
+	
+	<style>
+	.showcase .content {
+    float: left;
+    width: 340px;
+    height: 300px;
+}
+.showcase #content-4.content {
+    background-color: #1C383F;
+}
+.content {
+overflow: auto;
+position: relative;
+height: 230px;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+.mCustomScrollBox {
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    max-width: 100%;
+    outline: none;
+    direction: ltr;
+}
+.mCSB_inside > .mCSB_container {
+    margin-right: 30px;
+}
+.mCSB_inside > .mCSB_container {
+    margin-right: 30px;
+}
+.mCustomScrollBox {
+    direction: ltr;
+}
+.mCSB_scrollTools {
+    opacity: 0.75;
+    filter: "alpha(opacity=75)";
+    -ms-filter: "alpha(opacity=75)";
+}
+.mCSB_scrollTools {
+    position: absolute;
+    width: 16px;
+    height: auto;
+    left: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+.mCSB_scrollTools, .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar, .mCSB_scrollTools .mCSB_buttonUp, .mCSB_scrollTools .mCSB_buttonDown, .mCSB_scrollTools .mCSB_buttonLeft, .mCSB_scrollTools .mCSB_buttonRight {
+    -webkit-transition: opacity .2s ease-in-out, background-color .2s ease-in-out;
+    -moz-transition: opacity .2s ease-in-out, background-color .2s ease-in-out;
+    -o-transition: opacity .2s ease-in-out, background-color .2s ease-in-out;
+    transition: opacity .2s ease-in-out, background-color .2s ease-in-out;
+}
+.mCSB_scrollTools .mCSB_draggerContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: auto;
+}
+.mCSB_scrollTools .mCSB_dragger {
+    cursor: pointer;
+    width: 100%;
+    height: 30px;
+    z-index: 1;
+}
+.mCS-rounded-dots.mCSB_scrollTools .mCSB_draggerRail, .mCS-rounded-dots-dark.mCSB_scrollTools .mCSB_draggerRail {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAANElEQVQYV2NkIAAYiVbw//9/Y6DiM1ANJoyMjGdBbLgJQAX/kU0DKgDLkaQAvxW4HEvQFwCRcxIJK1XznAAAAABJRU5ErkJggg==");
+    background-repeat: repeat-y;
+    opacity: 0.3;
+    filter: "alpha(opacity=30)";
+    -ms-filter: "alpha(opacity=30)";
+}
+p {
+    margin: 0 0 10px;
+    font-size: 14px;
 }
 
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
+
+#footer-sec p {
+    border-right: 1px solid transparent;
+    padding-right: 10px;
+    margin: 0 0 0px;
 }
-	</script>
+#livesearch {
+    margin-left: 200px;
+    width: 70%;
+	margin-bottom: 40px;
+}
+#myInput {
+    background-image: url('/images/search.png'); /* Add a search icon to input */
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 70%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 7px 20px 7px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 2px; /* Add some space below the input */
+	margin-left: 200px;
+	height:46px;
+}
+.form-control:focus {
+    border-color: #F9BABE;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgb(249, 186, 190);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgb(249, 186, 190);
+}
+    </style>
 
 
 
+
+<div id="footer-sec">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12" id="about-ftr">
+				<h3 class="foot-text" style="margin-top: 10px;margin-bottom: 15px;"> Most Popular Tech Terms </h3>
+				</div>
+                <div class="col-lg-3 col-md-3" id="about-ftr">
+
+										<h5 style=""><a href="" style="padding-left:0;color: #fff;margin: 0 0 0px;"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+ERP</a></h5>
+										<h5><a href="" style="padding-left:0;color: #fff;margin: 0 0 0px;"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+Blockchain Technology</a></h5>
+										<h5><a href="" style="padding-left:0;color: #fff;margin: 0 0 0px;"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+Data Warehouse</a></h5>
+										<h5><a href="" style="padding-left:0;color: #fff;margin: 0 0 0px;"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+Digital Transformation</a></h5>
+										
+									
+		
+			</div>
+               
+                <div class="col-lg-3 col-md-3">
+                    
+										<h5><a href="" style="padding-left:0;color: #fff;margin: 0 0 0px;"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+Healthcare System</a></h5>
+										<h5><a href="" style="padding-left:0;color: #fff;margin: 0 0 0px;"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+Telecommunication</a></h5>
+										<h5><a href="" style="padding-left:0;color: #fff;margin: 0 0 0px;"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+Web 2.0</a></h5>
+										<h5><a href="" style="padding-left:0;color: #fff;margin: 0 0 0px;"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+Digitalization</a></h5>
+									
+                </div>
+
+                <div class="col-lg-3 col-md-3" style="border-right: 1px solid transparent;">
+                    
+										<h5><a href="" style="padding-left:0;color: #fff;margin: 0 0 0px;"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+Ransomware</a></h5>
+										<h5><a href="" style="padding-left:0;color: #fff;margin: 0 0 0px;"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+Information Technology</a></h5>
+										<h5><a href="" style="padding-left:0;color: #fff;margin: 0 0 0px;"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+Human Resource Management</a></h5>
+										<h5><a href="" style="padding-left:0;color: #fff;margin: 0 0 0px;"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+Intelligent Analytics</a></h5>
+										
+                </div>
+				<div class="col-lg-3 col-md-3">
+                    
+										<h5><a href="" style="padding-left:0;color: #fff;margin: 0 0 0px;"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+Open source BI</a></h5>
+										<h5><a href="" style="padding-left:0;color: #fff;margin: 0 0 0px;"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+Software</a></h5>
+										<h5><a href="" style="padding-left:0;color: #fff;margin: 0 0 0px;"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+Network</a></h5>
+										<h5><a href="" style="padding-left:0;color: #fff;margin: 0 0 0px;"><i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+Backup</a></h5>
+									
+                </div>
+            </div>
+        </div>
+         </div>
+
+
+
+         
+<div id="footser-end">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12">
+            	<span style="float: left;margin-top: -5px;">
+                    <a href="" target="_blank"><img alt="follow on linkedin" src="https://www.ciowhitepapersreview.com/img/linkedin_cirr.png" title="Linkedin" style="width: 30px;margin-top: 4px; margin-right:4px;"></a>
+                    
+                    <a href="" target="_blank"><img style="width: 28px;  margin-top:5px; margin-right:4px;" src="https://www.ciowhitepapersreview.com/img/Twitter_cir22.png" title="Twitter" alt="follow on twitter"></a>
+                    
+                    <a href="" target="_blank"><img style="width: 28px;  margin-top:5px;" src="https://www.ciowhitepapersreview.com/img/fb_anton.png" title="Facebook" alt="follow on facebook"></a>
+                
+              </span>
+				2018 All Rights Reserved | by: <a href="" style="color:#fff"></a>				
+			</div>
+		</div>
+	</div>
+</div>
+	
+<script src="https://www.ciowhitepapersreview.com/assets/js/jquery-1.10.2.js"></script>
+<script src="https://www.ciowhitepapersreview.com/assets/js/bootstrap.js"></script>
+<script src="https://www.ciowhitepapersreview.com/assets/js/custom.js"></script>
+<script src="https://www.ciowhitepapersreview.com/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="https://www.ciowhitepapersreview.com/assets/js/jquery-1.js"></script>
+<script src="https://www.ciowhitepapersreview.com/assets/js/plug-in.js"></script>
+<style type="text/css">
+.marquee{white-space:nowrap;overflow:hidden;visibility:hidden;}#marq_kill_marg_bord{border:none!important;margin:0!important;}
+</style>
+<script type="text/javascript" src="https://www.ciowhitepapersreview.com/assets/js/wf-site.js"></script>
+<script src="https://www.ciowhitepapersreview.com/assets/js/default-base.js"></script>
+<script src="https://www.ciowhitepapersreview.com/assets/js/searchtracker.js"></script>	
+<script>
+// Written By Jagdish for handeling Safari issues : 2017-08-11 .
+$(document).ready(function(){
+	if (navigator.userAgent.indexOf('Safari') != -1 && navigator.userAgent.indexOf('Chrome') == -1) {
+		$('#main-menu').css('margin-top','-28px');
+	}
+});
+
+function select_cat(cid,val)
+	{	
+
+		$.ajax({
+			type    :'post',
+			data	: {category: cid, itr: val},
+			url     :'/load_vertical1.php',
+			success :function(res){
+				 
+				 $("ul").html(res);
+			}
+		})
+			
+		
+	}
+	
+function show_menus()
+	{	
+	
+	$('#popup-menu').show();
+		
+	}
+function value_select(srch_val,id)
+{
+	document.getElementById("myInput").value = srch_val;
+	$('#livesearch').hide();
+	document.getElementById("hide_s").value = id;
+	document.getElementById("searchform").submit();
+}
+  function select_data(str)
+	{	
+		
+			if(str.length>0){
+				$.ajax({
+					type    :'post',
+					data    :'key='+str,
+					url     :'/load_category_src1.php',
+					success :function(res){
+						 $('#livesearch').show();
+						 $("#livesearch").html(res);
+					}
+				})
+			}
+			else
+			{
+				
+				$("#livesearch").html('')
+			}
+		
+	}
+</script>	
+
+<div class="overlay-screen"></div>
+<div id="tiptip_holder" style="max-width:200px;">
+	<div id="tiptip_arrow">
+		<div id="tiptip_arrow_inner">
+		</div>
+	</div>
+	<div id="tiptip_content">
+	</div>
+</div>
 </body>
-
-
-
 </html>

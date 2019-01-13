@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+{% extends 'base3.html' %}
+{% load staticfiles %}
+
+{%block head%}
+     
+    
+    
+    {%endblock%}
+
+
+
+ {% block body %}
+
+	<main class="main-wrapper">
+		
+		<aside class="side-panel">
+			<div class="search-area"><form action=""><input type="text" placeholder="Type to search.. "></form></div>
+				
+				<div class="scroll-able mt-10">
+					<ul class="top-ul">
+						<li><a href="{% url 'home:gisprac_q_intro' %}" >Introduction</a></li>
+						<li><a href="{% url 'home:gisprac_interface' %}" >QGIS Interface</a></li>
+						<li><a href="{% url 'home:gisprac_attribute' %}" >Work with Attribute</a></li>
+						
+                                                <li><a href="" class="active">Data Creation</a>	
+							<ul class="submenu">
+								<li><a href="" id="link1">Vector Data</a></li>			
+								<li><a href="" id="link2">Raster Data</a></li>
+								<li><a href="" id="link3">Map Making</a></li>
+								<li><a href="" id="link4">QGIS Plugins</a></li>
+								<li><a href="{% url 'quiz:interface' %}" >Test</a></li>
+							</ul>
+						</li>
+	
+						
+						
+                                                <li><a href="" >Coming soon</a></li>
+						<li><a href="" >Coming soon</a></li>
+						<li><a href="" >Coming soon</a></li>
+						<li><a href="" >Coming soon</a></li>
+						<li><a href="" >Coming soon</a></li>
+						<li><a href="" >Coming soon</a></li>
+						<li><a href="" >Coming soon</a></li>
+						<li><a href="" >Coming soon</a></li>
+						<li><a href="" >Coming soon</a></li>
+						
+						
+					</ul>
+				</div>
+				
+		</aside>
+		
+
+
+
+
+
+	<div class="main-section">
+		<div class="container">
+
+
+				<h1 class="topic-title">INTRODUCTION</h1>
+
+			<div id="linkintro">
+                         
+                            <p>This  course provides practical introduction to QGIS; a free, open-source Geographic
+                            Information System which runs on Windows, Mac OS X, and Linux. QGIS is a user-friendly GIS software,
+					providing common functions and features; also a free, collaborative, cross-platform software that is constantly developing by QGIS community. 
+					This course dive deep and take a comprehensive look at QGIS and the basic GIS concepts. Throughout this course, you will be learning through written tutorials, lecture videos and quizzes. </p>
+                            <div class="text-center">
+			    <img src="{%static 'img/vutia.jpg'%}" class="img-responsive" alt=""'>	
+			    </div>
+			    <h3>Software Used.</h3>
+			    
+                            
+			    <h3>Expected Results</h3>
+                            
+						
+				
+                            <h3>What if you get stack?</h3>
+			   
+				
+				 
+	        
+                               
+                                
+						
+                   		
+					
+	</div>
+
+			
+	
+
+			
+			<div id="link1data" class="animated fadeIn">
+
+
+				<h2>QGIS Installation</h2>
+				<div class="section2 grey-scale">
+					<div class="text-center">
+					
+					<h3 class="font-weight-bold">READING TUTORIAL.</h3> 
+					</div>
+					</div>
+					
+				<hr>
+				<p><span>Types </span></p>	
+				
+				<h2><span>Spreadsheet Data.</span></h2>
+					
+					<p>Attribute information can be attached to the spatial feature(shapefile) or it can be as an excel file(spreadsheet).</p>
+					
+					In GIS system, the attribute data can exist separately or attached with the shapefile. When attribute is in separate state
+					it is associated with a shapefile through the join operation. When the 
+					
+					
+					<p>To add a spreadsheet into QGIS, click on the Layer>Add Layer and click Add Delimited Text Layer. This will bring up anew dialog: </p>
+					
+					<img src="{%static 'img/interface_9.jpg'%}"   class= 'img-responsive'>
+					
+					<p>This dialog allows you to select a wide range of properties for your layer. Even though most common usage of the delimited file is comma,
+					there are always different options. If your file using another delimiter rather than a comma, you can define your custom delimiter from
+					Custom delimiters. Click OK to add your data into QGIS. </p>
+					
+					<p>Note: </p>
+					<p>If you have a csv file with coordinate value such as Latitude and Longitude, you can define your geometry by selecting Point Coordinates
+					and Reprojecting with same CRS. </p>
+                                        
+                                        
+                                        
+                                        	<img src="{%static 'img/interface_10.jpg'%}"   class= 'img-responsive'>
+					
+					<p>Right now, we have three layers, one showing the boundaries, one showing the provincial health sites and provincial main roads data. </p>
+					
+					<p>For next step, we will look at the attribute values of these layers. </p>
+				<div class="text-center">
+			    <img src="{%static 'img/installation.jpg'%}" class="img-responsive" alt=""'>	
+			    </div>
+				
+				
+	
+<br>
+	<hr>
+		
+		
+
+			</div>
+
+			
+
+			<div id="link2data" class="animated fadeIn">
+					<div class="section2 grey-scale">
+					<div class="text-center">
+					<h2>Files Management</h2>
+					</div>
+					</div>
+					
+				<hr>
+					<br>					
+
+					 <div class="text-center">
+				<img src="{%static 'img/fmngt111.jpg'%}" class="image-responsive" alt="">	
+					 </div>
+				
+				
+					<hr>
+			</div>
+
+
+
+			<div id="link3data" class="animated fadeIn">
+					
+					<div class="section2 grey-scale">
+					<div class="text-center">
+					<h2>QGIS Desktop</h2>
+					</div>
+					</div>
+					
+				<hr>
+					
+					
+					
+					
+					
+					<hr>
+			</div>
+			
+			
+			<div id="link4data" class="animated fadeIn">
+					
+					
+					<div class="section2 grey-scale">
+					<div class="text-center">
+					<h2>QGIS Plugins</h2>
+					</div>
+					</div>
+					
+				<hr>
+
+					<p>
+						
+					
+
+					<hr>
+						
+						
+						Configuring the user interface
+			</div>
+			
+			
+			
+			
+			
+			
+
+
+
+		</div>
+	
+</main>
+     
+     
+      {% endblock %}   
+        
+       

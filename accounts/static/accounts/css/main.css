@@ -78,8 +78,8 @@ nav{
 	background-color: #673AB7 !important;
 	height: 4px;
 	width: 100%;
-	position: absolute;
-	bottom: 0;
+	position: fixed;
+	top: 60px;
 	/*top: 20px;*/
 	z-index: 999;
 }
@@ -232,7 +232,14 @@ nav{
 	
 }
 .image-responsive{
-	height: 100%;
+	max-width: 100%;
+	height: auto !important;
+	
+}
+.img-responsive{
+	max-width: 100%;
+	height: auto !important;
+	
 }
 .btn-follow{
 	background-color: #FF4081;
@@ -519,6 +526,12 @@ hr.white{
 	min-height: 500px;
 	padding-top: 50px;
 }
+
+.section2{
+	min-height: 100px;
+	padding-top: 50px;
+}
+
 .section-title{
 	font-size: 2.1rem;
 	font-weight: 500;
@@ -758,7 +771,7 @@ hr.white{
 	text-decoration: none;
 	color: #673AB7
 }
-.side-panel ul li a.active{
+.left-sidebar ul li a.active{
 	background-color: #673AB7;
 	font-weight: 500;
 	color: #fff;
@@ -782,6 +795,10 @@ hr.white{
 }
 
 @media screen and (max-width: 420px){
+	.main-section{
+		/*margin-top: 70px;*/
+		padding-left: 10px;
+	}
 	.navbar-brand{
 		margin-left: 20px;
 	}
@@ -836,6 +853,10 @@ hr.white{
 	margin-bottom: 20px !important;
 }
 
+
+
+
+
 .image-holder,{
 	height: calc( 100vh - 60vh);
 	width: 80%;
@@ -856,7 +877,7 @@ hr.white{
 
 .video-holder{
 	height: calc( 100vh - 50vh);
-	width: 80%;
+	width: 100%;
 	margin: 15px 0px;
 }
 
@@ -911,9 +932,9 @@ iframe, .video-container, #contact{
   .asidenav a {font-size: 18px;}
 }
 
-  .navbar-brand{
-  	    margin-right: 10rem !important;
-  }
+ /* .navbar-brand{
+  	    margin-right: 2rem !important;
+  }*/
 
 
 .modal{
@@ -943,4 +964,14 @@ h3{
 }
 p{
 	    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+span {
+    font-weight:bold;
+    color:dark;
+}
+
+spanb {
+    
+    color:blue;
 }

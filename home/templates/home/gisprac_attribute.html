@@ -137,12 +137,22 @@
 				</h2>
 
 				<div id="linkintro">
-					<p>
-						<span>Welcome. This is topic one of the one Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima odit eius ullam minus ad
-                                                reiciendis obcaecati, neque id fugiat. Veniam totam dolorum eum tempora nisi amet, asperiores
-                                                assumenda, nihil id.</span>
-						
-					</p>
+					<img src="{%static 'img/interface_5.jpg'%}"   class= 'img-responsive'>
+					<p>As you may notice, shape of the country looks skewed vertically. This is an effect of projection that we discussed earlier. Since QGIS
+					automatically selects WGS84 projection, we should change it into a different projection that represents Tanzania. </p>
+					
+					<p>Select the option in the Status Bar that circled in the figure Project then click Properties, and open the CRS menu accordingly. </p>
+					
+					<p>Click on CRS option on the top of the project properties menu. Type "Pseudo" in the Filter search menu. Also, you can type "3857",
+					the code the related projection. Select the related projection system and click OK. </p>
+					
+					<img src="{%static 'img/interface_6.jpg'%}"   class= 'img-responsive'>
+					
+					<p>Note: There are different projection systems that you can use for different purposes. </p>
+					
+					<p>Now, boundaries of Tanzania should look like as shown: </p>
+					
+					<img src="{%static 'img/interface_7.jpg'%}"   class= 'img-responsive'>
 				</div>
 
 				<hr>

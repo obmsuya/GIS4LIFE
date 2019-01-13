@@ -1,0 +1,87 @@
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<!--<script src="{% static 'admin/js/bongo_js/bongo.js' %}"></script>-->
+     
+
+    </head>
+
+    <body>
+
+<div class="container">
+    <a href="{% url 'home:gisprac_q_intro' %}">&lt; Back </a>
+  <h3>Questions</h3>
+  <div class="alert alert-info" role="alert" id="score" ></div>
+  {% csrf_token %}
+       Please answer the following Questions <br>
+      
+    <ol>
+          {% for item in quizs %}
+            
+            
+             <li>   {{ item.question }}</li>
+             
+             <div id="{{ item.id }}" name="{{ item.id }}">
+             
+             <input type="hidden" name="{{ item.id }}" value="{{ item.ans }}">
+             <label> <input type="radio"  name="{{ item.id }}" value="{{ item.a }}" />{{ item.a }}</label><br>
+              <label><input type="radio"   name="{{ item.id }}" value="{{ item.b }}" />{{ item.b }}</label><br>
+                {% if item.c %}
+             <label> <input type="radio"  name="{{ item.id }}" value="{{ item.c }}" />{{ item.c }}</label><br>
+                  {% endif %}
+                {% if item.d %}
+             <label><input type="radio"   name="{{ item.id }}" value="{{ item.d }}" />{{ item.d }}</label>
+                  {% endif %}
+
+           </div>
+        {% endfor %}
+    </ol>   
+<br>
+      
+
+ 
+
+<script>
+ $( function() {
+
+var scores=0;
+
+  $("input:radio").removeAttr("checked"); 
+  $("div input").click( function(event)
+  {
+   var clicked = $(this); 
+   var c= clicked.val()
+   var namex=($(this).attr('name'));
+
+   var ans =$('input:hidden[name='+namex+']').val();
+   //alert(namex);
+   if (c=== ans){
+    alert("CORRECT!");
+    scores=scores+1;
+   }else{
+    alert("WRONG! The correct answer is "+ans);
+
+         }
+
+  //Update score
+    
+  $('#score').text("Score: "+scores + " " +"out of 10");
+   });
+
+
+  } );
+</script>
+
+</div>
+</body>
+</html> 

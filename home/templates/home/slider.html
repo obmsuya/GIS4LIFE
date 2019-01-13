@@ -1,182 +1,1114 @@
+<script>
+    function getGenologyTree(user_name, event)
+    {
+        $.ajax({
+            type: "POST",
+            url: 'https://infinitemlm.com/backoffice/admin/tree/tree_view',
+            data: {
+                user_name: user_name
+            },
+            beforeSend: function() {
+                if (event) {
+                    var x = event.clientX;     // Get the horizontal coordinate
+                    var y = event.clientY;     // Get the vertical coordinate
+                    var position = "fixed";
+                    //alert(x+"--"+y);
+                    var d = document.getElementById('loader-div');
+                    d.style.position = position;
+                    d.style.left = x;
+                    d.style.top = y;
+                    $('#loader-div').show();
+                }
+            },
+            success: function(data) {
+                $('#summary').html(data);
+                $('#loader-div').hide();
 
-<!--A Design by Noely 
-Author: Noely
-
--->
-{% load staticfiles %}
+                //Uncomment the following code to Focus on ROOT USER OF THE TREE//
+                /* var tree_window_size = $("#tree_div").width();
+                 var box_size = $("#summary").width();
+                 
+                 var x = tree_window_size / 2 - box_size / 2; 
+                 var y = 0;
+                 
+                 $("#summary").scrollTo(x, y);
+                 
+                 $('#summary').animate({
+                 'scrollTop': $("#chart").position().top
+                 }, '100');*/
+            }
+        });
+    }
+</script>
+<style>
+.panel{
+    box-shadow: none !important;
+}
+.row.search-cmd .panel-heading {
+    display: none;
+}
+ 
+.dropdown-toggle.tree-flag {
+    padding-top: 20px;
+}
+.dropdown-toggle.tree-top-head {
+    padding-bottom: 15px;
+}
+@media only screen and (max-width: 1024px) and (min-width: 768px){
+.main-content > .container {
+    height: -webkit-fill-available;
+}
+.spacer-xs {
+    height: -webkit-fill-available;
+}
+}
+ 
+</style>
 <!DOCTYPE html>
-<html>
-<head>
-<title>GIS | Home ::</title>
-<!--css-->
-<!--<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />-->
-<!--<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />-->
-<!--<link rel="stylesheet" href="css/ken-burns.css" type="text/css" media="all" />-->
-<!--<link rel="stylesheet" href="css/animate.min.css" type="text/css" media="all" />-->
+<html lang="en" class="no-js">
+    <!-- start: HEAD -->
+    <!--[if IE 8]><html class="ie8 no-js" lang="en"><![endif]-->
+    <!--[if IE 9]><html class="ie9 no-js" lang="en"><![endif]-->
+    <head>
+        <title>Infinite MLM Software 9.0 | Genealogy Tree</title>
+        <!-- start: META -->
+        <meta charset="utf-8" />
+        <!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
+        <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">--->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=12.0, minimum-scale=.25, user-scalable=yes"/>
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <!-- end: META -->    
+        <link rel="shortcut icon" type="image/png" href="https://infinitemlm.com/backoffice/public_html/images/logos/favicon.ico" />
+        <!-- <script src="https://infinitemlm.com/backoffice/public_html/javascript/jquery-1.8.2.min.js"></script> -->
+        <script src="https://infinitemlm.com/backoffice/public_html/javascript/jquery-1.11.1.min.js"></script>
+        
+        <!-- start: MAIN CSS -->
+        <link rel="stylesheet" href="https://infinitemlm.com/backoffice/public_html/plugins/bootstrap/css/bootstrap.min.css" media="screen">
+        <link rel="stylesheet" href="https://infinitemlm.com/backoffice/public_html/plugins/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://infinitemlm.com/backoffice/public_html/fonts/style.css">
+        <link rel="stylesheet" href="https://infinitemlm.com/backoffice/public_html/css/main.css">
+        <link rel="stylesheet" href="https://infinitemlm.com/backoffice/public_html/css/main-responsive.css">
+        <link rel="stylesheet" href="https://infinitemlm.com/backoffice/public_html/plugins/bootstrap-colorpalette/css/bootstrap-colorpalette.css">
+        <link rel="stylesheet" href="https://infinitemlm.com/backoffice/public_html/plugins/bootstrap-switch/static/stylesheets/bootstrap-switch.css">
+        
+        <link rel="stylesheet/less" type="text/css" href="https://infinitemlm.com/backoffice/public_html/css/styles.less">
+        <link rel="stylesheet/less" type="text/css" href="https://infinitemlm.com/backoffice/public_html/css/animations.css">
+        <link rel="stylesheet" href="https://infinitemlm.com/backoffice/public_html/css/theme_light.css" type="text/css" id="skin_color">        
+        
+        <!-- end: MAIN CSS -->
 
+        
+                                                                                                                            <link href="https://infinitemlm.com/backoffice/public_html/css/autoComplete.css" rel="stylesheet" type="text/css" />
+                                                                                                                                                                        
+        
+        <script src="https://infinitemlm.com/backoffice/public_html/javascript/switch_lang.js" type="text/javascript" ></script>
+                    <script src="https://infinitemlm.com/backoffice/public_html/javascript/timer.js" type="text/javascript"></script>
+            <script src="https://infinitemlm.com/backoffice/public_html/javascript/auto_timeout.js" type="text/javascript"></script>
+            
+            <script src="https://infinitemlm.com/backoffice/public_html/javascript/currency.js" type="text/javascript" ></script>
+        
+        <script>
+            jQuery(document).ready(function () {
+                $.ajaxSetup({
+                    data: {
+            inf_token: '1973192d39bfbdfc4e0a392faf892aee'
+                    }
+                });
+            });
+        </script> 
+    </head>
+    <body  class="" >
+        <input type = "hidden" name = "base_url" id = "base_url" value = "https://infinitemlm.com/backoffice/" />
+        <input type = "hidden" name = "img_src_path" id="img_src_path" value="https://infinitemlm.com/backoffice/public_html/"/>
+        <input type = "hidden" name = "current_url" id = "current_url" value = "tree/genology_tree" />
+        <input type = "hidden" name = "current_url_full" id = "current_url_full" value = "admin/tree/genology_tree" />
+        <input type = "hidden" name = "DEFAULT_CURRENCY_VALUE" id="DEFAULT_CURRENCY_VALUE" value="1"/>
+        <input type = "hidden" name = "DEFAULT_CURRENCY_CODE" id="DEFAULT_CURRENCY_CODE" value=""/>
+        <input type = "hidden" name = "DEFAULT_SYMBOL_LEFT" id="DEFAULT_SYMBOL_LEFT" value=""/>
+        <input type = "hidden" name = "DEFAULT_SYMBOL_RIGHT" id="DEFAULT_SYMBOL_RIGHT" value=""/>
+        <!--inactiviy logout setting-->
+                <input type = "hidden" name = "logout_time" id="logout_time" value="1800"/>
+                <!--end-->
+        
+         
+            <!--site header-->	
+            
+<style type="text/css">
+    /*badge*/
 
-	<link rel="stylesheet" href="{% static 'accounts/css/style.css' %}">
-	<link rel="stylesheet" href="{% static 'accounts/css/bootstrap.css' %}">	
-	<link rel="stylesheet" href="{% static 'accounts/css/ken-burns.css' %}">
-	<link rel="stylesheet" href="{% static 'accounts/css/animate.css' %}">
+    .badge.bg-primary {
+        background: #8075c4;
+    }
 
-<!--css-->
+    .badge.bg-success {
+        background: #a9d86e;
+    }
 
+    .badge.bg-warning {
+        background: #FCB322;
+    }
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Noely template, Bootstrap ,, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!--js-->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-<script src="https://fastcdn.org/ResponsiveSlides.js/1.54/responsiveslides.min.js"></script>
+    .badge.bg-important {
+        background: #ff6c60;
+    }
 
+    .badge.bg-info {
+        background: #41cac0;
+    }
 
+    .badge.bg-inverse {
+        background: #2A3542;
+    }
 
+</style>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    
+    <div class="container">
+        <div class="navbar-header">
+            
+            <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+                <span class="clip-list-2"></span>
+            </button>
+            
+                
+            <div class="logo-header">
+                <a class="navbar-brand" href="https://infinitemlm.com/backoffice/admin/home/index"> 
+                    <img src="https://infinitemlm.com/backoffice/public_html/images/logos/logo_default.png" class="logo"/>
+                </a>     
+            </div>
+            
+        </div>
+        <div class="navbar-tools">
+            
+            <ul class="nav navbar-right">
+                
+                <!-- start : OPENCART NOTIFICATION -->
+                                <!-- end : OPENCART NOTIFICATION -->
+                
+                <!-- start: MESSAGE DROPDOWN -->
 
-<!--<script src="js/jquery.min.js"></script>-->
-<!--<script src="js/bootstrap.min.js"></script>-->
-<!--js-->
-<!--webfonts-->
-<link href='//fonts.googleapis.com/css?family=Cagliostro' rel='stylesheet' type='text/css'>
-<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-<!--webfonts-->
-</head>
+                <li id="header_inbox_bar" class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle tree-top-head" href="#" title="Mail Notification">
+                        <i class="fa fa-envelope-o"></i>
+                                            </a>
+                    <ul class="dropdown-menu extended inbox " >
+                                                    <li>
+                                <p class="red"> You have no new mail</p>
+                            </li>
+                                                <li>
+                            <a href="https://infinitemlm.com/backoffice/admin/mail/mail_management">See all messages </a>
+                        </li>
+                    </ul>
+                </li> 
 
-<body>
+                <li id="header_inbox_bar" class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle tree-top-head" href="#" title="Notification">
+                        <i class="fa fa-bell-o"></i>
+                                            </a>
+                    <ul class="dropdown-menu extended inbox notification_count">
+                                                    <li>
+                                <p class="red"> You have no new notification</p>
+                            </li>
+                                            </ul>
+                </li> 
+                <!-- end: MESSAGE DROPDOWN -->
 
-	<!-- lkn lazima ikae ndani ya <body> tag-->
-	<!-- hapa ndio slider banner inaanza-->
-	<div class="banner">
-		<div id="kb" class="carousel kb_elastic animate_text kb_wrapper" data-ride="carousel" data-interval="6000" data-pause="hover">
+                
+                
 
-            <!-- Wrapper-for-Slides -->
-            <div class="carousel-inner" role="listbox">
+                <!-- start: USER DROPDOWN -->
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="true"> 
+                                                    <img alt="" src="https://infinitemlm.com/backoffice/public_html/images/profile_picture/nophoto.jpg" height="24px" width="24px">
+                                                <span class="username">overblessing Msuya</span>
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu extended logout">
+                        <li><a href="https://infinitemlm.com/backoffice/admin/profile/profile_view"><i class=" fa fa-suitcase"></i>Profile</a></li>						
+                        <li><a href="https://infinitemlm.com/backoffice/register/user_register"><i class=" clip-user-plus"></i>Signup</a></li>
+                        <li><a href="https://infinitemlm.com/backoffice/login/logout"><i class="fa fa-key"></i> Logout</a></li>
+                    </ul>
+                    <!-- <ul class="dropdown-menu extended logout">
+                            <li><a href="https://infinitemlm.com/backoffice/admin/profile/profile_view"><i class=" fa fa-suitcase"></i>Profile</a></li>						
+                            <li><a href="https://infinitemlm.com/backoffice/register/user_register"><i class=" clip-user-plus"></i>Signup</a></li>
+                            <li><a href="https://infinitemlm.com/backoffice/login/logout"><i class="fa fa-key"></i> Logout</a></li>
+                    </ul> -->
+                </li>
+                <!-- end: USER DROPDOWN -->
 
-                <!-- First-Slide -->
-                <div class="item active">
-                    <!--<img src="images/mmm10.jpg" alt="" class="img-responsive" />-->
-		    <img src="{%static 'img/mmm10.jpg'%}" class="img-responsive" alt="">
-                    <div class="carousel-caption kb_caption">
-                        <h3 data-animation="animated flipInX">Get Everything Right</h3>
-                        <h4 data-animation="animated flipInX">Noely Mwalongo</h4>
+            </ul>
+            <!-- end: TOP NAVIGATION MENU -->
+        </div>
+    </div>
+    <!-- end: TOP NAVIGATION CONTAINER -->
+</div>
+<!-- end: SITE HEADER -->
+<!-- start: MAIN CONTAINER -->
+<div class="main-container" >
+    <!-- start: SIDEBAR -->
+    <div class="navbar-content">
+        <div class="main-navigation navbar-collapse collapse">
+            <div class="user-info-left">
+                    <!-- <img src="https://infinitemlm.com/backoffice/public_html/images/profile_picture/nophoto.jpg" width="30" height="30"> -->
+                            </div>
+            <!-- start: MAIN MENU TOGGLER BUTTON -->
+            <div class="navigation-toggler">
+                <i class="fa fa-outdent" aria-hidden="true"></i>
+                 
+                <!-- i class="clip-menu"></i> -->
+            </div>
+            <!-- end: MAIN MENU TOGGLER BUTTON -->
+            <ul class='main-navigation-menu'>
+           
+                <li >           
+            <a href= 'https://infinitemlm.com/backoffice/admin/home/index' >                     
+                <i class='clip-home-2'  style="font-size: 13px;"></i>
+                <span class='title'>
+                    Dashboard
+                </span>
+                
+                                                            
+                                <span class='selected'></span>
+            </a>
+                    </li>
+       
+                <li  class='active open' >           
+            <a href= 'javascript:void(0);' >                     
+                <i class='clip-tree'  style="font-size: 13px;"></i>
+                <span class='title'>
+                    Organization
+                </span>
+                
+                                                            
+                                    <i class='icon-arrow  pull-right'></i>
+                                <span class='selected'></span>
+            </a>
+                            <ul class='sub-menu'>
+                                            <li  class='active' >
+                            <a href='https://infinitemlm.com/backoffice/admin/tree/genology_tree'>
+                                <!-- <i class='clip-tree-2' ></i> -->
+                                <i class='fa fa-circle' style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    Genealogy
+                                </span>
+                            </a>
+                        </li>
+                                            <li >
+                            <a href='https://infinitemlm.com/backoffice/admin/tree/select_tree'>
+                                <!-- <i class='clip-grid-6' ></i> -->
+                                <i class='fa fa-circle-o'  style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    Tabular
+                                </span>
+                            </a>
+                        </li>
+                                            <li >
+                            <a href='https://infinitemlm.com/backoffice/admin/tree/sponsor_tree'>
+                                <!-- <i class='clip-link' ></i> -->
+                                <i class='fa fa-circle-o'  style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    Sponsor
+                                </span>
+                            </a>
+                        </li>
+                    
+                </ul>
+                    </li>
+       
+                <li >           
+            <a href= 'https://infinitemlm.com/backoffice/admin/profile/user_account' >                     
+                <i class='clip-user-4'  style="font-size: 13px;"></i>
+                <span class='title'>
+                    User Overview
+                </span>
+                
+                                                            
+                                <span class='selected'></span>
+            </a>
+                    </li>
+       
+                <li >           
+            <a href= 'javascript:void(0);' >                     
+                <i class='clip-user-3'  style="font-size: 13px;"></i>
+                <span class='title'>
+                    Sign Up
+                </span>
+                
+                                                            
+                                    <i class='icon-arrow  pull-right'></i>
+                                <span class='selected'></span>
+            </a>
+                            <ul class='sub-menu'>
+                                            <li >
+                            <a href='https://infinitemlm.com/backoffice/register/user_register'>
+                                <!-- <i class='clip-user-plus' ></i> -->
+                                <i class='fa fa-circle-o'  style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    New Member
+                                </span>
+                            </a>
+                        </li>
+                                            <li >
+                            <a href='https://infinitemlm.com/backoffice/admin/member/pending_registration'>
+                                <!-- <i class='fa fa-check-square-o' ></i> -->
+                                <i class='fa fa-circle-o'  style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    Approval
+                                </span>
+                            </a>
+                        </li>
+                    
+                </ul>
+                    </li>
+       
+                <li >           
+            <a href= 'javascript:void(0);' >                     
+                <i class='fa fa-money'  style="font-size: 13px;"></i>
+                <span class='title'>
+                    Payout
+                </span>
+                
+                                                            
+                                    <i class='icon-arrow  pull-right'></i>
+                                <span class='selected'></span>
+            </a>
+                            <ul class='sub-menu'>
+                                            <li >
+                            <a href='https://infinitemlm.com/backoffice/admin/payout/payout_release'>
+                                <!-- <i class='clip-spinner-6' ></i> -->
+                                <i class='fa fa-circle-o'  style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    Release
+                                </span>
+                            </a>
+                        </li>
+                                            <li >
+                            <a href='https://infinitemlm.com/backoffice/admin/payout/mark_paid'>
+                                <!-- <i class='fa fa-check' ></i> -->
+                                <i class='fa fa-circle-o'  style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    Confirm Transfer
+                                </span>
+                            </a>
+                        </li>
+                    
+                </ul>
+                    </li>
+       
+                <li >           
+            <a href= 'javascript:void(0);' >                     
+                <i class='clip-cog'  style="font-size: 13px;"></i>
+                <span class='title'>
+                    Settings
+                </span>
+                
+                                                            
+                                    <i class='icon-arrow  pull-right'></i>
+                                <span class='selected'></span>
+            </a>
+                            <ul class='sub-menu'>
+                                            <li >
+                            <a href='https://infinitemlm.com/backoffice/admin/configuration/configuration_view'>
+                                <!-- <i class='clip-network' ></i> -->
+                                <i class='fa fa-circle-o'  style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    System Settings
+                                </span>
+                            </a>
+                        </li>
+                                            <li >
+                            <a href='https://infinitemlm.com/backoffice/admin/configuration/site_information'>
+                                <!-- <i class='clip-info-2' ></i> -->
+                                <i class='fa fa-circle-o'  style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    Company Profile
+                                </span>
+                            </a>
+                        </li>
+                                            <li >
+                            <a href='https://infinitemlm.com/backoffice/admin/configuration/content_management'>
+                                <!-- <i class=' clip-file-word' ></i> -->
+                                <i class='fa fa-circle-o'  style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    Content Management
+                                </span>
+                            </a>
+                        </li>
+                                            <li >
+                            <a href='https://infinitemlm.com/backoffice/admin/configuration/clear_cache'>
+                                <!-- <i class='clip-world' ></i> -->
+                                <i class='fa fa-circle-o'  style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    Clear Cache
+                                </span>
+                            </a>
+                        </li>
+                    
+                </ul>
+                    </li>
+       
+                <li >           
+            <a href= 'javascript:void(0);' >                     
+                <i class='clip-wrench-2'  style="font-size: 13px;"></i>
+                <span class='title'>
+                    Tools
+                </span>
+                
+                                                            
+                                    <i class='icon-arrow  pull-right'></i>
+                                <span class='selected'></span>
+            </a>
+                            <ul class='sub-menu'>
+                                            <li >
+                            <a href='https://infinitemlm.com/backoffice/admin/news/upload_materials'>
+                                <!-- <i class='clip-folder-upload' ></i> -->
+                                <i class='fa fa-circle-o'  style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    Upload Materials
+                                </span>
+                            </a>
+                        </li>
+                                            <li >
+                            <a href='https://infinitemlm.com/backoffice/admin/news/add_news'>
+                                <!-- <i class='clip-add' ></i> -->
+                                <i class='fa fa-circle-o'  style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    News Management
+                                </span>
+                            </a>
+                        </li>
+                                            <li >
+                            <a href='https://infinitemlm.com/backoffice/admin/feedback/feedback_view'>
+                                <!-- <i class='fa fa-mail-reply' ></i> -->
+                                <i class='fa fa-circle-o'  style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    Feedback
+                                </span>
+                            </a>
+                        </li>
+                    
+                </ul>
+                    </li>
+       
+                <li >           
+            <a href= 'javascript:void(0);' >                     
+                <i class='clip-calendar'  style="font-size: 13px;"></i>
+                <span class='title'>
+                    E-wallet
+                </span>
+                
+                                                            
+                                    <i class='icon-arrow  pull-right'></i>
+                                <span class='selected'></span>
+            </a>
+                            <ul class='sub-menu'>
+                                            <li >
+                            <a href='https://infinitemlm.com/backoffice/admin/ewallet/fund_management'>
+                                <!-- <i class='clip-banknote' ></i> -->
+                                <i class='fa fa-circle-o'  style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    Credit/Debit
+                                </span>
+                            </a>
+                        </li>
+                                            <li >
+                            <a href='https://infinitemlm.com/backoffice/admin/ewallet/fund_transfer'>
+                                <!-- <i class='clip-transfer' ></i> -->
+                                <i class='fa fa-circle-o'  style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    Fund Transfer
+                                </span>
+                            </a>
+                        </li>
+                                            <li >
+                            <a href='https://infinitemlm.com/backoffice/admin/ewallet/my_transfer_details'>
+                                <!-- <i class='clip-paste' ></i> -->
+                                <i class='fa fa-circle-o'  style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    Transfer History 
+                                </span>
+                            </a>
+                        </li>
+                                            <li >
+                            <a href='https://infinitemlm.com/backoffice/admin/ewallet/business_wallet'>
+                                <!-- <i class='clip-tag-2' ></i> -->
+                                <i class='fa fa-circle-o'  style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    Business Wallet
+                                </span>
+                            </a>
+                        </li>
+                    
+                </ul>
+                    </li>
+       
+                <li >           
+            <a href= 'https://infinitemlm.com/backoffice/admin/tran_pass/change_passcode' >                     
+                <i class='clip-keyhole'  style="font-size: 13px;"></i>
+                <span class='title'>
+                    Transaction Password
+                </span>
+                
+                                                            
+                                <span class='selected'></span>
+            </a>
+                    </li>
+       
+                <li >           
+            <a href= 'javascript:void(0);' >                     
+                <i class=' clip-note'  style="font-size: 13px;"></i>
+                <span class='title'>
+                    Reports
+                </span>
+                
+                                                            
+                                    <i class='icon-arrow  pull-right'></i>
+                                <span class='selected'></span>
+            </a>
+                            <ul class='sub-menu'>
+                                            <li >
+                            <a href='https://infinitemlm.com/backoffice/admin/select_report/admin_profile_report'>
+                                <!-- <i class='clip-user-3' ></i> -->
+                                <i class='fa fa-circle-o'  style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    Profile Reports
+                                </span>
+                            </a>
+                        </li>
+                                            <li >
+                            <a href='https://infinitemlm.com/backoffice/admin/select_report/total_joining_report'>
+                                <!-- <i class=' clip-users-2' ></i> -->
+                                <i class='fa fa-circle-o'  style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    Joining Report
+                                </span>
+                            </a>
+                        </li>
+                                            <li >
+                            <a href='https://infinitemlm.com/backoffice/admin/select_report/activate_deactivate_report'>
+                                <!-- <i class=' clip-users-2' ></i> -->
+                                <i class='fa fa-circle-o'  style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    Activate Deactivate Report
+                                </span>
+                            </a>
+                        </li>
+                                            <li >
+                            <a href='https://infinitemlm.com/backoffice/admin/select_report/total_payout_report'>
+                                <!-- <i class='clip-pie' ></i> -->
+                                <i class='fa fa-circle-o'  style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    Total Payout Report
+                                </span>
+                            </a>
+                        </li>
+                                            <li >
+                            <a href='https://infinitemlm.com/backoffice/admin/select_report/config_changes_report'>
+                                <!-- <i class='clip-cog' ></i> -->
+                                <i class='fa fa-circle-o'  style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    Configuration History
+                                </span>
+                            </a>
+                        </li>
+                                            <li >
+                            <a href='https://infinitemlm.com/backoffice/admin/select_report/top_earners_report'>
+                                <!-- <i class='clip-banknote' ></i> -->
+                                <i class='fa fa-circle-o'  style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    Top Earners
+                                </span>
+                            </a>
+                        </li>
+                                            <li >
+                            <a href='https://infinitemlm.com/backoffice/admin/select_report/rank_performance_report'>
+                                <!-- <i class='clip-credit' ></i> -->
+                                <i class='fa fa-circle-o'  style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    Rank Performance Report
+                                </span>
+                            </a>
+                        </li>
+                                            <li >
+                            <a href='https://infinitemlm.com/backoffice/admin/select_report/rank_achievers_report'>
+                                <!-- <i class='clip-credit' ></i> -->
+                                <i class='fa fa-circle-o'  style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    Rank Achievers Report
+                                </span>
+                            </a>
+                        </li>
+                                            <li >
+                            <a href='https://infinitemlm.com/backoffice/admin/select_report/commission_report'>
+                                <!-- <i class=' clip-user-5' ></i> -->
+                                <i class='fa fa-circle-o'  style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    Commission Report
+                                </span>
+                            </a>
+                        </li>
+                                            <li >
+                            <a href='https://infinitemlm.com/backoffice/admin/select_report/payout_release_report'>
+                                <!-- <i class='clip-pie' ></i> -->
+                                <i class='fa fa-circle-o'  style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    Payout Released Report
+                                </span>
+                            </a>
+                        </li>
+                    
+                </ul>
+                    </li>
+       
+                <li >           
+            <a href= 'javascript:void(0);' >                     
+                <i class='clip-users'  style="font-size: 13px;"></i>
+                <span class='title'>
+                    Profile Management
+                </span>
+                
+                                                            
+                                    <i class='icon-arrow  pull-right'></i>
+                                <span class='selected'></span>
+            </a>
+                            <ul class='sub-menu'>
+                                            <li >
+                            <a href='https://infinitemlm.com/backoffice/admin/profile/profile_view'>
+                                <!-- <i class='clip-user' ></i> -->
+                                <i class='fa fa-circle-o'  style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    Profile View
+                                </span>
+                            </a>
+                        </li>
+                                            <li >
+                            <a href='https://infinitemlm.com/backoffice/admin/member/search_member'>
+                                <!-- <i class=' clip-search-2' ></i> -->
+                                <i class='fa fa-circle-o'  style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    Search Member
+                                </span>
+                            </a>
+                        </li>
+                                            <li >
+                            <a href='https://infinitemlm.com/backoffice/admin/profile/change_username'>
+                                <!-- <i class='clip-note' ></i> -->
+                                <i class='fa fa-circle-o'  style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    Change Credential
+                                </span>
+                            </a>
+                        </li>
+                                            <li >
+                            <a href='https://infinitemlm.com/backoffice/admin/activate/activate_deactivate'>
+                                <!-- <i class='clip-note' ></i> -->
+                                <i class='fa fa-circle-o'  style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    Activate / Deactivate
+                                </span>
+                            </a>
+                        </li>
+                    
+                </ul>
+                    </li>
+       
+                <li >           
+            <a href= 'https://infinitemlm.com/backoffice/admin/mail/mail_management' >                     
+                <i class='clip-bubbles-2'  style="font-size: 13px;"></i>
+                <span class='title'>
+                    Mailbox
+                </span>
+                
+                                                                                                        
+                                <span class='selected'></span>
+            </a>
+                    </li>
+       
+                <li >           
+            <a href= 'javascript:void(0);' >                     
+                <i class='clip-star-6'  style="font-size: 13px;"></i>
+                <span class='title'>
+                    Promotional Tools
+                </span>
+                
+                                                            
+                                    <i class='icon-arrow  pull-right'></i>
+                                <span class='selected'></span>
+            </a>
+                            <ul class='sub-menu'>
+                                            <li >
+                            <a href='https://infinitemlm.com/backoffice/admin/member/text_invite_configuration'>
+                                <!-- <i class=' clip-star' ></i> -->
+                                <i class='fa fa-circle-o'  style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    Text Invites
+                                </span>
+                            </a>
+                        </li>
+                                            <li >
+                            <a href='https://infinitemlm.com/backoffice/admin/member/invite_banner_config'>
+                                <!-- <i class='clip-redo' ></i> -->
+                                <i class='fa fa-circle-o'  style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    Banner Invites
+                                </span>
+                            </a>
+                        </li>
+                                            <li >
+                            <a href='https://infinitemlm.com/backoffice/admin/member/invite_wallpost_config'>
+                                <!-- <i class='clip-rotate' ></i> -->
+                                <i class='fa fa-circle-o'  style="font-size: 12px;"></i>
+                                <span class='title'>
+                                    Social Invites
+                                </span>
+                            </a>
+                        </li>
+                    
+                </ul>
+                    </li>
+       
+                <li >           
+            <a href= 'https://infinitemlm.com/backoffice/admin/activity_history/activity_history_view' >                     
+                <i class='clip-stack-empty'  style="font-size: 13px;"></i>
+                <span class='title'>
+                    Activity History
+                </span>
+                
+                                                            
+                                <span class='selected'></span>
+            </a>
+                    </li>
+       
+                <li >           
+            <a href= 'https://infinitemlm.com/backoffice/login/logout' >                     
+                <i class='clip-switch'  style="font-size: 13px;"></i>
+                <span class='title'>
+                    Logout
+                </span>
+                
+                                                            
+                                <span class='selected'></span>
+            </a>
+                    </li>
+    
+</ul>
+        </div>
+    </div>
+</div>
+<!-- end: SIDEBAR -->
+<!-- start: PAGE -->
+<div class="main-content">
+    <!-- start: PAGE CONTAINER -->
+    <div class="container" id="page_container">
+        <!-- start: PAGE HEADER -->
+        <div class="row">
+            <div class="col-sm-12">
+                <!-- start: PAGE TITLE & BREADCRUMB -->
+                <ol class="breadcrumb">
+                    <li>
+                        <i class="clip-pencil"></i>
+                        <a href="https://infinitemlm.com/backoffice/admin/home/index">
+                            Dashboard
+                        </a>
+                    </li>
+                                            <li>
+                            <a href="#">
+                                Genealogy Tree
+                            </a>
+                        </li>
+                                                                                    <li>
+                            <a href="https://infinitemlmsoftware.com/help" target="_blank">
+                                <i class="clip-info help_top_icon" title="Click here to see more help on this page!"></i>
+                            </a>
+                        </li>
+                    	
+                    <!-- start: TIME -->
+                    <li class="pull-right">		
+                        <span class="date" style="padding: 0px 0px 0px 10px;">
+                            <timestamp id="date"></timestamp> 
+                        </span>
+                        <div id="clock"></div>
+
+                        <div style="float: left;border-right: 1px solid #999999;padding: 0px 10px 0px 0px;">
+                            <input value="06:29:09" id="serverClock_input" hidden>
+                            <input value="Friday, December 21st, 2018 " id="serverDate_input" hidden>
+                            <span class="date">
+                                <timestamp id="server_date"></timestamp> 
+                            </span>
+                            <div id="server_clock"></div> 
+                        </div>
+                    </li>  
+                    <!-- end : TIME -->
+                </ol>
+                <!-- end: PAGE TITLE & BREADCRUMB -->
+                <!-- start: PAGE HEADER -->
+                <!-- <div class="page-header">
+                        <h1>Genealogy Tree 
+                        </h1>
+</div> -->
+            </div>
+        </div>
+
+        <!-- end: PAGE HEADER --> 
+
+        
+
+        <script>
+    jQuery(document).ready(function ()
+    {
+        
+       
+        jQuery("#close_link").click(function ()
+        {
+            jQuery("#message_box").fadeOut(1000);
+            jQuery("#message_box").removeClass('ok');
+        });
+    });
+</script>
+
+            <!--site header-->            
+        
+
+<div id="span_js_messages" style="display:none">
+    <span id="error_msg">Select Username</span>
+</div>
+          
+<!-- start: GENOLOGY TREE-->                                         
+<div class="row">
+
+    <div class="col-sm-12">
+        <div class="panel panel-default" >
+            <div class="panel-heading">
+                <i class="fa fa-sitemap"></i>
+                Genealogy Tree
+                <div class="panel-tools">
+                            <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
+                            </a>
+                            <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <a class="btn btn-xs btn-link panel-refresh" href="#">
+                                <i class="fa fa-refresh"></i>
+                            </a>
+                                                        <a href="https://infinitemlm.com/backoffice/admin/my_report/binary_history" class="btn btn-sm btn-primary active" tabindex="4"><i class="fa fa-external-link"></i> Binary List</a>
+                                                    </div>
+            </div>
+            <div class="panel-body" style="padding: 15px;">
+        <div class="row">
+
+            <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12 gen">
+                <button class="zoomIn btn btn-success"><span class="glyphicon glyphicon-zoom-in" style="font-size:15px"></span></button>
+                <button class="zoomOut btn btn-danger"><span class="glyphicon glyphicon-zoom-out" style="font-size:15px"></span></button>
+                <button class="zoomOff btn btn-default"><span class="glyphicon glyphicon-off" style="font-size:15px"></span></button>
+            </div>
+                                <!-- <div class="panel-tools" style="right: 10px;">                          
+                        <a href="https://infinitemlm.com/backoffice/admin/my_report/binary_history" class="btn btn-sm btn-primary active" tabindex="4"><i class="fa fa-external-link"></i> Binary List</a>
+                </div> -->
+                                                                                                <br><br>
+                
+                    <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12 padding-top-icon ">
+                        <img src='https://infinitemlm.com/backoffice/public_html/images/themes/default/tree/active.png' style="border:hidden" title="Paid" align="absmiddle" width="40px" height="40px"/><b>Active</b>&nbsp;&nbsp;&nbsp;
+                        <img src='https://infinitemlm.com/backoffice/public_html/images/themes/default/tree/inactive.png' style="border:hidden" title="Not Paid" align="absmiddle" width="40px" height="40px"/><b>Inactive</b>&nbsp;&nbsp;&nbsp;
+                                                <img src="https://infinitemlm.com/backoffice/public_html/images/themes/default/tree/add_disabled.png" style="border:hidden" title="New One" align="absmiddle" width="40px" height="40px"/>&nbsp;<b>Disabled</b>&nbsp;&nbsp;&nbsp; 
+                                                <img src="https://infinitemlm.com/backoffice/public_html/images/themes/default/tree/add.png" style="border:hidden" title="New One" align="absmiddle" width="40px" height="40px"/>&nbsp;<b>Vacant</b>&nbsp;&nbsp;&nbsp; 
+                    </div>  
+                     <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12 padding-top-search">
+                        <div class="row search-cmd">
+    
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-external-link-square"></i>Search Member
+                <div class="panel-tools">
+                            <a class="btn btn-xs btn-link panel-collapse collapses" href="#">
+                            </a>
+                            <a class="btn btn-xs btn-link panel-config" href="#panel-config" data-toggle="modal">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <a class="btn btn-xs btn-link panel-refresh" href="#">
+                                <i class="fa fa-refresh"></i>
+                            </a>
+                </div>
+            </div>
+            <div class="panel-body margin-left-class">
+                <div class="col-sm-12">
+                <form action="https://infinitemlm.com/backoffice/admin/tree/genology_tree" role="form" class="smart-wizard form-inline" name="search_member" id="search_member" action="" method="post" accept-charset="utf-8">
+<input type="hidden" name="inf_token" value="1973192d39bfbdfc4e0a392faf892aee" />
+
+                <input type="hidden" id="search_member_error" value="You must enter a username"/>
+                <input type="hidden" id="search_member_error2" value="Invalid username."/>
+                <div class=" col-sm-12">
+                <div class="errorHandler alert alert-danger no-display">
+                    <i class="fa fa-times-sign"></i> Please check the values you've submitted.
+                </div>
+                </div>
+                <div class=" col-sm-7">
+                    <label class="required" for="user_name">Username</label>
+                    <input class="form-control" type="text" id="user_name" name="user_name" onKeyUp="ajax_showOptions(this, 'getCountriesByLetters', 'no', event)" autocomplete="Off">
+                </div>
+                
+                    <button class="btn btn-bricky update_social_info-search-member" type="submit" id="search_member_submit" value="search_member_submit" name="search_member_submit">
+                        Search
+                    </button>
+                
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
                     </div>
                 </div>
 
-                <!-- Second-Slide -->
-                <div class="item">
-                    <!--<img src="images/gis-intro.jpg" alt="" class="img-responsive" />-->
-		    <img src="{%static 'img/gis-intro.jpg'%}" class="img-responsive" alt="">
-                    <div class="carousel-caption kb_caption kb_caption_right">
-                        <h3 data-animation="animated flipInX">Get Everything Right</</h3>
-                        <h4 data-animation="animated flipInX">Noely Mwalongo</h4>
-                    </div>
-                </div>
+                <div id="loader-div" style="z-index:9999;text-align: center;display: none;"><img src="https://infinitemlm.com/backoffice/public_html/images/loader.gif" style="margin-left: 10px;"/></div>
 
-                <!-- Third-Slide -->
-                <div class="item">
-                    <!--<img src="images/gis-intro2.jpg" alt="" class="img-responsive" />-->
-		    <img src="{%static 'img/gis-intro2.jpg'%}" class="img-responsive" alt="">
-                    <div class="carousel-caption kb_caption kb_caption_center">
-                        <h3 data-animation="animated flipInX">Get Everything Right</</h3>
-                        <h4 data-animation="animated flipInX">Noely Mwalongo</h4>
-                    </div>
-                </div>
+                <div id="summary" class="panel-body1 tree-container1"></div>
 
             </div>
-			
-            <!-- Left-Button -->
-            <a class="left carousel-control kb_control_left" href="#kb" role="button" data-slide="prev">
-				<span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-
-            <!-- Right-Button -->
-            <a class="right carousel-control kb_control_right" href="#kb" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-			
         </div>
-		
-		
-		<script>
-/* Demo Scripts for Bootstrap Carousel and Animate.css article 
-2  * on SitePoint by Maria Antonietta Perna 
-3  */ 
-  (function( $ ) { 
-  
+    </div>
+</div>
+<!-- end: GENOLOGY TREE-->
+
+<div id="autowidthcss"></div>
+<div id="autowidthcssemp"></div>
+
  
-  	//Function to animate slider captions  
-  	function doAnimations( elems ) { 
-  		//Cache the animationend event in a variable 
-  		var animEndEv = 'webkitAnimationEnd animationend'; 
-  		 
-  		elems.each(function () { 
-  			var $this = $(this), 
-  				$animationType = $this.data('animation'); 
-  			$this.addClass($animationType).one(animEndEv, function () { 
-  				$this.removeClass($animationType); 
-  			}); 
-  		}); 
-  	}
-	
-	
-	
-	 
-  	//Variables on page load  
-  	var $myCarousel = $('.animate_text'), 
-  		$firstAnimatingElems = $myCarousel.find('.item:first').find("[data-animation ^= 'animated']"); 
-  		 
-  	//Initialize carousel  
-  	$myCarousel.carousel(); 
-  	 
-  	//Animate captions in first slide on page load  
-  	doAnimations($firstAnimatingElems); 
-  	 
-  	////Pause carousel   
-  	//$myCarousel.carousel('pause'); 
-  	 
-  	 
-  	//Other slides to be animated on carousel slide event  
-  	$myCarousel.on('slide.bs.carousel', function (e) { 
-  		var $animatingElems = $(e.relatedTarget).find("[data-animation ^= 'animated']"); 
-  		doAnimations($animatingElems); 
-  	});   
-  	 
-  })(jQuery); 
+            <div class="row">
+            <div class="col-sm-6" style="margin:0;padding:0;">
+                <div class="col-sm-12 sm-fifty">
+                    <div class="panel panel-default">
+                        <div class="panel-body no-padding" >
+                            <div class="pull-left noteimg col-sm-2">
+                                <img src="https://infinitemlm.com/backoffice/public_html/images/1358439241_Draft.png" />
+                            </div>
 
-//Variables on page load
-//    var $immortalCarousel = $('.animate_text'),
-//        $firstAnimatingElems = $immortalCarousel.find('.item:first').find("[data-animation ^= 'animated']");
-//    //Initialize carousel
-//    $immortalCarousel.carousel();
-//    //Animate captions in first slide on page load
-//    doAnimations($firstAnimatingElems);
-//    //Other slides to be animated on carousel slide event
-//    $immortalCarousel.on('slide.bs.carousel', function (e) {
-//        var $animatingElems = $(e.relatedTarget).find("[data-animation ^= 'animated']");
-//        doAnimations($animatingElems);
-//    });
-//
-//})(jQuery);
+                            <div class="pull-left notetxt col-sm-10">
+                                <p><font>
+                                    1.   This demo can customize your own MLM Plan with fully licensed mode. <br/>
+                                    2.   Once the demo is ready, you can simply move the demo to your own domain name. <br/>
+                                    3.   This demo will be automatically deleted after 48 hours unless upgraded. <br/>
+                                    4.   You can upgrade this demo to one month or can purchase the software.<br/>
+                                    5 .  Use Google Chrome or Mozilla Firefox for better User Experience<br/>
+                                    </font>
+                                </p>
+                            </div>                              
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="col-sm-6" style="margin:0;padding:0;">
+                <div class="col-sm-12 sm-fifty">
+                    <div class="panel panel-default">
+                        <div class="panel-body no-padding">
+                            <div class="pull-left noteimg col-sm-2">
+                                <img src="https://infinitemlm.com/backoffice/public_html/images/1358439696_lifesaver.png" />
+                            </div>
+                            <div class="pull-left notetxt col-sm-10">
+                                <p>              
+                                       
+                                        <a class="btn btn-bricky upgrdd" href="https://infinitemlm.com/backoffice/admin/revamp/revamp_update_plan"><i class="fa fa-plus"></i>
+                                            UPGRADE NOW!
+                                        </a>
+                                        <br/>
+                                                                        <a href="https://infinitemlm.com/backoffice/admin/revamp/send_feedback"  style="text-decoration: none; color: #169ac3;">Click here to place a Feedback For Support </a> <br />
+                                    <font>Website : www.ioss.in <br />
+                                    Blog : www.blog.infinitemlmsoftware.com<br />
+                                    Skype ID:infinitemlm<br /></font>
+                                </p>
+                            </div>
 
-
-
-
-
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    
+</div>
+<!-- end: PAGE CONTAINER -->
+</div>
+<!-- end : PAGE -->
+</div>
+<!-- end: MAIN CONTAINER -->
 
 
+<div class="footer clearfix">
+    <div class="col-sm-2"></div>
+    <div class="footer-inner">
+                2018 &copy; Infinite MLM Software 9.0 
+                    - <a href="https://ioss.in" target="_blank" style="text-decoration: none; color: #169ac3;">Developed by Infinite Open Source Solutions LLP™</a>
+            </div>
+    <div class="footer-items">
+        <span class="go-top"><i class="clip-chevron-up"></i></span>
+    </div>
+</div>
+
+
+
+<!--[if lt IE 9]>
+<script src="https://infinitemlm.com/backoffice/public_html/plugins/respond.min.js"></script>
+<script src="https://infinitemlm.com/backoffice/public_html/plugins/excanvas.min.js"></script>
+<![endif]-->
+<script src="https://infinitemlm.com/backoffice/public_html/plugins/jquery-ui/jquery-ui-1.10.2.custom.min.js"></script>
+<script src="https://infinitemlm.com/backoffice/public_html/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="https://infinitemlm.com/backoffice/public_html/plugins/blockUI/jquery.blockUI.js"></script>
+
+
+
+<script src="https://infinitemlm.com/backoffice/public_html/plugins/less/less-1.5.0.min.js"></script>
+<script src="https://infinitemlm.com/backoffice/public_html/plugins/jquery-cookie/jquery.cookie.js"></script>
+<script src="https://infinitemlm.com/backoffice/public_html/plugins/bootstrap-colorpalette/js/bootstrap-colorpalette.js"></script>
+<script src="https://infinitemlm.com/backoffice/public_html/plugins/bootstrap-switch/static/js/bootstrap-switch.min.js"></script>
+<script src="https://infinitemlm.com/backoffice/public_html/javascript/main.js"></script>
+<script> $( ".panel-refresh" ).click(function() {
+        location.reload(true);
+        });
 </script>
-	</div>
-<!--hapa slider banner mwisho-->
 
 
 
-				
+<!--index chart-->
+
+
+<!--index chart-->
+
+
+
+<script src="https://infinitemlm.com/backoffice/public_html/plugins/jquery-validation/dist/jquery.validate.min.js"></script>
+
+
+ 
+    
+    <link rel="stylesheet" href="https://infinitemlm.com/backoffice/public_html/plugins/notifications/css/jquery.notificator.css">
+    <script src="https://infinitemlm.com/backoffice/public_html/plugins/notifications/js/notificator.js"></script>
+    <script src="https://infinitemlm.com/backoffice/public_html/plugins/notifications/js/refresh.js"></script>
+    
+
+
+                                <script src="https://infinitemlm.com/backoffice/public_html/javascript/ajax-dynamic-list.js" type="text/javascript" ></script>
+                                                        <script src="https://infinitemlm.com/backoffice/public_html/javascript/ajax.js" type="text/javascript" ></script>
+                                            <script src="https://infinitemlm.com/backoffice/public_html/javascript/validate_select_user.js" type="text/javascript" ></script>
+                                            <script src="https://infinitemlm.com/backoffice/public_html/javascript/tree/zoom.js" type="text/javascript" ></script>
+            
+
+
+
+<script>
+    jQuery(document).ready(function() {
+        Main.init();
+        getGenologyTree('overblessing Msuya', null);
+        setTimeout(function() {
+        var rect = document.querySelector("#level-0").getBoundingClientRect();
+        var event = { clientX:rect.left, clientY:rect.top };
+        getGenologyTree('overblessing Msuya', event);
+        }, 1000);
+        ValidateSearchMember.init();
+    });
+</script>
+ 
+
 </body>
+
 </html>

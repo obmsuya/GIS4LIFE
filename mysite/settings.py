@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'gis4life.pythonanywhere.com']
 INSTALLED_APPS = [
     'accounts',
     'home',
+    'quiz',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -75,27 +76,76 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
+
+#local/production(test)
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME':'gis4life$gis4life',
-        'USER': 'gis4life',
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-            #Tell mysql to connect with 'utf8mb4' character set
-            'charset':'utf8mb4',
-            },
-        #Tell django to build the test database with 'utf8mb4'character set
-        'TEST': {
-            'CHARSET': 'utf8mb4',
-            'COLLATION': 'utf8mb4_unicode_ci',
-        },
-        'PASSWORD': 'Pa55w0rd',
-        'HOST': 'gis4life.mysql.pythonanywhere-services.com',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'quiz2',
+        'USER': 'postgres',
+        'PASSWORD': 'postgres',
+        'HOST': 'localhost',
         'PORT': '',
-       
     }
 }
+
+
+
+
+
+#local/production(og)
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME':'gis4life',
+#        'USER': 'gis4life',
+#        'PASSWORD': 'Savioury9',
+#        'OPTIONS': {
+#            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+#            #Tell mysql to connect with 'utf8mb4' character set
+#            'charset':'utf8mb4',
+#            },
+#        #Tell django to build the test database with 'utf8mb4'character set
+#        'TEST': {
+#            'CHARSET': 'utf8mb4',
+#            'COLLATION': 'utf8mb4_unicode_ci',
+#        },
+#        
+#    }
+#}
+
+
+
+#live
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME':'gis4life$gis4life',
+#        'USER': 'gis4life',
+#        'OPTIONS': {
+#            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+#            #Tell mysql to connect with 'utf8mb4' character set
+#            'charset':'utf8mb4',
+#            },
+#        #Tell django to build the test database with 'utf8mb4'character set
+#        'TEST': {
+#            'CHARSET': 'utf8mb4',
+#            'COLLATION': 'utf8mb4_unicode_ci',
+#        },
+#        'PASSWORD': 'Pa55w0rd',
+#        'HOST': 'gis4life.mysql.pythonanywhere-services.com',
+#        'PORT': '',
+#       
+#    }
+#}
+#
+
+
+
+
+
+
 
 
 # Password validation

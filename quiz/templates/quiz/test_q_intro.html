@@ -1,0 +1,140 @@
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<!--<script src="{% static 'admin/js/bongo_js/bongo.js' %}"></script>-->
+     
+
+    </head>
+
+    <body>
+
+<div class="container">
+   <a href="{% url 'home:gisprac_q_intro' %}">&lt; Back </a>
+  <h3>Questions</h3>
+  <div class="alert alert-info" role="alert" id="score" ></div>
+  {% csrf_token %}
+       Please answer the following Questions <br>
+      
+    
+          {% for item in quizs %}
+            
+            
+             <p> {{ item.id }}.  {{ item.question }}</p>
+             
+             <div id="{{ item.id }}" name="{{ item.id }}">
+             
+             <input type="hidden" name="{{ item.id }}" value="{{ item.ans }}">
+             <label> <input type="radio"  name="{{ item.id }}" value="{{ item.a }}" />{{ item.a }}</label><br>
+              <label><input type="radio"   name="{{ item.id }}" value="{{ item.b }}" />{{ item.b }}</label><br>
+                {% if item.c %}
+             <label> <input type="radio"  name="{{ item.id }}" value="{{ item.c }}" />{{ item.c }}</label><br>
+                  {% endif %}
+                {% if item.d %}
+             <label><input type="radio"   name="{{ item.id }}" value="{{ item.d }}" />{{ item.d }}</label>
+                  {% endif %}
+
+           </div>
+        {% endfor %}
+       
+<br>
+      
+            <h2>Practicle</h2>
+            
+            <p>Exercise1:</p>
+           <p> Open the Windows Explorer and navigate in the left and right pane.</p>
+            <ul>
+            <li>Use the scroll bars to move around.</li>
+            <li>Single click on a drive in the left pane. </li>
+            <li>Single click on a folder in the left pane.</li>
+            <li>Click on a plus sign to the left of a drive or folder. </li>
+            <li>Click on a minus sign to the left of a drive or folder.</li>
+            <li>Double click on folders in the left window.</li>
+            </ul>
+            
+            
+            <p>Exercise 2:</p>
+            <ul>
+              <li>On the C: drive, create a new folder called My Storage Space.</li>
+              <li>Within this new folder, create three sub folders called, Notepad Files, JPG Files and AppleWorks Files.</li>
+              <li>From the folder called File Management or File Management Session.</li>
+                  <ul>
+                      <li>Copy the three Notepad files to the new Notepad folder just created. Use the Click and drag 
+                      method to select these files. Use the Copy and Paste method to Copy them to the new folder</li>
+                      <li> Move the three AppleWorks files to the new AppleWorks folder. Use the Shift or CTRL key to 
+                      select these files. Use the click and drag method to move these files to the new folder. </li>
+                      <li> Delete the three Image files. Use the Right Click method to delete these files.</li>
+                      <li>Go to the Recycle Bin and undelete these three files. Check in Windows Explorer that these 
+                      three files have been deleted and then that they are restored.</li>
+                      <li>
+                      Now Move these three image files to the JPG Files folder.</li>
+                      <li>
+                      Rename one of the Notepad files. Use a name of your choice.</li>
+                  </ul>
+            </ul>
+
+          <p>Exercise 3:</p>
+           <ul>
+              <li>Create a shortcut for one of each of the test files in the three folders just created.</li>
+              <li>Drag each of these shortcuts to the Desktop.</li>
+              <li>Delete each of these shortcuts from the Desktop.</li>
+          </ul>
+          <p>Exercise 4:</p>
+          <ul>
+              <li>In the three sub folders just created search for all Test files.</li>
+              <li>Search for all files which contain the text ???.</li>
+              <li>Search for all files that have a .jpg extension.</li>
+          </ul>
+
+          <p>Exercise 5:</p>
+          <ul>
+          <li>Create a file in Notepad or Windows Write.Save this file in a folder called Word
+          Processing Files. Create this new folder from the Save as...window.</li>
+          <li>Verify, using Windows Explorer, that the file is actually saved where you placed</li>
+          
+          </ul>
+
+
+<script>
+ $( function() {
+
+var scores=0;
+
+  $("input:radio").removeAttr("checked"); 
+  $("div input").click( function(event)
+  {
+   var clicked = $(this); 
+   var c= clicked.val()
+   var namex=($(this).attr('name'));
+
+   var ans =$('input:hidden[name='+namex+']').val();
+   //alert(namex);
+   if (c=== ans){
+    alert("CORRECT!");
+    scores=scores+1;
+   }else{
+    alert("WRONG! The correct answer is "+ans);
+
+         }
+
+  //Update score
+    
+  $('#score').text("Score :"+scores);
+   });
+
+
+  } );
+</script>
+
+</div>
+</body>
+</html> 

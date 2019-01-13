@@ -1,101 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
     
-
+{% extends 'base3.html' %}
 {% load staticfiles %}
 
-<head>
-	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-	<title>Gis Online Courses</title>
-
-	
-	<link href="https://fonts.googleapis.com/css?family=Montserrat|Niramit" rel="stylesheet">
-
-	
-	  
-          <link rel="stylesheet" href="{% static 'accounts/css/font-awesome.min.css' %}">
-        <link rel="stylesheet" href="{% static 'accounts/css/bootstrap.min.css' %}">
-        <link rel="stylesheet" href="{% static 'accounts/css/main.css' %}">-->
+{%block head%}
+     
     
-	<link rel="stylesheet" href="{% static 'accounts/css/main3.css' %}">-->
-        
-            
-</head>
-<body>
+    
+    {%endblock%}
 
 
-	<!-- header -->
-	<header>
-		<nav class="navbar navbar-expand-lg navbar-light">
 
-			<div class="container">
-			  <button class="btn menu-btn d-md-none .d-lg-none"  onclick="openNav()">
-			  	<i class="fa fa-bars"></i>
-			  </button>
-
-			  <a class="navbar-brand" href="#">GIS4life</a>
-			
-                            <div id="mySidenav" class="asidenav">
-                              <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                              <a href="{% url 'accounts:logout'%}" role="button">Logout </a>
-			      <a href="{% url 'home:chat'%}" role="button">My classes</a>
-                              
-                            </div>
-
-			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-			    <ul class="navbar-nav ml-auto">
-			     	  {% if user.is_authenticated %}
-                                
-                                
-                <li class="nav-item mr-20"><a href="{% url 'home:chat'%}">My classes</a></li>
-                
-                <li class="nav-item mr-20"><a href="{% url 'accounts:logout'%}">Logout</a></li>
-			    </ul>
-                            
-                      {%else%}         
-                            
-               <ul class="navbar-nav ml-auto">
-		<li class="nav-item mr-20"><a href="{% url 'accounts:login'%}">Sign in</a></li>
-               <li class="nav-item mr-20"><a href="{% url 'accounts:register'%}">Sign up</a></li>
-                <li class="nav-item mr-20"><a href="{% url 'accounts:reset_password'%}">Reset Password</a></li>
-            </ul>
-            {%endif %}            
-                            
-                            
-                            
-                            
-			  </div>
-			</div>
-
-
-		<div class="line"></div>
-		</nav>
-	</header>
+ {% block body %}
 
 
 	<main class="main-wrapper">
-		<aside class="side-panel">
+		<aside class="left-sidebar">
 			<div class="search-area"><form action=""><input type="text" placeholder="Type to search.. "></form></div>
+
+			<div class="scroll-sidebar">
+				<nav class="sidebar-nav">
+					<ul id="sidebarnav" class="top-ul"> 
+						<li class="nav-small-cap">MENU</li>
+			
+						<li><a href="{% url 'home:gisprac_q_intro' %}" >Introduction</a></li>
+						<li><a href="#" class="active">QGIS Interface</a>	
+							<ul class="submenu">
+								<li><a href="" id="link1">Spatial Data</a></li>			
+								<li><a href="" id="link2">Attribute Data</a></li>
+								<li><a href="" id="link3">Map Making</a></li>
+								<li><a href="" id="link4">QGIS Plugins</a></li>
+								<li><a href="{% url 'quiz:interface' %}" >Test</a></li>
+							</ul>
+						</li>
+	
+						<li><a href="{% url 'home:gisprac_attribute' %}" >Coordinate system</a></li>
+						<li><a href="{% url 'home:gisprac_q_datacreation' %}" >Data Creation</a></li>
+					</ul>
+				</nav>
+			</div>
 				
 				<div class="scroll-able mt-10">
 					<ul class="top-ul">
 						
-						<li><a href="{% url 'home:gisprac_q_intro' %}" >Introduction</a></li>
 						
-						
-						<li><a href="" class="active">GIS Interface</a>	
-							<ul class="submenu">
-								<li><a href="" id="link1">Brief introduction</a></li>			
-								<li><a href="" id="link2">Sub menu</a></li>
-								<li><a href="" id="link3">Sub menu</a></li>
-							</ul>
-						</li>
-	
-						<li><a href="{% url 'home:gisprac_attribute' %}" >Work with Attribute</a></li>
-						<li><a href="" >Coming soon</a></li>
+						<li><a href="" >Data Creation</a></li>
 						<li><a href="" >Coming soon</a></li>
 						<li><a href="" >Coming soon</a></li>
 						<li><a href="" >Coming soon</a></li>
@@ -121,52 +71,35 @@
 				<h1 class="topic-title">GIS Interface</h1>
 
 			<div id="linkintro">
-				<h2>Aim of this practcle</h2>
 				
-				This first practical aims to familiarize you with the Quantum GIS (QGIS
-				2.0.1-Dufour) interface and GIS features by exploring the elements in the menu
+				
+				<p>This module aims to familiarize you with the Quantum GIS (QGIS
+				3.2) interface and GIS features by exploring the elements in the menu
 				bar, using the main tools to display geographical data, managing the layer
-				attributes and eventually creating thematic maps. 
-					<p>
-						<span>After completing this section, you will be able to correctly identify the
-						main elements of the screen in QGIS and know what each of them does, and load a shapefile into QGIS.</span>	
-					</p>
+				attributes and eventually creating thematic maps. After completing this section, you will be able to correctly identify the
+				main elements of the screen in QGIS and know what each of them does, and load a shapefile into QGIS.</p>
 					
-					<p>In this module we introduce the QGIS project itself, as well as explaining the user interface.
-					If you are new to GIS, we will tell you what you need to get started. If you are an experienced user,
-					you will see how QGIS fulfils all the functions you expect from a GIS program, and more.</p>
+				<p>If you are an experienced user,
+				you will see how QGIS fulfils all the functions you expect from a GIS program, and more.</p>
 					
 				
 					
-				<h3>Download Dataset for this practicle</h3>
-				<p>1.Obtain files to be used for this tutorial from www.brocku.ca/maplibrary/Instruction/QGIS_Data.zip .</p>
+				<p><span>Download Data</p></span>
+				<p>1.Obtain files to be used for this tutorial from  <a href= "{%static 'Nanyumbu.zip'%}" download>Nanyumbu</a> .</p>
 				<p>2. When prompted click Save As and save these files in your personal file folder (i.e. X:Drive) or on an external source
 				(i.e. a USB).
 				<p>3. Unzip the file.</p>
-				<p>4. Run QGIS (Start > All Programs > QGIS Brighton > QGIS Desktop 2.6.1) or the latest version.</p>
+				<p>4. Run QGIS (Start > All Programs > QGIS Brighton > QGIS Desktop 3.2) or the latest version.</p>
 				<p>5. Click Project [Menu Bar] > Save Navigate to your personal file folder and save the project with a name.</p>
 				
 				
-					<p>CODs are core sets of data to be used in GIS software. Set includes administrative boundaries, populated places, road and river
-					infrastructure of the country. </p>
-					
-					<p>You can download Tanzania COD using following link: </p>
-					
-					<p>https://data.humdata.org/search?q=tanzania&ext_page_size=25</p>
-					
-				<h4>Download provincial data of Tanzania</h4>
-					<p>Data source by OpenStreetMap with WFP-World Food Programme as contributor. This dataset includes main roads from OpenStreetMap
-					with the WFP data structure. </p>
-					<p>Link: https://data.humdata.org/dataset/tanzania-road-network</p>
-					<p>Data source by Global Health sites Mapping Project, this dataset shows the list of operating health facilities. Attributes included:
-					Name, Nature of Facility, Activities, Latitude and Longitude. </p>
-					<p>Link: https://data.humdata.org/dataset/tanzania-healthsites</p>
+				
 									
-				<h3>Key learning skills	</h3>
+				<p><span>Key learning skills</p></span>
 				<p>In this practical, you will learn the following skills:</p>
 					<p>1. Organizing and manipulating data layers</p>
 					<p>2. Using symbology</p>
-					<p>3. Understanding map projections</p>
+					<!--<p>3. Understanding map projections</p>-->
 					<p>4. Map production</p>
 
 					
@@ -179,43 +112,61 @@
 			
 			<div id="link1data" class="animated fadeIn">
 
-
-
-					
-					
-
-				<h3>Remember GIS Data Models</h3>
-
-					<p>Vector data model: A representation of the world using vertices or points, connected vertices or lines, and closed connected vertices or
-					polygons. We will use the data of administrative boundaries and province centres. </p>
-					
-					<p>Raster data model: A representation of the world as a surface divided into a regular grid of cells such as a satellite image or an
-					elevation surface. We will use a base map from OpenStreet Maps to visualize our map in a good way. </p>
-
-				<h2>Lesson 3: QGIS Graphical User Interface</h2>
-					<p>When QGIS starts, you are presented with the GUI as shown in the figure: </p>
-					<img src="{%static 'img/interface_2.jpg'%}"   class= 'img-responsive wide'>
-					
-					<p>The QGIS graphical user interface is divided into five areas: </p>
-					<p>1. Menu Bar: Provides access to various QGIS features using a standard hierarchical menu. </p>
-					<p>2. Tool Bar: Provides access to most of the functions as the menus, plus additional tools for interacting with the map. </p>
-					<p>3. Map Legend: Lists all the data layers in the project. This area also allows to change style or label the layer. </p>
-					<p>4. Map View: The map displayed in this window will depend on the vector and raster layers you have chosen to load. </p>
-					<p>5. Status Bar: The status bar shows you your current position in map coordinates as the mouse pointer is moved across the map view. </p>
-					
-					<p>Using these five areas, you can add a data layers, zoom to a specific area in the data, hide or show relevant layers and see the
-					coordinates, scale and projection of your displayed map. </p>
-
-				<h2>Lesson 4: Adding your first layers</h2>
-			<h3>Adding layer</h3> 
-					<p>To load a dataset, start QGIS and click on the Layer>Add Layer and, Add Vector Layer or simply press ctrl+shift+v. This will bring up a
+		<p>There are two components to GIS data: spatial data and attribute data.</p>
+		
+		<h1><span>Spatial Data.</span></h1>
+		<p>Spatial data, also known as geospatial data, is information about a physical object that can be represented by numerical values
+		in a geographic coordinate system.</p>
+		<P>Spatial data represents the location, size and shape of an object on planet Earth such as a building, lake, mountain or township.
+		Spatial data may also include attributes that provide more information about the entity that is being represented. </P>
+		
+		<P> Spatial data is usually stored as coordinates and topology, and is data that can be mapped. Spatial data is often accessed,
+		 manipulated or analyzed through Geographic Information Systems (GIS).</P>
+		
+		<h2><span>Shapefile.</span></h2>
+		 <p>A shapefile is a format for storing information of location and behaviour (attribute data) 
+		of geographic features or in another language; Shapefile can be made of both spatial data and attribute data.
+		The spatial data is the where and attribute data can contain information about the what, where, and why.</p>
+		
+		<p>Geographic features in a shapefile can be represented by points, lines, or polygons (areas)for example, water wells, rivers, and lakes. Each item usually has attributes that describe it, such as name or temperature.
+		The workspace containing shapefiles may also contain dBASE tables, which can store additional attributes that can be
+		joined to a shapefile's features.</p>
+		
+		<p>Despite its name indicating a singular file, a shapefile is actually a collection of at least three basic files (Mandatory files)
+		with specific file extensions that should be stored in the same project workspace. They are:.shp, .shx, .dbf</p>
+		
+		
+		<p><span>Shapefile extension</p></span>
+		<p>All shapefile files must have the same name but have different extensions.  There are three required files that,
+		at a minimum, make up a shapefile.  For example, a water GIS data set must have the minimum set of files: water.shp, water.shx, and water.dbf.</p>
+		<p>These three minimum files are:</p>
+		<ul>
+		<li><p>.shp-The main file that stores the feature geometry; required.</p></li>
+		<li><p>.shx-The index file that stores the index of the feature geometry; required.</p></li>
+		<li><p>.dbf-The dBASE table that stores the attribute information of features; required.</p></li>
+		</ul>
+		<p>All three files must be present in the same directory for the shapefile to be viewable. There may be additional files with the shapefile's projection information.  </p>
+		<p><span>Other files</span></p>
+		<ul>
+		<li><p>.prj-projection format; the coordinate system and projection information, a plain text file describing the projection using well-known text format</p></li>
+		<li><p>.sbn and .sbx - a spatial index of the features</p></li>
+		<li><p>.fbn and .fbx - a spatial index of the features that are read-only</p></li>
+		<li><p>Others includes;.ain and .aih,.ixs, .mxs, .atx, .shp,.xml, .cpg, and .qix 
+		</ul>
+		<p>Because a single shapefile contain three or more files, if you do copy a shapefile, be sure to copy all the files that make up the shapefile.</p>
+		
+		
+			
+			
+		<p><span>Add first Shapefile</span></p>
+					<p>To load a shapefile, start QGIS and click on the Layer>Add Layer and, Add Vector Layer or simply press ctrl+shift+v. This will bring up a
 					new dialog: </p>
 					
 					<img src="{%static 'img/interface_3.jpg'%}"   class= 'img-responsive'>
-					<p>Note: </p>
-					<p>A shapefile dataset must consist 5 different extension to represent a geographical data. These are *dbf, *dbf, *qpj, *sbx and *shp. </p>
+						<br><br><br>
+					<p>Note: A shapefile dataset must consist 5 different extension to represent a geographical data. These are *dbf, *dbf, *qpj, *sbx and *shp. </p>
 					
-					<p>When File option selected as Source type, click Browse, and look for "TZA_adm1.shp" under the folder where you have saved your Files
+					<p>When File option selected as Source type, click Browse, and look for "TZ.shp" under the folder where you have saved your Files
 					Admin_Boundaries folder, select and click Add. </p>
 					
 					<p>After selecting the *shp file, Add Layer menu should look like the following: </p>
@@ -227,77 +178,21 @@
 					<p>Click Close. After closing the window, first level of administrative boundaries of Tanzania should be presented like as shown: </p>
 					
 					<img src="{%static 'img/interface_5.jpg'%}"   class= 'img-responsive'>
-					<p>As you may notice, shape of the country looks skewed vertically. This is an effect of projection that we discussed earlier. Since QGIS
-					automatically selects WGS84 projection, we should change it into a different projection that represents Tanzania. </p>
 					
-					<p>Select the option in the Status Bar that circled in the figure Project then click Properties, and open the CRS menu accordingly. </p>
-					
-					<p>Click on CRS option on the top of the project properties menu. Type "Pseudo" in the Filter search menu. Also, you can type "3857",
-					the code the related projection. Select the related projection system and click OK. </p>
-					
-					<img src="{%static 'img/interface_6.jpg'%}"   class= 'img-responsive'>
-					
-					<p>Note: There are different projection systems that you can use for different purposes. </p>
-					
-					<p>Now, boundaries of Tanzania should look like as shown: </p>
-					
-					<img src="{%static 'img/interface_7.jpg'%}"   class= 'img-responsive'>
 					
 					<p>Note: </p>
 					<p>QGIS will automatically assign a random colour for your polygons.</p>
 					
 					<p>Congratulations, you have added your first layer. Let us do another one. </p>
-					
-					<p>As same procedure, open Add Vector Layer, browse and select "tza_trs_roads_osm.shp" under the folder where you have saved your Files
-					TZA_roads folder. </p>
+				<p><span>Add second Shapefile</span></p>
+					<p>As same procedure, open Add Vector Layer, browse and select "roads.shp" under the folder where you have saved your Files
+					TZ folder. </p>
 					
 					<img src="{%static 'img/interface_8.jpg'%}"   class= 'img-responsive'>
 					
-					<p>Congratulations, you have added your second layer. Let us add a spreadsheet. </p>
 					
-					<p>To add a spreadsheet into QGIS, click on the Layer>Add Layer and click Add Delimited Text Layer. This will bring up anew dialog: </p>
-					
-					<img src="{%static 'img/interface_9.jpg'%}"   class= 'img-responsive'>
-					
-					<p>This dialog allows you to select a wide range of properties for your layer. Even though most common usage of the delimited file is comma,
-					there are always different options. If your file using another delimiter rather than a comma, you can define your custom delimiter from
-					Custom delimiters. Click OK to add your data into QGIS. </p>
-					
-					<p>Note: </p>
-					<p>If you have a csv file with coordinate value such as Latitude and Longitude, you can define your geometry by selecting Point Coordinates
-					and Reprojecting with same CRS. </p>
-					
-					<p>Right click the data layer from the Map Legend area, then click Open Attribute Table to view attributes of the data. </p>
-					
-					<img src="{%static 'img/interface_10.jpg'%}"   class= 'img-responsive'>
-					
-					<p>Right now, we have three layers, one showing the boundaries, one showing the provincial health sites and provincial main roads data. </p>
-					
-					<p>For next step, we will look at the attribute values of these layers. </p>
-
-
-				<h2>ATTRIBUTE DATA</h2>
-					<p>As we discussed earlier, attributes of the data refer to the properties of spatial entities such as identity, province name or another
-					specific information. They are often referred as spatial data since they represent location information. </p>
-					
-					<p>To see the attributes of the Admin Boundaries data, right click the "TZA_adm1" layer from the Map Legend area, then click Open Attribute
-					Table to view attributes of the data. </p>
-					
-					<img src="{%static 'img/interface_11.jpg'%}"   class= 'img-responsive'>
-					
-					<p>Tip: </p>
-					<p>Select a feature and click Zoom to selected features to focus on a specific area. </p>
-					
-					<p>Attribute Table is divided into three main areas: </p>
-					<p>1. Toolbar: Just like the toolbar in QGIS graphical user interface, this bar holds the functions you can execute to the data in attribute table, such as select, modify or deleting the features. </p>
-					<p>2. Field Names: Field name, in other words column name defines the attribute of the feature. </p>
-					<p>3. Number of the Feature: Shows the number of the entry, in this case the feature. Every feature defines a polygon of the region. For example; number 10 defines, NAME_1 of the feature is PEMBA NORTH, HASC_1 is TZ.PN, CCN_1 is 0, CCA_2 is 54, TYPE_ is MKOA, ENGTYPE_1 is REGION and VARNAME_1 of the feature is KASKAZINI PEMBA. </p>
-					
-					<p>You can select a feature, modify the attributes, delete them or duplicate using this informative dialog scene. </p>
-					
-					<p>Please examine the attribute values for the other layers as well. </p>
-
-
+						
+						
 			</div>
 
 					<hr>
@@ -311,16 +206,44 @@
 
 
 			<div id="link2data" class="animated fadeIn">
-					<h3>
-						Topic sub header 2
-					</h3>
+					<h1>
+						Attribute Data
+					</h1>
 
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam ipsam sit ea distinctio vel,
-                                                quaerat non totam quae cum. Assumenda consequatur maxime praesentium, minima! Blanditiis aperiam
-                                                repudiandae eos perferendis necessitatibus?
-					</p>
+					<p>attribute data is a structured data about each feature.
+					For example of a house-  attributes of the house are things like size, colour, number of rooms etc.</p>
+					
+					<p>Attribute data is information appended in tabular format to a spatial features, it provides characteristics about spatial data.</p>
+					
+					<p>The attribute table displays information on features of a selected layer. Each row in the table represents a
+					feature (with or without geometry), and each column contains a particular piece of information about the feature.
+					Features in the table can be searched, selected, moved or even edited.</p>
+					
+					
+					<p>Right click the data layer from the Map Legend area, then click Open Attribute Table to view attributes of the data. </p>
+				
+					<p>As we discussed earlier, attributes of the data refer to the properties of spatial entities such as identity, province name or another
+					specific information. They are often referred as spatial data since they represent location information. </p>
+					
+					<p>To see the attributes of the Admin Boundaries data, right click the "TZ" layer from the Map Legend area, then click Open Attribute
+					Table to view attributes of the data. </p>
+					
+					<img src="{%static 'img/interface_11.jpg'%}"   class= 'img-responsive'>
+					
+					<p>Tip: </p>
+					<p>Select a feature and click Zoom to selected features to focus on a specific area. </p>
+					
+					<p>Attribute Table is divided into three main areas: </p>
+					<p>1. Toolbar: Just like the toolbar in QGIS graphical user interface, this bar holds the functions you can execute to the data in attribute table, such as select, modify or deleting the features. </p>
+					<p>2. Field Names: Field name, in other words column name defines the attribute of the feature. </p>
+					<p>3. Number of the Feature: Shows the number of the entry, in this case the feature. Every feature defines a polygon of the region.
+					For example; number 10 defines, NAME of the feature is PEMBA NORTH, HASC is TZ.PN, CCN is 0, CCA is 54, TYPE is MKOA and ENGTYPE is REGION . </p>
+					
+					<p>You can select a feature, modify the attributes, delete them or duplicate using this informative dialog scene. </p>
+					
+					<p>Please examine the attribute values for the other layers as well. </p>
 
+					<h2><span>Video.</span></h2>
 					<div class="video-holder">
 						<iframe src="https://www.youtube.com/embed/V0m2gxGFRx4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					</div>
@@ -332,19 +255,164 @@
 
 			<div id="link3data" class="animated fadeIn">
 					<h3>
-						Topic sub header 3
+						Map
 					</h3>
 
 					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam ipsam sit ea distinctio vel,
-                                                quaerat
-                                                non totam quae cum. Assumenda consequatur maxime praesentium, minima! Blanditiis aperiam
-                                                repudiandae eos perferendis necessitatibus?
+						<p><span>Reordering the Layers</span></p>
+					<p>The layers in your Layers list are drawn on the map in a certain order. The layer at the bottom of the list is drawn first,
+					and the layer at the top is drawn last. That means the top layer is on top therefore covering the bottom layer.
+					By changing the order that they are shown on the list, you can change the order they are drawn in.</p>
+					<p>Drag top layer to the bottom, the road layer will be covered as shwon bellow. </p>
+					<img src="{%static 'img/interface_8.5.jpg'%}"   class= 'img-responsive'>
+						
+					<P>The order in which the layers have been loaded into the map is probably not logical at this stage.
+					It's possible that the road layer is completely hidden because other layers are on top of it.</P>
+					<P>To resolve this problem:</P>
+<ul>
+					<li>Click and drag on a layer in the Layers list.</li>
+					<li>Reorder them to look like this:</li>
+</ul>
 					</p>
 
 					<hr>
-			</div>
+						
+						
+						
+						<h1>Creating a Basic Map and Database</h1>
+<img src="{%static 'img/createbasicmap_1.jpg'%}"   class= 'img-responsive'>
+<p>In this module, you will create a basic map which will be used later as a basis for further demonstrations of QGIS functionality.</p>
+<h2>Lesson 1: Working with Vector Data</h2>
+<p>Vector data is arguably the most common kind of data you will find in the daily use of GIS. It describes geographic data in terms of
+points that may be connected into lines and polygons. Every object in a vector dataset is called a feature, and is associated with data that
+describes that feature. </p>
+<h3>Viewing Layer Attributes</h3>
+<p>It is important to know that the data you will be working with does not only represent where objects are in space, but also tells you
+what those objects are. </p>
+<p>From the previous exercise, you should have the roads layer loaded in your map. What you can see right now is merely the position of the
+roads. </p>
+<img src="{%static 'img/createbasicmap_2.jpg'%}"   class= 'img-responsive'>
+    
+    
+<p>To see all the data available to you, with the roads layer selected in the Layers panel: Click on the Open Attribute Table </p>
+<p>It will show you a table with more data about the roads layer. This extra data is called attribute data. The lines that you can see on
+your map represent where the roads go; this is the spatial data. </p>
+<img src="{%static 'img/createbasicmap_3.jpg'%}"   class= 'img-responsive'>
+<p>You may now close the attribute table. </p>
+<p>Vector data represents features in terms of points, lines and polygons on a coordinate plane. It is usually used to store discrete
+features, like roads and city blocks. </p>
+<h3>Loading Vector Data from Shapefiles</h3>
+<p>The Shapefiles is a specific file format that allows you to store GIS data in an associated group of files. Each layer consists of
+several files with the same name, but different file types. Shapefiles are easy to send back and forth, and most GIS software can read them. </p>
+<p>Refer back to the introductory exercise in the previous section for instructions on how to add vector layers. </p>
+<p>Load the data sets into your map following the same method:  Health centres, water bodies (Lakes) and rivers. </p>
+<img src="{%static 'img/createbasicmap_4.jpg'%}"   class= 'img-responsive'>
+<h3>How to create a spatialite database</h3> 
+<p>Databases allow you to store a large volume of associated data in one file. You may already be familiar with a database management system
+(DBMS) such as Microsoft Access. GIS applications can also make use of databases. GIS-specific DBMSes (such as PostGIS) have extra functions,
+because they need to handle spatial data. </p>
+<p>Open QGIS and the exploration panel. If the panel Browse is missing, click View | Panels, and click Browse. In this panel you will find
+the access to SpatiaLite</p>
+<p>-Right click on the SpatiaLite entry in the Browser tree and select Create Database. </p>
+<p>-Select the directory of your choice and name the new database for example qgis-pl.db. It will appear under the rubric SpatiaLite. </p>
+<img src="{%static 'img/createbasicmap_5.jpg'%}"   class= 'img-responsive'>
+<p>-Click the refresh button at the top of the Browser and you should now see your database qgis-pl.db as shown below. </p>
+<img src="{%static 'img/createbasicmap_6.jpg'%}"   class= 'img-responsive'>
+<h3>How to import data into SpatiaLite Database</h3>
+<p>It is very easy to import data into SpatiaLite database if using the QGIS database manager. You can import directly the following
+formats: </p>
 
+<p>. Shapefile (.shp) </p>
+<p>. Dbase (.dbf) </p>
+<p>. Text (.txt), Commas Separate Values (.csv), et feuilles Excel (.xls) </p>
+<p>. Well-known Text (.wkt) et Well-known Binary (.wkb) </p>
+<p>. PostGIS (.ewkt / .ewkb) </p>
+<p>. Geography Markup Language (.gml) </p>
+<p>. Keyhole Markup Language (.kml) </p>
+<p>. Geometry JavaScript Object Notation (.geojson) </p>
+<p>. Scalable Vector Graphics (.svg) </p>
+<p>Let's see how to import a shapefiles: </p> 
+<p>1. Open the database manager by clicking Database Manager in the Database menu. </p> 
+<img src="{%static 'img/createbasicmap_7.jpg'%}"   class= 'img-responsive'>
+<p>2. Open SpatiaLite and select qgis-pl.db in the tree. </p>
+<img src="{%static 'img/createbasicmap_8.jpg'%}"   class= 'img-responsive'>
+<p>3. Go to the menu Table/Import a layer or a file to open the dialog Import a vector layer, as shown in the screenshot below. </p>
+<p>5. Highlight the shapefile you want to load. </p>
+<p>6. Click Upgrade options to load the rest of the dialogue box. The name of the output table will be filled with the name of the input
+shapefile. </p>
+
+
+<p>7. Set up the following options: </p>
+<p>*Select SCR Source and enter the EPSG code for the input data. If you do not want to change the coordinates system when proceeding to
+the import, it is useless to define the SCR target, alternatively, you can enter the desired coordinate system for the data in the database.
+*Select create a spatial index. </p>
+<p>8. Click OK to import the file. </p>
+<img src="{%static 'img/createbasicmap_9.jpg'%}"   class= 'img-responsive'>
+<p>Once the table is uploaded, you can display it directly in the cartographic window by double-clicking the table's name. </p>
+<img src="{%static 'img/createbasicmap_10.jpg'%}"   class= 'img-responsive'>
+<p>You can import more other vector layers. </p>
+<h2>Lesson 2: Symbology</h2>
+<p>The symbology of a layer is its visual appearance on the map. The basic strength of GIS over other ways of representing data with spatial
+aspects is that with GIS, you have a dynamic visual representation of the data you are working with. </p>
+<p>Therefore, the visual appearance of the map (which depends on the symbology of the individual layers) is very important. The end user of
+the maps you produce will need to be able to easily see what the map represents. Equally as important, you need to be able to explore the
+data as you're working with it, and good symbology helps a lot. </p>
+<p>In other words, having proper symbology is not a luxury or just nice to have. In fact, it is essential for you to use a GIS properly and
+produce maps and information that people will be able to use. </p>
+<h3>Changing colours</h3>
+<p>To change a layer's symbology, open its Layer Properties. Let's begin by changing the colour of the water bodies (Lakes) layer. </p>
+<p>Right-click on the water bodies (Lakes) layer in the Layers list. </p>
+<p>Select the menu item Properties in the menu that appears. </p>
+<img src="{%static 'img/createbasicmap_11.jpg'%}"   class= 'img-responsive'>
+    
+    
+    
+<p>Note
+<p>By defaulting you can also access a layer's properties by double-clicking on the layer in the layer list. </p>
+
+<p>In the Properties window: </p>
+<p>Select the Symbology tab at the extreme left: </p>
+<img src="{%static 'img/createbasicmap_12.jpg'%}"   class= 'img-responsive'>
+<p>Click the colour select the dropdown button next to the colour label. A standard colour dialog will appear. </p>
+<p>Choose a blue colour and click OK. </p>
+<p>Click OK again in the Layer Properties window, and you will see the colour change being applied to the layer. </p>
+<img src="{%static 'img/createbasicmap_13.jpg'%}"   class= 'img-responsive'>
+
+<h3>Changing Symbol Structure</h3>
+<p>This is good stuff so far, but there is more to a layer's symbology than just its colour. Next we want to eliminate the lines between
+the different land use areas so as to make the map less visually cluttered. </p>
+<p>-Open the Layer Properties window for the water bodies (Lakes) layer. </p>
+<p>Under the symbology tab, you will see the same kind of dialog as before. This time, however, you are doing more than just quickly
+changing the colour. </p>
+<p>-In the single symbol panel, expand the Fill dropdown (if necessary) and select the Simple fill option: </p>
+<img src="{%static 'img/createbasicmap_14.jpg'%}"   class= 'img-responsive'>
+<p>-Click on the Stroke style dropdown. At the moment, it should be showing a short line and the words Solid Line. </p>
+<p>-Change this to No Pen. </p>
+<p>-Click OK. </p>
+<img src="{%static 'img/createbasicmap_15.jpg'%}"   class= 'img-responsive'>
+Now the water bodies (Lakes) layer won't have any lines between areas. </p>
+
+
+
+<img src="{%static 'img/createbasicmap_16.jpg'%}"   class= 'img-responsive'>
+<h3>Scale-Based visibility</h3>
+<p>Sometimes you will find that a layer is not suitable for a given scale. For example, a dataset of all the continents may have low detail,
+and not be very accurate at street level. When that happens, you want to be able to hide the dataset at inappropriate scales. </p>
+<p>In our case, we may decide to hide the buildings from view at small scales. The buildings are hard to distinguish at that scale. </p>
+<img src="{%static 'img/createbasicmap_17.jpg'%}"   class= 'img-responsive'>
+<p>Open the Layer Properties dialog for the buildings layer. </p>
+<p>Activate the Rendering tab. </p>
+<p>Enable scale-based rendering by clicking on the checkbox labelled Scale dependent visibility: </p>
+<img src="{%static 'img/createbasicmap_18.jpg'%}"   class= 'img-responsive'>
+<p>Change the Minimum value to 1:100,000. </p>
+<p>Click OK. </p>
+<p>Test the effects of this by zooming in and out in your map, noting when the buildings layer disappears and reappears. </p>
+<p>Note: </p>
+<p>You can use your mouse wheel to zoom in increments. Alternatively, use the zoom tools to zoom to a window: </p>
+
+			</div>
+			
+			
 
 
 
@@ -353,28 +421,5 @@
 	
 </main>
         
-        
-        <script src="{% static "accounts/js/jquery.min.js" %}" type="text/javascript"></script>
-        <script src="{% static "accounts/js/bootstrap.min.js" %}" type="text/javascript"></script>
-        <script src="{% static "accounts/js/scrollreveal.min.js" %}" type="text/javascript"></script>
-        <script src="{% static "accounts/js/app2.js" %}" type="text/javascript"></script>
-
-
-
-        <script>
-			function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-}
-
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
-	</script>
-
-
-
-</body>
-
-
-
-</html>
+      
+      {% endblock %}   

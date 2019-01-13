@@ -119,9 +119,14 @@ def donald(request):
 def gisprac_q_intro(request):    
     return render (request, "home/gisprac_q_intro.html")
 
+def gisprac_q_datacreation(request):    
+    return render (request, "home/gisprac_q_datacreation.html")
+
 @login_required    
 def gisprac_interface(request):    
     return render (request, "home/gisprac_interface.html")
+
+
     
 def gisprac_attribute(request):    
     return render (request, "home/gisprac_attribute.html")
