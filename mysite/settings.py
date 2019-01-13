@@ -78,16 +78,16 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 
 #local/production(test)
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'quiz2',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'localhost',
-        'PORT': '',
-    }
-}
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#        'NAME': 'quiz2',
+#        'USER': 'postgres',
+#        'PASSWORD': 'postgres',
+#        'HOST': 'localhost',
+#        'PORT': '',
+#    }
+#}
 
 
 
@@ -118,28 +118,28 @@ DATABASES = {
 
 #live
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.mysql',
-#        'NAME':'gis4life$gis4life',
-#        'USER': 'gis4life',
-#        'OPTIONS': {
-#            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-#            #Tell mysql to connect with 'utf8mb4' character set
-#            'charset':'utf8mb4',
-#            },
-#        #Tell django to build the test database with 'utf8mb4'character set
-#        'TEST': {
-#            'CHARSET': 'utf8mb4',
-#            'COLLATION': 'utf8mb4_unicode_ci',
-#        },
-#        'PASSWORD': 'Pa55w0rd',
-#        'HOST': 'gis4life.mysql.pythonanywhere-services.com',
-#        'PORT': '',
-#       
-#    }
-#}
-#
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME':'gis4life$gis4life',
+        'USER': 'gis4life',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+            #Tell mysql to connect with 'utf8mb4' character set
+            'charset':'utf8mb4',
+            },
+        #Tell django to build the test database with 'utf8mb4'character set
+        'TEST': {
+            'CHARSET': 'utf8mb4',
+            'COLLATION': 'utf8mb4_unicode_ci',
+        },
+        'PASSWORD': 'Pa55w0rd',
+        'HOST': 'gis4life.mysql.pythonanywhere-services.com',
+        'PORT': '',
+       
+    }
+}
+
 
 
 
