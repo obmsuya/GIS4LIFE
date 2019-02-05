@@ -16,10 +16,10 @@ from django.contrib.sessions.models import Session
 from datetime import datetime
 
 #from quiz.forms import SignUpForm,Login_Form
-from django.contrib.auth import login , authenticate
-from django.contrib.auth.views import LoginView
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.forms import AuthenticationForm
+#from django.contrib.auth import login , authenticate
+#from django.contrib.auth.views import LoginView
+#from django.contrib.auth.forms import UserCreationForm
+#from django.contrib.auth.forms import AuthenticationForm
 
 
 
