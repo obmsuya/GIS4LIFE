@@ -30,34 +30,32 @@
 								<li><a href="" id="link1">Spatial Data</a></li>			
 								<li><a href="" id="link2">Attribute Data</a></li>
 								<li><a href="" id="link3">Map Making</a></li>
-								<li><a href="" id="link4">QGIS Plugins</a></li>
+								<li><a href="" id="link4">Print Composer</a></li>
 								<li><a href="{% url 'quiz:interface' %}" >Test</a></li>
 							</ul>
 						</li>
 	
 						<li><a href="{% url 'home:gisprac_attribute' %}" >Coordinate system</a></li>
 						<li><a href="{% url 'home:gisprac_q_datacreation' %}" >Data Creation</a></li>
-					</ul>
-				</nav>
-			</div>
-				
-				<div class="scroll-able mt-10">
-					<ul class="top-ul">
+					
+					
 						
+						<li><a href="#" >Data Creation</a></li>
+						<li><a href="#" >Coming soon</a></li>
+						<li><a href="#" >Coming soon</a></li>
 						
-						<li><a href="" >Data Creation</a></li>
-						<li><a href="" >Coming soon</a></li>
-						<li><a href="" >Coming soon</a></li>
-						<li><a href="" >Coming soon</a></li>
-						<li><a href="" >Coming soon</a></li>
-						<li><a href="" >Coming soon</a></li>
-						<li><a href="" >Coming soon</a></li>
-						<li><a href="" >Coming soon</a></li>
-						<li><a href="" >Coming soon</a></li>
 						
 						
 					</ul>
 				</div>
+				
+				
+				
+				
+				</nav>
+			</div>
+				
+				
 		</aside>
 
 
@@ -196,6 +194,7 @@
 			</div>
 
 					<hr>
+						<br>
 
 
 		
@@ -258,41 +257,134 @@
 						Map
 					</h3>
 
-					<p>
-						<p><span>Reordering the Layers</span></p>
-					<p>The layers in your Layers list are drawn on the map in a certain order. The layer at the bottom of the list is drawn first,
-					and the layer at the top is drawn last. That means the top layer is on top therefore covering the bottom layer.
-					By changing the order that they are shown on the list, you can change the order they are drawn in.</p>
-					<p>Drag top layer to the bottom, the road layer will be covered as shwon bellow. </p>
-					<img src="{%static 'img/interface_8.5.jpg'%}"   class= 'img-responsive'>
-						
-					<P>The order in which the layers have been loaded into the map is probably not logical at this stage.
-					It's possible that the road layer is completely hidden because other layers are on top of it.</P>
-					<P>To resolve this problem:</P>
-<ul>
-					<li>Click and drag on a layer in the Layers list.</li>
-					<li>Reorder them to look like this:</li>
-</ul>
-					</p>
-
+					
 					<hr>
 						
 						
 						
-						<h1>Creating a Basic Map and Database</h1>
-<img src="{%static 'img/createbasicmap_1.jpg'%}"   class= 'img-responsive'>
+						
+	<h2><span>Learning Objectives</span></h2>
+
+<p>The overall objective of this practical session is to produce a baseline GIS map using 
+QGIS software. A baseline GIS map provides the foundation for a Spatial Decision 
+Support System (SDSS) framework. During these exercises we will be using Iringa data to build a basic SDSS framework. By the end of this you will be able to:</p>
+<ol>
+	<li><p>Open QGIS and adjust the user interface</p></li>
+	<li><p>Open GIS vector data layers</li>
+	<li><p>Save a baseline SDSS map (as a QGIS project)</p></li>
+	<li><p>Manipulate vector data layers and style properties</p></li>
+</ol>
+
+
+
+
+	<p>1. To learn about the structure of vector data, and how to load vector dataset into a map.</p>
+	<p>2. To be able to create any symbology you want for any vector layer.</p>
 <p>In this module, you will create a basic map which will be used later as a basis for further demonstrations of QGIS functionality.</p>
-<h2>Lesson 1: Working with Vector Data</h2>
+
+<h3> Simple Map Navigation in QGI</h3>
+<p>Before we start adjusting and editing our base map, it is a good time to familiarise 
+yourself with the Map Navigation features of QGIS if you haven’t already done so. 
+Table below provides a brief description of the key Map Navigation features. </p>
+<!--<h2>Table</h2>
+
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr>
+  <tr>
+    <td>Ernst Handel</td>
+    <td>Roland Mendel</td>
+    <td>Austria</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>Helen Bennett</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Laughing Bacchus Winecellars</td>
+    <td>Yoshi Tannamuri</td>
+    <td>Canada</td>
+  </tr>
+  <tr>
+    <td>Magazzini Alimentari Riuniti</td>
+    <td>Giovanni Rovelli</td>
+    <td>Italy</td>
+  </tr>
+</table>-->
+<img src="{%static 'img/createbasicmap_1.5.jpg'%}"   class= 'img-responsive'>
+ <p>Spend some time familiarizing yourself with the map navigation features of 
+QGIS.</p>
+
+ <h2>Saving a QGIS Project</h2>
+
+ <p>Before we do anything further, we need to save our current QGIS project. As 
+mentioned during the overview, good file management and organisation in GIS is essential!</p>
+
+ <p>Go to Project > Save As</p>
+
+ <p>We will be saving our project in the QGIS_Project_Files folder, so navigate here using the browser that appears</p>
+<p>Save the QGIS project as "Iringa_Base_Map" and click save
+ (where you are saving the project should look like Figure below)
+<img src="{%static 'img/createbasicmap_1.52.jpg'%}"   class= 'img-responsive'>
+
+<p>Your QGIS project is now saved. We will be using this project as the basis for our 
+practicals. As we make changes to our project it is very important to continue to save 
+these changes in this project. Once you have saved a QGIS project, you can open 
+this file from the Project menu and it will load the shapefiles and remember the 
+settings of each layer etc. so that you do not have to re-create a map in QGIS</p>
+
+ <h2>Setting some key Project Properties</h2>
+<p> Before we go further, we need to set some default project properties. These are 
+important later when we deal with scaling and scale-
+bars etc.</p>
+
+ <p>1. Go to Project > Project Properties...</p>
+
+ <p>2. In the “CRS” tab, uncheck the “no projection (or unknown/non-Earth projection)” </p>
+
+<img src="{%static 'img/createbasicmap_1.53.jpg'%}"   class= 'img-responsive'>
+
+<p>In the “Elipsoid” tab, set it to “WGS 84” </p>
+<p>In "unit for distance measurement" tab set it to "Map units(degrees)"</p>
+<p>In "unit for area measurement" tab set it to "Map units(square degrees)"</p>
+<p>In "Display coordinate using" tab set it to "Map units(degrees)"</p>
+
+
+ <p>then press ok</p>
+
+
+ <img src="{%static 'img/createbasicmap_1.54.jpg'%}"   class= 'img-responsive'>
+
+  <p>Once this is done, save the QGIS project from the menu “Project > 
+
+ Save” or using the “Save Project” tool bar button</p>
+
+<h2>Working with Vector Data</h2>
 <p>Vector data is arguably the most common kind of data you will find in the daily use of GIS. It describes geographic data in terms of
 points that may be connected into lines and polygons. Every object in a vector dataset is called a feature, and is associated with data that
 describes that feature. </p>
-<h3>Viewing Layer Attributes</h3>
+<h3>View Layer Attributes</h3>
 <p>It is important to know that the data you will be working with does not only represent where objects are in space, but also tells you
 what those objects are. </p>
-<p>From the previous exercise, you should have the roads layer loaded in your map. What you can see right now is merely the position of the
+<p>From the previous exercise, you should have the roads layer loaded in your map or else follow the above procedures to load iringa road layer. What you can see right now is merely the position of the
 roads. </p>
 <img src="{%static 'img/createbasicmap_2.jpg'%}"   class= 'img-responsive'>
     
+
     
 <p>To see all the data available to you, with the roads layer selected in the Layers panel: Click on the Open Attribute Table </p>
 <p>It will show you a table with more data about the roads layer. This extra data is called attribute data. The lines that you can see on
@@ -307,51 +399,18 @@ several files with the same name, but different file types. Shapefiles are easy 
 <p>Refer back to the introductory exercise in the previous section for instructions on how to add vector layers. </p>
 <p>Load the data sets into your map following the same method:  Health centres, water bodies (Lakes) and rivers. </p>
 <img src="{%static 'img/createbasicmap_4.jpg'%}"   class= 'img-responsive'>
-<h3>How to create a spatialite database</h3> 
-<p>Databases allow you to store a large volume of associated data in one file. You may already be familiar with a database management system
-(DBMS) such as Microsoft Access. GIS applications can also make use of databases. GIS-specific DBMSes (such as PostGIS) have extra functions,
-because they need to handle spatial data. </p>
-<p>Open QGIS and the exploration panel. If the panel Browse is missing, click View | Panels, and click Browse. In this panel you will find
-the access to SpatiaLite</p>
-<p>-Right click on the SpatiaLite entry in the Browser tree and select Create Database. </p>
-<p>-Select the directory of your choice and name the new database for example qgis-pl.db. It will appear under the rubric SpatiaLite. </p>
-<img src="{%static 'img/createbasicmap_5.jpg'%}"   class= 'img-responsive'>
-<p>-Click the refresh button at the top of the Browser and you should now see your database qgis-pl.db as shown below. </p>
-<img src="{%static 'img/createbasicmap_6.jpg'%}"   class= 'img-responsive'>
-<h3>How to import data into SpatiaLite Database</h3>
-<p>It is very easy to import data into SpatiaLite database if using the QGIS database manager. You can import directly the following
-formats: </p>
-
-<p>. Shapefile (.shp) </p>
-<p>. Dbase (.dbf) </p>
-<p>. Text (.txt), Commas Separate Values (.csv), et feuilles Excel (.xls) </p>
-<p>. Well-known Text (.wkt) et Well-known Binary (.wkb) </p>
-<p>. PostGIS (.ewkt / .ewkb) </p>
-<p>. Geography Markup Language (.gml) </p>
-<p>. Keyhole Markup Language (.kml) </p>
-<p>. Geometry JavaScript Object Notation (.geojson) </p>
-<p>. Scalable Vector Graphics (.svg) </p>
-<p>Let's see how to import a shapefiles: </p> 
-<p>1. Open the database manager by clicking Database Manager in the Database menu. </p> 
-<img src="{%static 'img/createbasicmap_7.jpg'%}"   class= 'img-responsive'>
-<p>2. Open SpatiaLite and select qgis-pl.db in the tree. </p>
-<img src="{%static 'img/createbasicmap_8.jpg'%}"   class= 'img-responsive'>
-<p>3. Go to the menu Table/Import a layer or a file to open the dialog Import a vector layer, as shown in the screenshot below. </p>
-<p>5. Highlight the shapefile you want to load. </p>
-<p>6. Click Upgrade options to load the rest of the dialogue box. The name of the output table will be filled with the name of the input
-shapefile. </p>
 
 
-<p>7. Set up the following options: </p>
-<p>*Select SCR Source and enter the EPSG code for the input data. If you do not want to change the coordinates system when proceeding to
-the import, it is useless to define the SCR target, alternatively, you can enter the desired coordinate system for the data in the database.
-*Select create a spatial index. </p>
-<p>8. Click OK to import the file. </p>
-<img src="{%static 'img/createbasicmap_9.jpg'%}"   class= 'img-responsive'>
-<p>Once the table is uploaded, you can display it directly in the cartographic window by double-clicking the table's name. </p>
-<img src="{%static 'img/createbasicmap_10.jpg'%}"   class= 'img-responsive'>
-<p>You can import more other vector layers. </p>
-<h2>Lesson 2: Symbology</h2>
+<h2>Ordering the GIS data layers</h2>
+
+<p>As GIS uses data layers for individual map features, the order in which these data layers lie is important to how the map will look. You can see the order of the layers in the layer / legend panel, located on the left of the main map view. Layers are ordered on the map corresponding to the order they are listed in this panel i.e. the first layer is located on the top of the map, and the last layer at the bottom of our map. To change the order of the data layers:</p>
+
+<p> In the layer panel, click and hold the layer you want move and drag 
+it up or down the list Moving the layer like this changes 
+the order it appears on the map. Spend a little while changing the 
+order of the layers   and observing the changes on the map.</p>
+
+<h2>Symbology</h2>
 <p>The symbology of a layer is its visual appearance on the map. The basic strength of GIS over other ways of representing data with spatial
 aspects is that with GIS, you have a dynamic visual representation of the data you are working with. </p>
 <p>Therefore, the visual appearance of the map (which depends on the symbology of the individual layers) is very important. The end user of
@@ -386,19 +445,31 @@ the different land use areas so as to make the map less visually cluttered. </p>
 changing the colour. </p>
 <p>-In the single symbol panel, expand the Fill dropdown (if necessary) and select the Simple fill option: </p>
 <img src="{%static 'img/createbasicmap_14.jpg'%}"   class= 'img-responsive'>
-<p>-Click on the Stroke style dropdown. At the moment, it should be showing a short line and the words Solid Line. </p>
-<p>-Change this to No Pen. </p>
+<p>-Click on the Fill style dropdown. At the moment, it should be showing a different line style. </p>
+<p>-Change this to FDiagonal. </p>
 <p>-Click OK. </p>
-<img src="{%static 'img/createbasicmap_15.jpg'%}"   class= 'img-responsive'>
-Now the water bodies (Lakes) layer won't have any lines between areas. </p>
+<!--<img src="{%static 'img/createbasicmap_15.jpg'%}"   class= 'img-responsive'>-->
+
 
 
 
 <img src="{%static 'img/createbasicmap_16.jpg'%}"   class= 'img-responsive'>
+
+
+
+
+
+
+
 <h3>Scale-Based visibility</h3>
 <p>Sometimes you will find that a layer is not suitable for a given scale. For example, a dataset of all the continents may have low detail,
 and not be very accurate at street level. When that happens, you want to be able to hide the dataset at inappropriate scales. </p>
 <p>In our case, we may decide to hide the buildings from view at small scales. The buildings are hard to distinguish at that scale. </p>
+<P>Add the building layer</P>
+<p>Change fill style of Iring layer to no brush.</p>
+<p>Turn of other layers except building and iringa layer</p>
+
+
 <img src="{%static 'img/createbasicmap_17.jpg'%}"   class= 'img-responsive'>
 <p>Open the Layer Properties dialog for the buildings layer. </p>
 <p>Activate the Rendering tab. </p>
@@ -410,10 +481,155 @@ and not be very accurate at street level. When that happens, you want to be able
 <p>Note: </p>
 <p>You can use your mouse wheel to zoom in increments. Alternatively, use the zoom tools to zoom to a window: </p>
 
+
+
+<h2>Labelling the GIS layers</h2>
+<p>It is now time to add some additional information to our map. One of the easiest and most effective ways to do this is to use the label feature. 
+We will be labelling our Iringa layer, as well as our Building layer (when zoomed in).</p>
+
+<p>Right-click on the Iringa layer and select “Properties” (or 
+double-click on the layer).</p>
+
+<p>Click on the “Labels” tab 
+
+<p>Check the “Label this layer with” option</p>
+
+<p>Choose the field  you want to use as the layer (For Settlements we will 
+use the “Name” field”)</p>
+
+<p>In the “Text” settings make sure the colour is black and the text size is around 8</p>
+<img src="{%static 'img/createbasicmap_18.5.jpg'%}"   class= 'img-responsive'>
+
+<p>Click on the “Buffer” section and check the “Draw text buffer” option 
+and make sure the colour is set to white (this will create an outline 
+around the label to make it a little clearer on the map)</p>
+<img src="{%static 'img/createbasicmap_18.6.jpg'%}"   class= 'img-responsive'>
+ <p>Press OK once these settings have been adjusted and view the 
+additions made to your map</p>
+
+<p>Save Your Project</p>
+
+
+ <h2> Adding Scale-bar and North Arrow to the Map Window</h2>
+ 
+ <p>A good map should always include features such as a scale bar and a north arrow. 
+We can add these to our Map Window using the "View > Decorations" menu.</p>
+<img src="{%static 'img/createbasicmap_18.7.jpg'%}"   class= 'img-responsive'>
+	
+<p>In each menu item check the "enable" option and press OK (i.e. Enable scale-
+bar; Enable North Arrow)</p>
+<p>Save Your Project</p> 
+<br><br><br><br><br><br>
+
 			</div>
 			
 			
+</div>
 
+			<div id="link4data" class="animated fadeIn">
+					<h3>
+						Print
+					</h3>
+
+<p>This practical  aims  to  familiarize the  you  with  the  Print 
+Composer, the tool that QGIS includes to create map layouts. We will be creating thematic maps with the outcomes of the above Practical.</p>
+
+<h3>Introduction to Print Composer</h3>
+<p>In order to share our data, we must produce maps and export to other formats for 
+printing. After you have arranged your layers to create a good map layout in your 
+viewer, you will use the Print Composer tool in QGIS to format your maps and include multiple elements in a single layout. </p>
+
+<p>Opening the Print Composer provides you with a blank canvas to which you can add 
+the current QGIS map canvas, legend, scale bar, images, basic shapes, arrows and 
+text </p>
+
+<p>Legend, scale bar and title are features which should always be included in a map 
+composition. The compass arrow can be omitted as the QGIS map canvas is always 
+oriented with the north at the top.  </p>
+
+<p>Open the map project we created in the above Practical by selecting it from list of recent projects.</p>
+
+<p>Open Print Composer by selecting project > layout manager in the drop-down 
+menus or select the button corresponding to new print layout in the tool bar</p>
+
+<p>Note: Layout Manager<img src="{%static 'img/q_p_intro_print1.jpg'%}"   class= 'img-responsive'> button allows us to access to the different composition in progress and manage them; showing, removing, closing and so on. </p>
+
+<p>When prompted give the new map composition the title name of Iringa</p>
+<img src="{%static 'img/q_p_intro_print2.jpg'%}"   class= 'img-responsive'> 
+
+<p> 1. Click on the Add new map button and click-and-drag a rectangle over the blank workspace to add your current map view to the Print Composer</p>
+<img src="{%static 'img/q_p_intro_print3.jpg'%}"   class= 'img-responsive'> 
+<br>
+<img src="{%static 'img/q_p_intro_print4.jpg'%}"   class= 'img-responsive'> 
+
+<p>In order to adjust the map view to the canvas extent, under the Item properties tab, click on the 
+Set to map canvas extent button. </p>
+<img src="{%static 'img/q_p_intro_print5.jpg'%}"   class= 'img-responsive'> 
+
+<p>To move layers within the map element select the map element, click the Move 
+item content <img src="{%static 'img/q_p_intro_print6.jpg'%}"   class= 'img-responsive'> and move the layers within the map element frame with the left mouse button.</p>  
+
+<p>If you want to zoom in/out to/from a certain area of Iringa, hold down the "Ctrl"
+ key in your keyboard while scrolling up or down with the mouse wheel. </p>
+
+<p>To add a frame around the map view, make sure that the Frame option is ticked on under Item properties tab.</p>
+<img src="{%static 'img/q_p_intro_print7.jpg'%}"   class= 'img-responsive'>
+
+<p>To lock the element position within the print composer canvas. select the lock option underneath the Item tab. You can also go to the Item Properties tab and enable the option Lock layers for map item. This will fix this map layer.</p>
+
+<p><span>Adding a Scale Bar </span></p>
+
+<p>Add a scale bar to the map using the Add new scale bar tool and dragging a box on  the  map.  If  we  have  enabled  the  option on-the-fly  projection and  set to the map units, your scale bar will be displayed in kilometres (metric units) as this corresponds to the map units. Otherwise, your scale bar will be set in degree units.</p>
+ <img src="{%static 'img/q_p_intro_print8.jpg'%}"   class= 'img-responsive'>
+
+ <p>You can adjust the style and numbering under the Item Properties tab while the 
+scale bar is highlighted. Open the Item properties tab at the right of the PRINT 
+COMPOSER window in order to adjust the different parameters available for this 
+feature.  Notice  that  this  tab  is  shared  by  any  feature  added  to  our  map composition</p>
+ <img src="{%static 'img/q_p_intro_print9.jpg'%}"   class= 'img-responsive'>
+
+ <p>You can alternatively adjust front, size, appearance of the scale bar and other 
+parameters through the options available at the Item properties tab. </p>
+
+<p><span>Adding a Legend </span></p>
+
+Add a legend to the map by selecting the Add new legend tool and click to any place on the layout. 
+
+ 
+ <img src="{%static 'img/q_p_intro_print10.jpg'%}"   class= 'img-responsive'> 
+<p>Use the options under the Item properties tab to adjust the legend to your liking. </p> 
+ <img src="{%static 'img/q_p_intro_print11.jpg'%}"   class= 'img-responsive'>
+
+
+<p>Under Main  properties option,  change  the  legend  title  and  write 
+Iringa. Afterwards, click on legend item drop down button under 
+Fonts panel  and  change  the  title  format;  underline,  bold 
+and  letter  size  12. </p> 
+<img src="{%static 'img/q_p_intro_print12.jpg'%}"   class= 'img-responsive'>
+
+<p><span>Adding Title and North Arrow</span></p>
+
+Add a title to the map using the Add new label <img src="{%static 'img/q_p_intro_print13.jpg'%}"   class= 'img-responsive'>tool.  
+<p>Adjust the text under the item tab, and size and position by dragging the blue squares on the map. When adding a new label, the Item Properties tab pops up enabling you to change title content and font properties. </p>
+
+<img src="{%static 'img/q_p_intro_print13.jpg'%}"   class= 'img-responsive'>
+
+<p>Under Main properties panel, change the map title and write Iringa Map
+(by default it should be titled ‘QGIS’). Click on Font button  under Appearance on Main  properties panel  and  change  the  title  format; underline, bold and letter size 16. Finally, under Alignment panel check the Center and Middle option in both  Horizontal  and  Vertical  alignment  settings respectively</p>
+
+
+<p>To add a North Arrow to the map, use the Add image tool. Click on the map to place a box, and choose a north arrow from the images on the right, under Search directories panel. </p>
+<img src="{%static 'img/q_p_intro_print14.jpg'%}"   class= 'img-responsive'>
+
+<p><span>Print Layouts: exporting you maps</span></p>
+<p>The layout tab allows you to set paper size, orientation, the print quality for the output file in dpi (resolution) and to activate snapping to a grid of a defined resolution.</p>  
+
+<p>You can also activate the Print as raster checkbox. This means all elements will be rastered before printing or saving as Postscript of PDF. </p>
+
+<br><br><br><br><br>
+
+			</div>
+	</div>		
 
 
 

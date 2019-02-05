@@ -1,32 +1,102 @@
 
-{% extends 'base2.html' %}
+{% extends 'base3.html' %}
 
 {% load staticfiles %}
 <br><br>
 
    {% block body %}
-       <br>
-      <ul class="nav navbar-nav navbar-right"> 
-          <div class="row">
-                <div class="jumbotron">
-                 <h1>gis4life</h1>
-                     <!--<h2>Welcome</h2>-->
-                    <br>
-         
-                     <h2><form method="post">
-                             {% csrf_token%}
-                             {{form.as_p}}
-         
-                             <button type="submit">Sign in</button>
-                         </form></h2>
-                     <br>
-                     <br> 
-                     <p><a href="{% url 'accounts:register'%}">I don't have a password &raquo;</a></p>
-                     <p><a href="{% url 'accounts:reset_password'%}">I forgot my Password &raquo;</a></p>
-                 </div>
-     
-          </div>
-            
-    
-      </ul>
+     <br><br><br><br>
+      
+      
+      
+      
+       <main class="page-wrapper">
+		<div class="page-header">
+		</div>
+			<div class="page-conten container mt-50">
+				<div class="row">
+
+					<div class="col-md-6">
+						<div class="mb-8">
+							<h2 class="auth-title">
+								Login here
+							</h2>
+							<div class="line-sep"></div>
+						</div>
+
+
+						<div class="intro mb-8">
+							Welcome GIS4LIFE
+						</div>
+
+
+						<div class="row">
+							<div class="col-md-10 col-sm-12">
+								<div class="alert alert-danger">
+									<div class="form">
+                                                                        <form method="post">
+
+                                                                        {% csrf_token%}
+                                                                        {{form.as_p}}
+                                                                    
+                                                                    
+                                                            <button type="submit" class="btn btn-follow block btn-login">
+										 	Login </button>
+                                                                            </form>
+                                                                        
+								</div>
+							</div>
+						</div>
+
+
+
+
+
+						
+							
+
+								<!--<div class="row">-->
+									<div class="col-md-10 col-sm-12">
+										<hr>
+										<p>
+											<p><a href="{% url 'accounts:register'%}">I don't have a password &raquo;</a></p>
+                                                                                    <p><a href="{% url 'accounts:reset_password'%}">I forgot my Password &raquo;</a></p>
+										</p>
+									</div>
+								<!--</div>-->
+							</form>
+						</div>
+					</div>
+
+
+
+					<div class="col-md-6">
+						
+						 <img src="{%static 'img/login.jpg'%}"   class= 'img-responsive'>
+						<hr>
+
+
+						<h3>
+							Online Books 
+						</h3>
+
+						<p>
+							Available soon.
+						</p>
+						<hr>
+
+
+
+						<h3>
+							Build your Empire
+						</h3>
+
+						<p class="mb-20">
+							Are you an enterpreneur. Do you want to build your Empire? Contact us. Thanks
+						</p>
+						
+					</div>
+				</div>
+			</div>
+	</main>
    {% endblock %}

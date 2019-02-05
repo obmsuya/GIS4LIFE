@@ -22,20 +22,15 @@
 
 
        <hr>
-
-
-      
-    <ul class="questions">
-          {% for item in quizs %}
-
-          <li class="thank">
+<li class="thank">
             <h2 class="text-center">
-              Thanks you <br> you have completed the exam
-              
+             
+              <h3>Submit your results</h3>
               <form method="post">
                 
                 {% csrf_token%}
-                Score:<input name="scores" id="scores">  
+                <!--<input type="hidden" name="scores" id="scores">-->
+                <!--Score:<input name="scores" id="scores">  -->
                         {{form.as_p}}
                          
                         <button type="submit" >submit</button>
@@ -43,11 +38,14 @@
                         </form>
             </h2>
 
-            <a href="" class="btn btn-follow">Check your results</a>
+            <!--<a href="" class="btn btn-follow">Check your results</a>-->
           </li>
 
+      
+    <ul class="questions">
+        
+          {% for item in questions %}
 
-              
              <li class="{{ forloop.counter }}"> 
                <div class="qn-title">
                   <p>
@@ -135,7 +133,7 @@ var scores=0;
    var ans =$('input:hidden[name='+namex+']').val();
    //alert(namex);
    if (c=== ans){
-    alert("NEXT ");
+    //alert("NEXT ");
     scores=scores+1;
 
     // alert(scores);
@@ -143,7 +141,7 @@ var scores=0;
     // remove the question
 
 
-    if (theClass == 3) {
+    if (theClass == 4) {
       
       // by form submit
       $('hidden-form').submit();
@@ -160,10 +158,10 @@ var scores=0;
 
 
    }else{
-    alert("NEXT ");
+    //alert("NEXT ");
     //alert("WRONG! The correct answer is "+ans);
 
-     if (theClass == 3) {
+     if (theClass == 4) {
         $('hidden-form').submit();
         $('.' + theClass).fadeOut('slow');
           $('.thank').addClass('show'); 

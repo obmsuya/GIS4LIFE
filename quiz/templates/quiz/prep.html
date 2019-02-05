@@ -1,0 +1,121 @@
+ {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script src="{% static 'admin/js/bongo_js/bongo.js' %}"></script>
+     
+
+    </head>
+
+    <body>
+
+
+
+<div class="container">
+  
+
+
+<header>
+    <a href="{% url 'quiz:prep' %}"> Try Again</a>
+    <h3>Questions</h3>
+  
+    {% if user.is_authenticated %}
+
+      Hi {{ user.username }}!  
+     
+      
+     <a href="{% url 'accounts:logout'%}">Logout</a>
+    
+  </header>
+  <!--<div class="alert alert-info" role="alert" id="score" > Your score will be shown here </div>-->
+<hr>
+  {% csrf_token %}
+       Please answer the following Questions <br>
+      
+    
+          {% for item in quizs %}
+             
+            
+             <p> {{ item.id }}.  {{ item.question }}</p>
+             
+             <div id="div{{ item.id }}" name="{{ item.id }}">
+             
+             <input type="hidden" name="{{ item.id }}" value="{{ item.ans }}">
+             <label> <input type="radio"  name="{{ item.id }}" value="{{ item.a }}" />{{ item.a }}</label><br>
+              <label><input type="radio"   name="{{ item.id }}" value="{{ item.b }}" />{{ item.b }}</label><br>
+                {% if item.c %}
+             <label> <input type="radio"  name="{{ item.id }}" value="{{ item.c }}" />{{ item.c }}</label><br>
+                  {% endif %}
+                {% if item.d %}
+             <label><input type="radio"   name="{{ item.id }}" value="{{ item.d }}" />{{ item.d }}</label>
+                  {% endif %}
+
+            </div>
+<hr> 
+        {% endfor %}
+       
+<br>
+    
+ <!--<button id="showgrade" type="submit" class="btn btn-success">Submit</button>-->
+
+ 
+<br><br><br><br>
+
+<p> </p>
+ {% csrf_token %}
+{% else %}
+<p>Please log in to see the quiz</p>
+   
+      <a href="{% url 'accounts:login'%}">Sign in</a>
+    {% endif %}
+<script>
+ $( function() {
+
+var scores=0;
+
+  $("input:radio").removeAttr("checked"); 
+  $("div input").click( function(event)
+  {
+   var clicked = $(this); 
+   var c= clicked.val()
+   var namex=($(this).attr('name'));
+   
+   var ans =$('input:hidden[name='+namex+']').val();
+   
+   if (c=== ans){
+    alert("Correct answer!");
+    scores=scores+1;
+  
+    $('#div'+namex).remove();
+
+   }else{
+    
+    alert("Incorrect! ");
+
+         }
+
+  //Update score
+    
+  $('#score').text("Score :"+scores);
+   });
+  // write score to database
+    
+   
+
+
+
+  } );
+</script>
+
+</div>
+</body>
+</html> 

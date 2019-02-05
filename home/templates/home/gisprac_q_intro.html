@@ -24,26 +24,27 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav" class="top-ul">                       
                         <li class="nav-small-cap">MENU</li>
-                        <li><a href="" class="active">Introduction</a>	
+                        <li><a href="{% url 'home:gisprac_q_intro' %}" class="active">Introduction</a>	
 							<ul class="submenu">
 								<li><a href="#" id="link1">Installation</a></li>
 									
 								<li><a href="#" id="link2">Files Management</a></li>
 								<li><a href="#" id="link3">QGIS Desktop</a></li>
 								<!--<li><a href="" id="link4">QGIS Plugins</a></li>-->
-								<li><a href="{% url 'quiz:introduction' %}" >Test</a></li>
-								
-								
-                                                               
+								<li><a href="{% url 'quiz:introduction' %}" >Test</a></li>                                                               
 							</ul>
 							
-						</li>
+						
 	
 						<li><a href="{% url 'home:gisprac_interface' %}" >QGIS Interface</a></li>
 						<li><a href="{% url 'home:gisprac_q_datacreation' %}" >Data Creation</a></li>
 						<li><a href="{% url 'home:gisprac_attribute' %}" >Work with Attribute</a></li>
-                        <li><a href="#" >Coming soon</a></li>
-                       
+						<li><a href="{% url 'home:gisprac_attribute' %}" >Coordinate system</a></li>
+						<li><a href="{% url 'home:gisprac_attribute' %}" >Editing</a></li>
+						<li><a href="{% url 'home:gisprac_attribute' %}" >Second Test</a></li>						
+						<li><a href="{% url 'home:chat' %}" >FINAL EXAM</a></li>
+						
+                       </li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
@@ -75,6 +76,8 @@
                             <div class="text-center">
 			    <img src="{%static 'img/vutia.jpg'%}" class="img-responsive" alt=""'>	
 			    </div>
+			    
+				
 			    <h3>Software Used.</h3>
 			    <P>This practical has been tailored to QGIS 3.2. You are adviced to install and use same version of QGIS to avoid confussion. If you use different version of QGIS
 				things  may look different, but the concepts and tasks will be similar. 
@@ -726,9 +729,11 @@
 					of using the Browser. Instead of seeing all support files and non-spatial data, you will see only the spatial
 					layers that are supported by QGIS. Click on a layer to select it.</p>
 					
-					<p><span>Practice</span></p>
+					<p><span>PRACTICLE</span></p>
 					
-					<p>1. Download the file <a href= "{%static 'Nanyumbu.zip'%}" download>Nanyumbu</a> shapefile, at the bottom left of your scree click drop down arrow then click show in folder > Copy it> and paste on your desktop,</p>
+					<p><span>Data</span></p>
+					
+					<p>1. Download the file <a href= "{%static 'QGIS_Intro_Data.zip'%}" download>Data</a> shapefile, at the bottom left of your scree click drop down arrow then click show in folder > Copy it> and paste on your desktop,</p>
 					<img src="{%static 'img/q_p_intr_filemng_browser3.jpg'%}" class="image-responsive" alt="">
 					
 					<p>2. Unzip the file. Highlight the file, right click then click extract all. In the next window click extract </p>
@@ -775,7 +780,11 @@
 					
 					<img src="{%static 'img/q_p_intr_filemng_qdesk3.jpg'%}" class="image-responsive" alt="">
 					
-					<p>2. Hide or shown Toolbars and Panels: Right click in any blank area on the toolbar to get the Panel and Toolbars 
+					<p>2. Hide or shown Toolbars and Panels: 
+					As you can see, there are lots of features and tool buttons –some of these we don’t really need
+					 and it can be a good idea to remove them to make the interface look a little simple. To do this, 
+
+						Right click in any blank area on the toolbar to get the Panel and Toolbars 
 						menu. Click on a checked or unchecked Panel (s) or Toolbar(s) to toggle between hiding and showing them.
 						A good one to panel to show is the Spatial Bookmarks panel so you can bookmark your map extents. </p>
 					

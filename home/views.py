@@ -24,10 +24,11 @@ class HomeView(TemplateView):
         posts = Post.objects.all().order_by('created')
         users = User.objects.all()
         #exclude(id=request.user.id)
-     
-        friend = Friend.objects.get(current_user=request.user)
+    
+        friend, created = Friend.objects.get_or_create(current_user=request.user)
+    
         friends = friend.users.all()
-       
+  
         
         args = {'form': form, 'posts': posts, 'users': users, 'friends':friends}
         #'friends':friends
@@ -87,24 +88,13 @@ def register(request, item_id):
             create = form.save()
             create.save
             
-            return redirect('home:index')
+            return redirect('home:payment')
             
         args = {'form': form}
         return render(request, 'home/create.html', args)
        
-def payment(request, item_id):
-    try:
-        itm = Item.objects.get(id=item_id)
-    except Post.DoesNotExist:
-        itm = None
-        
-    context = {
-        'item': itm
-        
-    }
-    
-    return render (request, "home/payment.html", context)
-
+def payment(request):
+    return render (request, "home/payment.html")
 
 def basic(request):    
     return render (request, "home/basic.html")

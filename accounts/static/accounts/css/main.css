@@ -418,6 +418,14 @@ nav{
 	padding-top: 40px;
 	color: #fff;
 }
+
+.footer2{
+	background-color: #1D2026;
+	padding-top: 40px;
+	color: #fff;
+}
+
+
 .separator{
 	background-color: #FF4081;
 	height: 2px;
@@ -533,7 +541,7 @@ hr.white{
 }
 
 .section-title{
-	font-size: 2.1rem;
+	font-size: 1.5rem;
 	font-weight: 500;
 	margin-bottom: 15px;
 }
@@ -785,7 +793,7 @@ hr.white{
 
 .main-section{
 	margin-top: 70px;
-	padding-left: 260px;
+	padding-left: 120px;
 }
 .topic-title{
 	padding: 30px 0px;
@@ -937,6 +945,26 @@ iframe, .video-container, #contact{
   }*/
 
 
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+
+
+
 .modal{
 	margin-top: calc(100vh / 3) !important;
 }
@@ -975,3 +1003,4 @@ spanb {
     
     color:blue;
 }
+

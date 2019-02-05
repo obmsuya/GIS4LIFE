@@ -1,32 +1,57 @@
 
-{% extends 'base2.html' %}
+{% extends 'base3.html' %}
 
-    
+ {% load staticfiles %}   
 
 
 {% block body %}
-      <div class="container">
-    <a href="{% url 'home:index' %}">&lt; Back to the list</a>
-      <br><br>
-      </div>
-      <ul class="nav navbar-nav navbar-right"> 
-            <div class="row">
-                  <main role="main">
-                      
-                      <div class="jumbotron">
-                        <h1>Register</h1>
-                        <form method="post">
-                
-                            {% csrf_token%}
-                            {{form.as_p}}
-                        <button type="submit" >submit</button>
-                        
-                        </form>
       
-                    </div>
-                  </main>
-            </div>
-      </ul>
 
+  <br> <br> <br> 
+
+       
+                
+                <div class="container"
+     
+            
+                 <small><span class="caps">Course Registration</span></small>
+                            <div class="line-sep"></div>
+                
+                 <div class="col-md-8">
+					 	
+                                                <div class="row">
+							<div class="col-md-6">
+                                                            <div class="jumbotron">
+							<div class="text-left">	
+                                                           <h1>Register</h1>
+                                                            <form method="post">
+                                                    
+                                                                {% csrf_token%}
+                                                                {{form.as_p}}
+                                                            <!--<button type="submit" class="btn btn-follow btn-lg>submit</button>-->
+                                                           <button type="submit" class="btn btn-follow ">
+										 	Submit </button>
+                                                            
+                                                            </form>
+                                               
+                                                                
+                                                                
+                                                                
+                                                                
+                                                                
+                                                        </div>        
+							</div>
+                                                        
+                                                        
+
+									
+							</div>
+                 </div></div>
+
+
+    
+        </div>
+        
+        
 
    {% endblock %}

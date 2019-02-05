@@ -26,8 +26,8 @@ def register(request):
     else:
         form = RegistrationForm()
 
-        args = {'form': form}
-        return render(request, 'accounts/reg_form.html', args)
+    args = {'form': form}
+    return render(request, 'accounts/reg_form.html', args)
         
 def view_profile(request, pk=None):
     args = {'user': request.user}

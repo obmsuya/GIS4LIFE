@@ -8080,6 +8080,9 @@ a.mytooltip {
     .footer {
         left: 240px
     }
+    .footer2 {
+        left: 40px
+    }
 }
 
 @media (max-width:1023px) {

@@ -1,5 +1,5 @@
 
-{% extends 'base.html' %}
+{% extends 'base3.html' %}
 {% load staticfiles %}
 
     {%block head%}
@@ -42,22 +42,20 @@
                                     <div class="col-md-7"><h3>Descriptions</h3>{{item.description}}</div><br>
                                    
                                     <div class="col-md-5">
+					<h3>Price {{item.price}} USD</h3>
 					<div class="card right-in">
 					    <div class="card-icon">
-                                                <ul class="tutor-icons">
-                                                    <div class="flex f-end f-col">  
-                                                    <br>
-                                                    <h4><a class="btn btn-info btn-lg "href="{% url 'home:register' item_id=item.id %}"> Register </a></h4></li>                                                       
-                                                    </div>
-                                                </ul><br>
-                                                    <div class="flex f-end f-col">
-                                                        <h3>Only {{item.price}} USD</h3>
-                                                    </div><br>
-                                                <ul class="tutor-icons">                                                          
-                                                     <div class="flex f-end f-col">               
-                                                                    <h3> <a class="btn btn-follow "href="{% url 'home:payment' item_id=item.id %}">I want to Pay </a> </h3> </li>
-                                                     </div>  
-                                                </ul>
+                                                <br><br>
+						<ul class="tutor-icons">
+                                                   
+                                                    <br><br> 
+						    
+                                                    <h4><a class="btn btn-follow btn-lg "href="{% url 'home:register' item_id=item.id %}"> Join Now</a></h4></li>                                                       
+                                                    
+                                              
+						</ul>
+                                                    
+                                                
                                                   <br>
                                                    <hr>
                                                   <div class="text-left">
@@ -68,13 +66,17 @@
                                                   
                                                   <ul class="tutor-icons"> 
                                                 
-                                                1. Videos tutorial<br>
-                                                2. Reading tutorials<br>
+                                                1. Tutorial in video format <br>
+                                                2. Tutorial in Reading format<br>
                                                 3. Downloadable resources<br>
                                                 4. Full lifetime access<br>
                                                 5. Access on Laptop and mobile<br>
                                                 6. Certificate of Completion<br>
+						  
                                                  </ul>
+						  <br>
+						    <hr>
+						 <p> If you already registered go to <a class="btn btn-info btn-sm "href="{% url 'home:payment' %}"> Payment Detail</a> </p>
                                             </div>
                                         </div>
                                     </div>      
@@ -91,7 +93,8 @@
                 <div class="container"
         <section class="section">
             
-                 
+                 <small><span class="caps">Instructor</span></small>
+                            <div class="line-sep"></div>
                 
                  <div class="col-md-12">
 						<h1>About the Instructor</h1>
@@ -102,7 +105,7 @@
                                                                     
 									<div class="tutor-image">
 										
-										<img src="{%static 'img/eeeee.jpg'%}" class="img-responsive" alt=""'>	
+										<img src="{%static 'img/eeeee.jpg'%}" alt=""'>	
 									</div>
 
 									
@@ -135,11 +138,11 @@
                                                                                         2010, Msuya saw GIS to be a perfect opportunity to tie together
                                                                                         his interests in conservation and all things map. With a background
                                                                                         in Forestry, a masters in Geographical Information System and
-                                                                                        a certification in GIS, the launch of OBGIS was a natural 
+                                                                                        a certification in GIS, the launch of GIS4LIFE was a natural 
                                                                                         progression.</p>
                                                                                         <P>Mr Overblessing have now worked in several countries worldwide on projects ranging from
-                                                                                        on the ground data capture in USA to Web app development in Tanzania.
-                                                                                        At the core of OBGIS is a desire and enthusiasm to share knowledge and ideas through
+                                                                                        on the data capture in USA to Web app development in Tanzania.
+                                                                                        At the core of GIS4LIFE is a desire and enthusiasm to share knowledge and ideas through
                                                                                         training and collaboration.
 										</p>
 										
