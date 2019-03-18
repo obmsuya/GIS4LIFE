@@ -13,6 +13,7 @@ from home.views import HomeView
 urlpatterns = [
 
     url(r'^$', views.index),
+     url(r'^index/$', views.index, name = "index"),
     url(r'^chat', HomeView.as_view(), name = 'chat'),
     
     url(r'^donald/$', views.donald, name = "donald"),
@@ -24,7 +25,7 @@ urlpatterns = [
     
     
     url(r'^home/$', views.home, name = "home"),
-    url(r'^index/$', views.index, name = "index"),
+   
     url(r'^item/(?P<item_id>\d+)/$', views.item, name = "item"),
     url(r'^item/(?P<item_id>\d+)/register/$', views.register, name = "register"),
     #url(r'^item/(?P<item_id>\d+)/register/payment/$', views.payment, name = "payment"),

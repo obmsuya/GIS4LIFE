@@ -78,23 +78,23 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 
 #local/production(test)
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#        'NAME': 'quiz2',
-#        'USER': 'postgres',
-#        'PASSWORD': 'postgres',
-#        'HOST': 'localhost',
-#        'PORT': '',
-#    }
-#}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'quiz2',
+#         'USER': 'postgres',
+#         'PASSWORD': 'postgres',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
 
 
 
 
 
 #local/production(og)
-#DATABASES = {
+# DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.mysql',
 #        'NAME':'gis4life',
@@ -110,38 +110,53 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 #            'CHARSET': 'utf8mb4',
 #            'COLLATION': 'utf8mb4_unicode_ci',
 #        },
-#        
+       
 #    }
-#}
+# }
 
-
+# CORS_REPLACE_HTTPS_REFERER = False
+# SECURE_PROXY_SSL_HEADER = None
+# SECURE_SSL_REDIRECT = False
+# SESSION_COOKIE_SECURE=False
+# CRSF_COOKIE_SECURE = False
+# SECURE_HSTS_SECONDS = None
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = False
+# SECURE_FRAME_DENY = False
 
 #live
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME':'gis4life$gis4life',
-        'USER': 'gis4life',
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-            #Tell mysql to connect with 'utf8mb4' character set
-            'charset':'utf8mb4',
-            },
-        #Tell django to build the test database with 'utf8mb4'character set
-        'TEST': {
-            'CHARSET': 'utf8mb4',
-            'COLLATION': 'utf8mb4_unicode_ci',
-        },
-        'PASSWORD': 'Pa55w0rd',
-        'HOST': 'gis4life.mysql.pythonanywhere-services.com',
-        'PORT': '',
-       
-    }
+   'default': {
+       'ENGINE': 'django.db.backends.mysql',
+       'NAME':'gis4life$gis4life',
+       'USER': 'gis4life',
+       'OPTIONS': {
+           'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+           #Tell mysql to connect with 'utf8mb4' character set
+           'charset':'utf8mb4',
+           },
+       #Tell django to build the test database with 'utf8mb4'character set
+       'TEST': {
+           'CHARSET': 'utf8mb4',
+           'COLLATION': 'utf8mb4_unicode_ci',
+       },
+       'PASSWORD': 'Pa55w0rd',
+       'HOST': 'gis4life.mysql.pythonanywhere-services.com',
+       'PORT': '',
+      
+   }
 }
 
 
-
+CORS_REPLACE_HTTPS_REFERER = True
+HOT_SCHEME = "https://"
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTOCOL', 'https')
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE=True
+CRSF_COOKIE_SECURE = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_SECONDS = 1000000
+SECURE_FRAME_DENY = True
 
 
 
@@ -219,4 +234,6 @@ EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'suggestion')
 
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = 1025
+
+
 
