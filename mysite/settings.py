@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'mob_we*$0e2cpfq^0jey+wakxnzl&46%6v=tov)0p+&0!4(4!b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1', 'gis4life.pythonanywhere.com']
 
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -113,6 +114,8 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
        
 #    }
 # }
+
+
 
 # CORS_REPLACE_HTTPS_REFERER = False
 # SECURE_PROXY_SSL_HEADER = None
@@ -205,19 +208,35 @@ LOGIN_URL = '/account/login/'
 
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static', 'static_root')
 
+# STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static', 'static_root')
 
-STATICFILES_DIRS = (
-  os.path.join(os.path.dirname(BASE_DIR), 'static', 'static_dirs'),
+# STATICFILES_DIRS = (
+#   os.path.join(os.path.dirname(BASE_DIR), 'static', 'static_dirs'),
+# )
 
-)
-
-#MEDIA_ROOT =  os.path.join(BASE_DIR, 'mysite/media')
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static', 'media')
+# MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static', 'media')
 
 
 MEDIA_URL = '/media/'
+
+
+
+AWS_ACCESS_KEY_ID = 'AKIAIGCRUOY6E5QWAXDQ'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'django-business-obfiles'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+AWS_S3_REGION_NAME = 'eu-west-2'
+AWS_S3_SIGNATURE_VERSION = "s3v4"
+AWS_S3_FILE_OVERWRITE = False
+AWS_FILE_EXPIRE = 200
+
+
+
 
 LOGIN_EXEMPT_URLS = (
     r'^account/logout/$',
@@ -229,11 +248,18 @@ LOGIN_EXEMPT_URLS = (
 
 )
 
-EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
-EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'suggestion')
+# EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+# EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'suggestion')
 
-EMAIL_HOST = 'localhost'
-EMAIL_PORT = 1025
+# EMAIL_HOST = 'localhost'
+# EMAIL_PORT = 1025
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'oamsuy06'
+EMAIL_HOST_PASSWORD = 'Savioury9'
 
 
 
